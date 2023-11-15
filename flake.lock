@@ -1,0 +1,106 @@
+{
+  "nodes": {
+    "naersk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1686242667,
+        "narHash": "sha256-I7Kwp06WX/9E+rEND1i1wjdKQQm3XiDxYOyNK9fuJu0=",
+        "owner": "icewind1991",
+        "repo": "naersk",
+        "rev": "6d245a3bbb2ee31ec726bb57b9a8b206302e7110",
+        "type": "github"
+      },
+      "original": {
+        "owner": "icewind1991",
+        "repo": "naersk",
+        "rev": "6d245a3bbb2ee31ec726bb57b9a8b206302e7110",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1699994397,
+        "narHash": "sha256-xxNeIcMNMXH2EA9IAX6Cny+50mvY22LhIBiGZV363gc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d4b5a67bbe9ef750bd2fdffd4cad400dd5553af8",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-23.05",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "naersk": "naersk",
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay",
+        "utils": "utils"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1700014539,
+        "narHash": "sha256-YF+AoCicGzsrlNDrXZYCymfVyYwrMBox+6vbLBsrEQM=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "ed9fd98b28da90b1b28340f3230d35b2061b9752",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
