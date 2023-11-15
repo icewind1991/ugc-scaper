@@ -11,3 +11,5 @@ scraper = "0.18.1"
 miette = "5.10.0"
 thiserror = "1.0.50"
 main_error = "0.1.2"
+time = { version = "0.3.30", features = ["parsing", "macros"] }
+steamid-ng = "1.0.0"
