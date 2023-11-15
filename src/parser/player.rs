@@ -1,7 +1,8 @@
 use super::{ElementExt, Parser};
 use crate::data::{Honors, Player, TeamMemberShip, TeamRef};
+use crate::parser::{select_last_text, select_text};
 use crate::{ParseError, Result};
-use scraper::{ElementRef, Html, Selector};
+use scraper::{Html, Selector};
 use std::iter::repeat;
 use steamid_ng::SteamID;
 use time::{macros::format_description, Date};
@@ -58,27 +59,12 @@ impl PlayerParser {
     }
 }
 
-fn select_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
-    el.select(selector)
-        .next()
-        .and_then(|item| item.text().filter(|s| !s.trim().is_empty()).next())
-        .unwrap_or(default)
-        .trim()
-}
-
-fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
-    el.select(selector)
-        .next()
-        .and_then(|item| item.text().last())
-        .unwrap_or(default)
-        .trim()
-}
-
 impl Parser for PlayerParser {
     type Output = Player;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
         let document = Html::parse_document(&document);
+        let format = format_description!("[month padding:none]/[day padding:none]/[year]");
 
         let name = document
             .select(&self.selector_name)
@@ -122,7 +108,7 @@ impl Parser for PlayerParser {
         let teams = document
             .select(&self.selector_team_group)
             .filter(|item| item.select(&self.selector_team_link).next().is_some())
-            .map(|item| {
+            .map(move |item| {
                 let link = item
                     .select(&self.selector_team_link)
                     .next()
@@ -136,7 +122,6 @@ impl Parser for PlayerParser {
                     Some((_, id)) => id.parse().unwrap_or_default(),
                     _ => 0,
                 };
-                let format = format_description!("[month padding:none]/[day padding:none]/[year]");
                 let since = match since.rsplit_once("\n") {
                     Some((_, since)) => Date::parse(since, &format).unwrap_or(Date::MIN),
                     _ => Date::MIN,

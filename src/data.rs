@@ -28,3 +28,11 @@ pub struct TeamRef {
     pub name: String,
     pub id: u32,
 }
+
+#[derive(Debug, Clone)]
+pub struct MembershipHistory {
+    pub team: TeamRef,
+    pub division: String,
+    pub joined: Date,
+    pub left: Option<Date>,
+}

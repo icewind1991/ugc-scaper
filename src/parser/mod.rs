@@ -1,9 +1,11 @@
 use crate::Result;
-use scraper::ElementRef;
+use scraper::{ElementRef, Selector};
 
 mod player;
+mod player_details;
 
 pub use player::*;
+pub use player_details::*;
 
 pub trait Parser {
     type Output;
@@ -26,4 +28,20 @@ impl<'a> ElementExt<'a> for ElementRef<'a> {
             .next()
             .map(|s| s.trim())
     }
+}
+
+fn select_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
+    el.select(selector)
+        .next()
+        .and_then(|item| item.text().filter(|s| !s.trim().is_empty()).next())
+        .unwrap_or(default)
+        .trim()
+}
+
+fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
+    el.select(selector)
+        .next()
+        .and_then(|item| item.text().last())
+        .unwrap_or(default)
+        .trim()
 }
