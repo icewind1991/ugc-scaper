@@ -1,5 +1,7 @@
-use crate::Result;
+use crate::{ParseError, Result};
 use scraper::{ElementRef, Selector};
+use time::format_description::FormatItem;
+use time::macros::format_description;
 
 mod player;
 mod player_details;
@@ -19,29 +21,38 @@ trait ElementExt<'a> {
 
 impl<'a> ElementExt<'a> for ElementRef<'a> {
     fn first_text(&self) -> Option<&'a str> {
-        self.text().filter(|s| !s.trim().is_empty()).next()
+        self.text().map(str::trim).find(|s| !s.is_empty())
     }
     fn nth_text(&self, n: usize) -> Option<&'a str> {
         self.text()
             .filter(|s| !s.trim().is_empty())
-            .skip(n - 1)
-            .next()
-            .map(|s| s.trim())
+            .nth(n - 1)
+            .map(str::trim)
     }
 }
 
-fn select_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
+fn select_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a str> {
     el.select(selector)
         .next()
-        .and_then(|item| item.text().filter(|s| !s.trim().is_empty()).next())
-        .unwrap_or(default)
-        .trim()
+        .and_then(|item| item.text().find(|s| !s.trim().is_empty()))
+        .map(str::trim)
 }
 
-fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector, default: &'static str) -> &'a str {
+fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a str> {
     el.select(selector)
         .next()
         .and_then(|item| item.text().last())
-        .unwrap_or(default)
-        .trim()
+        .map(str::trim)
+}
+
+const DATE_FORMAT: &[FormatItem<'static>] =
+    format_description!("[month padding:none]/[day padding:none]/[year]");
+
+fn team_id_from_link(link: &str) -> Result<u32, ParseError> {
+    link.rsplit_once('=')
+        .and_then(|part| part.1.parse().ok())
+        .ok_or_else(|| ParseError::InvalidLink {
+            link: link.to_string(),
+            role: "team id",
+        })
 }

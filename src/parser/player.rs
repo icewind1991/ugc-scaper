@@ -1,11 +1,11 @@
 use super::{ElementExt, Parser};
 use crate::data::{Honors, Player, TeamMemberShip, TeamRef};
-use crate::parser::{select_last_text, select_text};
+use crate::parser::{select_last_text, select_text, team_id_from_link, DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
 use std::iter::repeat;
 use steamid_ng::SteamID;
-use time::{macros::format_description, Date};
+use time::Date;
 
 const SELECTOR_PLAYER_NAME: &str = ".container .col-md-4 > h3 > b";
 const SELECTOR_PLAYER_ID: &str = ".container .col-md-4 > p.nomargin";
@@ -39,6 +39,12 @@ pub struct PlayerParser {
     selector_team_since: Selector,
 }
 
+impl Default for PlayerParser {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PlayerParser {
     pub fn new() -> Self {
         PlayerParser {
@@ -63,9 +69,7 @@ impl Parser for PlayerParser {
     type Output = Player;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
-        let document = Html::parse_document(&document);
-        let format = format_description!("[month padding:none]/[day padding:none]/[year]");
-
+        let document = Html::parse_document(document);
         let name = document
             .select(&self.selector_name)
             .next()
@@ -91,19 +95,37 @@ impl Parser for PlayerParser {
         let honors = document
             .select(&self.selector_honors_group)
             .flat_map(|group| {
-                let format =
-                    select_text(group, &self.selector_honors_header, "format not detected")
-                        .trim_end_matches(" Medals");
+                let format = select_text(group, &self.selector_honors_header)
+                    .ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_PLAYER_HONORS_HEADER,
+                        role: "player honors format",
+                    })
+                    .map(|format| format.trim_end_matches(" Medals"));
                 let leagues = group.select(&self.selector_honors_league);
                 let teams = group.select(&self.selector_honors_team);
                 repeat(format).zip(leagues).zip(teams)
             })
-            .map(|((format, season), team)| Honors {
-                format: format.to_string(),
-                season: season.text().next().unwrap_or_default().trim().to_string(),
-                team: team.text().next().unwrap_or_default().trim().to_string(),
+            .map(|((format_res, season), team)| {
+                let format = format_res?;
+                Ok(Honors {
+                    format: format.to_string(),
+                    season: season
+                        .first_text()
+                        .ok_or(ParseError::EmptyText {
+                            selector: SELECTOR_PLAYER_HONORS_LEAGUE,
+                            role: "player honors season",
+                        })?
+                        .to_string(),
+                    team: team
+                        .first_text()
+                        .ok_or(ParseError::EmptyText {
+                            selector: SELECTOR_PLAYER_HONORS_TEAM,
+                            role: "player honors team",
+                        })?
+                        .to_string(),
+                })
             })
-            .collect();
+            .collect::<Result<Vec<_>>>()?;
 
         let teams = document
             .select(&self.selector_team_group)
@@ -112,31 +134,58 @@ impl Parser for PlayerParser {
                 let link = item
                     .select(&self.selector_team_link)
                     .next()
-                    .and_then(|link| link.attr("href"))
-                    .unwrap_or("=0");
-                let name = select_text(item, &self.selector_team_name, "failed to find name");
-                let league = select_text(item, &self.selector_team_league, "failed to find league");
-                let since = select_last_text(item, &self.selector_team_since, "");
+                    .ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_PLAYER_TEAM_LINK,
+                        role: "players team link",
+                    })?
+                    .attr("href")
+                    .unwrap_or_default();
+                let name = select_text(item, &self.selector_team_name).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_PLAYER_TEAM_NAME,
+                        role: "players team name",
+                    },
+                )?;
+                let league = select_text(item, &self.selector_team_league).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_PLAYER_TEAM_LEAGUE,
+                        role: "players team league",
+                    },
+                )?;
+                let since = select_last_text(item, &self.selector_team_since).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_PLAYER_TEAM_SINCE,
+                        role: "players team joined",
+                    },
+                )?;
 
-                let id = match link.rsplit_once("=") {
-                    Some((_, id)) => id.parse().unwrap_or_default(),
-                    _ => 0,
-                };
-                let since = match since.rsplit_once("\n") {
-                    Some((_, since)) => Date::parse(since, &format).unwrap_or(Date::MIN),
-                    _ => Date::MIN,
+                let id = team_id_from_link(link)?;
+                let since = match since.rsplit_once('\n') {
+                    Some((_, since)) => {
+                        Date::parse(since, DATE_FORMAT).map_err(|_| ParseError::InvalidDate {
+                            role: "team join date",
+                            date: since.to_string(),
+                        })?
+                    }
+                    _ => {
+                        return Err(ParseError::InvalidDate {
+                            role: "team join date",
+                            date: since.to_string(),
+                        }
+                        .into())
+                    }
                 };
 
-                TeamMemberShip {
+                Ok(TeamMemberShip {
                     team: TeamRef {
                         name: name.to_string(),
                         id,
                     },
                     league: league.to_string(),
                     since,
-                }
+                })
             })
-            .collect();
+            .collect::<Result<Vec<_>>>()?;
 
         Ok(Player {
             name,

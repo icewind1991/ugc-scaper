@@ -1,9 +1,9 @@
 use super::{ElementExt, Parser};
 use crate::data::{MembershipHistory, TeamRef};
-use crate::parser::select_text;
-use crate::Result;
+use crate::parser::{select_text, team_id_from_link, DATE_FORMAT};
+use crate::{ParseError, Result};
 use scraper::{Html, Selector};
-use time::{macros::format_description, Date};
+use time::Date;
 
 const SELECTOR_TEAM_FORMAT: &str = ".container .white-row-small thead h4";
 const SELECTOR_TEAM_GROUP: &str = ".container .white-row-small tbody";
@@ -37,13 +37,19 @@ impl PlayerDetailsParser {
     }
 }
 
+impl Default for PlayerDetailsParser {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Parser for PlayerDetailsParser {
     type Output = Vec<MembershipHistory>;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
-        let document = Html::parse_document(&document);
+        let document = Html::parse_document(document);
 
-        Ok(document
+        document
             .select(&self.selector_team_format)
             .zip(document.select(&self.selector_team_group))
             .flat_map(|(format, history)| {
@@ -52,34 +58,57 @@ impl Parser for PlayerDetailsParser {
                     .map(move |row| (format, row))
             })
             .map(|(format, team)| {
-                let format = format.first_text();
+                let format = format.first_text().ok_or(ParseError::EmptyText {
+                    selector: SELECTOR_TEAM_FORMAT,
+                    role: "team format",
+                })?;
                 let link = team
                     .select(&self.selector_team_link)
                     .next()
-                    .and_then(|link| link.attr("href"))
+                    .ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_TEAM_LINK,
+                        role: "team link",
+                    })?
+                    .attr("href")
                     .unwrap_or_default();
-                let name = select_text(team, &self.selector_team_link, "failed to find team name");
-                let division =
-                    select_text(team, &self.selector_team_joined, "failed to find division");
-                let joined = select_text(team, &self.selector_team_joined, "");
-                let left = select_text(team, &self.selector_team_left, "");
+                let name = select_text(team, &self.selector_team_link).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_TEAM_LINK,
+                        role: "team link",
+                    },
+                )?;
+                let division = select_text(team, &self.selector_team_division).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_TEAM_DIVISION,
+                        role: "team division",
+                    },
+                )?;
+                let joined = select_text(team, &self.selector_team_joined).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_TEAM_JOINED,
+                        role: "team join date",
+                    },
+                )?;
+                let left = select_text(team, &self.selector_team_left).unwrap_or_default();
 
-                let id = match link.rsplit_once("=") {
-                    Some((_, id)) => id.parse().unwrap_or_default(),
-                    _ => 0,
-                };
-                let format = format_description!("[month padding:none]/[day padding:none]/[year]");
+                let id = team_id_from_link(link)?;
 
-                MembershipHistory {
-                    joined: Date::parse(joined, format).unwrap_or(Date::MIN),
-                    left: Date::parse(left, format).ok(),
+                Ok(MembershipHistory {
+                    format: format.to_string(),
+                    joined: Date::parse(joined, DATE_FORMAT).map_err(|_| {
+                        ParseError::InvalidDate {
+                            role: "team join date",
+                            date: joined.to_string(),
+                        }
+                    })?,
+                    left: Date::parse(left, DATE_FORMAT).ok(),
                     team: TeamRef {
                         name: name.to_string(),
                         id,
                     },
                     division: division.to_string(),
-                }
+                })
             })
-            .collect())
+            .collect()
     }
 }

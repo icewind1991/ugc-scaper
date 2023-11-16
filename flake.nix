@@ -38,10 +38,17 @@
         cargo = msrvToolchain;
       };
 
-      src = sourceByRegex ./. ["Cargo.*" "(src|derive|benches|tests|examples|koth_bagel.*)(/.*)?"];
+      src = sourceByRegex ./. ["Cargo.*" "(src|derive|benches|tests|examples)(/.*)?"];
+
+      deps = with pkgs; [
+        pkg-config
+        openssl
+      ];
+
       nearskOpt = {
         pname = "vbsp";
         root = src;
+        nativeBuildInputs = deps;
       };
     in rec {
       packages = {
@@ -67,15 +74,12 @@
       devShells = let
         tools = with pkgs; [
           bacon
+          cargo-insta
           cargo-edit
           cargo-outdated
           cargo-audit
           cargo-msrv
           cargo-semver-checks
-        ];
-        deps = with pkgs; [
-          pkg-config
-          openssl
         ];
       in {
         default = mkShell {

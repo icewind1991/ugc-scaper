@@ -1,0 +1,128 @@
+---
+source: tests/player.rs
+expression: parsed
+---
+[
+  {
+    "format": "TF2 Highlander",
+    "team": {
+      "name": "Xenon",
+      "id": 7861
+    },
+    "division": "Euro Platinum",
+    "joined": [
+      2013,
+      221
+    ],
+    "left": null
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "UGC 6s",
+      "id": 6929
+    },
+    "division": "Europe",
+    "joined": [
+      2017,
+      52
+    ],
+    "left": null
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "sExy eSports",
+      "id": 17736
+    },
+    "division": "Euro Steel",
+    "joined": [
+      2015,
+      253
+    ],
+    "left": [
+      2017,
+      22
+    ]
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "BigHorseDong",
+      "id": 16277
+    },
+    "division": "Euro Steel",
+    "joined": [
+      2015,
+      157
+    ],
+    "left": [
+      2015,
+      253
+    ]
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "sExy eSports",
+      "id": 17736
+    },
+    "division": "Euro Steel",
+    "joined": [
+      2015,
+      153
+    ],
+    "left": [
+      2015,
+      157
+    ]
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "BigHorseDong",
+      "id": 16277
+    },
+    "division": "Euro Steel",
+    "joined": [
+      2015,
+      32
+    ],
+    "left": [
+      2015,
+      153
+    ]
+  },
+  {
+    "format": "TF2 6vs6",
+    "team": {
+      "name": "Necronoms",
+      "id": 8622
+    },
+    "division": "Euro Steel",
+    "joined": [
+      2013,
+      250
+    ],
+    "left": [
+      2014,
+      357
+    ]
+  },
+  {
+    "format": "TF2 4vs4",
+    "team": {
+      "name": "sExy eSports",
+      "id": 17790
+    },
+    "division": "Silver Euro",
+    "joined": [
+      2015,
+      153
+    ],
+    "left": [
+      2017,
+      227
+    ]
+  }
+]
