@@ -7,17 +7,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1686242667,
-        "narHash": "sha256-I7Kwp06WX/9E+rEND1i1wjdKQQm3XiDxYOyNK9fuJu0=",
-        "owner": "icewind1991",
+        "lastModified": 1698420672,
+        "narHash": "sha256-/TdeHMPRjjdJub7p7+w55vyABrsJlt5QkznPYy55vKA=",
+        "owner": "nix-community",
         "repo": "naersk",
-        "rev": "6d245a3bbb2ee31ec726bb57b9a8b206302e7110",
+        "rev": "aeb58d5e8faead8980a807c840232697982d47b9",
         "type": "github"
       },
       "original": {
-        "owner": "icewind1991",
+        "owner": "nix-community",
         "repo": "naersk",
-        "rev": "6d245a3bbb2ee31ec726bb57b9a8b206302e7110",
         "type": "github"
       }
     },
@@ -54,11 +53,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700014539,
-        "narHash": "sha256-YF+AoCicGzsrlNDrXZYCymfVyYwrMBox+6vbLBsrEQM=",
+        "lastModified": 1700100993,
+        "narHash": "sha256-Zc//DbR3eMGajG09iQUMTO/Tc/fdUYmTAzXYdxx5MKw=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "ed9fd98b28da90b1b28340f3230d35b2061b9752",
+        "rev": "b7a041430733fccaa1ffc3724bb9454289d0f701",
         "type": "github"
       },
       "original": {
