@@ -160,6 +160,7 @@ pub struct TeamSeasonMatch {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub enum MatchResult {
     Played {
+        id: u32,
         opponent: TeamRef,
         score: u8,
         score_opponent: u8,
@@ -167,6 +168,7 @@ pub enum MatchResult {
         match_points_opponent: f32,
     },
     Pending {
+        id: u32,
         opponent: TeamRef,
         score: u8,
         score_opponent: u8,

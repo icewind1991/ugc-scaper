@@ -1,6 +1,6 @@
 use super::Parser;
 use crate::data::{MatchResult, TeamRef, TeamSeason, TeamSeasonMatch};
-use crate::parser::{select_text, team_id_from_link, ElementExt};
+use crate::parser::{match_id_from_link, select_text, team_id_from_link, ElementExt};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
 
@@ -18,6 +18,7 @@ const SELECTOR_SEASON_MAP: &str = "td:nth-child(7)";
 const SELECTOR_SEASON_SCORES: &str = "td:nth-child(8)";
 const SELECTOR_SEASON_POINTS: &str = "td:nth-child(9) small";
 const SELECTOR_SEASON_POINTS_OPPONENTS: &str = "td:nth-child(10) small";
+const SELECTOR_SEASON_MATCH_PAGE: &str = "td a[href^=\"matchpage\"]";
 
 pub struct TeamMatchesParser {
     selector_title: Selector,
@@ -32,6 +33,7 @@ pub struct TeamMatchesParser {
     selector_scores: Selector,
     selector_points: Selector,
     selector_points_opponent: Selector,
+    selector_match_page: Selector,
 }
 
 impl Default for TeamMatchesParser {
@@ -55,6 +57,7 @@ impl TeamMatchesParser {
             selector_scores: Selector::parse(SELECTOR_SEASON_SCORES).unwrap(),
             selector_points: Selector::parse(SELECTOR_SEASON_POINTS).unwrap(),
             selector_points_opponent: Selector::parse(SELECTOR_SEASON_POINTS_OPPONENTS).unwrap(),
+            selector_match_page: Selector::parse(SELECTOR_SEASON_MATCH_PAGE).unwrap(),
         }
     }
 }
@@ -127,6 +130,12 @@ impl Parser for TeamMatchesParser {
                             .trim_end_matches(')');
                         let points = select_text(game, &self.selector_points);
                         let points_opponent = select_text(game, &self.selector_points_opponent);
+                        let id = game
+                            .select(&self.selector_match_page)
+                            .next()
+                            .and_then(|link| {
+                                match_id_from_link(link.attr("href").unwrap_or_default()).ok()
+                            });
 
                         let points = points
                             .map(|points| {
@@ -173,6 +182,10 @@ impl Parser for TeamMatchesParser {
                         let result = match (opponent, points, points_opponent) {
                             (Some(opponent), Some(point), Some(points_opponent)) => {
                                 MatchResult::Played {
+                                    id: id.ok_or(ParseError::ElementNotFound {
+                                        selector: SELECTOR_SEASON_MATCH_PAGE,
+                                        role: "match page link",
+                                    })?,
                                     opponent,
                                     score: score,
                                     score_opponent: score_opponent,
@@ -181,6 +194,10 @@ impl Parser for TeamMatchesParser {
                                 }
                             }
                             (Some(opponent), None, None) => MatchResult::Pending {
+                                id: id.ok_or(ParseError::ElementNotFound {
+                                    selector: SELECTOR_SEASON_MATCH_PAGE,
+                                    role: "match page link",
+                                })?,
                                 opponent,
                                 score: score,
                                 score_opponent: score_opponent,

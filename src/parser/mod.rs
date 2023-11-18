@@ -73,6 +73,15 @@ fn team_id_from_link(link: &str) -> Result<u32, ParseError> {
         })
 }
 
+fn match_id_from_link(link: &str) -> Result<u32, ParseError> {
+    link.rsplit_once('=')
+        .and_then(|part| part.1.parse().ok())
+        .ok_or_else(|| ParseError::InvalidLink {
+            link: link.to_string(),
+            role: "match id",
+        })
+}
+
 fn steam_id_from_link(link: &str) -> Result<SteamID, ParseError> {
     link.rsplit_once('=')
         .and_then(|part| part.1.parse::<u64>().ok())

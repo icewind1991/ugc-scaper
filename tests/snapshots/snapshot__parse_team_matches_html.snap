@@ -13,6 +13,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 116246,
             "opponent": {
               "name": "VKID",
               "id": 32033
@@ -40,6 +41,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 116330,
             "opponent": {
               "name": "ivan",
               "id": 32667
@@ -59,6 +61,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 116393,
             "opponent": {
               "name": "JaR",
               "id": 30047
@@ -78,6 +81,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 116440,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -97,6 +101,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Pending": {
+            "id": 116474,
             "opponent": {
               "name": "PONY",
               "id": 32208
@@ -119,6 +124,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 115752,
             "opponent": {
               "name": "VoI",
               "id": 30693
@@ -138,6 +144,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 115789,
             "opponent": {
               "name": "PONY",
               "id": 32208
@@ -157,6 +164,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 115827,
             "opponent": {
               "name": "I DO",
               "id": 32814
@@ -176,6 +184,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 115883,
             "opponent": {
               "name": "SDJC",
               "id": 31550
@@ -195,6 +204,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 115929,
             "opponent": {
               "name": "AͣHͪ",
               "id": 31975
@@ -214,6 +224,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 115985,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -233,6 +244,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 116063,
             "opponent": {
               "name": "PMSjr",
               "id": 32815
@@ -252,6 +264,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 116085,
             "opponent": {
               "name": "menel",
               "id": 32475
@@ -276,6 +289,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114504,
             "opponent": {
               "name": "VoI",
               "id": 30693
@@ -295,6 +309,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 114525,
             "opponent": {
               "name": "pLV",
               "id": 7827
@@ -314,6 +329,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114572,
             "opponent": {
               "name": "/ᐠ｡ꞈ｡ᐟ\\",
               "id": 32759
@@ -333,6 +349,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114595,
             "opponent": {
               "name": "hb",
               "id": 31798
@@ -352,6 +369,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 114633,
             "opponent": {
               "name": "Tissi",
               "id": 29099
@@ -379,6 +397,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 114730,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -398,6 +417,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 114783,
             "opponent": {
               "name": "AVN",
               "id": 32505
@@ -417,6 +437,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114805,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -449,6 +470,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 113335,
             "opponent": {
               "name": "Tissi",
               "id": 29099
@@ -468,6 +490,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 113402,
             "opponent": {
               "name": "AVN",
               "id": 32505
@@ -487,6 +510,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 113476,
             "opponent": {
               "name": "/ᐠ｡ꞈ｡ᐟ\\",
               "id": 32759
@@ -506,6 +530,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 113559,
             "opponent": {
               "name": "VKID",
               "id": 32033
@@ -525,6 +550,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 113703,
             "opponent": {
               "name": "menel",
               "id": 32475
@@ -544,6 +570,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 113848,
             "opponent": {
               "name": "I DO",
               "id": 32814
@@ -563,6 +590,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114017,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -582,6 +610,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 114175,
             "opponent": {
               "name": "/ᐠ｡ꞈ｡ᐟ\\",
               "id": 32759
@@ -614,6 +643,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 112092,
             "opponent": {
               "name": "PMS",
               "id": 32614
@@ -633,6 +663,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 112285,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -652,6 +683,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 112418,
             "opponent": {
               "name": "doge bread",
               "id": 32701
@@ -671,6 +703,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 112561,
             "opponent": {
               "name": "/ᐠ｡ꞈ｡ᐟ\\",
               "id": 32759
@@ -690,6 +723,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 112711,
             "opponent": {
               "name": "nlfop",
               "id": 32674
@@ -709,6 +743,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 112867,
             "opponent": {
               "name": "ps5",
               "id": 32403
@@ -728,6 +763,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 113008,
             "opponent": {
               "name": "GS",
               "id": 31251
@@ -755,6 +791,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 113167,
             "opponent": {
               "name": "ps5",
               "id": 32403
@@ -774,6 +811,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 113211,
             "opponent": {
               "name": "/ᐠ｡ꞈ｡ᐟ\\",
               "id": 32759
@@ -798,6 +836,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 110300,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -817,6 +856,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 110398,
             "opponent": {
               "name": "PONY",
               "id": 32208
@@ -836,6 +876,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 110541,
             "opponent": {
               "name": "BLINI",
               "id": 32522
@@ -863,6 +904,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 110888,
             "opponent": {
               "name": "hb",
               "id": 31798
@@ -882,6 +924,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 111035,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -901,6 +944,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 111208,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -920,6 +964,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 111376,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -944,6 +989,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 108752,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -963,6 +1009,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 108876,
             "opponent": {
               "name": "H4B",
               "id": 30243
@@ -982,6 +1029,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 108978,
             "opponent": {
               "name": "ded",
               "id": 32295
@@ -1001,6 +1049,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 109228,
             "opponent": {
               "name": "PONY",
               "id": 32208
@@ -1020,6 +1069,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 109361,
             "opponent": {
               "name": "PFAN",
               "id": 32296
@@ -1039,6 +1089,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 109489,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -1058,6 +1109,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 109642,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -1077,6 +1129,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 109806,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -1101,6 +1154,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 107297,
             "opponent": {
               "name": "Tissi",
               "id": 29099
@@ -1120,6 +1174,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 107409,
             "opponent": {
               "name": "AͣHͪ",
               "id": 31975
@@ -1139,6 +1194,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 107566,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -1158,6 +1214,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 107705,
             "opponent": {
               "name": "BM",
               "id": 28465
@@ -1177,6 +1234,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 107870,
             "opponent": {
               "name": "kiti",
               "id": 22135
@@ -1196,6 +1254,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 108043,
             "opponent": {
               "name": "0FO",
               "id": 18094
@@ -1215,6 +1274,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 108237,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -1234,6 +1294,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 108409,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -1253,6 +1314,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 108503,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -1277,6 +1339,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 102939,
             "opponent": {
               "name": "V///",
               "id": 31198
@@ -1296,6 +1359,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 103133,
             "opponent": {
               "name": "1R#",
               "id": 29845
@@ -1315,6 +1379,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 103404,
             "opponent": {
               "name": "Tissi",
               "id": 29099
@@ -1334,6 +1399,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 103698,
             "opponent": {
               "name": "GMsU",
               "id": 21544
@@ -1353,6 +1419,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 103986,
             "opponent": {
               "name": "-.IA.-",
               "id": 27743
@@ -1372,6 +1439,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 104168,
             "opponent": {
               "name": "TC",
               "id": 30478
@@ -1391,6 +1459,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 104403,
             "opponent": {
               "name": "BD",
               "id": 18846
@@ -1410,6 +1479,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 104698,
             "opponent": {
               "name": "Snus",
               "id": 31095
@@ -1434,6 +1504,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 100997,
             "opponent": {
               "name": "0FO",
               "id": 18094
@@ -1453,6 +1524,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 101202,
             "opponent": {
               "name": "ZoF",
               "id": 30555
@@ -1472,6 +1544,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 101376,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -1491,6 +1564,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 101627,
             "opponent": {
               "name": "warsaw",
               "id": 30603
@@ -1510,6 +1584,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 101790,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -1529,6 +1604,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 102061,
             "opponent": {
               "name": "HIKEN",
               "id": 30727
@@ -1548,6 +1624,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 102304,
             "opponent": {
               "name": "H4B",
               "id": 30243
@@ -1567,6 +1644,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 102433,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -1591,6 +1669,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 99616,
             "opponent": {
               "name": "Tissi",
               "id": 29099
@@ -1610,6 +1689,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 99693,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -1629,6 +1709,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 99825,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -1648,6 +1729,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 99957,
             "opponent": {
               "name": "turks",
               "id": 29440
@@ -1667,6 +1749,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 100198,
             "opponent": {
               "name": "-.IA.-",
               "id": 27743
@@ -1686,6 +1769,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 100277,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -1705,6 +1789,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 100432,
             "opponent": {
               "name": "CygZap",
               "id": 27744
@@ -1724,6 +1809,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 100611,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -1748,6 +1834,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 98348,
             "opponent": {
               "name": "8/10",
               "id": 28469
@@ -1767,6 +1854,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 98433,
             "opponent": {
               "name": "| CYO |",
               "id": 17176
@@ -1786,6 +1874,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 98544,
             "opponent": {
               "name": "AOÉNOSSA",
               "id": 29261
@@ -1805,6 +1894,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 98648,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -1824,6 +1914,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 98832,
             "opponent": {
               "name": "POOP",
               "id": 29054
@@ -1843,6 +1934,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 98953,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -1862,6 +1954,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 99181,
             "opponent": {
               "name": "WCHFM 2.0",
               "id": 29322
@@ -1881,6 +1974,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 99286,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -1905,6 +1999,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 96981,
             "opponent": {
               "name": "8/10",
               "id": 28469
@@ -1924,6 +2019,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 97147,
             "opponent": {
               "name": "FFF",
               "id": 28589
@@ -1943,6 +2039,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 97320,
             "opponent": {
               "name": "BD",
               "id": 18846
@@ -1962,6 +2059,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 97539,
             "opponent": {
               "name": "-.IA.-",
               "id": 27743
@@ -1981,6 +2079,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 97752,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -2000,6 +2099,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 97916,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2024,6 +2124,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 94251,
             "opponent": {
               "name": "kiti",
               "id": 22135
@@ -2043,6 +2144,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 94441,
             "opponent": {
               "name": "NUT",
               "id": 26393
@@ -2062,6 +2164,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 94675,
             "opponent": {
               "name": "gaeta",
               "id": 26063
@@ -2081,6 +2184,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 94931,
             "opponent": {
               "name": "-.IA.-",
               "id": 27743
@@ -2100,6 +2204,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 95172,
             "opponent": {
               "name": ".__o<",
               "id": 27115
@@ -2119,6 +2224,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 95411,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2138,6 +2244,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 95756,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2165,6 +2272,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 96355,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2189,6 +2297,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 92186,
             "opponent": {
               "name": "0FO",
               "id": 18094
@@ -2208,6 +2317,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 92564,
             "opponent": {
               "name": "FFF",
               "id": 28589
@@ -2227,6 +2337,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 92754,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2246,6 +2357,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 93070,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -2265,6 +2377,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 93335,
             "opponent": {
               "name": "LP",
               "id": 28334
@@ -2284,6 +2397,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 93566,
             "opponent": {
               "name": "gaeta",
               "id": 26063
@@ -2303,6 +2417,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 93766,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -2322,6 +2437,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 93972,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2346,6 +2462,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 89341,
             "opponent": {
               "name": "friends",
               "id": 27262
@@ -2365,6 +2482,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 89624,
             "opponent": {
               "name": "kiti",
               "id": 22135
@@ -2384,6 +2502,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 90131,
             "opponent": {
               "name": "TOPDEF",
               "id": 27261
@@ -2403,6 +2522,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 90483,
             "opponent": {
               "name": "jew",
               "id": 27974
@@ -2422,6 +2542,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 90773,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -2441,6 +2562,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91045,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2460,6 +2582,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91334,
             "opponent": {
               "name": "-.IA.-",
               "id": 27743
@@ -2479,6 +2602,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91556,
             "opponent": {
               "name": "wc",
               "id": 27739
@@ -2498,6 +2622,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91707,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -2517,6 +2642,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91833,
             "opponent": {
               "name": "jew",
               "id": 27974
@@ -2536,6 +2662,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 91883,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2560,6 +2687,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 86553,
             "opponent": {
               "name": "fxgn²",
               "id": 21971
@@ -2579,6 +2707,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 86861,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2598,6 +2727,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 87204,
             "opponent": {
               "name": "kiti",
               "id": 22135
@@ -2617,6 +2747,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 87595,
             "opponent": {
               "name": "EU",
               "id": 26948
@@ -2636,6 +2767,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 87833,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -2655,6 +2787,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 88202,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2674,6 +2807,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 88520,
             "opponent": {
               "name": "sandcastle",
               "id": 26731
@@ -2693,6 +2827,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 88808,
             "opponent": {
               "name": "TOPDEF",
               "id": 27261
@@ -2717,6 +2852,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 84223,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -2736,6 +2872,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 84514,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -2755,6 +2892,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 84757,
             "opponent": {
               "name": "0FO",
               "id": 18094
@@ -2774,6 +2912,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 85047,
             "opponent": {
               "name": "[AoT]",
               "id": 24975
@@ -2793,6 +2932,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 85323,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -2812,6 +2952,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 85618,
             "opponent": {
               "name": "ubåd",
               "id": 26260
@@ -2831,6 +2972,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 85901,
             "opponent": {
               "name": "fxgn²",
               "id": 21971
@@ -2858,6 +3000,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 86282,
             "opponent": {
               "name": "ubåd",
               "id": 26260
@@ -2877,6 +3020,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 86378,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -2896,6 +3040,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 86402,
             "opponent": {
               "name": "TC",
               "id": 18119
@@ -2920,6 +3065,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 81227,
             "opponent": {
               "name": "Op_Sqd",
               "id": 24021
@@ -2939,6 +3085,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 81585,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -2958,6 +3105,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 81898,
             "opponent": {
               "name": "FROOT",
               "id": 25137
@@ -2977,6 +3125,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 82556,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -2996,6 +3145,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 82914,
             "opponent": {
               "name": "Lucrosa",
               "id": 23348
@@ -3015,6 +3165,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 83146,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -3034,6 +3185,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 83369,
             "opponent": {
               "name": ".fi",
               "id": 25231
@@ -3053,6 +3205,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 83680,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -3072,6 +3225,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 83790,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -3091,6 +3245,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 83885,
             "opponent": {
               "name": "kiti",
               "id": 22135
@@ -3115,6 +3270,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 78596,
             "opponent": {
               "name": "brrrrr",
               "id": 24203
@@ -3134,6 +3290,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 78823,
             "opponent": {
               "name": "ENGA",
               "id": 19484
@@ -3161,6 +3318,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 79490,
             "opponent": {
               "name": "Teamisme64",
               "id": 23630
@@ -3180,6 +3338,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 79766,
             "opponent": {
               "name": "0FO",
               "id": 18094
@@ -3199,6 +3358,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 80147,
             "opponent": {
               "name": "FF",
               "id": 24010
@@ -3218,6 +3378,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 80418,
             "opponent": {
               "name": "Gimme",
               "id": 18092
@@ -3237,6 +3398,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 80659,
             "opponent": {
               "name": "|FV|",
               "id": 18648
@@ -3261,6 +3423,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75885,
             "opponent": {
               "name": ":(",
               "id": 9443
@@ -3280,6 +3443,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 75915,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -3299,6 +3463,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 75919,
             "opponent": {
               "name": "kebab",
               "id": 12854
@@ -3318,6 +3483,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75922,
             "opponent": {
               "name": "BMS",
               "id": 12348
@@ -3337,6 +3503,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 75925,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -3356,6 +3523,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75929,
             "opponent": {
               "name": "StuD",
               "id": 23629
@@ -3375,6 +3543,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75934,
             "opponent": {
               "name": "S-O",
               "id": 17139
@@ -3399,6 +3568,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 71668,
             "opponent": {
               "name": "Energy ?",
               "id": 8475
@@ -3426,6 +3596,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 72503,
             "opponent": {
               "name": "ᵛᵉˢ",
               "id": 20489
@@ -3445,6 +3616,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 73057,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -3464,6 +3636,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 73541,
             "opponent": {
               "name": "ᴜᴋɪᴘ",
               "id": 16949
@@ -3483,6 +3656,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 74081,
             "opponent": {
               "name": "GODL",
               "id": 22120
@@ -3502,6 +3676,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 74623,
             "opponent": {
               "name": "<3",
               "id": 21227
@@ -3521,6 +3696,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 74985,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -3540,6 +3716,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75335,
             "opponent": {
               "name": ".aC",
               "id": 18789
@@ -3559,6 +3736,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75419,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -3578,6 +3756,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 75533,
             "opponent": {
               "name": "ᴜᴋɪᴘ",
               "id": 16949
@@ -3602,6 +3781,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 66886,
             "opponent": {
               "name": "TSx*",
               "id": 7246
@@ -3621,6 +3801,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 67410,
             "opponent": {
               "name": "UHT",
               "id": 19962
@@ -3640,6 +3821,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 67966,
             "opponent": {
               "name": "DF",
               "id": 19830
@@ -3659,6 +3841,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 68579,
             "opponent": {
               "name": "ATc.",
               "id": 19815
@@ -3678,6 +3861,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 69057,
             "opponent": {
               "name": "TL",
               "id": 20141
@@ -3697,6 +3881,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 69533,
             "opponent": {
               "name": ".aC",
               "id": 18789
@@ -3716,6 +3901,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 70143,
             "opponent": {
               "name": "A!A!A!",
               "id": 13009
@@ -3735,6 +3921,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 70569,
             "opponent": {
               "name": "CW4",
               "id": 19561
@@ -3754,6 +3941,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 70979,
             "opponent": {
               "name": "HL3",
               "id": 17739
@@ -3773,6 +3961,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 71083,
             "opponent": {
               "name": ".aC",
               "id": 18789
@@ -3792,6 +3981,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 71357,
             "opponent": {
               "name": "ACE",
               "id": 16819
@@ -3816,6 +4006,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 63482,
             "opponent": {
               "name": "Uncle",
               "id": 16512
@@ -3835,6 +4026,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 63883,
             "opponent": {
               "name": ":3",
               "id": 10827
@@ -3854,6 +4046,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 64345,
             "opponent": {
               "name": "$$$",
               "id": 12767
@@ -3873,6 +4066,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 64900,
             "opponent": {
               "name": "ALTFS",
               "id": 18166
@@ -3892,6 +4086,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 65272,
             "opponent": {
               "name": "bby.",
               "id": 18041
@@ -3911,6 +4106,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 65703,
             "opponent": {
               "name": "[T-A!] KSV",
               "id": 5162
@@ -3938,6 +4134,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 66515,
             "opponent": {
               "name": "SB",
               "id": 13955
@@ -3962,6 +4159,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 59027,
             "opponent": {
               "name": "RUN!",
               "id": 8335
@@ -3981,6 +4179,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 59431,
             "opponent": {
               "name": "Z",
               "id": 16406
@@ -4000,6 +4199,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 59972,
             "opponent": {
               "name": "Fruity",
               "id": 14474
@@ -4019,6 +4219,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 60506,
             "opponent": {
               "name": "[T-A!] KSV",
               "id": 5162
@@ -4038,6 +4239,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 61025,
             "opponent": {
               "name": "/r/ip",
               "id": 11214
@@ -4057,6 +4259,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 61722,
             "opponent": {
               "name": "TSx*",
               "id": 7246
@@ -4076,6 +4279,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 62120,
             "opponent": {
               "name": "SS",
               "id": 16972
@@ -4095,6 +4299,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 62613,
             "opponent": {
               "name": "<3Frank",
               "id": 9387
@@ -4119,6 +4324,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 53654,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -4138,6 +4344,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 54199,
             "opponent": {
               "name": ".gimme",
               "id": 13864
@@ -4157,6 +4364,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 54991,
             "opponent": {
               "name": "/r/ip",
               "id": 11214
@@ -4176,6 +4384,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 55555,
             "opponent": {
               "name": "|FTS|",
               "id": 15424
@@ -4195,6 +4404,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 56074,
             "opponent": {
               "name": "mix/huix",
               "id": 8669
@@ -4214,6 +4424,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 56678,
             "opponent": {
               "name": "RUN!",
               "id": 8335
@@ -4233,6 +4444,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 57376,
             "opponent": {
               "name": "CI^",
               "id": 14988
@@ -4252,6 +4464,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 57712,
             "opponent": {
               "name": "PM",
               "id": 3577
@@ -4276,6 +4489,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 48876,
             "opponent": {
               "name": "Energy ?",
               "id": 8475
@@ -4295,6 +4509,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 49366,
             "opponent": {
               "name": "«GFM»",
               "id": 13501
@@ -4322,6 +4537,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 50505,
             "opponent": {
               "name": "[T-A!] KSV",
               "id": 5162
@@ -4341,6 +4557,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 51026,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -4360,6 +4577,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 51651,
             "opponent": {
               "name": "-GA-",
               "id": 13725
@@ -4387,6 +4605,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 52630,
             "opponent": {
               "name": ".gimme",
               "id": 13864
@@ -4411,6 +4630,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 42931,
             "opponent": {
               "name": "Dz.",
               "id": 11124
@@ -4430,6 +4650,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 43634,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -4449,6 +4670,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 44084,
             "opponent": {
               "name": "-WP-",
               "id": 11799
@@ -4468,6 +4690,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 44739,
             "opponent": {
               "name": "pH",
               "id": 9002
@@ -4487,6 +4710,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 45421,
             "opponent": {
               "name": "/gE/",
               "id": 8694
@@ -4506,6 +4730,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 46040,
             "opponent": {
               "name": "RB",
               "id": 7047
@@ -4525,6 +4750,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 46657,
             "opponent": {
               "name": "dv8",
               "id": 9731
@@ -4544,6 +4770,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 47121,
             "opponent": {
               "name": "MM",
               "id": 11486
@@ -4563,6 +4790,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 47686,
             "opponent": {
               "name": "VH?",
               "id": 9490
@@ -4582,6 +4810,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 48161,
             "opponent": {
               "name": "Dr. med.",
               "id": 10474
@@ -4606,6 +4835,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 37589,
             "opponent": {
               "name": "SDCK!",
               "id": 8054
@@ -4625,6 +4855,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 38061,
             "opponent": {
               "name": "UAP",
               "id": 10048
@@ -4644,6 +4875,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 38689,
             "opponent": {
               "name": "\\o/.",
               "id": 8113
@@ -4663,6 +4895,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 39189,
             "opponent": {
               "name": "§GOLD",
               "id": 7864
@@ -4682,6 +4915,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 39783,
             "opponent": {
               "name": "Tr-S",
               "id": 8960
@@ -4701,6 +4935,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 40369,
             "opponent": {
               "name": "srs bsns",
               "id": 7071
@@ -4720,6 +4955,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 40862,
             "opponent": {
               "name": "[GC]",
               "id": 6318
@@ -4739,6 +4975,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 41442,
             "opponent": {
               "name": "Bf N",
               "id": 9960
@@ -4758,6 +4995,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 41970,
             "opponent": {
               "name": "iHat",
               "id": 10042
@@ -4777,6 +5015,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 42308,
             "opponent": {
               "name": "ECD",
               "id": 9215
@@ -4801,6 +5040,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 33321,
             "opponent": {
               "name": "-TI-",
               "id": 8643
@@ -4820,6 +5060,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 33853,
             "opponent": {
               "name": "BEST",
               "id": 7660
@@ -4839,6 +5080,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 34210,
             "opponent": {
               "name": "Energy ?",
               "id": 8475
@@ -4858,6 +5100,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 34643,
             "opponent": {
               "name": "TEAM_",
               "id": 7558
@@ -4877,6 +5120,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 34979,
             "opponent": {
               "name": "kat.",
               "id": 5650
@@ -4896,6 +5140,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 35472,
             "opponent": {
               "name": "[rub!X]",
               "id": 4788
@@ -4915,6 +5160,7 @@ expression: parsed
         "side": "visiting",
         "result": {
           "Played": {
+            "id": 35966,
             "opponent": {
               "name": "fc |",
               "id": 7194
@@ -4934,6 +5180,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 36453,
             "opponent": {
               "name": "{PaPs}",
               "id": 6917
@@ -4953,6 +5200,7 @@ expression: parsed
         "side": "home",
         "result": {
           "Played": {
+            "id": 36673,
             "opponent": {
               "name": "Bill",
               "id": 7835
