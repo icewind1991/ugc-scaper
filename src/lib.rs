@@ -3,9 +3,9 @@ mod error;
 #[doc(hidden)]
 pub mod parser;
 
-use crate::data::{MembershipHistory, Player, RosterHistory, Team, TeamSeason};
+use crate::data::{MembershipHistory, Player, RosterHistory, Seasons, Team, TeamSeason};
 use crate::parser::{
-    Parser, PlayerDetailsParser, PlayerParser, TeamMatchesParser, TeamParser,
+    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamMatchesParser, TeamParser,
     TeamRosterHistoryParser,
 };
 pub use error::*;
@@ -23,6 +23,7 @@ pub struct UgcClient {
     team_parser: TeamParser,
     team_roster_history_parser: TeamRosterHistoryParser,
     team_matches_parser: TeamMatchesParser,
+    seasons_parser: SeasonsParser,
 }
 
 /// "API client" for ugc by scraping the website
@@ -35,6 +36,7 @@ impl UgcClient {
             team_parser: TeamParser::new(),
             team_roster_history_parser: TeamRosterHistoryParser::new(),
             team_matches_parser: TeamMatchesParser::new(),
+            seasons_parser: SeasonsParser::new(),
         }
     }
 
@@ -115,5 +117,17 @@ impl UgcClient {
             .text()
             .await?;
         self.team_matches_parser.parse(&body)
+    }
+
+    /// Get all historical seasons by game mode
+    pub async fn previous_seasons(&self) -> Result<Vec<Seasons>> {
+        let body = self
+            .client
+            .get("https://www.ugcleague.com")
+            .send()
+            .await?
+            .text()
+            .await?;
+        self.seasons_parser.parse(&body)
     }
 }

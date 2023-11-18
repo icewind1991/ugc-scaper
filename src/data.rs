@@ -173,3 +173,17 @@ pub enum MatchResult {
     },
     ByeWeek,
 }
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct Seasons {
+    pub mode: String,
+    pub seasons: Vec<Season>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct Season {
+    pub id: String,
+    pub name: String,
+}

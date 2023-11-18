@@ -1,0 +1,545 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+[
+  {
+    "mode": "Highlander",
+    "seasons": [
+      {
+        "id": "tf2h_season39",
+        "name": "HL Season 39"
+      },
+      {
+        "id": "tf2h_season38",
+        "name": "HL Season 38"
+      },
+      {
+        "id": "tf2h_season37",
+        "name": "HL Season 37"
+      },
+      {
+        "id": "tf2h_season36",
+        "name": "HL Season 36"
+      },
+      {
+        "id": "tf2h_season35",
+        "name": "HL Season 35"
+      },
+      {
+        "id": "tf2h_season34",
+        "name": "HL Season 34"
+      },
+      {
+        "id": "tf2h_season33",
+        "name": "HL Season 33"
+      },
+      {
+        "id": "tf2h_season32",
+        "name": "HL Season 32"
+      },
+      {
+        "id": "tf2h_season31",
+        "name": "HL Season 31"
+      },
+      {
+        "id": "tf2h_season30",
+        "name": "HL Season 30"
+      },
+      {
+        "id": "tf2h_season29",
+        "name": "HL Season 29"
+      },
+      {
+        "id": "tf2h_season28",
+        "name": "HL Season 28"
+      },
+      {
+        "id": "tf2h_season27",
+        "name": "HL Season 27"
+      },
+      {
+        "id": "tf2h_season26",
+        "name": "HL Season 26"
+      },
+      {
+        "id": "tf2h_season25",
+        "name": "HL Season 25"
+      },
+      {
+        "id": "tf2h_season24",
+        "name": "HL Season 24"
+      },
+      {
+        "id": "tf2h_season23",
+        "name": "HL Season 23"
+      },
+      {
+        "id": "tf2h_season22",
+        "name": "HL Season 22"
+      },
+      {
+        "id": "tf2h_season21",
+        "name": "HL Season 21"
+      },
+      {
+        "id": "tf2h_season20",
+        "name": "HL Season 20"
+      },
+      {
+        "id": "tf2h_season19",
+        "name": "HL Season 19"
+      },
+      {
+        "id": "tf2h_season18",
+        "name": "HL Season 18"
+      },
+      {
+        "id": "tf2h_season17",
+        "name": "HL Season 17"
+      },
+      {
+        "id": "tf2h_season16",
+        "name": "HL Season 16"
+      },
+      {
+        "id": "tf2h_season15",
+        "name": "HL Season 15"
+      },
+      {
+        "id": "tf2h_season14",
+        "name": "HL Season 14"
+      },
+      {
+        "id": "tf2h_season13",
+        "name": "HL Season 13"
+      },
+      {
+        "id": "tf2h_season12",
+        "name": "HL Season 12"
+      },
+      {
+        "id": "tf2h_season11",
+        "name": "HL Season 11"
+      },
+      {
+        "id": "tf2h_season10",
+        "name": "Season 10"
+      },
+      {
+        "id": "tf2h_season9",
+        "name": "Season 9"
+      },
+      {
+        "id": "tf2h_season8",
+        "name": "Season 8"
+      }
+    ]
+  },
+  {
+    "mode": "TF2 6v6 League",
+    "seasons": [
+      {
+        "id": "tf26_season40",
+        "name": "Season 40"
+      },
+      {
+        "id": "tf26_season39",
+        "name": "Season 39"
+      },
+      {
+        "id": "tf26_season38",
+        "name": "Season 38"
+      },
+      {
+        "id": "tf26_season37",
+        "name": "Season 37"
+      },
+      {
+        "id": "tf26_season36",
+        "name": "Season 36"
+      },
+      {
+        "id": "tf26_season35",
+        "name": "Season 35"
+      },
+      {
+        "id": "tf26_season34",
+        "name": "Season 34"
+      },
+      {
+        "id": "tf26_season33",
+        "name": "Season 33"
+      },
+      {
+        "id": "tf26_season32",
+        "name": "Season 32"
+      },
+      {
+        "id": "tf26_season31",
+        "name": "Season 31"
+      },
+      {
+        "id": "tf26_season30",
+        "name": "Season 30"
+      },
+      {
+        "id": "tf26_season29",
+        "name": "Season 29"
+      },
+      {
+        "id": "tf26_season28",
+        "name": "Season 28"
+      },
+      {
+        "id": "tf26_season27",
+        "name": "Season 27"
+      },
+      {
+        "id": "tf26_season26",
+        "name": "Season 26"
+      },
+      {
+        "id": "tf26_season25",
+        "name": "Season 25"
+      },
+      {
+        "id": "tf26_season24",
+        "name": "Season 24"
+      },
+      {
+        "id": "tf26_season23",
+        "name": "Season 23"
+      },
+      {
+        "id": "tf26_season22",
+        "name": "Season 22"
+      },
+      {
+        "id": "tf26_season21",
+        "name": "Season 21"
+      },
+      {
+        "id": "tf26_season20",
+        "name": "Season 20"
+      },
+      {
+        "id": "tf26_season19",
+        "name": "Season 19"
+      },
+      {
+        "id": "tf26_season18",
+        "name": "Season 18"
+      },
+      {
+        "id": "tf26_season17",
+        "name": "Season 17"
+      },
+      {
+        "id": "tf26_season16",
+        "name": "Season 16"
+      },
+      {
+        "id": "tf26_season15",
+        "name": "Season 15"
+      }
+    ]
+  },
+  {
+    "mode": "TF2 4v4 League",
+    "seasons": [
+      {
+        "id": "tf24_season28",
+        "name": "Season 28"
+      },
+      {
+        "id": "tf24_season27",
+        "name": "Season 27"
+      },
+      {
+        "id": "tf24_season26",
+        "name": "Season 26"
+      },
+      {
+        "id": "tf24_season25",
+        "name": "Season 25"
+      },
+      {
+        "id": "tf24_season24",
+        "name": "Season 24"
+      },
+      {
+        "id": "tf24_season23",
+        "name": "Season 23"
+      },
+      {
+        "id": "tf24_season22",
+        "name": "Season 22"
+      },
+      {
+        "id": "tf24_season21",
+        "name": "Season 21"
+      },
+      {
+        "id": "tf24_season20",
+        "name": "Season 20"
+      },
+      {
+        "id": "tf24_season19",
+        "name": "Season 19"
+      },
+      {
+        "id": "tf24_season18",
+        "name": "Season 18"
+      },
+      {
+        "id": "tf24_season17",
+        "name": "Season 17"
+      },
+      {
+        "id": "tf24_season16",
+        "name": "Season 16"
+      },
+      {
+        "id": "tf24_season15",
+        "name": "Season 15"
+      },
+      {
+        "id": "tf24_season14",
+        "name": "Season 14"
+      },
+      {
+        "id": "tf24_season13",
+        "name": "Season 13"
+      },
+      {
+        "id": "tf24_season12",
+        "name": "Season 12"
+      },
+      {
+        "id": "tf24_season11",
+        "name": "Season 11"
+      },
+      {
+        "id": "tf24_season10",
+        "name": "Season 10"
+      },
+      {
+        "id": "tf24_season9",
+        "name": "Season 9"
+      },
+      {
+        "id": "tf24_season8",
+        "name": "Season 8"
+      },
+      {
+        "id": "tf24_season7",
+        "name": "Season 7"
+      },
+      {
+        "id": "tf24_season6",
+        "name": "Season 6"
+      },
+      {
+        "id": "tf24_season5",
+        "name": "Season 5"
+      },
+      {
+        "id": "tf24_season4",
+        "name": "Season 4"
+      },
+      {
+        "id": "tf24_season3",
+        "name": "Season 3"
+      },
+      {
+        "id": "tf24_season2",
+        "name": "Season 2"
+      },
+      {
+        "id": "tf24_season1",
+        "name": "Season 1"
+      }
+    ]
+  },
+  {
+    "mode": "TF2 Ultiduo League",
+    "seasons": [
+      {
+        "id": "tf22_season10",
+        "name": "Season 10"
+      },
+      {
+        "id": "tf22_season9",
+        "name": "Season 9"
+      },
+      {
+        "id": "tf22_season8",
+        "name": "Season 8"
+      },
+      {
+        "id": "tf22_season7",
+        "name": "Season 7"
+      },
+      {
+        "id": "tf22_season6",
+        "name": "Season 6"
+      },
+      {
+        "id": "tf22_season5",
+        "name": "Season 5"
+      },
+      {
+        "id": "tf22_season4",
+        "name": "Season 4"
+      },
+      {
+        "id": "tf22_season3",
+        "name": "Season 3"
+      },
+      {
+        "id": "tf22_season2",
+        "name": "Season 2"
+      },
+      {
+        "id": "tf22_season1",
+        "name": "Season 1"
+      }
+    ]
+  },
+  {
+    "mode": "ASIA Highlander",
+    "seasons": [
+      {
+        "id": "atf2h_season38",
+        "name": "ASIA HL Season 38"
+      },
+      {
+        "id": "atf2h_season37",
+        "name": "ASIA HL Season 37"
+      },
+      {
+        "id": "atf2h_season36",
+        "name": "ASIA HL Season 36"
+      },
+      {
+        "id": "atf2h_season35",
+        "name": "ASIA HL Season 35"
+      },
+      {
+        "id": "atf2h_season34",
+        "name": "ASIA HL Season 34"
+      },
+      {
+        "id": "atf2h_season33",
+        "name": "ASIA HL Season 33"
+      },
+      {
+        "id": "atf2h_season32",
+        "name": "ASIA HL Season 32"
+      }
+    ]
+  },
+  {
+    "mode": "ASIA 6v6",
+    "seasons": [
+      {
+        "id": "atf26_season40",
+        "name": "ASIA 6v6 Season 40"
+      },
+      {
+        "id": "atf26_season39",
+        "name": "ASIA 6v6 Season 39"
+      },
+      {
+        "id": "atf26_season38",
+        "name": "ASIA 6v6 Season 38"
+      },
+      {
+        "id": "atf26_season37",
+        "name": "ASIA 6v6 Season 37"
+      }
+    ]
+  },
+  {
+    "mode": "Overwatch",
+    "seasons": [
+      {
+        "id": "ow_season19",
+        "name": "OW2 Season 1"
+      },
+      {
+        "id": "ow_season18",
+        "name": "OW Season 18"
+      },
+      {
+        "id": "ow_season17",
+        "name": "OW Season 17"
+      },
+      {
+        "id": "ow_season16",
+        "name": "OW Season 16"
+      },
+      {
+        "id": "ow_season15",
+        "name": "OW Season 15"
+      },
+      {
+        "id": "ow_season14",
+        "name": "OW Season 14"
+      },
+      {
+        "id": "ow_season13",
+        "name": "OW Season 13"
+      },
+      {
+        "id": "ow_season12",
+        "name": "OW Season 12"
+      },
+      {
+        "id": "ow_season11",
+        "name": "OW Season 11"
+      },
+      {
+        "id": "ow_season10",
+        "name": "OW Season 10"
+      },
+      {
+        "id": "ow_season9",
+        "name": "OW Season 9"
+      },
+      {
+        "id": "ow_season8",
+        "name": "OW Season 8"
+      },
+      {
+        "id": "ow_season7",
+        "name": "OW Season 7"
+      },
+      {
+        "id": "ow_season6",
+        "name": "OW Season 6"
+      },
+      {
+        "id": "ow_season5",
+        "name": "OW Season 5"
+      },
+      {
+        "id": "ow_season4",
+        "name": "OW Season 4"
+      },
+      {
+        "id": "ow_season3",
+        "name": "OW Season 3"
+      },
+      {
+        "id": "ow_season2",
+        "name": "OW Season 2"
+      },
+      {
+        "id": "ow_season1",
+        "name": "OW Season 1"
+      }
+    ]
+  }
+]

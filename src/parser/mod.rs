@@ -6,12 +6,14 @@ use time::macros::format_description;
 
 mod player;
 mod player_details;
+mod seasons;
 mod team;
 mod team_matches;
 mod team_roster_history;
 
 pub use player::*;
 pub use player_details::*;
+pub use seasons::*;
 pub use team::*;
 pub use team_matches::*;
 pub use team_roster_history::*;

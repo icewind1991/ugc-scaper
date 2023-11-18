@@ -1,7 +1,7 @@
 use insta::assert_json_snapshot;
 use std::fs::read_to_string;
 use ugc_scraper::parser::{
-    Parser, PlayerDetailsParser, PlayerParser, TeamMatchesParser, TeamParser,
+    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamMatchesParser, TeamParser,
     TeamRosterHistoryParser,
 };
 
@@ -49,6 +49,14 @@ fn test_parse_team_roster_history_html() {
 fn test_parse_team_matches_html() {
     let body = read_to_string("tests/data/team_matches_7861.html").unwrap();
     let parser = TeamMatchesParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
+fn test_parse_seasons_html() {
+    let body = read_to_string("tests/data/index.html").unwrap();
+    let parser = SeasonsParser::new();
     let parsed = parser.parse(&body).unwrap();
     assert_json_snapshot!(parsed);
 }
