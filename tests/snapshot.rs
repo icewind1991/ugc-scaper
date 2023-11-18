@@ -1,8 +1,8 @@
 use insta::assert_json_snapshot;
 use std::fs::read_to_string;
 use ugc_scraper::parser::{
-    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamMatchesParser, TeamParser,
-    TeamRosterHistoryParser,
+    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamLookupParser, TeamMatchesParser,
+    TeamParser, TeamRosterHistoryParser,
 };
 
 #[test]
@@ -57,6 +57,38 @@ fn test_parse_team_matches_html() {
 fn test_parse_seasons_html() {
     let body = read_to_string("tests/data/index.html").unwrap();
     let parser = SeasonsParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
+fn test_parse_seasons_9_html() {
+    let body = read_to_string("tests/data/lookup_9v9.html").unwrap();
+    let parser = TeamLookupParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
+fn test_parse_seasons_6_html() {
+    let body = read_to_string("tests/data/lookup_6v6.html").unwrap();
+    let parser = TeamLookupParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
+fn test_parse_seasons_4_html() {
+    let body = read_to_string("tests/data/lookup_4v4.html").unwrap();
+    let parser = TeamLookupParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
+fn test_parse_seasons_2_html() {
+    let body = read_to_string("tests/data/lookup_2v2.html").unwrap();
+    let parser = TeamLookupParser::new();
     let parsed = parser.parse(&body).unwrap();
     assert_json_snapshot!(parsed);
 }

@@ -3,10 +3,10 @@ mod error;
 #[doc(hidden)]
 pub mod parser;
 
-use crate::data::{MembershipHistory, Player, RosterHistory, Seasons, Team, TeamSeason};
+use crate::data::{MembershipHistory, Player, RosterHistory, Seasons, Team, TeamRef, TeamSeason};
 use crate::parser::{
-    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamMatchesParser, TeamParser,
-    TeamRosterHistoryParser,
+    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamLookupParser, TeamMatchesParser,
+    TeamParser, TeamRosterHistoryParser,
 };
 pub use error::*;
 use reqwest::redirect::Policy;
@@ -24,6 +24,7 @@ pub struct UgcClient {
     team_roster_history_parser: TeamRosterHistoryParser,
     team_matches_parser: TeamMatchesParser,
     seasons_parser: SeasonsParser,
+    team_lookup_parser: TeamLookupParser,
 }
 
 /// "API client" for ugc by scraping the website
@@ -37,6 +38,7 @@ impl UgcClient {
             team_roster_history_parser: TeamRosterHistoryParser::new(),
             team_matches_parser: TeamMatchesParser::new(),
             seasons_parser: SeasonsParser::new(),
+            team_lookup_parser: TeamLookupParser::new(),
         }
     }
 
@@ -129,5 +131,34 @@ impl UgcClient {
             .text()
             .await?;
         self.seasons_parser.parse(&body)
+    }
+
+    async fn teams(&self, link: &str) -> Result<Vec<TeamRef>> {
+        let body = self.client.get(link).send().await?.text().await?;
+        self.team_lookup_parser.parse(&body)
+    }
+
+    /// Get a list of all 9v9 teams
+    pub async fn teams_9v9(&self) -> Result<Vec<TeamRef>> {
+        self.teams("https://www.ugcleague.com/team_lookup_tf2h.cfm")
+            .await
+    }
+
+    /// Get a list of all 6v6 teams
+    pub async fn teams_6v6(&self) -> Result<Vec<TeamRef>> {
+        self.teams("https://www.ugcleague.com/team_lookup_tf26.cfm")
+            .await
+    }
+
+    /// Get a list of all 4v4 teams
+    pub async fn teams_4v4(&self) -> Result<Vec<TeamRef>> {
+        self.teams("https://www.ugcleague.com/team_lookup_tf24.cfm")
+            .await
+    }
+
+    /// Get a list of all 2v2 teams
+    pub async fn teams_2v2(&self) -> Result<Vec<TeamRef>> {
+        self.teams("https://www.ugcleague.com/team_lookup_tf22.cfm")
+            .await
     }
 }
