@@ -110,16 +110,19 @@ impl Parser for TeamParser {
     fn parse(&self, document: &str) -> Result<Self::Output> {
         let document = Html::parse_document(document);
         let root = document.root_element();
-        let name = select_text(root, &self.selector_name)
-            .ok_or(ScrapeError::NotFound)?
+        let mut name = select_text(root, &self.selector_name)
+            .unwrap_or_default()
             .to_string();
 
         let tag = select_text(root, &self.selector_tag)
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_TAG,
-                role: "team tag",
-            })?
+            .unwrap_or_default()
             .to_string();
+
+        match (tag.as_str(), name.as_str()) {
+            ("", "") => return Err(ScrapeError::NotFound),
+            (_, "") => name = tag.clone(),
+            _ => {}
+        };
 
         let image =
             document
@@ -157,24 +160,20 @@ impl Parser for TeamParser {
             .to_string();
 
         let description = select_text(root, &self.selector_team_description)
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_DESCRIPTION,
-                role: "team description",
-            })?
+            .unwrap_or_default()
             .replace('\n', " ");
 
         let titles = document
             .select(&self.selector_team_titles)
             .next()
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_TITLES,
-                role: "team titles",
-            })?
-            .text()
-            .map(str::trim)
-            .filter(|s| !s.is_empty())
-            .map(String::from)
-            .collect();
+            .map(|el| {
+                el.text()
+                    .map(str::trim)
+                    .filter(|s| !s.is_empty())
+                    .map(String::from)
+                    .collect()
+            })
+            .unwrap_or_default();
 
         let results = document
             .select(&self.selector_team_records)
