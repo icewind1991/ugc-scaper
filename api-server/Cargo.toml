@@ -1,0 +1,14 @@
+[package]
+name = "ugc-api-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.34.0", features = ["macros", "rt-multi-thread", "rt"] }
+main_error = "0.1.2"
+ugc-scraper = { path = "../", version = "0.1" }
+axum = "0.6.20"
+steamid-ng = "1.0.0"
+thiserror = "1.0.50"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
