@@ -1,0 +1,97 @@
+use super::Parser;
+use crate::data::RosterHistory;
+use crate::parser::{select_text, ROSTER_HISTORY_DATE_FORMAT};
+use crate::{ParseError, Result};
+use scraper::{Html, Selector};
+use steamid_ng::SteamID;
+use time::Date;
+
+const SELECTOR_ROSTER_ITEM: &str =
+    ".container .white-row-small .row-fluid > .col-md-12 > .clearfix";
+const SELECTOR_ROSTER_NAME: &str = "h5 b";
+const SELECTOR_ROSTER_ID: &str = "h5 small";
+const SELECTOR_ROSTER_JOINED: &str = "span.text-success small";
+const SELECTOR_ROSTER_LEFT: &str = "span.text-danger small";
+
+pub struct TeamRosterHistoryParser {
+    selector_item: Selector,
+    selector_name: Selector,
+    selector_id: Selector,
+    selector_joined: Selector,
+    selector_left: Selector,
+}
+
+impl Default for TeamRosterHistoryParser {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+impl TeamRosterHistoryParser {
+    pub fn new() -> Self {
+        TeamRosterHistoryParser {
+            selector_item: Selector::parse(SELECTOR_ROSTER_ITEM).unwrap(),
+            selector_name: Selector::parse(SELECTOR_ROSTER_NAME).unwrap(),
+            selector_id: Selector::parse(SELECTOR_ROSTER_ID).unwrap(),
+            selector_joined: Selector::parse(SELECTOR_ROSTER_JOINED).unwrap(),
+            selector_left: Selector::parse(SELECTOR_ROSTER_LEFT).unwrap(),
+        }
+    }
+}
+
+impl Parser for TeamRosterHistoryParser {
+    type Output = Vec<RosterHistory>;
+
+    fn parse(&self, document: &str) -> Result<Self::Output> {
+        let document = Html::parse_document(document);
+
+        document
+            .select(&self.selector_item)
+            .map(|item| {
+                let name =
+                    select_text(item, &self.selector_name).ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_ROSTER_NAME,
+                        role: "member name",
+                    })?;
+                let steam_id =
+                    select_text(item, &self.selector_id).ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_ROSTER_ID,
+                        role: "member steam id",
+                    })?;
+                let joined = select_text(item, &self.selector_joined).ok_or(
+                    ParseError::ElementNotFound {
+                        selector: SELECTOR_ROSTER_JOINED,
+                        role: "member joined date",
+                    },
+                )?;
+                let left = select_text(item, &self.selector_left);
+
+                Ok(RosterHistory {
+                    name: name.to_string(),
+                    steam_id: SteamID::from_steam3(steam_id).map_err(|_| {
+                        ParseError::InvalidText {
+                            text: steam_id.to_string(),
+                            role: "member steam id",
+                        }
+                    })?,
+                    joined: Date::parse(joined, ROSTER_HISTORY_DATE_FORMAT).map_err(|_| {
+                        ParseError::InvalidDate {
+                            date: steam_id.to_string(),
+                            role: "member join date",
+                        }
+                    })?,
+                    left: left
+                        .map(|left| {
+                            Date::parse(left, ROSTER_HISTORY_DATE_FORMAT).map_err(|_| {
+                                ParseError::InvalidDate {
+                                    date: steam_id.to_string(),
+                                    role: "member join date",
+                                }
+                            })
+                        })
+                        .transpose()?,
+                })
+            })
+            .collect::<Result<Vec<_>>>()
+    }
+}

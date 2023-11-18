@@ -1,0 +1,531 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Xenon",
+  "tag": "-Xe-",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/db/dbabbd8bab7ccf6d27a9d4ca2e73a76e085bb201_full.jpg",
+  "format": "TF2 Highlander",
+  "timezone": "West-Euro",
+  "division": "Euro Platinum",
+  "description": "Contact Kimo or Icewind for everything.",
+  "titles": [
+    "TF2 HL EU Silver 3rd Place S18"
+  ],
+  "members": [
+    {
+      "name": "Icewind demostf",
+      "steam_id": 76561198024494988,
+      "role": "Leader",
+      "since": [
+        2013,
+        221,
+        3,
+        23,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Fish",
+      "steam_id": 76561198052362074,
+      "role": "Leader",
+      "since": [
+        2014,
+        120,
+        10,
+        37,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "GCKimo",
+      "steam_id": 76561197992327511,
+      "role": "Leader",
+      "since": [
+        2016,
+        171,
+        11,
+        24,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "NoSocks",
+      "steam_id": 76561198012110404,
+      "role": "Member",
+      "since": [
+        2013,
+        218,
+        5,
+        21,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Shoosh",
+      "steam_id": 76561198049593717,
+      "role": "Member",
+      "since": [
+        2014,
+        255,
+        9,
+        37,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Dirty Sneeds Done",
+      "steam_id": 76561198049312442,
+      "role": "Member",
+      "since": [
+        2015,
+        266,
+        12,
+        24,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Deity",
+      "steam_id": 76561198076020012,
+      "role": "Member",
+      "since": [
+        2015,
+        363,
+        2,
+        52,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "jojo",
+      "steam_id": 76561197995029224,
+      "role": "Member",
+      "since": [
+        2016,
+        17,
+        10,
+        47,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bigdog",
+      "steam_id": 76561198076014163,
+      "role": "Member",
+      "since": [
+        2016,
+        146,
+        4,
+        8,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "musTard",
+      "steam_id": 76561197990486664,
+      "role": "Member",
+      "since": [
+        2017,
+        17,
+        7,
+        43,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Kaga",
+      "steam_id": 76561198040965137,
+      "role": "Member",
+      "since": [
+        2018,
+        312,
+        6,
+        42,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "STEEEEEEEEEEELAZ",
+      "steam_id": 76561198036824480,
+      "role": "Member",
+      "since": [
+        2019,
+        272,
+        8,
+        35,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Derakusa",
+      "steam_id": 76561198011495003,
+      "role": "Member",
+      "since": [
+        2020,
+        275,
+        4,
+        28,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Kireek",
+      "steam_id": 76561198052694464,
+      "role": "Member",
+      "since": [
+        2022,
+        27,
+        4,
+        17,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Royal Flush",
+      "steam_id": 76561198052084714,
+      "role": "Member",
+      "since": [
+        2022,
+        128,
+        6,
+        42,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "BaaBo",
+      "steam_id": 76561198004331478,
+      "role": "Member",
+      "since": [
+        2023,
+        9,
+        10,
+        18,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "drew",
+      "steam_id": 76561198012304706,
+      "role": "Member",
+      "since": [
+        2023,
+        43,
+        5,
+        54,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Raipe",
+      "steam_id": 76561198061082936,
+      "role": "Member",
+      "since": [
+        2023,
+        78,
+        5,
+        27,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Teroantero2007",
+      "steam_id": 76561197996902035,
+      "role": "Member",
+      "since": [
+        2023,
+        177,
+        2,
+        1,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "taskmast33r",
+      "steam_id": 76561198218881647,
+      "role": "Member",
+      "since": [
+        2023,
+        203,
+        4,
+        46,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "marko",
+      "steam_id": 76561198274165935,
+      "role": "Member",
+      "since": [
+        2023,
+        292,
+        1,
+        13,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    }
+  ],
+  "results": [
+    {
+      "season": 40,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 39,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 38,
+      "division": "Euro Silver",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 37,
+      "division": "Euro Silver",
+      "wins": 9,
+      "losses": 2
+    },
+    {
+      "season": 36,
+      "division": "Euro Platinum",
+      "wins": 2,
+      "losses": 6
+    },
+    {
+      "season": 35,
+      "division": "Euro Platinum",
+      "wins": 2,
+      "losses": 6
+    },
+    {
+      "season": 34,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 6
+    },
+    {
+      "season": 32,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 31,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 30,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 29,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 28,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 3
+    },
+    {
+      "season": 27,
+      "division": "Premium EU",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 26,
+      "division": "Premium EU",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 25,
+      "division": "Euro Platinum",
+      "wins": 5,
+      "losses": 6
+    },
+    {
+      "season": 24,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 23,
+      "division": "Euro Platinum",
+      "wins": 5,
+      "losses": 6
+    },
+    {
+      "season": 22,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 6
+    },
+    {
+      "season": 21,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 20,
+      "division": "Euro Platinum",
+      "wins": 2,
+      "losses": 5
+    },
+    {
+      "season": 19,
+      "division": "Euro Gold",
+      "wins": 6,
+      "losses": 5
+    },
+    {
+      "season": 18,
+      "division": "Euro Silver",
+      "wins": 7,
+      "losses": 4
+    },
+    {
+      "season": 17,
+      "division": "Euro Silver",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 16,
+      "division": "Euro Silver",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 15,
+      "division": "Euro Silver",
+      "wins": 2,
+      "losses": 6
+    },
+    {
+      "season": 14,
+      "division": "Euro Silver",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 13,
+      "division": "Euro Silver",
+      "wins": 3,
+      "losses": 6
+    },
+    {
+      "season": 12,
+      "division": "Euro Silver",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 11,
+      "division": "Euro Steel",
+      "wins": 4,
+      "losses": 4
+    }
+  ],
+  "name_changes": []
+}

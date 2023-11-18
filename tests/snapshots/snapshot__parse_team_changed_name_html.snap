@@ -1,0 +1,583 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "UGC 6s",
+  "tag": "Europe",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/09/096a30b1025c586f9d41c686077129f6e86998d0_full.jpg",
+  "format": "TF2 6vs6",
+  "timezone": "West-Euro",
+  "division": "Europe",
+  "description": "Giel is Jesus",
+  "titles": [
+    "TF2 6v6 S38 Europe 3rd Place",
+    "TF2 6v6 EU Steel Champions Season 14"
+  ],
+  "members": [
+    {
+      "name": "GCKimo",
+      "steam_id": 76561197992327511,
+      "role": "Leader",
+      "since": [
+        2013,
+        127,
+        9,
+        31,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Gielewiel9",
+      "steam_id": 76561198061174419,
+      "role": "Member",
+      "since": [
+        2013,
+        254,
+        1,
+        21,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "SUZY Sacrénom d'un",
+      "steam_id": 76561198004734774,
+      "role": "Member",
+      "since": [
+        2013,
+        276,
+        1,
+        45,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Vipe",
+      "steam_id": 76561198059011634,
+      "role": "Member",
+      "since": [
+        2014,
+        141,
+        3,
+        32,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "spreijer tf2lt",
+      "steam_id": 76561198032234067,
+      "role": "Member",
+      "since": [
+        2014,
+        155,
+        1,
+        6,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Herpa",
+      "steam_id": 76561198183437643,
+      "role": "Member",
+      "since": [
+        2016,
+        173,
+        3,
+        5,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Icewind demostf",
+      "steam_id": 76561198024494988,
+      "role": "Member",
+      "since": [
+        2017,
+        52,
+        3,
+        52,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Vclox",
+      "steam_id": 76561198056783619,
+      "role": "Member",
+      "since": [
+        2018,
+        59,
+        2,
+        29,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Fish",
+      "steam_id": 76561198052362074,
+      "role": "Member",
+      "since": [
+        2018,
+        171,
+        2,
+        12,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Bobbert",
+      "steam_id": 76561198071877015,
+      "role": "Member",
+      "since": [
+        2019,
+        170,
+        1,
+        59,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Kaga",
+      "steam_id": 76561198040965137,
+      "role": "Member",
+      "since": [
+        2020,
+        42,
+        6,
+        35,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "GMsU CreepsiliusM",
+      "steam_id": 76561198071903356,
+      "role": "Member",
+      "since": [
+        2022,
+        284,
+        4,
+        43,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "DelT",
+      "steam_id": 76561198204007537,
+      "role": "Member",
+      "since": [
+        2023,
+        60,
+        3,
+        2,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Deity",
+      "steam_id": 76561198076020012,
+      "role": "Member",
+      "since": [
+        2023,
+        228,
+        4,
+        31,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Ikaros",
+      "steam_id": 76561198158482651,
+      "role": "Member",
+      "since": [
+        2023,
+        228,
+        4,
+        32,
+        0,
+        0,
+        -5,
+        0,
+        0
+      ]
+    }
+  ],
+  "results": [
+    {
+      "season": 42,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 40,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 39,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 38,
+      "division": "Europe",
+      "wins": 5,
+      "losses": 6
+    },
+    {
+      "season": 37,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 36,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 35,
+      "division": "Europe",
+      "wins": 5,
+      "losses": 4
+    },
+    {
+      "season": 34,
+      "division": "Europe",
+      "wins": 6,
+      "losses": 3
+    },
+    {
+      "season": 33,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 32,
+      "division": "Europe",
+      "wins": 5,
+      "losses": 5
+    },
+    {
+      "season": 31,
+      "division": "Europe",
+      "wins": 7,
+      "losses": 3
+    },
+    {
+      "season": 30,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 6
+    },
+    {
+      "season": 29,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 3
+    },
+    {
+      "season": 28,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 27,
+      "division": "Europe",
+      "wins": 5,
+      "losses": 4
+    },
+    {
+      "season": 26,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 25,
+      "division": "Europe",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 24,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 6
+    },
+    {
+      "season": 23,
+      "division": "Europe",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 22,
+      "division": "Euro Platinum",
+      "wins": 2,
+      "losses": 3
+    },
+    {
+      "season": 21,
+      "division": "Euro Gold",
+      "wins": 3,
+      "losses": 5
+    },
+    {
+      "season": 20,
+      "division": "Euro Steel",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 19,
+      "division": "Euro Steel",
+      "wins": 5,
+      "losses": 2
+    },
+    {
+      "season": 18,
+      "division": "Euro Steel",
+      "wins": 2,
+      "losses": 5
+    },
+    {
+      "season": 17,
+      "division": "Euro Steel",
+      "wins": 5,
+      "losses": 4
+    },
+    {
+      "season": 16,
+      "division": "Euro Platinum",
+      "wins": 4,
+      "losses": 6
+    },
+    {
+      "season": 15,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 3
+    },
+    {
+      "season": 14,
+      "division": "Euro Steel",
+      "wins": 11,
+      "losses": 1
+    },
+    {
+      "season": 13,
+      "division": "Euro Platinum",
+      "wins": 3,
+      "losses": 7
+    },
+    {
+      "season": 12,
+      "division": "Euro Steel",
+      "wins": 5,
+      "losses": 3
+    }
+  ],
+  "name_changes": [
+    {
+      "from_tag": "by Kimo",
+      "from": "Xenon 2",
+      "to_tag": "Europe",
+      "to": "UGC 6s",
+      "date": [
+        2023,
+        60
+      ]
+    },
+    {
+      "from_tag": "John 2",
+      "from": "Let's Claim the Default",
+      "to_tag": "by Kimo",
+      "to": "Xenon 2",
+      "date": [
+        2022,
+        278
+      ]
+    },
+    {
+      "from_tag": "John 2",
+      "from": "https://youtu.be/iio-P3ubZtE",
+      "to_tag": "John 2",
+      "to": "Let's Claim the Default",
+      "date": [
+        2022,
+        170
+      ]
+    },
+    {
+      "from_tag": "... I guess?",
+      "from": "Let's Claim the Default",
+      "to_tag": "John 2",
+      "to": "https://youtu.be/iio-P3ubZtE",
+      "date": [
+        2022,
+        137
+      ]
+    },
+    {
+      "from_tag": "360",
+      "from": "Controller Gamers",
+      "to_tag": "... I guess?",
+      "to": "Let's Claim the Default",
+      "date": [
+        2021,
+        181
+      ]
+    },
+    {
+      "from_tag": "bye",
+      "from": "Bye week",
+      "to_tag": "360",
+      "to": "Controller Gamers",
+      "date": [
+        2021,
+        55
+      ]
+    },
+    {
+      "from_tag": "| meta.tf",
+      "from": "meta.tf",
+      "to_tag": "bye",
+      "to": "Bye week",
+      "date": [
+        2020,
+        281
+      ]
+    },
+    {
+      "from_tag": "Giele!",
+      "from": "Giel and the 9wiels",
+      "to_tag": "| meta.tf",
+      "to": "meta.tf",
+      "date": [
+        2017,
+        151
+      ]
+    },
+    {
+      "from_tag": "pFp",
+      "from": "Popping for points",
+      "to_tag": "Giele!",
+      "to": "Giel and the 9wiels",
+      "date": [
+        2016,
+        167
+      ]
+    },
+    {
+      "from_tag": "HLL",
+      "from": "HL Lite",
+      "to_tag": "pFp",
+      "to": "Popping for points",
+      "date": [
+        2016,
+        20
+      ]
+    },
+    {
+      "from_tag": "-AA-",
+      "from": "Anti-Anime",
+      "to_tag": "HLL",
+      "to": "HL Lite",
+      "date": [
+        2015,
+        280
+      ]
+    },
+    {
+      "from_tag": "Frequent",
+      "from": "Frequently Missing",
+      "to_tag": "-AA-",
+      "to": "Anti-Anime",
+      "date": [
+        2015,
+        138
+      ]
+    },
+    {
+      "from_tag": "pinky|",
+      "from": "Frequently Missing",
+      "to_tag": "Frequent",
+      "to": "Frequently Missing",
+      "date": [
+        2015,
+        17
+      ]
+    },
+    {
+      "from_tag": "pinky|",
+      "from": "Pinky",
+      "to_tag": "pinky|",
+      "to": "Frequently Missing",
+      "date": [
+        2015,
+        17
+      ]
+    }
+  ]
+}

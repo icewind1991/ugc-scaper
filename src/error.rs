@@ -1,16 +1,14 @@
-use miette::Diagnostic;
 use thiserror::Error;
 
-#[derive(Debug, Error, Diagnostic)]
+#[derive(Debug, Error)]
 pub enum ScrapeError {
     #[error("Failed to request data: {0:#}")]
     Request(#[from] reqwest::Error),
     #[error(transparent)]
-    #[diagnostic(transparent)]
     Parse(#[from] ParseError),
 }
 
-#[derive(Debug, Error, Diagnostic, Clone)]
+#[derive(Debug, Error, Clone)]
 pub enum ParseError {
     #[error("Couldn't find expected element '{selector}' for {role}")]
     ElementNotFound {
@@ -22,6 +20,8 @@ pub enum ParseError {
         selector: &'static str,
         role: &'static str,
     },
+    #[error("Invalid text for {role}: {text}")]
+    InvalidText { text: String, role: &'static str },
     #[error("Invalid link for {role}: {link}")]
     InvalidLink { link: String, role: &'static str },
     #[error("Invalid date for {role}: {date}")]

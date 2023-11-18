@@ -1,13 +1,20 @@
 use crate::{ParseError, Result};
 use scraper::{ElementRef, Selector};
+use steamid_ng::SteamID;
 use time::format_description::FormatItem;
 use time::macros::format_description;
 
 mod player;
 mod player_details;
+mod team;
+mod team_matches;
+mod team_roster_history;
 
 pub use player::*;
 pub use player_details::*;
+pub use team::*;
+pub use team_matches::*;
+pub use team_roster_history::*;
 
 pub trait Parser {
     type Output;
@@ -47,6 +54,11 @@ fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a s
 
 const DATE_FORMAT: &[FormatItem<'static>] =
     format_description!("[month padding:none]/[day padding:none]/[year]");
+const MEMBER_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
+    "[month repr:short] [day padding:none], [year]\n/\n[hour padding:none]:[minute] [period]\n(ET)"
+);
+const ROSTER_HISTORY_DATE_FORMAT: &[FormatItem<'static>] =
+    format_description!("[month repr:short] [day padding:none], [year]");
 
 fn team_id_from_link(link: &str) -> Result<u32, ParseError> {
     link.rsplit_once('=')
@@ -55,4 +67,14 @@ fn team_id_from_link(link: &str) -> Result<u32, ParseError> {
             link: link.to_string(),
             role: "team id",
         })
+}
+
+fn steam_id_from_link(link: &str) -> Result<SteamID, ParseError> {
+    link.rsplit_once('=')
+        .and_then(|part| part.1.parse::<u64>().ok())
+        .ok_or_else(|| ParseError::InvalidLink {
+            link: link.to_string(),
+            role: "user id",
+        })
+        .map(SteamID::from)
 }

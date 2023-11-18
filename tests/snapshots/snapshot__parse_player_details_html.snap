@@ -1,5 +1,5 @@
 ---
-source: tests/player.rs
+source: tests/snapshot.rs
 expression: parsed
 ---
 [
