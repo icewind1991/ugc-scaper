@@ -3,10 +3,12 @@ mod error;
 #[doc(hidden)]
 pub mod parser;
 
-use crate::data::{MembershipHistory, Player, RosterHistory, Seasons, Team, TeamRef, TeamSeason};
+use crate::data::{
+    MatchInfo, MembershipHistory, Player, RosterHistory, Seasons, Team, TeamRef, TeamSeason,
+};
 use crate::parser::{
-    Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamLookupParser, TeamMatchesParser,
-    TeamParser, TeamRosterHistoryParser,
+    MatchPageParser, Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamLookupParser,
+    TeamMatchesParser, TeamParser, TeamRosterHistoryParser,
 };
 pub use error::*;
 use reqwest::redirect::Policy;
@@ -25,6 +27,7 @@ pub struct UgcClient {
     team_matches_parser: TeamMatchesParser,
     seasons_parser: SeasonsParser,
     team_lookup_parser: TeamLookupParser,
+    match_page_parser: MatchPageParser,
 }
 
 /// "API client" for ugc by scraping the website
@@ -39,6 +42,7 @@ impl UgcClient {
             team_matches_parser: TeamMatchesParser::new(),
             seasons_parser: SeasonsParser::new(),
             team_lookup_parser: TeamLookupParser::new(),
+            match_page_parser: MatchPageParser::new(),
         }
     }
 
@@ -160,5 +164,20 @@ impl UgcClient {
     pub async fn teams_2v2(&self) -> Result<Vec<TeamRef>> {
         self.teams("https://www.ugcleague.com/team_lookup_tf22.cfm")
             .await
+    }
+
+    /// Get match page info
+    pub async fn match_info(&self, id: u32) -> Result<MatchInfo> {
+        let body = self
+            .client
+            .get(&format!(
+                "https://www.ugcleague.com/matchpage_tf2h.cfm?mid={}",
+                id
+            ))
+            .send()
+            .await?
+            .text()
+            .await?;
+        self.match_page_parser.parse(&body)
     }
 }

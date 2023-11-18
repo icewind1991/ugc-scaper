@@ -189,3 +189,14 @@ pub struct Season {
     pub id: String,
     pub name: String,
 }
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct MatchInfo {
+    pub comment: Option<String>,
+    pub comment_author: Option<String>,
+    pub team_home: TeamRef,
+    pub team_away: TeamRef,
+    pub score_home: u8,
+    pub score_away: u8,
+}

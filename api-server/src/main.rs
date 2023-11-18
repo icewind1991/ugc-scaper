@@ -64,6 +64,7 @@ async fn main() -> MainResult {
         .route("/team/:id", get(team))
         .route("/team/:id/roster", get(team_roster))
         .route("/team/:id/matches", get(team_matches))
+        .route("/match/:id", get(match_page))
         .with_state(AppState::default());
 
     // run it
@@ -148,5 +149,15 @@ async fn team_matches(
 ) -> Result<impl IntoResponse, ApiError> {
     debug!(team = id, "requesting team matches");
     let response = state.client.team_matches(id).await?;
+    Ok(Json(response))
+}
+
+#[instrument(skip(state))]
+async fn match_page(
+    Path(id): Path<u32>,
+    State(state): State<AppState>,
+) -> Result<impl IntoResponse, ApiError> {
+    debug!(team = id, "requesting match");
+    let response = state.client.match_info(id).await?;
     Ok(Json(response))
 }
