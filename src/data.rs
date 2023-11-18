@@ -1,6 +1,41 @@
 pub use steamid_ng::SteamID;
 use time::{Date, OffsetDateTime};
 
+#[cfg(feature = "serde")]
+mod serde_date {
+    use serde::ser::Error as _;
+    use serde::{Serialize, Serializer};
+    use time::format_description::FormatItem;
+    use time::macros::format_description;
+    use time::Date;
+
+    const DATE_FORMAT: &[FormatItem<'static>] = format_description!("[year]-[month]-[day]");
+
+    pub fn serialize<S: Serializer>(date: &Date, serializer: S) -> Result<S::Ok, S::Error> {
+        date.format(DATE_FORMAT)
+            .map_err(S::Error::custom)?
+            .serialize(serializer)
+    }
+
+    pub mod opt {
+        use super::DATE_FORMAT;
+        use serde::ser::Error as _;
+        use serde::{Serialize, Serializer};
+        use time::Date;
+
+        pub fn serialize<S: Serializer>(
+            option: &Option<Date>,
+            serializer: S,
+        ) -> Result<S::Ok, S::Error> {
+            option
+                .map(|odt| odt.format(DATE_FORMAT))
+                .transpose()
+                .map_err(S::Error::custom)?
+                .serialize(serializer)
+        }
+    }
+}
+
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Player {
@@ -23,6 +58,7 @@ pub struct Honors {
 pub struct TeamMemberShip {
     pub team: TeamRef,
     pub league: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub since: Date,
 }
 
@@ -39,7 +75,9 @@ pub struct MembershipHistory {
     pub format: String,
     pub team: TeamRef,
     pub division: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub joined: Date,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date::opt"))]
     pub left: Option<Date>,
 }
 
@@ -66,6 +104,7 @@ pub struct NameChange {
     pub from: String,
     pub to_tag: String,
     pub to: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub date: Date,
 }
 
@@ -75,6 +114,7 @@ pub struct Membership {
     pub name: String,
     pub steam_id: SteamID,
     pub role: String,
+    #[cfg_attr(feature = "serde", serde(with = "time::serde::iso8601"))]
     pub since: OffsetDateTime,
 }
 
@@ -92,7 +132,9 @@ pub struct Record {
 pub struct RosterHistory {
     pub name: String,
     pub steam_id: SteamID,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub joined: Date,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date::opt"))]
     pub left: Option<Date>,
 }
 

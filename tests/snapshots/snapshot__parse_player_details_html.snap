@@ -10,10 +10,7 @@ expression: parsed
       "id": 7861
     },
     "division": "Euro Platinum",
-    "joined": [
-      2013,
-      221
-    ],
+    "joined": "2013-08-09",
     "left": null
   },
   {
@@ -23,10 +20,7 @@ expression: parsed
       "id": 6929
     },
     "division": "Europe",
-    "joined": [
-      2017,
-      52
-    ],
+    "joined": "2017-02-21",
     "left": null
   },
   {
@@ -36,14 +30,8 @@ expression: parsed
       "id": 17736
     },
     "division": "Euro Steel",
-    "joined": [
-      2015,
-      253
-    ],
-    "left": [
-      2017,
-      22
-    ]
+    "joined": "2015-09-10",
+    "left": "2017-01-22"
   },
   {
     "format": "TF2 6vs6",
@@ -52,14 +40,8 @@ expression: parsed
       "id": 16277
     },
     "division": "Euro Steel",
-    "joined": [
-      2015,
-      157
-    ],
-    "left": [
-      2015,
-      253
-    ]
+    "joined": "2015-06-06",
+    "left": "2015-09-10"
   },
   {
     "format": "TF2 6vs6",
@@ -68,14 +50,8 @@ expression: parsed
       "id": 17736
     },
     "division": "Euro Steel",
-    "joined": [
-      2015,
-      153
-    ],
-    "left": [
-      2015,
-      157
-    ]
+    "joined": "2015-06-02",
+    "left": "2015-06-06"
   },
   {
     "format": "TF2 6vs6",
@@ -84,14 +60,8 @@ expression: parsed
       "id": 16277
     },
     "division": "Euro Steel",
-    "joined": [
-      2015,
-      32
-    ],
-    "left": [
-      2015,
-      153
-    ]
+    "joined": "2015-02-01",
+    "left": "2015-06-02"
   },
   {
     "format": "TF2 6vs6",
@@ -100,14 +70,8 @@ expression: parsed
       "id": 8622
     },
     "division": "Euro Steel",
-    "joined": [
-      2013,
-      250
-    ],
-    "left": [
-      2014,
-      357
-    ]
+    "joined": "2013-09-07",
+    "left": "2014-12-23"
   },
   {
     "format": "TF2 4vs4",
@@ -116,13 +80,7 @@ expression: parsed
       "id": 17790
     },
     "division": "Silver Euro",
-    "joined": [
-      2015,
-      153
-    ],
-    "left": [
-      2017,
-      227
-    ]
+    "joined": "2015-06-02",
+    "left": "2017-08-15"
   }
 ]

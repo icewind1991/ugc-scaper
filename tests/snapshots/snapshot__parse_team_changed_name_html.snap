@@ -19,241 +19,91 @@ expression: parsed
       "name": "GCKimo",
       "steam_id": 76561197992327511,
       "role": "Leader",
-      "since": [
-        2013,
-        127,
-        9,
-        31,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002013-05-07T09:31:00.000000000-05:00"
     },
     {
       "name": "Gielewiel9",
       "steam_id": 76561198061174419,
       "role": "Member",
-      "since": [
-        2013,
-        254,
-        1,
-        21,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002013-09-11T01:21:00.000000000-05:00"
     },
     {
       "name": "SUZY Sacrénom d'un",
       "steam_id": 76561198004734774,
       "role": "Member",
-      "since": [
-        2013,
-        276,
-        1,
-        45,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002013-10-03T01:45:00.000000000-05:00"
     },
     {
       "name": "Vipe",
       "steam_id": 76561198059011634,
       "role": "Member",
-      "since": [
-        2014,
-        141,
-        3,
-        32,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002014-05-21T03:32:00.000000000-05:00"
     },
     {
       "name": "spreijer tf2lt",
       "steam_id": 76561198032234067,
       "role": "Member",
-      "since": [
-        2014,
-        155,
-        1,
-        6,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002014-06-04T01:06:00.000000000-05:00"
     },
     {
       "name": "Herpa",
       "steam_id": 76561198183437643,
       "role": "Member",
-      "since": [
-        2016,
-        173,
-        3,
-        5,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002016-06-21T03:05:00.000000000-05:00"
     },
     {
       "name": "Icewind demostf",
       "steam_id": 76561198024494988,
       "role": "Member",
-      "since": [
-        2017,
-        52,
-        3,
-        52,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002017-02-21T03:52:00.000000000-05:00"
     },
     {
       "name": "Vclox",
       "steam_id": 76561198056783619,
       "role": "Member",
-      "since": [
-        2018,
-        59,
-        2,
-        29,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002018-02-28T02:29:00.000000000-05:00"
     },
     {
       "name": "Fish",
       "steam_id": 76561198052362074,
       "role": "Member",
-      "since": [
-        2018,
-        171,
-        2,
-        12,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002018-06-20T02:12:00.000000000-05:00"
     },
     {
       "name": "Bobbert",
       "steam_id": 76561198071877015,
       "role": "Member",
-      "since": [
-        2019,
-        170,
-        1,
-        59,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002019-06-19T01:59:00.000000000-05:00"
     },
     {
       "name": "Kaga",
       "steam_id": 76561198040965137,
       "role": "Member",
-      "since": [
-        2020,
-        42,
-        6,
-        35,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002020-02-11T06:35:00.000000000-05:00"
     },
     {
       "name": "GMsU CreepsiliusM",
       "steam_id": 76561198071903356,
       "role": "Member",
-      "since": [
-        2022,
-        284,
-        4,
-        43,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002022-10-11T04:43:00.000000000-05:00"
     },
     {
       "name": "DelT",
       "steam_id": 76561198204007537,
       "role": "Member",
-      "since": [
-        2023,
-        60,
-        3,
-        2,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002023-03-01T03:02:00.000000000-05:00"
     },
     {
       "name": "Deity",
       "steam_id": 76561198076020012,
       "role": "Member",
-      "since": [
-        2023,
-        228,
-        4,
-        31,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002023-08-16T04:31:00.000000000-05:00"
     },
     {
       "name": "Ikaros",
       "steam_id": 76561198158482651,
       "role": "Member",
-      "since": [
-        2023,
-        228,
-        4,
-        32,
-        0,
-        0,
-        -5,
-        0,
-        0
-      ]
+      "since": "+002023-08-16T04:32:00.000000000-05:00"
     }
   ],
   "results": [
@@ -444,140 +294,98 @@ expression: parsed
       "from": "Xenon 2",
       "to_tag": "Europe",
       "to": "UGC 6s",
-      "date": [
-        2023,
-        60
-      ]
+      "date": "2023-03-01"
     },
     {
       "from_tag": "John 2",
       "from": "Let's Claim the Default",
       "to_tag": "by Kimo",
       "to": "Xenon 2",
-      "date": [
-        2022,
-        278
-      ]
+      "date": "2022-10-05"
     },
     {
       "from_tag": "John 2",
       "from": "https://youtu.be/iio-P3ubZtE",
       "to_tag": "John 2",
       "to": "Let's Claim the Default",
-      "date": [
-        2022,
-        170
-      ]
+      "date": "2022-06-19"
     },
     {
       "from_tag": "... I guess?",
       "from": "Let's Claim the Default",
       "to_tag": "John 2",
       "to": "https://youtu.be/iio-P3ubZtE",
-      "date": [
-        2022,
-        137
-      ]
+      "date": "2022-05-17"
     },
     {
       "from_tag": "360",
       "from": "Controller Gamers",
       "to_tag": "... I guess?",
       "to": "Let's Claim the Default",
-      "date": [
-        2021,
-        181
-      ]
+      "date": "2021-06-30"
     },
     {
       "from_tag": "bye",
       "from": "Bye week",
       "to_tag": "360",
       "to": "Controller Gamers",
-      "date": [
-        2021,
-        55
-      ]
+      "date": "2021-02-24"
     },
     {
       "from_tag": "| meta.tf",
       "from": "meta.tf",
       "to_tag": "bye",
       "to": "Bye week",
-      "date": [
-        2020,
-        281
-      ]
+      "date": "2020-10-07"
     },
     {
       "from_tag": "Giele!",
       "from": "Giel and the 9wiels",
       "to_tag": "| meta.tf",
       "to": "meta.tf",
-      "date": [
-        2017,
-        151
-      ]
+      "date": "2017-05-31"
     },
     {
       "from_tag": "pFp",
       "from": "Popping for points",
       "to_tag": "Giele!",
       "to": "Giel and the 9wiels",
-      "date": [
-        2016,
-        167
-      ]
+      "date": "2016-06-15"
     },
     {
       "from_tag": "HLL",
       "from": "HL Lite",
       "to_tag": "pFp",
       "to": "Popping for points",
-      "date": [
-        2016,
-        20
-      ]
+      "date": "2016-01-20"
     },
     {
       "from_tag": "-AA-",
       "from": "Anti-Anime",
       "to_tag": "HLL",
       "to": "HL Lite",
-      "date": [
-        2015,
-        280
-      ]
+      "date": "2015-10-07"
     },
     {
       "from_tag": "Frequent",
       "from": "Frequently Missing",
       "to_tag": "-AA-",
       "to": "Anti-Anime",
-      "date": [
-        2015,
-        138
-      ]
+      "date": "2015-05-18"
     },
     {
       "from_tag": "pinky|",
       "from": "Frequently Missing",
       "to_tag": "Frequent",
       "to": "Frequently Missing",
-      "date": [
-        2015,
-        17
-      ]
+      "date": "2015-01-17"
     },
     {
       "from_tag": "pinky|",
       "from": "Pinky",
       "to_tag": "pinky|",
       "to": "Frequently Missing",
-      "date": [
-        2015,
-        17
-      ]
+      "date": "2015-01-17"
     }
   ]
 }

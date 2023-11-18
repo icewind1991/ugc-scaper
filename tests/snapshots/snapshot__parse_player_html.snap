@@ -214,10 +214,7 @@ expression: parsed
         "id": 6929
       },
       "league": "TF2 6vs6 - Europe",
-      "since": [
-        2017,
-        52
-      ]
+      "since": "2017-02-21"
     },
     {
       "team": {
@@ -225,10 +222,7 @@ expression: parsed
         "id": 7861
       },
       "league": "TF2 Highlander - Euro Platinum",
-      "since": [
-        2013,
-        221
-      ]
+      "since": "2013-08-09"
     }
   ]
 }
