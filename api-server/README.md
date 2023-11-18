@@ -27,3 +27,7 @@ Get team roster history
 ### `/team/:id/matches`
 
 Get team match history
+
+### `match/:id`
+
+Get match information
