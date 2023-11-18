@@ -148,20 +148,13 @@ impl Parser for TeamMatchesParser {
 
                         let (score, score_opponent) =
                             scores
-                                .split_once(" -\n")
+                                .split_once("-")
                                 .ok_or_else(|| ParseError::InvalidText {
                                     text: scores.to_string(),
                                     role: "match scores",
                                 })?;
-                        let score = score.parse().map_err(|_| ParseError::InvalidText {
-                            text: scores.to_string(),
-                            role: "match scores",
-                        });
-                        let score_opponent =
-                            score_opponent.parse().map_err(|_| ParseError::InvalidText {
-                                text: scores.to_string(),
-                                role: "match scores",
-                            });
+                        let score: u8 = score.trim().parse().unwrap_or_default();
+                        let score_opponent: u8 = score_opponent.trim().parse().unwrap_or_default();
 
                         let opponent = opponent_link
                             .map(|link| {
@@ -181,16 +174,16 @@ impl Parser for TeamMatchesParser {
                             (Some(opponent), Some(point), Some(points_opponent)) => {
                                 MatchResult::Played {
                                     opponent,
-                                    score: score?,
-                                    score_opponent: score_opponent?,
+                                    score: score,
+                                    score_opponent: score_opponent,
                                     match_points: point,
                                     match_points_opponent: points_opponent,
                                 }
                             }
                             (Some(opponent), None, None) => MatchResult::Pending {
                                 opponent,
-                                score: score?,
-                                score_opponent: score_opponent?,
+                                score: score,
+                                score_opponent: score_opponent,
                             },
                             _ => MatchResult::ByeWeek,
                         };
