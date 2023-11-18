@@ -1,7 +1,7 @@
 use axum::extract::{Path, State};
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
-use axum::{response::Html, routing::get, Json, Router};
+use axum::{routing::get, Json, Router};
 use main_error::MainResult;
 use std::env::var;
 use std::net::SocketAddr;
@@ -75,8 +75,8 @@ async fn main() -> MainResult {
     Ok(())
 }
 
-async fn handler() -> Html<&'static str> {
-    Html("<h1>Hello, World!</h1>")
+async fn handler() -> &'static str {
+    include_str!("../README.md")
 }
 
 #[instrument(skip(state))]
