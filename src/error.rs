@@ -6,6 +6,8 @@ pub enum ScrapeError {
     Request(#[from] reqwest::Error),
     #[error(transparent)]
     Parse(#[from] ParseError),
+    #[error("Player or team doesn't exist")]
+    NotFound,
 }
 
 #[derive(Debug, Error, Clone)]

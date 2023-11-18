@@ -9,7 +9,8 @@ use crate::parser::{
     TeamRosterHistoryParser,
 };
 pub use error::*;
-use reqwest::Client;
+use reqwest::redirect::Policy;
+use reqwest::{Client, StatusCode};
 pub use steamid_ng::SteamID;
 
 pub type Result<T, E = ScrapeError> = std::result::Result<T, E>;
@@ -28,7 +29,7 @@ pub struct UgcClient {
 impl UgcClient {
     pub fn new() -> Self {
         UgcClient {
-            client: Client::default(),
+            client: Client::builder().redirect(Policy::none()).build().unwrap(),
             player_parser: PlayerParser::new(),
             player_detail_parser: PlayerDetailsParser::new(),
             team_parser: TeamParser::new(),
@@ -39,31 +40,35 @@ impl UgcClient {
 
     /// Retrieve player information
     pub async fn player(&self, steam_id: SteamID) -> Result<Player> {
-        let body = self
+        let res = self
             .client
             .get(&format!(
                 "https://www.ugcleague.com/players_page.cfm?player_id={}",
                 u64::from(steam_id)
             ))
             .send()
-            .await?
-            .text()
             .await?;
+        if res.status() == StatusCode::FOUND {
+            return Err(ScrapeError::NotFound);
+        }
+        let body = res.text().await?;
         self.player_parser.parse(&body)
     }
 
     /// Retrieve team membership history for a player
     pub async fn player_team_history(&self, steam_id: SteamID) -> Result<Vec<MembershipHistory>> {
-        let body = self
+        let res = self
             .client
             .get(&format!(
                 "https://www.ugcleague.com/players_page_details.cfm?player_id={}",
                 u64::from(steam_id)
             ))
             .send()
-            .await?
-            .text()
             .await?;
+        if res.status() == StatusCode::FOUND {
+            return Err(ScrapeError::NotFound);
+        }
+        let body = res.text().await?;
         self.player_detail_parser.parse(&body)
     }
 

@@ -32,6 +32,7 @@ impl IntoResponse for ApiError {
             Self::SteamId(err) => {
                 (StatusCode::UNPROCESSABLE_ENTITY, format!("{:#}", err)).into_response()
             }
+            Self::Scrape(ScrapeError::NotFound) => (StatusCode::NOT_FOUND, "").into_response(),
             Self::Scrape(err) => {
                 (StatusCode::INTERNAL_SERVER_ERROR, format!("{:#}", err)).into_response()
             }

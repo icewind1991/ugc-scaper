@@ -1,7 +1,7 @@
 use super::{ElementExt, Parser};
 use crate::data::{Membership, NameChange, Record, Team};
 use crate::parser::{select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_FORMAT};
-use crate::{ParseError, Result};
+use crate::{ParseError, Result, ScrapeError};
 use scraper::{Html, Selector};
 use time::{Date, PrimitiveDateTime, UtcOffset};
 
@@ -111,10 +111,7 @@ impl Parser for TeamParser {
         let document = Html::parse_document(document);
         let root = document.root_element();
         let name = select_text(root, &self.selector_name)
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_NAME,
-                role: "team name",
-            })?
+            .ok_or(ScrapeError::NotFound)?
             .to_string();
 
         let tag = select_text(root, &self.selector_tag)
