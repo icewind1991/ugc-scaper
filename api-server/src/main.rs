@@ -23,6 +23,8 @@ enum ApiError {
     SteamId(#[from] SteamIDError),
     #[error(transparent)]
     Scrape(#[from] ScrapeError),
+    #[error("mallformed request")]
+    Mallformared(String),
 }
 
 impl IntoResponse for ApiError {
@@ -30,6 +32,9 @@ impl IntoResponse for ApiError {
         error!(error = ?self, "error while handling request");
         match self {
             Self::SteamId(err) => {
+                (StatusCode::UNPROCESSABLE_ENTITY, format!("{:#}", err)).into_response()
+            }
+            Self::Mallformared(err) => {
                 (StatusCode::UNPROCESSABLE_ENTITY, format!("{:#}", err)).into_response()
             }
             Self::Scrape(ScrapeError::NotFound) => (StatusCode::NOT_FOUND, "").into_response(),
@@ -55,6 +60,7 @@ async fn main() -> MainResult {
         .route("/", get(handler))
         .route("/player/:id", get(player))
         .route("/player/:id/history", get(player_history))
+        .route("/teams/:format", get(teams))
         .route("/team/:id", get(team))
         .route("/team/:id/roster", get(team_roster))
         .route("/team/:id/matches", get(team_matches))
@@ -92,6 +98,26 @@ async fn player_history(
     let steam_id = SteamID::try_from(id.as_str())?;
     debug!(player = steam_id.steam3(), "requesting player history");
     let response = state.client.player_team_history(steam_id).await?;
+    Ok(Json(response))
+}
+
+#[instrument(skip(state))]
+async fn teams(
+    Path(format): Path<String>,
+    State(state): State<AppState>,
+) -> Result<impl IntoResponse, ApiError> {
+    let response = match format.as_str() {
+        "9v9" => state.client.teams_9v9().await?,
+        "6v6" => state.client.teams_6v6().await?,
+        "4v4" => state.client.teams_4v4().await?,
+        "2v2" => state.client.teams_2v2().await?,
+        _ => {
+            return Err(ApiError::Mallformared(format!(
+                "invalid game mode {}",
+                format
+            )))
+        }
+    };
     Ok(Json(response))
 }
 
