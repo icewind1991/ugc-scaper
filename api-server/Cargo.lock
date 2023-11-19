@@ -1742,9 +1742,9 @@ dependencies = [
 
 [[package]]
 name = "ugc-scraper"
-version = "0.1.1"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14ae17e7f4fb13d132b973b6e449dbc782f2e118c3c86bbb93210aea19bd0972"
+checksum = "3be88e517d2c0e368dc65c377c9fd60583fb430ab4fe5bc7b348120e0e9df42f"
 dependencies = [
  "reqwest",
  "scraper",

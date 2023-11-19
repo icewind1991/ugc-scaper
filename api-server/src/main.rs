@@ -5,11 +5,13 @@ use axum::{routing::get, Json, Router};
 use main_error::MainResult;
 use std::env::var;
 use std::net::SocketAddr;
+use std::str::FromStr;
 use std::sync::Arc;
 use steamid_ng::{SteamID, SteamIDError};
 use thiserror::Error;
 use tracing::{debug, error, instrument};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+use ugc_scraper::data::GameMode;
 use ugc_scraper::{ScrapeError, UgcClient};
 
 #[derive(Clone, Default)]
@@ -61,6 +63,7 @@ async fn main() -> MainResult {
         .route("/player/:id", get(player))
         .route("/player/:id/history", get(player_history))
         .route("/teams/:format", get(teams))
+        .route("/transactions/:format", get(transactions))
         .route("/team/:id", get(team))
         .route("/team/:id/roster", get(team_roster))
         .route("/team/:id/matches", get(team_matches))
@@ -107,11 +110,8 @@ async fn teams(
     Path(format): Path<String>,
     State(state): State<AppState>,
 ) -> Result<impl IntoResponse, ApiError> {
-    let response = match format.as_str() {
-        "9v9" => state.client.teams_9v9().await?,
-        "6v6" => state.client.teams_6v6().await?,
-        "4v4" => state.client.teams_4v4().await?,
-        "2v2" => state.client.teams_2v2().await?,
+    let mode = match GameMode::from_str(&format) {
+        Ok(mode) => mode,
         _ => {
             return Err(ApiError::Mallformared(format!(
                 "invalid game mode {}",
@@ -119,6 +119,25 @@ async fn teams(
             )))
         }
     };
+    let response = state.client.teams(mode).await?;
+    Ok(Json(response))
+}
+
+#[instrument(skip(state))]
+async fn transactions(
+    Path(format): Path<String>,
+    State(state): State<AppState>,
+) -> Result<impl IntoResponse, ApiError> {
+    let mode = match GameMode::from_str(&format) {
+        Ok(mode) => mode,
+        _ => {
+            return Err(ApiError::Mallformared(format!(
+                "invalid game mode {}",
+                format
+            )))
+        }
+    };
+    let response = state.client.transactions(mode).await?;
     Ok(Json(response))
 }
 

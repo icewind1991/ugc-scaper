@@ -16,6 +16,10 @@ Get team history for player
 
 Get teams by format (`9v9`, `6v6`, `4v4`, `2v2`)
 
+### `/transactions/:format`
+
+Get roster transactions by format (`9v9`, `6v6`, `4v4`, `2v2`)
+
 ### `/team/:id`
 
 Get team info by id
