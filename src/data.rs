@@ -1,3 +1,5 @@
+use crate::ParseError;
+use std::str::FromStr;
 pub use steamid_ng::SteamID;
 use time::{Date, OffsetDateTime};
 
@@ -199,4 +201,67 @@ pub struct MatchInfo {
     pub team_away: TeamRef,
     pub score_home: u8,
     pub score_away: u8,
+}
+
+pub enum GameMode {
+    Highlander,
+    Sixes,
+    Fours,
+    Ultiduo,
+}
+
+impl FromStr for GameMode {
+    type Err = ();
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "9v9" => Ok(GameMode::Highlander),
+            "6v6" => Ok(GameMode::Sixes),
+            "4v4" => Ok(GameMode::Fours),
+            "2v2" => Ok(GameMode::Ultiduo),
+            _ => Err(()),
+        }
+    }
+}
+
+impl GameMode {
+    pub fn letter(&self) -> char {
+        match self {
+            GameMode::Highlander => 'h',
+            GameMode::Sixes => '6',
+            GameMode::Fours => '4',
+            GameMode::Ultiduo => '2',
+        }
+    }
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct Transaction {
+    pub name: String,
+    pub steam_id: SteamID,
+    pub action: TranactionAction,
+    pub team: TeamRef,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub enum TranactionAction {
+    Joined,
+    Left,
+}
+
+impl FromStr for TranactionAction {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "Joined" => Ok(TranactionAction::Joined),
+            "Left" => Ok(TranactionAction::Left),
+            _ => Err(ParseError::InvalidText {
+                role: "transaction action",
+                text: s.to_string(),
+            }),
+        }
+    }
 }

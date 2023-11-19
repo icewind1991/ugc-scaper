@@ -1,0 +1,69 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+[
+  {
+    "name": "L9 ivan",
+    "steam_id": 76561199017754044,
+    "action": "Joined",
+    "team": {
+      "name": "1. e4 e5 2. Ke2 Ke7",
+      "id": 33233
+    }
+  },
+  {
+    "name": "Rhythm",
+    "steam_id": 76561198062801366,
+    "action": "Joined",
+    "team": {
+      "name": "#FreeTheBlackHeavy",
+      "id": 33011
+    }
+  },
+  {
+    "name": "G Punish",
+    "steam_id": 76561198207987376,
+    "action": "Left",
+    "team": {
+      "name": "1. e4 e5 2. Ke2 Ke7",
+      "id": 33233
+    }
+  },
+  {
+    "name": "hellboy",
+    "steam_id": 76561199089196165,
+    "action": "Joined",
+    "team": {
+      "name": "1. e4 e5 2. Ke2 Ke7",
+      "id": 33233
+    }
+  },
+  {
+    "name": "realhedgehog2082",
+    "steam_id": 76561198168931330,
+    "action": "Left",
+    "team": {
+      "name": "1. e4 e5 2. Ke2 Ke7",
+      "id": 33233
+    }
+  },
+  {
+    "name": "Rhythm",
+    "steam_id": 76561198062801366,
+    "action": "Left",
+    "team": {
+      "name": "el gato",
+      "id": 33014
+    }
+  },
+  {
+    "name": "Pope Sonder",
+    "steam_id": 76561198214202059,
+    "action": "Left",
+    "team": {
+      "name": "Gaelic Gladiators",
+      "id": 29916
+    }
+  }
+]

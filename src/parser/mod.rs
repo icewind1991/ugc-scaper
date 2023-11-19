@@ -12,6 +12,7 @@ mod team;
 mod team_lookup;
 mod team_matches;
 mod team_roster_history;
+mod transactions;
 
 pub use match_page::*;
 pub use player::*;
@@ -21,6 +22,7 @@ pub use team::*;
 pub use team_lookup::*;
 pub use team_matches::*;
 pub use team_roster_history::*;
+pub use transactions::*;
 
 pub trait Parser {
     type Output;
@@ -28,8 +30,9 @@ pub trait Parser {
 }
 
 trait ElementExt<'a> {
-    fn first_text(&'a self) -> Option<&'a str>;
-    fn nth_text(&'a self, n: usize) -> Option<&'a str>;
+    fn first_text(&self) -> Option<&'a str>;
+    fn nth_text(&self, n: usize) -> Option<&'a str>;
+    fn last_text(&self) -> Option<&'a str>;
 }
 
 impl<'a> ElementExt<'a> for ElementRef<'a> {
@@ -41,6 +44,9 @@ impl<'a> ElementExt<'a> for ElementRef<'a> {
             .filter(|s| !s.trim().is_empty())
             .nth(n - 1)
             .map(str::trim)
+    }
+    fn last_text(&self) -> Option<&'a str> {
+        self.text().map(str::trim).filter(|s| !s.is_empty()).last()
     }
 }
 
