@@ -128,7 +128,6 @@ impl Parser for MapHistoryParser {
                     .first_text()
                     .unwrap_or_default()
                     .trim_start_matches("Season ");
-                dbg!(season);
                 let season = season.parse().map_err(|_| ParseError::InvalidText {
                     role: "previous season number",
                     text: season.to_string(),

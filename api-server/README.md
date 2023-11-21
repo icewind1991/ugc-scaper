@@ -35,3 +35,7 @@ Get team match history
 ### `match/:id`
 
 Get match information
+
+### `/maps/:format`
+
+Get map history by format (`9v9`, `6v6`, `4v4`, `2v2`)

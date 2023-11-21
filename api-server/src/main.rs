@@ -68,6 +68,7 @@ async fn main() -> MainResult {
         .route("/team/:id/roster", get(team_roster))
         .route("/team/:id/matches", get(team_matches))
         .route("/match/:id", get(match_page))
+        .route("/maps/:format", get(map_history))
         .with_state(AppState::default());
 
     // run it
@@ -178,5 +179,23 @@ async fn match_page(
 ) -> Result<impl IntoResponse, ApiError> {
     debug!(team = id, "requesting match");
     let response = state.client.match_info(id).await?;
+    Ok(Json(response))
+}
+
+#[instrument(skip(state))]
+async fn map_history(
+    Path(format): Path<String>,
+    State(state): State<AppState>,
+) -> Result<impl IntoResponse, ApiError> {
+    let mode = match GameMode::from_str(&format) {
+        Ok(mode) => mode,
+        _ => {
+            return Err(ApiError::Mallformared(format!(
+                "invalid game mode {}",
+                format
+            )))
+        }
+    };
+    let response = state.client.map_history(mode).await?;
     Ok(Json(response))
 }

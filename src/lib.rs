@@ -177,7 +177,7 @@ impl UgcClient {
 
     pub async fn map_history(&self, format: GameMode) -> Result<MapHistory> {
         let link = format!(
-            "https://www.ugcleague.com/rostertransactions_tf2{}_all.cfm",
+            "https://www.ugcleague.com/maplist_tf2{}.cfm",
             format.letter()
         );
         let body = self.client.get(link).send().await?.text().await?;
