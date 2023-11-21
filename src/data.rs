@@ -240,24 +240,24 @@ impl GameMode {
 pub struct Transaction {
     pub name: String,
     pub steam_id: SteamID,
-    pub action: TranactionAction,
+    pub action: TransactionAction,
     pub team: TeamRef,
 }
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
-pub enum TranactionAction {
+pub enum TransactionAction {
     Joined,
     Left,
 }
 
-impl FromStr for TranactionAction {
+impl FromStr for TransactionAction {
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
-            "Joined" => Ok(TranactionAction::Joined),
-            "Left" => Ok(TranactionAction::Left),
+            "Joined" => Ok(TransactionAction::Joined),
+            "Left" => Ok(TransactionAction::Left),
             _ => Err(ParseError::InvalidText {
                 role: "transaction action",
                 text: s.to_string(),
