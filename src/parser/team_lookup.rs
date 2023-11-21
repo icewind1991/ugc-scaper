@@ -52,7 +52,7 @@ impl Parser for TeamLookupParser {
                     role: "team name",
                     selector: SELECTOR_OPTION,
                 })?;
-                let (_, name) = text.split_once("-").unwrap_or_default();
+                let (_, name) = text.split_once('-').unwrap_or_default();
 
                 let id = team_id_from_link(link)?;
                 Ok(TeamRef {

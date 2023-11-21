@@ -157,7 +157,7 @@ impl Parser for TeamMatchesParser {
 
                         let (score, score_opponent) =
                             scores
-                                .split_once("-")
+                                .split_once('-')
                                 .ok_or_else(|| ParseError::InvalidText {
                                     text: scores.to_string(),
                                     role: "match scores",
@@ -187,8 +187,8 @@ impl Parser for TeamMatchesParser {
                                         role: "match page link",
                                     })?,
                                     opponent,
-                                    score: score,
-                                    score_opponent: score_opponent,
+                                    score,
+                                    score_opponent,
                                     match_points: point,
                                     match_points_opponent: points_opponent,
                                 }
@@ -199,8 +199,8 @@ impl Parser for TeamMatchesParser {
                                     role: "match page link",
                                 })?,
                                 opponent,
-                                score: score,
-                                score_opponent: score_opponent,
+                                score,
+                                score_opponent,
                             },
                             _ => MatchResult::ByeWeek,
                         };
