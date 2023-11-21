@@ -80,5 +80,1801 @@ expression: parsed
       }
     ]
   },
-  "previous": []
+  "previous": [
+    {
+      "season": 29,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_proplant_v8",
+          "date": "2023-06-23"
+        },
+        {
+          "week": 2,
+          "map": "koth_airfield_b7",
+          "date": "2023-06-30"
+        },
+        {
+          "week": 3,
+          "map": "koth_jamram_rc1a",
+          "date": "2023-07-07"
+        },
+        {
+          "week": 4,
+          "map": "koth_badlands",
+          "date": "2023-07-14"
+        },
+        {
+          "week": 5,
+          "map": "koth_bagel_rc6",
+          "date": "2023-07-21"
+        },
+        {
+          "week": 6,
+          "map": "koth_product_final",
+          "date": "2023-07-28"
+        },
+        {
+          "week": 7,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2023-08-04"
+        },
+        {
+          "week": 8,
+          "map": "cp_warmfrost_rc1",
+          "date": "2023-08-11"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2023-08-18"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2023-08-25"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2023-09-01"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2023-09-08"
+        }
+      ]
+    },
+    {
+      "season": 28,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_highpass",
+          "date": "2023-02-17"
+        },
+        {
+          "week": 2,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2023-02-24"
+        },
+        {
+          "week": 3,
+          "map": "koth_stallone_b2",
+          "date": "2023-03-03"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_final",
+          "date": "2023-03-10"
+        },
+        {
+          "week": 5,
+          "map": "koth_harter_rc1",
+          "date": "2023-03-17"
+        },
+        {
+          "week": 6,
+          "map": "koth_brazil",
+          "date": "2023-03-24"
+        },
+        {
+          "week": 7,
+          "map": "koth_airfield_b7",
+          "date": "2023-03-31"
+        },
+        {
+          "week": 8,
+          "map": "koth_undergrove_rc1",
+          "date": "2023-04-07"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-14"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-21"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-28"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2023-05-05"
+        }
+      ]
+    },
+    {
+      "season": 27,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2022-10-07"
+        },
+        {
+          "week": 2,
+          "map": "koth_highpass_rc1a",
+          "date": "2022-10-14"
+        },
+        {
+          "week": 3,
+          "map": "koth_brazil_rc3",
+          "date": "2022-10-21"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_final",
+          "date": "2022-10-28"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2022-11-04"
+        },
+        {
+          "week": 6,
+          "map": "koth_bagel_rc5",
+          "date": "2022-11-11"
+        },
+        {
+          "week": 7,
+          "map": "koth_undergrove_rc1",
+          "date": "2022-11-18"
+        },
+        {
+          "week": 8,
+          "map": "koth_airfield_b7",
+          "date": "2022-11-25"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-02"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-09"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-16"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-23"
+        }
+      ]
+    },
+    {
+      "season": 26,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_stallone_b2",
+          "date": "2022-06-10"
+        },
+        {
+          "week": 2,
+          "map": "koth_cascade",
+          "date": "2022-06-17"
+        },
+        {
+          "week": 3,
+          "map": "koth_undergrove_rc1",
+          "date": "2022-06-24"
+        },
+        {
+          "week": 4,
+          "map": "koth_airfield_b7",
+          "date": "2022-07-01"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2022-07-08"
+        },
+        {
+          "week": 6,
+          "map": "koth_highpass_rc1a",
+          "date": "2022-07-15"
+        },
+        {
+          "week": 7,
+          "map": "koth_product_final",
+          "date": "2022-07-22"
+        },
+        {
+          "week": 8,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2022-07-29"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-05"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-12"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-19"
+        }
+      ]
+    },
+    {
+      "season": 25,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2022-02-04"
+        },
+        {
+          "week": 2,
+          "map": "koth_badlands",
+          "date": "2022-02-11"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_final",
+          "date": "2022-02-18"
+        },
+        {
+          "week": 4,
+          "map": "koth_highpass",
+          "date": "2022-02-25"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2022-03-04"
+        },
+        {
+          "week": 6,
+          "map": "koth_brazil",
+          "date": "2022-03-11"
+        },
+        {
+          "week": 7,
+          "map": "koth_cascade",
+          "date": "2022-03-18"
+        },
+        {
+          "week": 8,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2022-03-25"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-01"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-08"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-15"
+        }
+      ]
+    },
+    {
+      "season": 24,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2021-10-08"
+        },
+        {
+          "week": 2,
+          "map": "koth_badlands",
+          "date": "2021-10-15"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_final",
+          "date": "2021-10-22"
+        },
+        {
+          "week": 4,
+          "map": "koth_highpass",
+          "date": "2021-10-29"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2021-11-05"
+        },
+        {
+          "week": 6,
+          "map": "koth_brazil",
+          "date": "2021-11-12"
+        },
+        {
+          "week": 7,
+          "map": "koth_stallone_b2",
+          "date": "2021-11-19"
+        },
+        {
+          "week": 8,
+          "map": "koth_maple_ridge_rc1",
+          "date": "2021-11-26"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-12-03"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-12-10"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-12-17"
+        }
+      ]
+    },
+    {
+      "season": 23,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_coalplant_b8",
+          "date": "2021-06-18"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rcx",
+          "date": "2021-06-25"
+        },
+        {
+          "week": 3,
+          "map": "koth_highpass",
+          "date": "2021-07-02"
+        },
+        {
+          "week": 4,
+          "map": "cp_warmfrost_rc1",
+          "date": "2021-07-09"
+        },
+        {
+          "week": 5,
+          "map": "koth_badlands",
+          "date": "2021-07-16"
+        },
+        {
+          "week": 6,
+          "map": "koth_airfield_b7",
+          "date": "2021-07-23"
+        },
+        {
+          "week": 7,
+          "map": "koth_bagel_rc2a",
+          "date": "2021-07-30"
+        },
+        {
+          "week": 8,
+          "map": "koth_harter_rc1",
+          "date": "2021-08-06"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-13"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-20"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-27"
+        }
+      ]
+    },
+    {
+      "season": 22,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_coalplant_b8",
+          "date": "2021-02-19"
+        },
+        {
+          "week": 2,
+          "map": "cp_warmfrost_rc1",
+          "date": "2021-02-26"
+        },
+        {
+          "week": 3,
+          "map": "koth_highpass",
+          "date": "2021-03-05"
+        },
+        {
+          "week": 4,
+          "map": "koth_airfield_b7",
+          "date": "2021-03-12"
+        },
+        {
+          "week": 5,
+          "map": "koth_harter_rc1",
+          "date": "2021-03-19"
+        },
+        {
+          "week": 6,
+          "map": "koth_bagel_rc2a",
+          "date": "2021-03-26"
+        },
+        {
+          "week": 7,
+          "map": "koth_badlands",
+          "date": "2021-04-02"
+        },
+        {
+          "week": 8,
+          "map": "koth_product_rcx",
+          "date": "2021-04-09"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-16"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-23"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2021-04-30"
+        }
+      ]
+    },
+    {
+      "season": 21,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_harter_rc1",
+          "date": "2020-10-09"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rcx",
+          "date": "2020-10-16"
+        },
+        {
+          "week": 3,
+          "map": "koth_badlands",
+          "date": "2020-10-23"
+        },
+        {
+          "week": 4,
+          "map": "koth_bagel_rc2a",
+          "date": "2020-10-30"
+        },
+        {
+          "week": 5,
+          "map": "koth_airfield_b7",
+          "date": "2020-11-06"
+        },
+        {
+          "week": 6,
+          "map": "koth_highpass",
+          "date": "2020-11-13"
+        },
+        {
+          "week": 7,
+          "map": "cp_warmfrost_rc1",
+          "date": "2020-11-20"
+        },
+        {
+          "week": 8,
+          "map": "koth_coalplant_b8",
+          "date": "2020-11-27"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-12-04"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-12-11"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2020-12-18"
+        }
+      ]
+    },
+    {
+      "season": 20,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2020-06-12"
+        },
+        {
+          "week": 2,
+          "map": "koth_badlands",
+          "date": "2020-06-19"
+        },
+        {
+          "week": 3,
+          "map": "koth_bagel_rc2a",
+          "date": "2020-06-26"
+        },
+        {
+          "week": 4,
+          "map": "koth_coalplant_b7",
+          "date": "2020-07-03"
+        },
+        {
+          "week": 5,
+          "map": "koth_maple_ridge_b6",
+          "date": "2020-07-10"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2020-07-17"
+        },
+        {
+          "week": 7,
+          "map": "koth_product_rcx",
+          "date": "2020-07-24"
+        },
+        {
+          "week": 8,
+          "map": "koth_highpass",
+          "date": "2020-07-31"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-07"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-14"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2020-08-21"
+        }
+      ]
+    },
+    {
+      "season": 19,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2020-02-21"
+        },
+        {
+          "week": 2,
+          "map": "koth_airfield_b7",
+          "date": "2020-02-28"
+        },
+        {
+          "week": 3,
+          "map": "cp_warmfrost_rc1",
+          "date": "2020-03-06"
+        },
+        {
+          "week": 4,
+          "map": "koth_cascade_rc1a",
+          "date": "2020-03-13"
+        },
+        {
+          "week": 5,
+          "map": "koth_highpass",
+          "date": "2020-03-20"
+        },
+        {
+          "week": 6,
+          "map": "koth_product_rcx",
+          "date": "2020-03-27"
+        },
+        {
+          "week": 7,
+          "map": "koth_maple_ridge_b6",
+          "date": "2020-04-03"
+        },
+        {
+          "week": 8,
+          "map": "koth_brazil",
+          "date": "2020-04-10"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-17"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-24"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2020-05-01"
+        }
+      ]
+    },
+    {
+      "season": 18,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2019-10-11"
+        },
+        {
+          "week": 2,
+          "map": "koth_undergrove_rc1",
+          "date": "2019-10-18"
+        },
+        {
+          "week": 3,
+          "map": "koth_highpass_rc1a",
+          "date": "2019-10-25"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rcx",
+          "date": "2019-11-01"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2019-11-08"
+        },
+        {
+          "week": 6,
+          "map": "koth_daenam_b7a",
+          "date": "2019-11-15"
+        },
+        {
+          "week": 7,
+          "map": "koth_warmtic_rc4",
+          "date": "2019-11-22"
+        },
+        {
+          "week": 8,
+          "map": "koth_badlands",
+          "date": "2019-11-29"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-06"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-13"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-20"
+        }
+      ]
+    },
+    {
+      "season": 17,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2019-06-07"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rcx",
+          "date": "2019-06-14"
+        },
+        {
+          "week": 3,
+          "map": "koth_maple_ridge_b6",
+          "date": "2019-06-21"
+        },
+        {
+          "week": 4,
+          "map": "koth_undergrove_rc1",
+          "date": "2019-06-28"
+        },
+        {
+          "week": 5,
+          "map": "koth_highpass_rc1a",
+          "date": "2019-07-05"
+        },
+        {
+          "week": 6,
+          "map": "koth_daenam_b7a",
+          "date": "2019-07-12"
+        },
+        {
+          "week": 7,
+          "map": "koth_kemptown_rc1",
+          "date": "2019-07-19"
+        },
+        {
+          "week": 8,
+          "map": "koth_warmtic_rc4",
+          "date": "2019-07-26"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2019-08-02"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2019-08-09"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2019-08-16"
+        }
+      ]
+    },
+    {
+      "season": 16,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2019-02-01"
+        },
+        {
+          "week": 2,
+          "map": "koth_badlands",
+          "date": "2019-02-08"
+        },
+        {
+          "week": 3,
+          "map": "cp_warmfrost_rc1",
+          "date": "2019-02-15"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rc9",
+          "date": "2019-02-22"
+        },
+        {
+          "week": 5,
+          "map": "koth_brazil_rc1",
+          "date": "2019-03-01"
+        },
+        {
+          "week": 6,
+          "map": "cp_mojave_b2",
+          "date": "2019-03-08"
+        },
+        {
+          "week": 7,
+          "map": "koth_stallone_b2",
+          "date": "2019-03-15"
+        },
+        {
+          "week": 8,
+          "map": "koth_maple_ridge_b6",
+          "date": "2019-03-22"
+        },
+        {
+          "week": 9,
+          "map": "Playoffs",
+          "date": "2019-03-29"
+        },
+        {
+          "week": 10,
+          "map": "Playoffs",
+          "date": "2019-04-05"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2019-04-12"
+        }
+      ]
+    },
+    {
+      "season": 15,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_viaduct_pro7",
+          "date": "2018-09-28"
+        },
+        {
+          "week": 2,
+          "map": "koth_airfield_b7",
+          "date": "2018-10-05"
+        },
+        {
+          "week": 3,
+          "map": "koth_maple_ridge_b6",
+          "date": "2018-10-12"
+        },
+        {
+          "week": 4,
+          "map": "cp_warmfrost_rc1",
+          "date": "2018-10-19"
+        },
+        {
+          "week": 5,
+          "map": "koth_coalplant_b7",
+          "date": "2018-10-26"
+        },
+        {
+          "week": 6,
+          "map": "koth_badlands",
+          "date": "2018-11-02"
+        },
+        {
+          "week": 7,
+          "map": "koth_brazil",
+          "date": "2018-11-09"
+        },
+        {
+          "week": 8,
+          "map": "koth_cascade_rc1a",
+          "date": "2018-11-16"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2018-11-23"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2018-11-30"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2018-12-07"
+        }
+      ]
+    },
+    {
+      "season": 14,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_maple_ridge_b6",
+          "date": "2018-05-25"
+        },
+        {
+          "week": 2,
+          "map": "koth_airfield_b7",
+          "date": "2018-06-01"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_rc8",
+          "date": "2018-06-08"
+        },
+        {
+          "week": 4,
+          "map": "koth_brazil_rc1",
+          "date": "2018-06-15"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2018-06-22"
+        },
+        {
+          "week": 6,
+          "map": "koth_badlands",
+          "date": "2018-06-29"
+        },
+        {
+          "week": 7,
+          "map": "koth_coalplant_b7",
+          "date": "2018-07-06"
+        },
+        {
+          "week": 8,
+          "map": "koth_cascade_rc1a",
+          "date": "2018-07-13"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2018-07-20"
+        },
+        {
+          "week": 10,
+          "map": "koth_product_rc8",
+          "date": "2018-07-27"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2018-08-03"
+        },
+        {
+          "week": 12,
+          "map": "TBD",
+          "date": "2018-08-10"
+        }
+      ]
+    },
+    {
+      "season": 13,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2018-01-26"
+        },
+        {
+          "week": 2,
+          "map": "koth_coalplant_b7",
+          "date": "2018-02-02"
+        },
+        {
+          "week": 3,
+          "map": "koth_airfield_b7",
+          "date": "2018-02-09"
+        },
+        {
+          "week": 4,
+          "map": "koth_cascade_b6",
+          "date": "2018-02-16"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2018-02-23"
+        },
+        {
+          "week": 6,
+          "map": "koth_maple_ridge_b6",
+          "date": "2018-03-02"
+        },
+        {
+          "week": 7,
+          "map": "koth_brazil_rc1",
+          "date": "2018-03-09"
+        },
+        {
+          "week": 8,
+          "map": "koth_product_rc8",
+          "date": "2018-03-16"
+        },
+        {
+          "week": 9,
+          "map": "koth_badlands",
+          "date": "2018-03-23"
+        },
+        {
+          "week": 10,
+          "map": "koth_airfield_b7",
+          "date": "2018-03-30"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2018-04-06"
+        }
+      ]
+    },
+    {
+      "season": 12,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2017-09-08"
+        },
+        {
+          "week": 2,
+          "map": "koth_maple_ridge_b6",
+          "date": "2017-09-15"
+        },
+        {
+          "week": 3,
+          "map": "koth_badlands",
+          "date": "2017-09-22"
+        },
+        {
+          "week": 4,
+          "map": "koth_stallone_b2",
+          "date": "2017-09-29"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2017-10-06"
+        },
+        {
+          "week": 6,
+          "map": "koth_bagel_rc2a",
+          "date": "2017-10-13"
+        },
+        {
+          "week": 7,
+          "map": "koth_product_rc8",
+          "date": "2017-10-20"
+        },
+        {
+          "week": 8,
+          "map": "koth_brazil_rc1",
+          "date": "2017-10-27"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2017-11-03"
+        },
+        {
+          "week": 10,
+          "map": "koth_badlands",
+          "date": "2017-11-10"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-17"
+        }
+      ]
+    },
+    {
+      "season": 11,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2017-05-19"
+        },
+        {
+          "week": 2,
+          "map": "koth_stallone_b2",
+          "date": "2017-05-26"
+        },
+        {
+          "week": 3,
+          "map": "koth_airfield_b7",
+          "date": "2017-06-02"
+        },
+        {
+          "week": 4,
+          "map": "koth_bagel_rc2a",
+          "date": "2017-06-09"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2017-06-16"
+        },
+        {
+          "week": 6,
+          "map": "koth_brazil_rc1",
+          "date": "2017-06-23"
+        },
+        {
+          "week": 7,
+          "map": "koth_maple_ridge_b6",
+          "date": "2017-06-30"
+        },
+        {
+          "week": 8,
+          "map": "koth_product_rc8",
+          "date": "2017-07-07"
+        },
+        {
+          "week": 9,
+          "map": "koth_badlands",
+          "date": "2017-07-14"
+        },
+        {
+          "week": 10,
+          "map": "koth_airfield_b7",
+          "date": "2017-07-21"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-07-28"
+        }
+      ]
+    },
+    {
+      "season": 10,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2017-01-27"
+        },
+        {
+          "week": 2,
+          "map": "koth_maple_ridge_b6",
+          "date": "2017-02-03"
+        },
+        {
+          "week": 3,
+          "map": "cp_warmfrost_rc1",
+          "date": "2017-02-10"
+        },
+        {
+          "week": 4,
+          "map": "koth_badlands",
+          "date": "2017-02-17"
+        },
+        {
+          "week": 5,
+          "map": "koth_stallone_b2",
+          "date": "2017-02-24"
+        },
+        {
+          "week": 6,
+          "map": "cp_mojave_b2",
+          "date": "2017-03-03"
+        },
+        {
+          "week": 7,
+          "map": "koth_product_rc8",
+          "date": "2017-03-10"
+        },
+        {
+          "week": 8,
+          "map": "koth_brazil_rc1",
+          "date": "2017-03-17"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2017-03-24"
+        },
+        {
+          "week": 10,
+          "map": "koth_badlands",
+          "date": "2017-03-31"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-04-07"
+        }
+      ]
+    },
+    {
+      "season": 9,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2016-09-23"
+        },
+        {
+          "week": 2,
+          "map": "koth_bagel_a10",
+          "date": "2016-09-30"
+        },
+        {
+          "week": 3,
+          "map": "cp_mojave_b2",
+          "date": "2016-10-07"
+        },
+        {
+          "week": 4,
+          "map": "koth_airfield_b7",
+          "date": "2016-10-14"
+        },
+        {
+          "week": 5,
+          "map": "koth_brazil_rc1",
+          "date": "2016-10-21"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2016-10-28"
+        },
+        {
+          "week": 7,
+          "map": "koth_stallone_b2",
+          "date": "2016-11-04"
+        },
+        {
+          "week": 8,
+          "map": "koth_product_rc8",
+          "date": "2016-11-11"
+        },
+        {
+          "week": 9,
+          "map": "koth_badlands",
+          "date": "2016-11-18"
+        },
+        {
+          "week": 10,
+          "map": "koth_airfield_b7",
+          "date": "2016-12-02"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2016-12-09"
+        }
+      ]
+    },
+    {
+      "season": 8,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2016-06-10"
+        },
+        {
+          "week": 2,
+          "map": "koth_forge_b3",
+          "date": "2016-06-17"
+        },
+        {
+          "week": 3,
+          "map": "cp_warmfrost_rc1",
+          "date": "2016-06-24"
+        },
+        {
+          "week": 4,
+          "map": "koth_badlands",
+          "date": "2016-07-01"
+        },
+        {
+          "week": 5,
+          "map": "koth_product_rc8",
+          "date": "2016-07-08"
+        },
+        {
+          "week": 6,
+          "map": "cp_alamo",
+          "date": "2016-07-15"
+        },
+        {
+          "week": 7,
+          "map": "koth_artefact_v1",
+          "date": "2016-07-22"
+        },
+        {
+          "week": 8,
+          "map": "koth_stallone_b2",
+          "date": "2016-07-29"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2016-08-05"
+        },
+        {
+          "week": 10,
+          "map": "cp_warmfrost_rc1",
+          "date": "2016-08-12"
+        },
+        {
+          "week": 11,
+          "map": "koth_badlands",
+          "date": "2016-08-19"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2016-08-26"
+        }
+      ]
+    },
+    {
+      "season": 7,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2016-01-22"
+        },
+        {
+          "week": 2,
+          "map": "koth_ashville_rc1",
+          "date": "2016-01-29"
+        },
+        {
+          "week": 3,
+          "map": "cp_alamo",
+          "date": "2016-02-05"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rc8",
+          "date": "2016-02-12"
+        },
+        {
+          "week": 5,
+          "map": "koth_airfield_b7",
+          "date": "2016-02-19"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2016-02-26"
+        },
+        {
+          "week": 7,
+          "map": "koth_stallone_b2",
+          "date": "2016-03-04"
+        },
+        {
+          "week": 8,
+          "map": "koth_artefact_v1",
+          "date": "2016-03-11"
+        },
+        {
+          "week": 9,
+          "map": "koth_badlands",
+          "date": "2016-03-18"
+        },
+        {
+          "week": 10,
+          "map": "cp_warmfrost_rc1",
+          "date": "2016-03-25"
+        },
+        {
+          "week": 11,
+          "map": "koth_airfield_b7",
+          "date": "2016-04-01"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2016-04-08"
+        }
+      ]
+    },
+    {
+      "season": 6,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_badlands",
+          "date": "2015-10-02"
+        },
+        {
+          "week": 2,
+          "map": "koth_highpass_rc1a",
+          "date": "2015-10-09"
+        },
+        {
+          "week": 3,
+          "map": "cp_alamo",
+          "date": "2015-10-16"
+        },
+        {
+          "week": 4,
+          "map": "koth_sandstone_pro_rc1",
+          "date": "2015-10-23"
+        },
+        {
+          "week": 5,
+          "map": "koth_product_rc8",
+          "date": "2015-10-30"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2015-11-06"
+        },
+        {
+          "week": 7,
+          "map": "koth_artefact_v1",
+          "date": "2015-11-13"
+        },
+        {
+          "week": 8,
+          "map": "koth_airfield_b7",
+          "date": "2015-11-20"
+        }
+      ]
+    },
+    {
+      "season": 5,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2015-06-05"
+        },
+        {
+          "week": 2,
+          "map": "koth_dropdown_rc1",
+          "date": "2015-06-12"
+        },
+        {
+          "week": 3,
+          "map": "koth_badlands",
+          "date": "2015-06-19"
+        },
+        {
+          "week": 4,
+          "map": "koth_artefact_v1",
+          "date": "2015-06-26"
+        },
+        {
+          "week": 5,
+          "map": "cp_warmfrost_rc1",
+          "date": "2015-07-03"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1",
+          "date": "2015-07-10"
+        },
+        {
+          "week": 7,
+          "map": "koth_stallone_b2",
+          "date": "2015-07-17"
+        },
+        {
+          "week": 8,
+          "map": "koth_viaduct_pro7",
+          "date": "2015-07-24"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2015-07-31"
+        },
+        {
+          "week": 10,
+          "map": "cp_warmfrost_rc1",
+          "date": "2015-08-07"
+        },
+        {
+          "week": 11,
+          "map": "koth_badlands",
+          "date": "2015-08-14"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2015-08-21"
+        }
+      ]
+    },
+    {
+      "season": 4,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_airfield_b7",
+          "date": "2015-01-30"
+        },
+        {
+          "week": 2,
+          "map": "koth_stallone_b2",
+          "date": "2015-02-06"
+        },
+        {
+          "week": 3,
+          "map": "cp_mojave_b2",
+          "date": "2015-02-13"
+        },
+        {
+          "week": 4,
+          "map": "koth_viaduct_pro5",
+          "date": "2015-02-20"
+        },
+        {
+          "week": 5,
+          "map": "koth_maple_ridge_b6",
+          "date": "2015-02-27"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2015-03-13"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2015-03-20"
+        },
+        {
+          "week": 8,
+          "map": "koth_badlands",
+          "date": "2015-03-27"
+        },
+        {
+          "week": 9,
+          "map": "koth_brazil_rc1",
+          "date": "2015-04-03"
+        },
+        {
+          "week": 10,
+          "map": "cp_warmfrost_rc1",
+          "date": "2015-04-10"
+        },
+        {
+          "week": 11,
+          "map": "koth_airfield_b7",
+          "date": "2015-04-17"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2015-04-24"
+        }
+      ]
+    },
+    {
+      "season": 3,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_ashville_rc1",
+          "date": "2014-09-26"
+        },
+        {
+          "week": 2,
+          "map": "koth_stallone_b2",
+          "date": "2014-10-03"
+        },
+        {
+          "week": 3,
+          "map": "plr_hysteria_b2",
+          "date": "2014-10-10"
+        },
+        {
+          "week": 4,
+          "map": "koth_badlands",
+          "date": "2014-10-17"
+        },
+        {
+          "week": 5,
+          "map": "koth_brazil_rc1",
+          "date": "2014-10-24"
+        },
+        {
+          "week": 6,
+          "map": "cp_warmfrost_rc1",
+          "date": "2014-10-31"
+        },
+        {
+          "week": 7,
+          "map": "koth_lakeside_final",
+          "date": "2014-11-07"
+        },
+        {
+          "week": 8,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-11-14"
+        },
+        {
+          "week": 9,
+          "map": "koth_airfield_b7",
+          "date": "2014-11-21"
+        },
+        {
+          "week": 10,
+          "map": "Bye - Holiday",
+          "date": "2014-11-28"
+        },
+        {
+          "week": 11,
+          "map": "cp_warmfrost_rc1",
+          "date": "2014-12-05"
+        },
+        {
+          "week": 12,
+          "map": "koth_badlands",
+          "date": "2014-12-12"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2014-12-19"
+        }
+      ]
+    },
+    {
+      "season": 2,
+      "maps": [
+        {
+          "week": 0,
+          "map": "koth_fuel_a4",
+          "date": "2014-05-23"
+        },
+        {
+          "week": 1,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-05-30"
+        },
+        {
+          "week": 2,
+          "map": "koth_stallone_b2",
+          "date": "2014-06-06"
+        },
+        {
+          "week": 3,
+          "map": "cp_whitefrost_b3",
+          "date": "2014-06-13"
+        },
+        {
+          "week": 4,
+          "map": "koth_airfield_b7",
+          "date": "2014-06-20"
+        },
+        {
+          "week": 5,
+          "map": "koth_lakeside_final",
+          "date": "2014-06-27"
+        },
+        {
+          "week": 6,
+          "map": "pl_waste_b4",
+          "date": "2014-07-04"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2014-07-11"
+        },
+        {
+          "week": 8,
+          "map": "koth_badlands",
+          "date": "2014-07-18"
+        },
+        {
+          "week": 9,
+          "map": "cp_gravelpit",
+          "date": "2014-07-25"
+        },
+        {
+          "week": 10,
+          "map": "koth_airfield_b7",
+          "date": "2014-08-01"
+        },
+        {
+          "week": 11,
+          "map": "koth_ashville_rc1",
+          "date": "2014-08-08"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2014-08-15"
+        }
+      ]
+    },
+    {
+      "season": 1,
+      "maps": [
+        {
+          "week": 0,
+          "map": "koth_badlands",
+          "date": "2014-01-24"
+        },
+        {
+          "week": 1,
+          "map": "koth_ashville_rc1",
+          "date": "2014-01-31"
+        },
+        {
+          "week": 2,
+          "map": "cp_gorge",
+          "date": "2014-02-07"
+        },
+        {
+          "week": 3,
+          "map": "koth_airfield_b7",
+          "date": "2014-02-14"
+        },
+        {
+          "week": 4,
+          "map": "sd_doomsday",
+          "date": "2014-02-21"
+        },
+        {
+          "week": 5,
+          "map": "koth_arctic_b3",
+          "date": "2014-02-28"
+        },
+        {
+          "week": 6,
+          "map": "cp_whitefrost_b3",
+          "date": "2014-03-07"
+        },
+        {
+          "week": 7,
+          "map": "cp_gravelpit",
+          "date": "2014-03-14"
+        },
+        {
+          "week": 8,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-03-21"
+        },
+        {
+          "week": 9,
+          "map": "koth_ashville_rc1",
+          "date": "2014-03-28"
+        },
+        {
+          "week": 10,
+          "map": "koth_airfield_b7",
+          "date": "2014-04-04"
+        },
+        {
+          "week": 11,
+          "map": "koth_badlands",
+          "date": "2014-04-11"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2014-04-18"
+        }
+      ]
+    }
+  ]
 }

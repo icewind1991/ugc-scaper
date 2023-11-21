@@ -74,5 +74,431 @@ expression: parsed
       }
     ]
   },
-  "previous": []
+  "previous": [
+    {
+      "season": 7,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_baloo_v2",
+          "date": "2022-02-01"
+        },
+        {
+          "week": 2,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2022-02-08"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_grove_b4",
+          "date": "2022-02-15"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2022-02-22"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_noodle",
+          "date": "2022-03-01"
+        },
+        {
+          "week": 6,
+          "map": "ultiduo_seclusion_b3",
+          "date": "2022-03-08"
+        },
+        {
+          "week": 7,
+          "map": "ultiduo_obsidiian_a10",
+          "date": "2022-03-15"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_lookout_b1",
+          "date": "2022-03-22"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-03-29"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-05"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-12"
+        }
+      ]
+    },
+    {
+      "season": 6,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_grove_b4",
+          "date": "2021-10-05"
+        },
+        {
+          "week": 2,
+          "map": "ultiduo_obsidiian_a10",
+          "date": "2021-10-12"
+        },
+        {
+          "week": 3,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2021-10-19"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_seclusion_b3",
+          "date": "2021-10-26"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_baloo_v2",
+          "date": "2021-11-02"
+        },
+        {
+          "week": 6,
+          "map": "ultiduo_furnace_b1",
+          "date": "2021-11-09"
+        },
+        {
+          "week": 7,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2021-11-16"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_thaw_b3",
+          "date": "2021-11-23"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-11-30"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-12-07"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-12-14"
+        }
+      ]
+    },
+    {
+      "season": 5,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_noodle",
+          "date": "2021-06-15"
+        },
+        {
+          "week": 2,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2021-06-22"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_lookout_b1",
+          "date": "2021-06-29"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_baloo_v2",
+          "date": "2021-07-06"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_grove_b4",
+          "date": "2021-07-13"
+        },
+        {
+          "week": 6,
+          "map": "ultiduo_coaltown_v8",
+          "date": "2021-07-20"
+        },
+        {
+          "week": 7,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2021-07-27"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_raksha_beta7",
+          "date": "2021-08-03"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-10"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-17"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-24"
+        }
+      ]
+    },
+    {
+      "season": 4,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_baloo_v2",
+          "date": "2021-02-16"
+        },
+        {
+          "week": 2,
+          "map": "ultiduo_badlands_b1",
+          "date": "2021-02-23"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_grove_b4",
+          "date": "2021-03-02"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_noodle",
+          "date": "2021-03-09"
+        },
+        {
+          "week": 5,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2021-03-16"
+        },
+        {
+          "week": 6,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2021-03-23"
+        },
+        {
+          "week": 7,
+          "map": "ultiduo_seclusion_b3",
+          "date": "2021-03-30"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_lookout_b1",
+          "date": "2021-04-06"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-13"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-20"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-27"
+        }
+      ]
+    },
+    {
+      "season": 3,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_baloo_v2",
+          "date": "2020-10-06"
+        },
+        {
+          "week": 2,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2020-10-13"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_grove_b4",
+          "date": "2020-10-20"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_raksha_beta7",
+          "date": "2020-10-27"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_noodle",
+          "date": "2020-11-03"
+        },
+        {
+          "week": 6,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2020-11-10"
+        },
+        {
+          "week": 7,
+          "map": "ultiduo_lookout_b1",
+          "date": "2020-11-17"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_obsidiian_a10",
+          "date": "2020-11-24"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-12-01"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-12-08"
+        },
+        {
+          "week": 11,
+          "map": "Finals 3 Maps",
+          "date": "2020-12-15"
+        }
+      ]
+    },
+    {
+      "season": 2,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_baloo_v2",
+          "date": "2020-06-09"
+        },
+        {
+          "week": 2,
+          "map": "ultiduo_champions_a4b",
+          "date": "2020-06-16"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_thaw_b3",
+          "date": "2020-06-23"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_lookout_b1",
+          "date": "2020-06-30"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_nicecicles_v2",
+          "date": "2020-07-07"
+        },
+        {
+          "week": 6,
+          "map": "ultiduo_gullywash_b2",
+          "date": "2020-07-14"
+        },
+        {
+          "week": 7,
+          "map": "koth_ultiduo_r_b7",
+          "date": "2020-07-21"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_noodle",
+          "date": "2020-07-28"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-04"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-11"
+        },
+        {
+          "week": 11,
+          "map": "Finals 3 Maps",
+          "date": "2020-08-18"
+        }
+      ]
+    },
+    {
+      "season": 1,
+      "maps": [
+        {
+          "week": 1,
+          "map": "ultiduo_gullywash_b2 (old)",
+          "date": "2020-02-25"
+        },
+        {
+          "week": 2,
+          "map": "koth_ultiduo_r_b7 (old)",
+          "date": "2020-03-03"
+        },
+        {
+          "week": 3,
+          "map": "ultiduo_baloo_v2 (old)",
+          "date": "2020-03-10"
+        },
+        {
+          "week": 4,
+          "map": "ultiduo_badlands_b1 (old)",
+          "date": "2020-03-17"
+        },
+        {
+          "week": 5,
+          "map": "ultiduo_gullywash_b2 (old)",
+          "date": "2020-03-24"
+        },
+        {
+          "week": 6,
+          "map": "koth_ultiduo_r_b7 (old)",
+          "date": "2020-03-31"
+        },
+        {
+          "week": 7,
+          "map": "ultiduo_baloo_v2 (old)",
+          "date": "2020-04-07"
+        },
+        {
+          "week": 8,
+          "map": "ultiduo_badlands_b1 (old)",
+          "date": "2020-04-14"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-21"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-28"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2020-05-05"
+        },
+        {
+          "week": 12,
+          "map": "Finals 3 Maps",
+          "date": "2020-05-12"
+        }
+      ]
+    }
+  ]
 }

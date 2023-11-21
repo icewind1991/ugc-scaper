@@ -283,7 +283,7 @@ pub struct CurrentSeasonMapList {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct PreviousSeasonMapList {
     pub season: u8,
-    pub maps: Vec<PreviousSeasonMapList>,
+    pub maps: Vec<PreviousSeasonMap>,
 }
 
 #[derive(Debug, Clone)]
