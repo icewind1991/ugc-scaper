@@ -4,6 +4,7 @@ use steamid_ng::SteamID;
 use time::format_description::FormatItem;
 use time::macros::format_description;
 
+mod map_history;
 mod match_page;
 mod player;
 mod player_details;
@@ -14,6 +15,7 @@ mod team_matches;
 mod team_roster_history;
 mod transactions;
 
+pub use map_history::*;
 pub use match_page::*;
 pub use player::*;
 pub use player_details::*;

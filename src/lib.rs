@@ -4,12 +4,12 @@ mod error;
 pub mod parser;
 
 use crate::data::{
-    GameMode, MatchInfo, MembershipHistory, Player, RosterHistory, Seasons, Team, TeamRef,
-    TeamSeason, Transaction,
+    GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, Seasons, Team,
+    TeamRef, TeamSeason, Transaction,
 };
 use crate::parser::{
-    MatchPageParser, Parser, PlayerDetailsParser, PlayerParser, SeasonsParser, TeamLookupParser,
-    TeamMatchesParser, TeamParser, TeamRosterHistoryParser, TransactionParser,
+    MapHistoryParser, MatchPageParser, Parser, PlayerDetailsParser, PlayerParser, SeasonsParser,
+    TeamLookupParser, TeamMatchesParser, TeamParser, TeamRosterHistoryParser, TransactionParser,
 };
 pub use error::*;
 use reqwest::redirect::Policy;
@@ -30,6 +30,7 @@ pub struct UgcClient {
     team_lookup_parser: TeamLookupParser,
     match_page_parser: MatchPageParser,
     transaction_parser: TransactionParser,
+    map_history_parser: MapHistoryParser,
 }
 
 /// "API client" for ugc by scraping the website
@@ -46,6 +47,7 @@ impl UgcClient {
             team_lookup_parser: TeamLookupParser::new(),
             match_page_parser: MatchPageParser::new(),
             transaction_parser: TransactionParser::new(),
+            map_history_parser: MapHistoryParser::new(),
         }
     }
 
@@ -171,5 +173,14 @@ impl UgcClient {
         );
         let body = self.client.get(link).send().await?.text().await?;
         self.transaction_parser.parse(&body)
+    }
+
+    pub async fn map_history(&self, format: GameMode) -> Result<MapHistory> {
+        let link = format!(
+            "https://www.ugcleague.com/rostertransactions_tf2{}_all.cfm",
+            format.letter()
+        );
+        let body = self.client.get(link).send().await?.text().await?;
+        self.map_history_parser.parse(&body)
     }
 }

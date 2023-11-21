@@ -1,0 +1,84 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "current": {
+    "season": 43,
+    "maps": [
+      {
+        "week": 1,
+        "map": "koth_product_final",
+        "date": "Wed, Oct 11",
+        "na_date": null
+      },
+      {
+        "week": 2,
+        "map": "cp_metalworks_f5",
+        "date": "Wed, Oct 18",
+        "na_date": null
+      },
+      {
+        "week": 3,
+        "map": "cp_snakewater_final1",
+        "date": "Wed, Oct 25",
+        "na_date": null
+      },
+      {
+        "week": 4,
+        "map": "cp_process_f12",
+        "date": "Wed, Nov 01",
+        "na_date": null
+      },
+      {
+        "week": 5,
+        "map": "cp_gullywash_f9",
+        "date": "Wed, Nov 08",
+        "na_date": null
+      },
+      {
+        "week": 6,
+        "map": "cp_sunshine",
+        "date": "Wed, Nov 15",
+        "na_date": null
+      },
+      {
+        "week": 7,
+        "map": "koth_clearcut_b16a",
+        "date": "Wed, Nov 22",
+        "na_date": null
+      },
+      {
+        "week": 8,
+        "map": "cp_granary_pro_rc16a",
+        "date": "Wed, Nov 29",
+        "na_date": null
+      },
+      {
+        "week": 9,
+        "map": "Best of 3 Maps",
+        "date": "Wed, Dec 06",
+        "na_date": null
+      },
+      {
+        "week": 10,
+        "map": "Best of 3 Maps",
+        "date": "Wed, Dec 13",
+        "na_date": null
+      },
+      {
+        "week": 11,
+        "map": "Best of 3 Maps",
+        "date": "Wed, Dec 20",
+        "na_date": null
+      },
+      {
+        "week": 12,
+        "map": "Best of 3 Maps",
+        "date": "Wed, Dec 27",
+        "na_date": null
+      }
+    ]
+  },
+  "previous": []
+}

@@ -1,0 +1,78 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "current": {
+    "season": 41,
+    "maps": [
+      {
+        "week": 1,
+        "map": "koth_ashville_final",
+        "date": "Mon, Oct 09",
+        "na_date": "Sun, Oct 08"
+      },
+      {
+        "week": 2,
+        "map": "pl_upward_f10",
+        "date": "Mon, Oct 16",
+        "na_date": "Sun, Oct 15"
+      },
+      {
+        "week": 3,
+        "map": "koth_proot_b6b",
+        "date": "Mon, Oct 23",
+        "na_date": "Sun, Oct 22"
+      },
+      {
+        "week": 4,
+        "map": "pl_swiftwater_final1",
+        "date": "Mon, Oct 30",
+        "na_date": "Sun, Oct 29"
+      },
+      {
+        "week": 5,
+        "map": "koth_product_final",
+        "date": "Mon, Nov 06",
+        "na_date": "Sun, Nov 05"
+      },
+      {
+        "week": 6,
+        "map": "pl_vigil_rc10",
+        "date": "Mon, Nov 13",
+        "na_date": "Sun, Nov 12"
+      },
+      {
+        "week": 7,
+        "map": "koth_warmtic_f10",
+        "date": "Mon, Nov 20",
+        "na_date": "Sun, Nov 19"
+      },
+      {
+        "week": 8,
+        "map": "cp_steel_f12",
+        "date": "Mon, Nov 27",
+        "na_date": "Sun, Nov 26"
+      },
+      {
+        "week": 9,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Dec 04",
+        "na_date": "Sun, Dec 03"
+      },
+      {
+        "week": 10,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Dec 11",
+        "na_date": "Sun, Dec 10"
+      },
+      {
+        "week": 11,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Dec 18",
+        "na_date": "Sun, Dec 17"
+      }
+    ]
+  },
+  "previous": []
+}

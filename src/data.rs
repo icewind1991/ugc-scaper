@@ -265,3 +265,41 @@ impl FromStr for TransactionAction {
         }
     }
 }
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct MapHistory {
+    pub current: CurrentSeasonMapList,
+    pub previous: Vec<PreviousSeasonMapList>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct CurrentSeasonMapList {
+    pub season: u8,
+    pub maps: Vec<CurrentSeasonMap>,
+}
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct PreviousSeasonMapList {
+    pub season: u8,
+    pub maps: Vec<PreviousSeasonMapList>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct CurrentSeasonMap {
+    pub week: u8,
+    pub map: String,
+    pub date: String,
+    pub na_date: Option<String>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+pub struct PreviousSeasonMap {
+    pub week: u8,
+    pub map: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
+    pub date: Date,
+}

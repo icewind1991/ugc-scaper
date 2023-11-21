@@ -1,0 +1,84 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "current": {
+    "season": 30,
+    "maps": [
+      {
+        "week": 1,
+        "map": "koth_harter_rc1",
+        "date": "Fri, Oct 13",
+        "na_date": null
+      },
+      {
+        "week": 2,
+        "map": "koth_maple_ridge_rc1",
+        "date": "Fri, Oct 20",
+        "na_date": null
+      },
+      {
+        "week": 3,
+        "map": "koth_badlands",
+        "date": "Fri, Oct 27",
+        "na_date": null
+      },
+      {
+        "week": 4,
+        "map": "koth_bagel_rc7",
+        "date": "Fri, Nov 03",
+        "na_date": null
+      },
+      {
+        "week": 5,
+        "map": "koth_jamram_rc1b",
+        "date": "Fri, Nov 10",
+        "na_date": null
+      },
+      {
+        "week": 6,
+        "map": "koth_cornyard_b2",
+        "date": "Fri, Nov 17",
+        "na_date": null
+      },
+      {
+        "week": 7,
+        "map": "koth_product_final",
+        "date": "Fri, Nov 24",
+        "na_date": null
+      },
+      {
+        "week": 8,
+        "map": "cp_warmfrost_rc1",
+        "date": "Fri, Dec 01",
+        "na_date": null
+      },
+      {
+        "week": 9,
+        "map": "Best of 3 Maps",
+        "date": "Fri, Dec 08",
+        "na_date": null
+      },
+      {
+        "week": 10,
+        "map": "Best of 3 Maps",
+        "date": "Fri, Dec 15",
+        "na_date": null
+      },
+      {
+        "week": 11,
+        "map": "Best of 3 Maps",
+        "date": "Fri, Dec 22",
+        "na_date": null
+      },
+      {
+        "week": 12,
+        "map": "Best of 3 Maps",
+        "date": "Fri, Dec 29",
+        "na_date": null
+      }
+    ]
+  },
+  "previous": []
+}
