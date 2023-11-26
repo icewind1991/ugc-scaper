@@ -71,6 +71,8 @@ const DATE_FORMAT: &[FormatItem<'static>] =
 const MEMBER_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
     "[month repr:short] [day padding:none], [year]\n/\n[hour padding:none]:[minute] [period]\n(ET)"
 );
+const MEMBER_DATE_ALT_FORMAT: &[FormatItem<'static>] =
+    format_description!("[month repr:short] [day padding:none], [year]");
 const ROSTER_HISTORY_DATE_FORMAT: &[FormatItem<'static>] =
     format_description!("[month repr:short] [day padding:none], [year]");
 

@@ -1,0 +1,73 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Melting Pot",
+  "tag": "Melting Pot",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f7/f75809d7774c917be9883370d772d3099bfe457d_full.jpg",
+  "format": "TF2 Highlander",
+  "timezone": "West-Euro",
+  "division": "Euro Platinum",
+  "description": "",
+  "titles": [],
+  "members": [
+    {
+      "name": "uncle spoodg[A]",
+      "steam_id": 76561198014928031,
+      "role": "Leader",
+      "since": "+002012-01-29T00:00:00.000000000Z"
+    },
+    {
+      "name": "CratZ crayonnaise",
+      "steam_id": 76561198021136779,
+      "role": "Member",
+      "since": "+002012-01-30T00:00:00.000000000Z"
+    },
+    {
+      "name": "calm``",
+      "steam_id": 76561197968127159,
+      "role": "Member",
+      "since": "+002012-01-30T00:00:00.000000000Z"
+    },
+    {
+      "name": "Plysse",
+      "steam_id": 76561198028175255,
+      "role": "Member",
+      "since": "+002012-05-30T00:00:00.000000000Z"
+    },
+    {
+      "name": "calm``",
+      "steam_id": 76561197968127159,
+      "role": "Member",
+      "since": "+002012-05-30T00:00:00.000000000Z"
+    },
+    {
+      "name": "pwalt",
+      "steam_id": 76561197988404333,
+      "role": "Member",
+      "since": "+002012-09-14T00:00:00.000000000Z"
+    }
+  ],
+  "results": [
+    {
+      "season": 8,
+      "division": "Euro Platinum",
+      "wins": 1,
+      "losses": 4
+    },
+    {
+      "season": 7,
+      "division": "*West European",
+      "wins": 1,
+      "losses": 2
+    },
+    {
+      "season": 6,
+      "division": "*West European",
+      "wins": 6,
+      "losses": 3
+    }
+  ],
+  "name_changes": []
+}

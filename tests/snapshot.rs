@@ -30,6 +30,14 @@ fn test_parse_team_html() {
 }
 
 #[test]
+fn test_parse_older_team_html() {
+    let body = read_to_string("tests/data/team_4105.html").unwrap();
+    let parser = TeamParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
 fn test_parse_team_changed_name_html() {
     let body = read_to_string("tests/data/team_6929.html").unwrap();
     let parser = TeamParser::new();

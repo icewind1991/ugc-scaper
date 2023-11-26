@@ -1,9 +1,11 @@
 use super::{ElementExt, Parser};
 use crate::data::{Membership, NameChange, Record, Team};
-use crate::parser::{select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_FORMAT};
+use crate::parser::{
+    select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_ALT_FORMAT, MEMBER_DATE_FORMAT,
+};
 use crate::{ParseError, Result, ScrapeError};
 use scraper::{Html, Selector};
-use time::{Date, PrimitiveDateTime, UtcOffset};
+use time::{Date, PrimitiveDateTime, Time, UtcOffset};
 
 const SELECTOR_TEAM_NAME: &str = ".container .col-md-12 h1 > b";
 const SELECTOR_TEAM_TAG: &str = ".container .col-md-12 h1 > span";
@@ -257,12 +259,28 @@ impl Parser for TeamParser {
                 )?;
                 let role = role.trim().to_string();
                 let since = since.trim();
-                let since = PrimitiveDateTime::parse(since, MEMBER_DATE_FORMAT)
-                    .map_err(|_| ParseError::InvalidDate {
-                        role: "member join date",
-                        date: since.to_string(),
-                    })?
-                    .assume_offset(UtcOffset::from_hms(-5, 0, 0).unwrap());
+                let since = if since.starts_with('(') {
+                    let part = since
+                        .split_once('-')
+                        .unwrap_or_default()
+                        .0
+                        .trim()
+                        .trim_start_matches('(');
+                    let date = Date::parse(part, MEMBER_DATE_ALT_FORMAT).map_err(|_| {
+                        ParseError::InvalidDate {
+                            role: "member join date (alternate format)",
+                            date: since.to_string(),
+                        }
+                    })?;
+                    PrimitiveDateTime::new(date, Time::MIDNIGHT).assume_offset(UtcOffset::UTC)
+                } else {
+                    PrimitiveDateTime::parse(since, MEMBER_DATE_FORMAT)
+                        .map_err(|_| ParseError::InvalidDate {
+                            role: "member join date",
+                            date: since.to_string(),
+                        })?
+                        .assume_offset(UtcOffset::from_hms(-5, 0, 0).unwrap())
+                };
 
                 Ok(Membership {
                     name,
