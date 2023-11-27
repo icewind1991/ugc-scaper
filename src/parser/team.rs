@@ -154,12 +154,7 @@ impl Parser for TeamParser {
             })?
             .to_string();
 
-        let timezone = select_text(root, &self.selector_team_timezone)
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_TIMEZONE,
-                role: "team timzone",
-            })?
-            .to_string();
+        let timezone = select_text(root, &self.selector_team_timezone).map(String::from);
 
         let description = select_text(root, &self.selector_team_description)
             .unwrap_or_default()

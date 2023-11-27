@@ -1,0 +1,133 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Barney and the Ganks",
+  "tag": "Grand Meister",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d7/d71ff4e1e2635c3d7c1be8d96bc40b499c665aad_full.jpg",
+  "format": "TF2 Highlander",
+  "timezone": null,
+  "division": "NA Platinum",
+  "description": "",
+  "titles": [],
+  "members": [
+    {
+      "name": "rchl",
+      "steam_id": 76561198027925375,
+      "role": "Leader",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "Yollide",
+      "steam_id": 76561197964088385,
+      "role": "Leader",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "Gankmeister",
+      "steam_id": 76561198017648752,
+      "role": "Leader",
+      "since": "+002013-08-14T00:00:00.000000000Z"
+    },
+    {
+      "name": "Hng",
+      "steam_id": 76561198042955655,
+      "role": "Member",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "snake kryptonite",
+      "steam_id": 76561197998673784,
+      "role": "Member",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "Hugh",
+      "steam_id": 76561197968399860,
+      "role": "Member",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "Joy",
+      "steam_id": 76561197997012073,
+      "role": "Member",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "BIG RAT",
+      "steam_id": 76561197975762186,
+      "role": "Member",
+      "since": "+002013-08-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "GoldenBrownBear",
+      "steam_id": 76561197991937066,
+      "role": "Member",
+      "since": "+002013-08-22T00:00:00.000000000Z"
+    },
+    {
+      "name": "bfl Satan",
+      "steam_id": 76561197996097401,
+      "role": "Member",
+      "since": "+002013-08-27T00:00:00.000000000Z"
+    },
+    {
+      "name": "Murow",
+      "steam_id": 76561198046399702,
+      "role": "Member",
+      "since": "+002013-08-31T00:00:00.000000000Z"
+    },
+    {
+      "name": "Ibby",
+      "steam_id": 76561198001095962,
+      "role": "Member",
+      "since": "+002013-09-05T00:00:00.000000000Z"
+    },
+    {
+      "name": "mpb",
+      "steam_id": 76561197995307557,
+      "role": "Member",
+      "since": "+002013-09-09T00:00:00.000000000Z"
+    },
+    {
+      "name": "Hei",
+      "steam_id": 76561197987102243,
+      "role": "Member",
+      "since": "+002013-09-15T00:00:00.000000000Z"
+    },
+    {
+      "name": "to go to bed forev",
+      "steam_id": 76561198025368981,
+      "role": "Member",
+      "since": "+002013-09-15T00:00:00.000000000Z"
+    },
+    {
+      "name": "stanplsStochast1c",
+      "steam_id": 76561197995209440,
+      "role": "Member",
+      "since": "+002013-09-28T00:00:00.000000000Z"
+    },
+    {
+      "name": "ChinGoo",
+      "steam_id": 76561197990116981,
+      "role": "Member",
+      "since": "+002013-10-03T00:00:00.000000000Z"
+    },
+    {
+      "name": "Bruce Leeroy",
+      "steam_id": 76561198010708247,
+      "role": "Member",
+      "since": "+002013-10-07T00:00:00.000000000Z"
+    }
+  ],
+  "results": [
+    {
+      "season": 11,
+      "division": "NA Platinum",
+      "wins": 5,
+      "losses": 5
+    }
+  ],
+  "name_changes": []
+}

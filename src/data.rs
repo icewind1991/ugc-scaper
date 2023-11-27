@@ -90,7 +90,7 @@ pub struct Team {
     pub tag: String,
     pub image: String,
     pub format: String,
-    pub timezone: String,
+    pub timezone: Option<String>,
     pub division: String,
     pub description: String,
     pub titles: Vec<String>,
