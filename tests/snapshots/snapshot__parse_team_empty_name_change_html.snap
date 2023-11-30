@@ -1,0 +1,207 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Ponkotsu: Reloaded",
+  "tag": "PNKTSU",
+  "image": "clan_avatars/32437_thumbnail.jpg",
+  "format": "TF2 Highlander",
+  "timezone": null,
+  "division": "North America",
+  "description": "",
+  "titles": [
+    "TF2 HL North America 1st Place S39",
+    "TF2 HL North America 2nd Place S38",
+    "TF2 HL North America 3rd Place S36"
+  ],
+  "members": [
+    {
+      "name": "Kikuro",
+      "steam_id": 76561198201593238,
+      "role": "Leader",
+      "since": "+002022-01-10T12:43:00.000000000-05:00"
+    },
+    {
+      "name": "Mr Ketchum",
+      "steam_id": 76561198274737917,
+      "role": "Member",
+      "since": "+002022-09-25T10:41:00.000000000-05:00"
+    },
+    {
+      "name": "momichi gangster2",
+      "steam_id": 76561198195717911,
+      "role": "Member",
+      "since": "+002022-10-24T04:47:00.000000000-05:00"
+    },
+    {
+      "name": "Lord Seith",
+      "steam_id": 76561198190100828,
+      "role": "Member",
+      "since": "+002022-11-20T11:02:00.000000000-05:00"
+    },
+    {
+      "name": "gasparmx",
+      "steam_id": 76561197998611994,
+      "role": "Member",
+      "since": "+002023-01-31T02:31:00.000000000-05:00"
+    },
+    {
+      "name": "Gabriel",
+      "steam_id": 76561198151816133,
+      "role": "Member",
+      "since": "+002023-02-11T10:11:00.000000000-05:00"
+    },
+    {
+      "name": "Tnaas",
+      "steam_id": 76561198284886594,
+      "role": "Member",
+      "since": "+002023-02-28T11:05:00.000000000-05:00"
+    },
+    {
+      "name": "true",
+      "steam_id": 76561198153117396,
+      "role": "Member",
+      "since": "+002023-03-05T02:02:00.000000000-05:00"
+    },
+    {
+      "name": "Galleto",
+      "steam_id": 76561198280047870,
+      "role": "Member",
+      "since": "+002023-03-10T10:52:00.000000000-05:00"
+    },
+    {
+      "name": "Syn",
+      "steam_id": 76561199100303067,
+      "role": "Member",
+      "since": "+002023-03-10T10:57:00.000000000-05:00"
+    },
+    {
+      "name": "Neko",
+      "steam_id": 76561198414358056,
+      "role": "Member",
+      "since": "+002023-03-13T03:07:00.000000000-05:00"
+    },
+    {
+      "name": "jasperr",
+      "steam_id": 76561199106104716,
+      "role": "Member",
+      "since": "+002023-03-19T02:09:00.000000000-05:00"
+    },
+    {
+      "name": "on99",
+      "steam_id": 76561198164610169,
+      "role": "Member",
+      "since": "+002023-03-19T02:09:00.000000000-05:00"
+    },
+    {
+      "name": "tonyyyy",
+      "steam_id": 76561198305808710,
+      "role": "Member",
+      "since": "+002023-03-21T05:20:00.000000000-05:00"
+    },
+    {
+      "name": "Michaelpc1",
+      "steam_id": 76561198088365519,
+      "role": "Member",
+      "since": "+002023-05-04T08:58:00.000000000-05:00"
+    }
+  ],
+  "results": [
+    {
+      "season": 40,
+      "division": "North America",
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "season": 39,
+      "division": "North America",
+      "wins": 8,
+      "losses": 1
+    },
+    {
+      "season": 38,
+      "division": "North America",
+      "wins": 6,
+      "losses": 4
+    },
+    {
+      "season": 37,
+      "division": "North America",
+      "wins": 5,
+      "losses": 5
+    },
+    {
+      "season": 36,
+      "division": "North America",
+      "wins": 2,
+      "losses": 7
+    }
+  ],
+  "name_changes": [
+    {
+      "from_tag": "PONKOTSU",
+      "from": "Ponkotsu Tenshi",
+      "to_tag": "PNKTSU",
+      "to": "Ponkotsu: Reloaded",
+      "date": "2023-02-01"
+    },
+    {
+      "from_tag": "Rangers",
+      "from": "The rangers",
+      "to_tag": "PONKOTSU",
+      "to": "Ponkotsu Tenshi",
+      "date": "2022-08-26"
+    },
+    {
+      "from_tag": "Ringer",
+      "from": "The ringers",
+      "to_tag": "Rangers",
+      "to": "The rangers",
+      "date": "2022-05-09"
+    },
+    {
+      "from_tag": "Ranger",
+      "from": "The ringers",
+      "to_tag": "Ringer",
+      "to": "The ringers",
+      "date": "2022-02-06"
+    },
+    {
+      "from_tag": "Ranger",
+      "from": "The rangers",
+      "to_tag": "Ranger",
+      "to": "The ringers",
+      "date": "2022-02-06"
+    },
+    {
+      "from_tag": "Cats",
+      "from": "Cat Appreciation Club",
+      "to_tag": "Ranger",
+      "to": "The rangers",
+      "date": "2022-01-13"
+    },
+    {
+      "from_tag": "Cats",
+      "from": "Cat Apreciation Club",
+      "to_tag": "Cats",
+      "to": "Cat Appreciation Club",
+      "date": "2022-01-10"
+    },
+    {
+      "from_tag": "",
+      "from": "Cat Apreciation Club",
+      "to_tag": "Cats",
+      "to": "Cat Apreciation Club",
+      "date": "2022-01-10"
+    },
+    {
+      "from_tag": "Ranger",
+      "from": "The rangers",
+      "to_tag": "",
+      "to": "Cat Apreciation Club",
+      "date": "2022-01-10"
+    }
+  ]
+}

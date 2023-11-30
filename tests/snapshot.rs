@@ -54,6 +54,14 @@ fn test_parse_team_changed_name_html() {
 }
 
 #[test]
+fn test_parse_team_empty_name_change_html() {
+    let body = read_to_string("tests/data/team_32437.html").unwrap();
+    let parser = TeamParser::new();
+    let parsed = parser.parse(&body).unwrap();
+    assert_json_snapshot!(parsed);
+}
+
+#[test]
 fn test_parse_team_roster_history_html() {
     let body = read_to_string("tests/data/team_roster_history_7861.html").unwrap();
     let parser = TeamRosterHistoryParser::new();

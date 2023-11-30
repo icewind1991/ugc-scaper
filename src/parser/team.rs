@@ -289,24 +289,15 @@ impl Parser for TeamParser {
         let name_changes = document
             .select(&self.selector_team_name_item)
             .map(|row| {
-                let from_tag = select_text(row, &self.selector_team_name_from_tag).ok_or(
-                    ParseError::ElementNotFound {
-                        selector: SELECTOR_TEAM_NAME_FROM_TAG,
-                        role: "team name change from tag",
-                    },
-                )?;
+                let from_tag =
+                    select_text(row, &self.selector_team_name_from_tag).unwrap_or_default();
                 let from_name = select_text(row, &self.selector_team_name_from_name).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_NAME_FROM_NAME,
                         role: "team name change from name",
                     },
                 )?;
-                let to_tag = select_text(row, &self.selector_team_name_to_tag).ok_or(
-                    ParseError::ElementNotFound {
-                        selector: SELECTOR_TEAM_NAME_TO_TAG,
-                        role: "team name change to tag",
-                    },
-                )?;
+                let to_tag = select_text(row, &self.selector_team_name_to_tag).unwrap_or_default();
                 let to_name = select_text(row, &self.selector_team_name_to_name).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_NAME_TO_NAME,
