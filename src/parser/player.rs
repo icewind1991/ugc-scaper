@@ -9,7 +9,7 @@ use steamid_ng::SteamID;
 use time::Date;
 
 const SELECTOR_PLAYER_NAME: &str = ".container .col-md-4 > h3 > b";
-const SELECTOR_PLAYER_ID: &str = ".container .col-md-4 > p.nomargin";
+const SELECTOR_PLAYER_ID: &str = r#"a[href*="steam://friends/add"]"#;
 
 const SELECTOR_PLAYER_HONORS_GROUP: &str =
     ".container .col-md-6:nth-child(2) .white-row-small .row-fluid";
@@ -100,7 +100,9 @@ impl Parser for PlayerParser {
                 selector: SELECTOR_PLAYER_ID,
                 role: "player steam id",
             })?
-            .nth_text(3)
+            .attr("href")
+            .unwrap_or_default()
+            .strip_prefix("steam://friends/add/")
             .unwrap_or_default()
             .to_string();
 
@@ -226,7 +228,7 @@ impl Parser for PlayerParser {
         Ok(Player {
             name,
             avatar,
-            steam_id: SteamID::from_steam3(&id).unwrap_or_default(),
+            steam_id: SteamID::try_from(id.as_str()).unwrap_or_default(),
             honors,
             teams,
             favorite_classes,
