@@ -154,7 +154,10 @@ impl Parser for TeamParser {
         let steam_group = root
             .select(&self.selector_steam_group)
             .next()
-            .and_then(|link| link.attr("href").map(String::from));
+            .and_then(|link| {
+                link.attr("href")
+                    .map(|group| group.replace("http://http", "http"))
+            });
 
         let division = select_text(root, &self.selector_team_division)
             .ok_or(ParseError::ElementNotFound {

@@ -18,7 +18,7 @@ async fn main() -> MainResult {
 
     println!();
     println!("previous players ");
-    let roster_history = client.team_roster_history(id).await?;
+    let roster_history = client.team_roster_history(id).await?.history;
     for roster_item in roster_history {
         if let Some(left) = roster_item.left {
             println!(

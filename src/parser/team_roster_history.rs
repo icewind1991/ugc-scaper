@@ -1,5 +1,5 @@
 use super::Parser;
-use crate::data::RosterHistory;
+use crate::data::{RosterHistory, TeamRosterData};
 use crate::parser::{select_text, ROSTER_HISTORY_DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
@@ -13,12 +13,15 @@ const SELECTOR_ROSTER_ID: &str = "h5 small";
 const SELECTOR_ROSTER_JOINED: &str = "span.text-success small";
 const SELECTOR_ROSTER_LEFT: &str = "span.text-danger small";
 
+const SELECTOR_STEAM: &str = r#"p.muted a[href*="//steamcommunity.com/groups"]"#;
+
 pub struct TeamRosterHistoryParser {
     selector_item: Selector,
     selector_name: Selector,
     selector_id: Selector,
     selector_joined: Selector,
     selector_left: Selector,
+    selector_steam_group: Selector,
 }
 
 impl Default for TeamRosterHistoryParser {
@@ -35,17 +38,29 @@ impl TeamRosterHistoryParser {
             selector_id: Selector::parse(SELECTOR_ROSTER_ID).unwrap(),
             selector_joined: Selector::parse(SELECTOR_ROSTER_JOINED).unwrap(),
             selector_left: Selector::parse(SELECTOR_ROSTER_LEFT).unwrap(),
+            selector_steam_group: Selector::parse(SELECTOR_STEAM).unwrap(),
         }
     }
 }
 
 impl Parser for TeamRosterHistoryParser {
-    type Output = Vec<RosterHistory>;
+    type Output = TeamRosterData;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
         let document = Html::parse_document(document);
 
-        document
+        let steam_group = document.select(&self.selector_steam_group).next().ok_or(
+            ParseError::ElementNotFound {
+                selector: SELECTOR_STEAM,
+                role: "team steam group",
+            },
+        )?;
+        let steam_group = steam_group
+            .attr("href")
+            .unwrap_or_default()
+            .replace("http://http", "http");
+
+        let history = document
             .select(&self.selector_item)
             .map(|item| {
                 let name =
@@ -92,6 +107,10 @@ impl Parser for TeamRosterHistoryParser {
                         .transpose()?,
                 })
             })
-            .collect::<Result<Vec<_>>>()
+            .collect::<Result<Vec<_>>>()?;
+        Ok(TeamRosterData {
+            history,
+            steam_group,
+        })
     }
 }

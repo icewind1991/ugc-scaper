@@ -4,8 +4,8 @@ mod error;
 pub mod parser;
 
 use crate::data::{
-    GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, Seasons, Team,
-    TeamRef, TeamSeason, Transaction,
+    GameMode, MapHistory, MatchInfo, MembershipHistory, Player, Seasons, Team, TeamRef,
+    TeamRosterData, TeamSeason, Transaction,
 };
 use crate::parser::{
     MapHistoryParser, MatchPageParser, Parser, PlayerDetailsParser, PlayerParser, SeasonsParser,
@@ -101,7 +101,7 @@ impl UgcClient {
     }
 
     /// Retrieve team roster history
-    pub async fn team_roster_history(&self, id: u32) -> Result<Vec<RosterHistory>> {
+    pub async fn team_roster_history(&self, id: u32) -> Result<TeamRosterData> {
         let body = self
             .client
             .get(&format!(
