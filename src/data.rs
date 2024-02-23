@@ -40,6 +40,7 @@ mod serde_date {
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
+#[non_exhaustive]
 pub struct Player {
     pub name: String,
     pub steam_id: SteamID,
@@ -85,6 +86,7 @@ pub struct MembershipHistory {
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
+#[non_exhaustive]
 pub struct Team {
     pub name: String,
     pub tag: String,
