@@ -35,6 +35,7 @@ in {
       wants = ["network-online.target"];
       environment = {
         RUST_LOG = cfg.logLevel;
+        PORT = toString  cfg.port;
       };
 
       serviceConfig = {
