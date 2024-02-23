@@ -27,8 +27,8 @@ enum ApiError {
     SteamId(#[from] SteamIDError),
     #[error(transparent)]
     Scrape(#[from] ScrapeError),
-    #[error("mallformed request")]
-    Mallformared(String),
+    #[error("malformed request")]
+    Malformed(String),
 }
 
 impl IntoResponse for ApiError {
@@ -38,7 +38,7 @@ impl IntoResponse for ApiError {
             Self::SteamId(err) => {
                 (StatusCode::UNPROCESSABLE_ENTITY, format!("{:#}", err)).into_response()
             }
-            Self::Mallformared(err) => {
+            Self::Malformed(err) => {
                 (StatusCode::UNPROCESSABLE_ENTITY, format!("{:#}", err)).into_response()
             }
             Self::Scrape(ScrapeError::NotFound) => (StatusCode::NOT_FOUND, "").into_response(),
@@ -116,12 +116,7 @@ async fn teams(
 ) -> Result<impl IntoResponse, ApiError> {
     let mode = match GameMode::from_str(&format) {
         Ok(mode) => mode,
-        _ => {
-            return Err(ApiError::Mallformared(format!(
-                "invalid game mode {}",
-                format
-            )))
-        }
+        _ => return Err(ApiError::Malformed(format!("invalid game mode {}", format))),
     };
     let response = state.client.teams(mode).await?;
     Ok(Json(response))
@@ -134,12 +129,7 @@ async fn transactions(
 ) -> Result<impl IntoResponse, ApiError> {
     let mode = match GameMode::from_str(&format) {
         Ok(mode) => mode,
-        _ => {
-            return Err(ApiError::Mallformared(format!(
-                "invalid game mode {}",
-                format
-            )))
-        }
+        _ => return Err(ApiError::Malformed(format!("invalid game mode {}", format))),
     };
     let response = state.client.transactions(mode).await?;
     Ok(Json(response))
@@ -192,12 +182,7 @@ async fn map_history(
 ) -> Result<impl IntoResponse, ApiError> {
     let mode = match GameMode::from_str(&format) {
         Ok(mode) => mode,
-        _ => {
-            return Err(ApiError::Mallformared(format!(
-                "invalid game mode {}",
-                format
-            )))
-        }
+        _ => return Err(ApiError::Malformed(format!("invalid game mode {}", format))),
     };
     let response = state.client.map_history(mode).await?;
     Ok(Json(response))
