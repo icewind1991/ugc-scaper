@@ -26,7 +26,8 @@ const SELECTOR_PLAYER_TEAM_SINCE: &str = "small";
 
 const SELECTOR_AVATAR: &str =
     r#"a[href*="https://www.ugcleague.com/players_page.cfm?player_id="] img.img-responsive"#;
-const SELECTOR_CLASS: &str = r#"img.img-rounded[src*="images/tf2/icon/"]"#;
+const SELECTOR_CLASS: &str =
+    r#"img.img-rounded[src*="images/tf2/icon/"], img.img-rounded[data-cfsrc*="images/tf2/icon/"]"#;
 
 pub struct PlayerParser {
     selector_name: Selector,
@@ -103,14 +104,17 @@ impl Parser for PlayerParser {
             .unwrap_or_default()
             .to_string();
 
-        let avatar = document
-            .select(&self.selector_avatar)
-            .next()
-            .ok_or(ParseError::ElementNotFound {
-                selector: SELECTOR_AVATAR,
-                role: "player avatar",
-            })?
+        let avatar_element =
+            document
+                .select(&self.selector_avatar)
+                .next()
+                .ok_or(ParseError::ElementNotFound {
+                    selector: SELECTOR_AVATAR,
+                    role: "player avatar",
+                })?;
+        let avatar = avatar_element
             .attr("src")
+            .or_else(|| avatar_element.attr("data-cfsrc"))
             .unwrap_or_default()
             .to_string();
 
@@ -151,7 +155,7 @@ impl Parser for PlayerParser {
 
         let favorite_classes = document
             .select(&self.selector_class)
-            .filter_map(|class| class.attr("src"))
+            .filter_map(|class| class.attr("src").or_else(|| class.attr("data-cfsrc")))
             .filter_map(|img| {
                 img.strip_prefix("images/tf2/icon/")
                     .and_then(|class| class.strip_suffix(".jpg"))
