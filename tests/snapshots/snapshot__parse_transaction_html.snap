@@ -5,7 +5,7 @@ expression: parsed
 [
   {
     "name": "L9 ivan",
-    "steam_id": 76561199017754044,
+    "steam_id": "76561199017754044",
     "action": "Joined",
     "team": {
       "name": "1. e4 e5 2. Ke2 Ke7",
@@ -14,7 +14,7 @@ expression: parsed
   },
   {
     "name": "Rhythm",
-    "steam_id": 76561198062801366,
+    "steam_id": "76561198062801366",
     "action": "Joined",
     "team": {
       "name": "#FreeTheBlackHeavy",
@@ -23,7 +23,7 @@ expression: parsed
   },
   {
     "name": "G Punish",
-    "steam_id": 76561198207987376,
+    "steam_id": "76561198207987376",
     "action": "Left",
     "team": {
       "name": "1. e4 e5 2. Ke2 Ke7",
@@ -32,7 +32,7 @@ expression: parsed
   },
   {
     "name": "hellboy",
-    "steam_id": 76561199089196165,
+    "steam_id": "76561199089196165",
     "action": "Joined",
     "team": {
       "name": "1. e4 e5 2. Ke2 Ke7",
@@ -41,7 +41,7 @@ expression: parsed
   },
   {
     "name": "realhedgehog2082",
-    "steam_id": 76561198168931330,
+    "steam_id": "76561198168931330",
     "action": "Left",
     "team": {
       "name": "1. e4 e5 2. Ke2 Ke7",
@@ -50,7 +50,7 @@ expression: parsed
   },
   {
     "name": "Rhythm",
-    "steam_id": 76561198062801366,
+    "steam_id": "76561198062801366",
     "action": "Left",
     "team": {
       "name": "el gato",
@@ -59,7 +59,7 @@ expression: parsed
   },
   {
     "name": "Pope Sonder",
-    "steam_id": 76561198214202059,
+    "steam_id": "76561198214202059",
     "action": "Left",
     "team": {
       "name": "Gaelic Gladiators",

@@ -15,37 +15,37 @@ expression: parsed
   "members": [
     {
       "name": "uncle spoodg[A]",
-      "steam_id": 76561198014928031,
+      "steam_id": "76561198014928031",
       "role": "Leader",
       "since": "+002012-01-29T00:00:00.000000000Z"
     },
     {
       "name": "CratZ crayonnaise",
-      "steam_id": 76561198021136779,
+      "steam_id": "76561198021136779",
       "role": "Member",
       "since": "+002012-01-30T00:00:00.000000000Z"
     },
     {
       "name": "calm``",
-      "steam_id": 76561197968127159,
+      "steam_id": "76561197968127159",
       "role": "Member",
       "since": "+002012-01-30T00:00:00.000000000Z"
     },
     {
       "name": "Plysse",
-      "steam_id": 76561198028175255,
+      "steam_id": "76561198028175255",
       "role": "Member",
       "since": "+002012-05-30T00:00:00.000000000Z"
     },
     {
       "name": "calm``",
-      "steam_id": 76561197968127159,
+      "steam_id": "76561197968127159",
       "role": "Member",
       "since": "+002012-05-30T00:00:00.000000000Z"
     },
     {
       "name": "pwalt",
-      "steam_id": 76561197988404333,
+      "steam_id": "76561197988404333",
       "role": "Member",
       "since": "+002012-09-14T00:00:00.000000000Z"
     }
