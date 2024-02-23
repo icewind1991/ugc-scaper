@@ -8,6 +8,7 @@ expression: parsed
   "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/09/096a30b1025c586f9d41c686077129f6e86998d0_full.jpg",
   "format": "TF2 6vs6",
   "timezone": "West-Euro",
+  "steam_group": null,
   "division": "Europe",
   "description": "Giel is Jesus",
   "titles": [

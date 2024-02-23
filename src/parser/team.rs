@@ -38,6 +38,8 @@ const SELECTOR_TEAM_NAME_TO_TAG: &str = "td:nth-child(3) small";
 const SELECTOR_TEAM_NAME_TO_NAME: &str = "td:nth-child(4) small";
 const SELECTOR_TEAM_NAME_DATE: &str = "td:nth-child(5) small";
 
+const SELECTOR_STEAM: &str = r#"a.btn.btn-xs.btn-default[href*="//steamcommunity.com/groups"]"#;
+
 pub struct TeamParser {
     selector_name: Selector,
     selector_tag: Selector,
@@ -48,6 +50,7 @@ pub struct TeamParser {
     selector_team_timezone: Selector,
     selector_team_description: Selector,
     selector_team_titles: Selector,
+    selector_steam_group: Selector,
 
     selector_team_member_row: Selector,
     selector_team_member_link: Selector,
@@ -85,6 +88,7 @@ impl TeamParser {
             selector_team_timezone: Selector::parse(SELECTOR_TEAM_TIMEZONE).unwrap(),
             selector_team_description: Selector::parse(SELECTOR_TEAM_DESCRIPTION).unwrap(),
             selector_team_titles: Selector::parse(SELECTOR_TEAM_TITLES).unwrap(),
+            selector_steam_group: Selector::parse(SELECTOR_STEAM).unwrap(),
 
             selector_team_member_row: Selector::parse(SELECTOR_TEAM_MEMBER_ROW).unwrap(),
             selector_team_member_link: Selector::parse(SELECTOR_TEAM_MEMBER_LINK).unwrap(),
@@ -146,6 +150,11 @@ impl Parser for TeamParser {
                 role: "team format",
             })?
             .to_string();
+
+        let steam_group = root
+            .select(&self.selector_steam_group)
+            .next()
+            .and_then(|link| link.attr("href").map(String::from));
 
         let division = select_text(root, &self.selector_team_division)
             .ok_or(ParseError::ElementNotFound {
@@ -330,6 +339,7 @@ impl Parser for TeamParser {
             division,
             timezone,
             format,
+            steam_group,
             image,
             tag,
             titles,

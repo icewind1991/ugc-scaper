@@ -91,6 +91,7 @@ pub struct Team {
     pub image: String,
     pub format: String,
     pub timezone: Option<String>,
+    pub steam_group: Option<String>,
     pub division: String,
     pub description: String,
     pub titles: Vec<String>,
