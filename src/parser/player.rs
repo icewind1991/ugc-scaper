@@ -24,6 +24,8 @@ const SELECTOR_PLAYER_TEAM_NAME: &str = "span.text-primary b";
 const SELECTOR_PLAYER_TEAM_LEAGUE: &str = "small";
 const SELECTOR_PLAYER_TEAM_SINCE: &str = "small";
 
+const SELECTOR_AVATAR: &str =
+    r#"a[href*="https://www.ugcleague.com/players_page.cfm?player_id="] img.img-responsive"#;
 const SELECTOR_CLASS: &str = r#"img.img-rounded[src*="images/tf2/icon/"]"#;
 
 pub struct PlayerParser {
@@ -41,6 +43,7 @@ pub struct PlayerParser {
     selector_team_league: Selector,
     selector_team_since: Selector,
 
+    selector_avatar: Selector,
     selector_class: Selector,
 }
 
@@ -67,6 +70,7 @@ impl PlayerParser {
             selector_team_league: Selector::parse(SELECTOR_PLAYER_TEAM_LEAGUE).unwrap(),
             selector_team_since: Selector::parse(SELECTOR_PLAYER_TEAM_SINCE).unwrap(),
 
+            selector_avatar: Selector::parse(SELECTOR_AVATAR).unwrap(),
             selector_class: Selector::parse(SELECTOR_CLASS).unwrap(),
         }
     }
@@ -96,6 +100,17 @@ impl Parser for PlayerParser {
                 role: "player steam id",
             })?
             .nth_text(3)
+            .unwrap_or_default()
+            .to_string();
+
+        let avatar = document
+            .select(&self.selector_avatar)
+            .next()
+            .ok_or(ParseError::ElementNotFound {
+                selector: SELECTOR_AVATAR,
+                role: "player avatar",
+            })?
+            .attr("src")
             .unwrap_or_default()
             .to_string();
 
@@ -206,6 +221,7 @@ impl Parser for PlayerParser {
 
         Ok(Player {
             name,
+            avatar,
             steam_id: SteamID::from_steam3(&id).unwrap_or_default(),
             honors,
             teams,

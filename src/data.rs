@@ -43,6 +43,7 @@ mod serde_date {
 #[non_exhaustive]
 pub struct Player {
     pub name: String,
+    pub avatar: String,
     pub steam_id: SteamID,
     pub honors: Vec<Honors>,
     pub teams: Vec<TeamMemberShip>,
