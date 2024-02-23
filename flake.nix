@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.05";
+    nixpkgs.url = "nixpkgs/nixos-23.11";
     utils.url = "github:numtide/flake-utils";
     naersk.url = "github:nix-community/naersk";
     naersk.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +17,10 @@
     rust-overlay,
   }:
     utils.lib.eachDefaultSystem (system: let
-      overlays = [(import rust-overlay)];
+      overlays = [
+        (import rust-overlay)
+        (import ./overlay.nix)
+      ];
       pkgs = (import nixpkgs) {
         inherit system overlays;
       };
@@ -46,12 +49,12 @@
       ];
 
       nearskOpt = {
-        pname = "vbsp";
+        pname = "ugc-scraper";
         root = src;
         nativeBuildInputs = deps;
       };
     in rec {
-      packages = {
+      packages = rec {
         check = naersk'.buildPackage (nearskOpt
           // {
             mode = "check";
@@ -69,6 +72,8 @@
           // {
             mode = "check";
           });
+        inherit (pkgs) ugc-api-server;
+        default = ugc-api-server;
       };
 
       devShells = let
@@ -83,11 +88,28 @@
         ];
       in {
         default = mkShell {
+          OPENSSL_NO_VENDOR = 1;
           nativeBuildInputs = [toolchain] ++ tools ++ deps;
         };
         msrv = mkShell {
+          OPENSSL_NO_VENDOR = 1;
           nativeBuildInputs = [msrvToolchain] ++ tools ++ deps;
         };
       };
-    });
+    })
+    // {
+      overlays.default = import ./overlay.nix;
+      nixosModules.default = {
+        pkgs,
+        config,
+        lib,
+        ...
+      }: {
+        imports = [./module.nix];
+        config = lib.mkIf config.services.ugc-api-server.enable {
+          nixpkgs.overlays = [self.overlays.default];
+          services.ugc-api-server.package = lib.mkDefault pkgs.ugc-api-server;
+        };
+      };
+    };
 }
