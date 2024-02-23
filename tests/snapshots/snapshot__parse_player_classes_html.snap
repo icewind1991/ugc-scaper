@@ -1,0 +1,120 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Dirty Sneeds Don",
+  "steam_id": 0,
+  "honors": [
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 32 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 31 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 30 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 29 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 28 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 27 Premium EU",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 26 Premium EU",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 25 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 24 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 23 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 22 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 21 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 20 Euro Platinum",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 19 Euro Gold",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 18 Euro Silver",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 17 Euro Silver",
+      "team": "Xenon"
+    },
+    {
+      "format": "TF2 6vs6",
+      "season": "Season 32 Europe",
+      "team": "Ulku Ocaklari"
+    },
+    {
+      "format": "TF2 6vs6",
+      "season": "Season 31 Europe",
+      "team": "Ulku Ocaklari"
+    },
+    {
+      "format": "TF2 6vs6",
+      "season": "Season 30 Europe",
+      "team": "Ulku Ocaklari"
+    }
+  ],
+  "teams": [
+    {
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      },
+      "league": "TF2 Highlander - Euro Platinum",
+      "since": "2015-09-23"
+    }
+  ],
+  "favorite_classes": [
+    "demoman",
+    "soldier",
+    "scout"
+  ]
+}

@@ -46,6 +46,7 @@ pub struct Player {
     pub steam_id: SteamID,
     pub honors: Vec<Honors>,
     pub teams: Vec<TeamMemberShip>,
+    pub favorite_classes: Vec<Class>,
 }
 
 #[derive(Debug, Clone)]
@@ -100,6 +101,38 @@ pub struct Team {
     pub members: Vec<Membership>,
     pub results: Vec<Record>,
     pub name_changes: Vec<NameChange>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+#[cfg_attr(feature = "serde", serde(rename_all = "lowercase"))]
+pub enum Class {
+    Scout,
+    Soldier,
+    Pyro,
+    Demoman,
+    Heavy,
+    Medic,
+    Sniper,
+    Spy,
+}
+
+impl FromStr for Class {
+    type Err = ();
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "scout" => Ok(Class::Scout),
+            "soldier" => Ok(Class::Soldier),
+            "pyro" => Ok(Class::Pyro),
+            "demoman" => Ok(Class::Demoman),
+            "heavy" => Ok(Class::Heavy),
+            "medic" => Ok(Class::Medic),
+            "sniper" => Ok(Class::Sniper),
+            "spy" => Ok(Class::Spy),
+            _ => Err(()),
+        }
+    }
 }
 
 #[derive(Debug, Clone)]

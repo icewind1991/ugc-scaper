@@ -224,5 +224,6 @@ expression: parsed
       "league": "TF2 Highlander - Euro Platinum",
       "since": "2013-08-09"
     }
-  ]
+  ],
+  "favorite_classes": []
 }

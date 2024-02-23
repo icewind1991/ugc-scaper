@@ -1,9 +1,10 @@
 use super::{ElementExt, Parser};
-use crate::data::{Honors, Player, TeamMemberShip, TeamRef};
+use crate::data::{Class, Honors, Player, TeamMemberShip, TeamRef};
 use crate::parser::{select_last_text, select_text, team_id_from_link, DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
 use std::iter::repeat;
+use std::str::FromStr;
 use steamid_ng::SteamID;
 use time::Date;
 
@@ -23,6 +24,8 @@ const SELECTOR_PLAYER_TEAM_NAME: &str = "span.text-primary b";
 const SELECTOR_PLAYER_TEAM_LEAGUE: &str = "small";
 const SELECTOR_PLAYER_TEAM_SINCE: &str = "small";
 
+const SELECTOR_CLASS: &str = r#"img.img-rounded[src*="images/tf2/icon/"]"#;
+
 pub struct PlayerParser {
     selector_name: Selector,
     selector_id: Selector,
@@ -37,6 +40,8 @@ pub struct PlayerParser {
     selector_team_name: Selector,
     selector_team_league: Selector,
     selector_team_since: Selector,
+
+    selector_class: Selector,
 }
 
 impl Default for PlayerParser {
@@ -61,6 +66,8 @@ impl PlayerParser {
             selector_team_name: Selector::parse(SELECTOR_PLAYER_TEAM_NAME).unwrap(),
             selector_team_league: Selector::parse(SELECTOR_PLAYER_TEAM_LEAGUE).unwrap(),
             selector_team_since: Selector::parse(SELECTOR_PLAYER_TEAM_SINCE).unwrap(),
+
+            selector_class: Selector::parse(SELECTOR_CLASS).unwrap(),
         }
     }
 }
@@ -127,6 +134,16 @@ impl Parser for PlayerParser {
             })
             .collect::<Result<Vec<_>>>()?;
 
+        let favorite_classes = document
+            .select(&self.selector_class)
+            .filter_map(|class| class.attr("src"))
+            .filter_map(|img| {
+                img.strip_prefix("images/tf2/icon/")
+                    .and_then(|class| class.strip_suffix(".jpg"))
+            })
+            .filter_map(|class| Class::from_str(class).ok())
+            .collect::<Vec<_>>();
+
         let teams = document
             .select(&self.selector_team_group)
             .filter(|item| item.select(&self.selector_team_link).next().is_some())
@@ -192,6 +209,7 @@ impl Parser for PlayerParser {
             steam_id: SteamID::from_steam3(&id).unwrap_or_default(),
             honors,
             teams,
+            favorite_classes,
         })
     }
 }
