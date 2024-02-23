@@ -44,6 +44,7 @@ mod serde_date {
 pub struct Player {
     pub name: String,
     pub avatar: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_steam_id_as_string"))]
     pub steam_id: SteamID,
     pub honors: Vec<Honors>,
     pub teams: Vec<TeamMemberShip>,
@@ -151,6 +152,7 @@ pub struct NameChange {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Membership {
     pub name: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_steam_id_as_string"))]
     pub steam_id: SteamID,
     pub role: String,
     #[cfg_attr(feature = "serde", serde(with = "time::serde::iso8601"))]
@@ -170,6 +172,7 @@ pub struct Record {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct RosterHistory {
     pub name: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_steam_id_as_string"))]
     pub steam_id: SteamID,
     #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub joined: Date,
@@ -276,6 +279,7 @@ impl GameMode {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Transaction {
     pub name: String,
+    #[cfg_attr(feature = "serde", serde(with = "serde_steam_id_as_string"))]
     pub steam_id: SteamID,
     pub action: TransactionAction,
     pub team: TeamRef,
@@ -339,4 +343,24 @@ pub struct PreviousSeasonMap {
     pub map: String,
     #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
     pub date: Date,
+}
+
+#[cfg(feature = "serde")]
+mod serde_steam_id_as_string {
+    use serde::{Deserialize, Deserializer, Serialize, Serializer};
+    use steamid_ng::SteamID;
+
+    pub fn serialize<S: Serializer>(steam_id: &SteamID, serializer: S) -> Result<S::Ok, S::Error> {
+        let id = u64::from(*steam_id);
+        format!("{id}").serialize(serializer)
+    }
+
+    #[allow(dead_code)]
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<SteamID, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let id = u64::deserialize(deserializer)?;
+        Ok(SteamID::from(id))
+    }
 }
