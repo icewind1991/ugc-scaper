@@ -49,16 +49,10 @@ impl Parser for TeamRosterHistoryParser {
     fn parse(&self, document: &str) -> Result<Self::Output> {
         let document = Html::parse_document(document);
 
-        let steam_group = document.select(&self.selector_steam_group).next().ok_or(
-            ParseError::ElementNotFound {
-                selector: SELECTOR_STEAM,
-                role: "team steam group",
-            },
-        )?;
+        let steam_group = document.select(&self.selector_steam_group).next();
         let steam_group = steam_group
-            .attr("href")
-            .unwrap_or_default()
-            .replace("http://http", "http");
+            .and_then(|link| link.attr("href"))
+            .map(|href| href.replace("http://http", "http"));
 
         let history = document
             .select(&self.selector_item)

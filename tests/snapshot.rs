@@ -36,6 +36,7 @@ fn test_parse_team_html(input: &str, name: &str) {
 }
 
 #[test_case("team_roster_history_7861.html", "team_roster_history")]
+#[test_case("team_roster_history_2133.html", "team_roster_history_no_group")]
 fn test_parse_team_roster_history_html(input: &str, name: &str) {
     let body = read_to_string(&format!("tests/data/{input}")).unwrap();
     let parser = TeamRosterHistoryParser::new();

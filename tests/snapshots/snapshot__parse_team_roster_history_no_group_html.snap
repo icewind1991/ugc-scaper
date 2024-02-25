@@ -1,0 +1,33 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "steam_group": null,
+  "history": [
+    {
+      "name": "elwood",
+      "steam_id": "76561197961197074",
+      "joined": "2007-10-04",
+      "left": "2008-01-14"
+    },
+    {
+      "name": "crumbles",
+      "steam_id": "76561197963844061",
+      "joined": "2007-10-04",
+      "left": "2008-01-14"
+    },
+    {
+      "name": "AO",
+      "steam_id": "76561197960464501",
+      "joined": "2007-10-04",
+      "left": "2008-01-14"
+    },
+    {
+      "name": "Klone",
+      "steam_id": "76561197961272077",
+      "joined": "2007-10-04",
+      "left": "2008-01-14"
+    }
+  ]
+}

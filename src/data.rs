@@ -172,7 +172,7 @@ pub struct Record {
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 #[non_exhaustive]
 pub struct TeamRosterData {
-    pub steam_group: String,
+    pub steam_group: Option<String>,
     pub history: Vec<RosterHistory>,
 }
 
