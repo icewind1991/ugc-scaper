@@ -55,7 +55,7 @@ impl UgcClient {
     pub async fn player(&self, steam_id: SteamID) -> Result<Player> {
         let res = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/players_page.cfm?player_id={}",
                 u64::from(steam_id)
             ))
@@ -72,7 +72,7 @@ impl UgcClient {
     pub async fn player_team_history(&self, steam_id: SteamID) -> Result<Vec<MembershipHistory>> {
         let res = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/players_page_details.cfm?player_id={}",
                 u64::from(steam_id)
             ))
@@ -89,7 +89,7 @@ impl UgcClient {
     pub async fn team(&self, id: u32) -> Result<Team> {
         let body = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/team_page.cfm?clan_id={}",
                 id
             ))
@@ -104,7 +104,7 @@ impl UgcClient {
     pub async fn team_roster_history(&self, id: u32) -> Result<TeamRosterData> {
         let body = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/team_page_rosterhistory.cfm?clan_id={}",
                 id
             ))
@@ -119,7 +119,7 @@ impl UgcClient {
     pub async fn team_matches(&self, id: u32) -> Result<Vec<TeamSeason>> {
         let body = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/team_page_matches.cfm?clan_id={}",
                 id
             ))
@@ -155,7 +155,7 @@ impl UgcClient {
     pub async fn match_info(&self, id: u32) -> Result<MatchInfo> {
         let body = self
             .client
-            .get(&format!(
+            .get(format!(
                 "https://www.ugcleague.com/matchpage_tf2h.cfm?mid={}",
                 id
             ))

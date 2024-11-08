@@ -33,22 +33,11 @@ pub trait Parser {
 
 trait ElementExt<'a> {
     fn first_text(&self) -> Option<&'a str>;
-    fn nth_text(&self, n: usize) -> Option<&'a str>;
-    fn last_text(&self) -> Option<&'a str>;
 }
 
 impl<'a> ElementExt<'a> for ElementRef<'a> {
     fn first_text(&self) -> Option<&'a str> {
         self.text().map(str::trim).find(|s| !s.is_empty())
-    }
-    fn nth_text(&self, n: usize) -> Option<&'a str> {
-        self.text()
-            .filter(|s| !s.trim().is_empty())
-            .nth(n - 1)
-            .map(str::trim)
-    }
-    fn last_text(&self) -> Option<&'a str> {
-        self.text().map(str::trim).filter(|s| !s.is_empty()).last()
     }
 }
 
