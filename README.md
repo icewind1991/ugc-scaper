@@ -1,6 +1,6 @@
 # ugc-scraper
 
-*We have ugc api at home*
+_We have ugc api at home_
 
 ## Usage
 

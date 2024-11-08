@@ -1,32 +1,33 @@
-{
-  rustPlatform,
-  openssl,
-  pkg-config,
-  lib,
-}: let
+{ rustPlatform
+, openssl
+, pkg-config
+, lib
+,
+}:
+let
   inherit (lib.sources) sourceByRegex;
   inherit (builtins) fromTOML readFile;
-  src = sourceByRegex ./api-server ["Cargo.*" "(src)(/.*)?" "README.md"];
+  src = sourceByRegex ./api-server [ "Cargo.*" "(src)(/.*)?" "README.md" ];
   version = (fromTOML (readFile api-server/Cargo.toml)).package.version;
 in
-  rustPlatform.buildRustPackage rec {
-    pname = "ugc-api-server";
+rustPlatform.buildRustPackage rec {
+  pname = "ugc-api-server";
 
-    inherit src version;
+  inherit src version;
 
-    buildInputs = [
-      openssl
-    ];
+  buildInputs = [
+    openssl
+  ];
 
-    nativeBuildInputs = [
-      pkg-config
-    ];
+  nativeBuildInputs = [
+    pkg-config
+  ];
 
-    OPENSSL_NO_VENDOR = 1;
+  OPENSSL_NO_VENDOR = 1;
 
-    doCheck = false;
+  doCheck = false;
 
-    cargoLock = {
-      lockFile = ./api-server/Cargo.lock;
-    };
-  }
+  cargoLock = {
+    lockFile = ./api-server/Cargo.lock;
+  };
+}

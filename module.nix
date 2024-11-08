@@ -1,12 +1,12 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 with lib; let
   cfg = config.services.ugc-api-server;
-in {
+in
+{
   options.services.ugc-api-server = {
     enable = mkEnableOption "ugc api server";
 
@@ -30,12 +30,12 @@ in {
 
   config = mkIf cfg.enable {
     systemd.services."ugc-api-server" = {
-      wantedBy = ["multi-user.target"];
-      after = ["network-online.target"];
-      wants = ["network-online.target"];
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network-online.target" ];
+      wants = [ "network-online.target" ];
       environment = {
         RUST_LOG = cfg.logLevel;
-        PORT = toString  cfg.port;
+        PORT = toString cfg.port;
       };
 
       serviceConfig = {
@@ -61,7 +61,7 @@ in {
         RestrictAddressFamilies = "AF_INET AF_INET6";
         RestrictRealtime = true;
         ProtectProc = "noaccess";
-        SystemCallFilter = ["@system-service" "~@resources" "~@privileged"];
+        SystemCallFilter = [ "@system-service" "~@resources" "~@privileged" ];
         PrivateUsers = true;
         ProcSubset = "pid";
       };

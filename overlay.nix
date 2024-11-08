@@ -1,3 +1,3 @@
 final: prev: {
-  ugc-api-server = final.callPackage ./package.nix {};
+  ugc-api-server = final.callPackage ./package.nix { };
 }

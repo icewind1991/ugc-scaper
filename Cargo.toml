@@ -2,24 +2,24 @@
 name = "ugc-scraper"
 version = "0.4.1"
 edition = "2021"
-rust-version = "1.67.0"
+rust-version = "1.70.0"
 description = "Scraper for ugcleague.com"
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/icewind1991/ugc-scaper"
 
 [dependencies]
-tokio = "1.36.0"
-reqwest = "0.11.24"
+tokio = "1.38.1"
+reqwest = "0.11.27"
 scraper = "0.18.1"
-thiserror = "1.0.57"
-time = { version = "0.3.34", features = ["parsing", "macros"] }
+thiserror = "2.0.1"
+time = { version = "0.3.36", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
-serde = { version = "1.0.197", features = ["derive"], optional = true }
+serde = { version = "1.0.214", features = ["derive"], optional = true }
 
 [dev-dependencies]
-tokio = { version = "1.36.0", features = ["macros", "rt-multi-thread", "rt"] }
+tokio = { version = "1.38.1", features = ["macros", "rt-multi-thread", "rt"] }
 main_error = "0.1.2"
-insta = { version = "1.35.1", features = ["json"] }
+insta = { version = "1.41.1", features = ["json"] }
 test-case = "3.3.1"
 
 [profile.dev.package]
