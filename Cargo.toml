@@ -9,8 +9,8 @@ homepage = "https://github.com/icewind1991/ugc-scaper"
 
 [dependencies]
 tokio = "1.38.1"
-reqwest = "0.11.27"
-scraper = "0.18.1"
+reqwest = "0.12.9"
+scraper = "0.21.0"
 thiserror = "2.0.1"
 time = { version = "0.3.36", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
