@@ -8,16 +8,16 @@ license = "MIT OR Apache-2.0"
 homepage = "https://github.com/icewind1991/ugc-scaper"
 
 [dependencies]
-tokio = "1.38.1"
+tokio = "1.41.1"
 reqwest = "0.12.9"
 scraper = "0.21.0"
-thiserror = "2.0.1"
+thiserror = "2.0.3"
 time = { version = "0.3.36", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
-serde = { version = "1.0.214", features = ["derive"], optional = true }
+serde = { version = "1.0.215", features = ["derive"], optional = true }
 
 [dev-dependencies]
-tokio = { version = "1.38.1", features = ["macros", "rt-multi-thread", "rt"] }
+tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread", "rt"] }
 main_error = "0.1.2"
 insta = { version = "1.41.1", features = ["json"] }
 test-case = "3.3.1"
