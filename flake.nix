@@ -12,6 +12,11 @@
   };
   outputs = { mill-scale, ... }: mill-scale ./. {
     extraFilesRegex = [ ".*\.html" ];
+    tools = pkgs: with pkgs; [
+      bacon
+      cargo-insta
+      sqlx-cli
+    ];
     nixosModules = { outputs, ... }: {
       default =
         { pkgs
