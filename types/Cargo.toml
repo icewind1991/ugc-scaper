@@ -2,6 +2,10 @@
 name = "ugc-scraper-types"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.70.0"
+description = "Scraper for ugcleague.com"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/icewind1991/ugc-scaper"
 
 [dependencies]
 steamid-ng = "1.0.0"
