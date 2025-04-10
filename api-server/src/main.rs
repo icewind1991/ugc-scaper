@@ -170,7 +170,7 @@ async fn match_page(
     Path(id): Path<u32>,
     State(state): State<AppState>,
 ) -> Result<impl IntoResponse, ApiError> {
-    debug!(team = id, "requesting match");
+    debug!(r#match = id, "requesting match");
     let response = state.client.match_info(id).await?;
     Ok(Json(response))
 }
