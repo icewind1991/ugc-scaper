@@ -13,12 +13,11 @@ use crate::parser::{
 };
 pub use error::*;
 use reqwest::redirect::Policy;
-use reqwest::{Client, StatusCode};
+use reqwest::{Client, Response, StatusCode};
 pub use steamid_ng::SteamID;
 
 pub type Result<T, E = ScrapeError> = std::result::Result<T, E>;
 
-#[derive(Default)]
 pub struct UgcClient {
     client: Client,
     player_parser: PlayerParser,
@@ -31,6 +30,12 @@ pub struct UgcClient {
     match_page_parser: MatchPageParser,
     transaction_parser: TransactionParser,
     map_history_parser: MapHistoryParser,
+}
+
+impl Default for UgcClient {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 /// "API client" for ugc by scraping the website
@@ -53,35 +58,32 @@ impl UgcClient {
 
     /// Retrieve player information
     pub async fn player(&self, steam_id: SteamID) -> Result<Player> {
-        let res = self
+        let body = self
             .client
             .get(format!(
                 "https://www.ugcleague.com/players_page.cfm?player_id={}",
                 u64::from(steam_id)
             ))
             .send()
+            .await?
+            .check_not_found()?
+            .text()
             .await?;
-        if res.status() == StatusCode::FOUND {
-            return Err(ScrapeError::NotFound);
-        }
-        let body = res.text().await?;
         self.player_parser.parse(&body)
     }
 
     /// Retrieve team membership history for a player
     pub async fn player_team_history(&self, steam_id: SteamID) -> Result<Vec<MembershipHistory>> {
-        let res = self
+        let body = self
             .client
             .get(format!(
                 "https://www.ugcleague.com/players_page_details.cfm?player_id={}",
                 u64::from(steam_id)
             ))
             .send()
+            .await?
+            .check_not_found()?
             .await?;
-        if res.status() == StatusCode::FOUND {
-            return Err(ScrapeError::NotFound);
-        }
-        let body = res.text().await?;
         self.player_detail_parser.parse(&body)
     }
 
@@ -161,6 +163,7 @@ impl UgcClient {
             ))
             .send()
             .await?
+            .check_not_found()?
             .text()
             .await?;
         self.match_page_parser.parse(&body)
@@ -182,5 +185,19 @@ impl UgcClient {
         );
         let body = self.client.get(link).send().await?.text().await?;
         self.map_history_parser.parse(&body)
+    }
+}
+
+trait ResponseExt: Sized {
+    fn check_not_found(self) -> Result<Self, ScrapeError>;
+}
+
+impl ResponseExt for Response {
+    fn check_not_found(self) -> Result<Self, ScrapeError> {
+        if self.status() == StatusCode::FOUND {
+            Err(ScrapeError::NotFound)
+        } else {
+            Ok(self)
+        }
     }
 }
