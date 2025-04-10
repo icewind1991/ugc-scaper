@@ -14,7 +14,7 @@ scraper = "0.21.0"
 thiserror = "2.0.3"
 time = { version = "0.3.36", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
-serde = { version = "1.0.215", features = ["derive"], optional = true }
+ugc-scraper-types = { version = "0.1.0", path = "./types" }
 
 [dev-dependencies]
 tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread", "rt"] }
@@ -27,5 +27,5 @@ insta.opt-level = 3
 similar.opt-level = 3
 
 [features]
-serde = ["dep:serde", "time/serde", "time/formatting"]
+serde = ["ugc-scraper-types/serde"]
 default = ["serde"]

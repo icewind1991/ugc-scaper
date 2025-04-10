@@ -1,4 +1,5 @@
 use thiserror::Error;
+use ugc_scraper_types::MallFormedTransaction;
 
 #[derive(Debug, Error)]
 pub enum ScrapeError {
@@ -28,4 +29,19 @@ pub enum ParseError {
     InvalidLink { link: String, role: &'static str },
     #[error("Invalid date for {role}: {date}")]
     InvalidDate { date: String, role: &'static str },
+}
+
+impl From<MallFormedTransaction> for ParseError {
+    fn from(transaction: MallFormedTransaction) -> Self {
+        ParseError::InvalidText {
+            role: "transaction",
+            text: transaction.text,
+        }
+    }
+}
+
+impl From<MallFormedTransaction> for ScrapeError {
+    fn from(transaction: MallFormedTransaction) -> Self {
+        ScrapeError::Parse(ParseError::from(transaction))
+    }
 }

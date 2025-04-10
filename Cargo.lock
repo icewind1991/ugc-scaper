@@ -1851,12 +1851,21 @@ dependencies = [
  "main_error",
  "reqwest",
  "scraper",
- "serde",
  "steamid-ng",
  "test-case",
  "thiserror 2.0.3",
  "time",
  "tokio",
+ "ugc-scraper-types",
+]
+
+[[package]]
+name = "ugc-scraper-types"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "steamid-ng",
+ "time",
 ]
 
 [[package]]
