@@ -12,6 +12,11 @@
   };
   outputs = { mill-scale, ... }: mill-scale ./. {
     extraFilesRegex = [ ".*\.html" ];
+    withOverlays = [(import ./overlay.nix)];
+    packages = {
+      ugc-api-server = pkgs: pkgs.ugc-api-server;
+      ugc-api-archiver = pkgs: pkgs.ugc-api-archiver;
+    };
     tools = pkgs: with pkgs; [
       bacon
       cargo-insta

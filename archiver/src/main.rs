@@ -1,0 +1,84 @@
+mod archive;
+mod client;
+mod config;
+
+use crate::archive::Archive;
+use crate::client::{UgcClient, UgcClientError};
+use crate::config::Config;
+use clap::{Parser, Subcommand};
+use main_error::MainResult;
+use std::path::PathBuf;
+use std::time::Duration;
+use tokio::time::sleep;
+use tracing::{error, info, span, warn, Level};
+
+#[derive(Debug, Parser)]
+struct Args {
+    #[clap(long, short)]
+    config: PathBuf,
+    #[command(subcommand)]
+    command: Command,
+}
+
+#[derive(Debug, Subcommand)]
+enum Command {
+    Matches,
+}
+
+const LAST_MATCH: u32 = 117047;
+const MAYBE_FIRST_MATCH: u32 = 14486;
+
+#[tokio::main]
+async fn main() -> MainResult {
+    tracing_subscriber::fmt::init();
+    let args = Args::parse();
+    let config = Config::read(&args.config)?;
+    let client = UgcClient::new(config.api.url);
+    let archive = Archive::new(&config.db.url, &config.db.password()?).await?;
+
+    match args.command {
+        Command::Matches => {
+            archive_matches(&client, &archive).await?;
+        }
+    }
+    Ok(())
+}
+
+async fn archive_matches(client: &UgcClient, archive: &Archive) -> MainResult {
+    let next_match = archive
+        .get_last_match_id()
+        .await?
+        .unwrap_or(MAYBE_FIRST_MATCH - 1)
+        + 1;
+    for id in next_match..=LAST_MATCH {
+        let _span = span!(Level::INFO, "archive_match", id = id).entered();
+        match client.get_match(id).await.check_not_found() {
+            Ok(Some(match_data)) => {
+                info!("storing match");
+                archive.store_match(id, match_data).await?;
+            }
+            Ok(None) => {
+                warn!("match not found");
+            }
+            Err(e) => {
+                error!("error fetching match: {}", e);
+            }
+        }
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+trait NotFoundResultExt<T>: Sized {
+    fn check_not_found(self) -> Result<Option<T>, UgcClientError>;
+}
+
+impl<T> NotFoundResultExt<T> for Result<T, UgcClientError> {
+    fn check_not_found(self) -> Result<Option<T>, UgcClientError> {
+        match self {
+            Ok(x) => Ok(Some(x)),
+            Err(UgcClientError::NotFound { .. }) => Ok(None),
+            Err(e) => Err(e),
+        }
+    }
+}
