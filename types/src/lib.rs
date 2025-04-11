@@ -266,6 +266,7 @@ pub struct MatchInfo {
     pub score_away: u8,
 }
 
+#[derive(Debug, Clone, Copy)]
 pub enum GameMode {
     Highlander,
     Sixes,
