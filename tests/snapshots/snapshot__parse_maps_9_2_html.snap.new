@@ -1,0 +1,3106 @@
+---
+source: tests/snapshot.rs
+assertion_line: 113
+expression: parsed
+snapshot_kind: text
+---
+{
+  "current": {
+    "season": 43,
+    "maps": [
+      {
+        "week": 1,
+        "map": "pl_vigil_rc10",
+        "date": "Mon, Aug 05",
+        "na_date": "Sun, Aug 04"
+      },
+      {
+        "week": 2,
+        "map": "koth_warmtic_f10",
+        "date": "Mon, Aug 12",
+        "na_date": "Sun, Aug 11"
+      },
+      {
+        "week": 3,
+        "map": "pl_upward_f12",
+        "date": "Mon, Aug 19",
+        "na_date": "Sun, Aug 18"
+      },
+      {
+        "week": 4,
+        "map": "koth_proot_b5b",
+        "date": "Mon, Aug 26",
+        "na_date": "Sun, Aug 25"
+      },
+      {
+        "week": 5,
+        "map": "cp_steel_f12",
+        "date": "Mon, Sep 02",
+        "na_date": "Sun, Sep 01"
+      },
+      {
+        "week": 6,
+        "map": "pl_divulgence_b4b",
+        "date": "Mon, Sep 09",
+        "na_date": "Sun, Sep 08"
+      },
+      {
+        "week": 7,
+        "map": "koth_ashville_final1",
+        "date": "Mon, Sep 16",
+        "na_date": "Sun, Sep 15"
+      },
+      {
+        "week": 8,
+        "map": "pl_swiftwater_final1",
+        "date": "Mon, Sep 23",
+        "na_date": "Sun, Sep 22"
+      },
+      {
+        "week": 9,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Sep 30",
+        "na_date": "Sun, Sep 29"
+      },
+      {
+        "week": 10,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Oct 07",
+        "na_date": "Sun, Oct 06"
+      },
+      {
+        "week": 11,
+        "map": "Best of 3 Maps",
+        "date": "Mon, Oct 14",
+        "na_date": "Sun, Oct 13"
+      }
+    ]
+  },
+  "previous": [
+    {
+      "season": 42,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_vigil_rc10",
+          "date": "2024-03-04"
+        },
+        {
+          "week": 2,
+          "map": "koth_warmtic_f10",
+          "date": "2024-03-11"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward_f11",
+          "date": "2024-03-18"
+        },
+        {
+          "week": 4,
+          "map": "koth_proot_b6c-alt2",
+          "date": "2024-03-25"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel_f12",
+          "date": "2024-04-01"
+        },
+        {
+          "week": 6,
+          "map": "pl_divulgence_b4b",
+          "date": "2024-04-08"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_final",
+          "date": "2024-04-15"
+        },
+        {
+          "week": 8,
+          "map": "pl_swiftwater_final1",
+          "date": "2024-04-22"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2024-04-29"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2024-05-06"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2024-05-13"
+        }
+      ]
+    },
+    {
+      "season": 41,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_ashville_final",
+          "date": "2023-10-09"
+        },
+        {
+          "week": 2,
+          "map": "pl_upward_f10",
+          "date": "2023-10-16"
+        },
+        {
+          "week": 3,
+          "map": "koth_proot_b6b",
+          "date": "2023-10-23"
+        },
+        {
+          "week": 4,
+          "map": "pl_swiftwater_final1",
+          "date": "2023-10-30"
+        },
+        {
+          "week": 5,
+          "map": "koth_product_final",
+          "date": "2023-11-06"
+        },
+        {
+          "week": 6,
+          "map": "pl_vigil_rc10",
+          "date": "2023-11-13"
+        },
+        {
+          "week": 7,
+          "map": "koth_warmtic_f10",
+          "date": "2023-11-20"
+        },
+        {
+          "week": 8,
+          "map": "cp_steel_f12",
+          "date": "2023-11-27"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2023-12-04"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2023-12-11"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2023-12-18"
+        }
+      ]
+    },
+    {
+      "season": 40,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_product_final",
+          "date": "2023-06-19"
+        },
+        {
+          "week": 2,
+          "map": "pl_upward_f10",
+          "date": "2023-06-26"
+        },
+        {
+          "week": 3,
+          "map": "koth_warmtic_f10",
+          "date": "2023-07-03"
+        },
+        {
+          "week": 4,
+          "map": "pl_vigil_rc10",
+          "date": "2023-07-10"
+        },
+        {
+          "week": 5,
+          "map": "koth_proot_b5b",
+          "date": "2023-07-17"
+        },
+        {
+          "week": 6,
+          "map": "pl_swiftwater_final1",
+          "date": "2023-07-24"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_final",
+          "date": "2023-07-31"
+        },
+        {
+          "week": 8,
+          "map": "cp_steel_f12",
+          "date": "2023-08-07"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2023-08-14"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2023-08-21"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2023-08-28"
+        },
+        {
+          "week": 12,
+          "map": "",
+          "date": "2023-09-04"
+        }
+      ]
+    },
+    {
+      "season": 39,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_vigil_rc9",
+          "date": "2023-02-13"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_final",
+          "date": "2023-02-20"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward_f10",
+          "date": "2023-02-27"
+        },
+        {
+          "week": 4,
+          "map": "koth_proot_b5b",
+          "date": "2023-03-06"
+        },
+        {
+          "week": 5,
+          "map": "pl_swiftwater_final1",
+          "date": "2023-03-13"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_final",
+          "date": "2023-03-20"
+        },
+        {
+          "week": 7,
+          "map": "cp_caldera_rc2",
+          "date": "2023-03-27"
+        },
+        {
+          "week": 8,
+          "map": "koth_clearcut_b15d",
+          "date": "2023-04-03"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-10"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-17"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2023-04-24"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2023-05-01"
+        }
+      ]
+    },
+    {
+      "season": 38,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_ashville_final",
+          "date": "2022-10-03"
+        },
+        {
+          "week": 2,
+          "map": "pl_borneo_f2",
+          "date": "2022-10-10"
+        },
+        {
+          "week": 3,
+          "map": "koth_cascade",
+          "date": "2022-10-17"
+        },
+        {
+          "week": 4,
+          "map": "pl_vigil_rc9",
+          "date": "2022-10-24"
+        },
+        {
+          "week": 5,
+          "map": "koth_product_final",
+          "date": "2022-10-31"
+        },
+        {
+          "week": 6,
+          "map": "pl_upward_f10",
+          "date": "2022-11-07"
+        },
+        {
+          "week": 7,
+          "map": "koth_clearcut_b15d",
+          "date": "2022-11-14"
+        },
+        {
+          "week": 8,
+          "map": "cp_steel_f12",
+          "date": "2022-11-21"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-11-28"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-05"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-12"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2022-12-19"
+        }
+      ]
+    },
+    {
+      "season": 37,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_product_final",
+          "date": "2022-06-06"
+        },
+        {
+          "week": 2,
+          "map": "pl_vigil_rc9",
+          "date": "2022-06-13"
+        },
+        {
+          "week": 3,
+          "map": "koth_ashville_rc2d",
+          "date": "2022-06-20"
+        },
+        {
+          "week": 4,
+          "map": "pl_swiftwater_final1",
+          "date": "2022-06-27"
+        },
+        {
+          "week": 5,
+          "map": "koth_lakeside_r2",
+          "date": "2022-07-04"
+        },
+        {
+          "week": 6,
+          "map": "cp_steel_f10",
+          "date": "2022-07-11"
+        },
+        {
+          "week": 7,
+          "map": "koth_cascade",
+          "date": "2022-07-18"
+        },
+        {
+          "week": 8,
+          "map": "pl_upward_f8",
+          "date": "2022-07-25"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-01"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-08"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-08-15"
+        }
+      ]
+    },
+    {
+      "season": 36,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward_f5",
+          "date": "2022-01-31"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_r2",
+          "date": "2022-02-07"
+        },
+        {
+          "week": 3,
+          "map": "pl_cornwater_b7b",
+          "date": "2022-02-14"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_final",
+          "date": "2022-02-21"
+        },
+        {
+          "week": 5,
+          "map": "pl_vigil_rc9",
+          "date": "2022-02-28"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc2d",
+          "date": "2022-03-07"
+        },
+        {
+          "week": 7,
+          "map": "cp_steel_f9",
+          "date": "2022-03-14"
+        },
+        {
+          "week": 8,
+          "map": "pl_borneo_f1",
+          "date": "2022-03-21"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2022-03-28"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-04"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2022-04-11"
+        }
+      ]
+    },
+    {
+      "season": 35,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_vigil_rc7",
+          "date": "2021-10-04"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_final",
+          "date": "2021-10-11"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward_f1",
+          "date": "2021-10-18"
+        },
+        {
+          "week": 4,
+          "map": "koth_cascade_v2_b5",
+          "date": "2021-10-25"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel_f6",
+          "date": "2021-11-01"
+        },
+        {
+          "week": 6,
+          "map": "pl_prowater_b12",
+          "date": "2021-11-08"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1_nb7",
+          "date": "2021-11-15"
+        },
+        {
+          "week": 8,
+          "map": "pl_swiftwater_final1",
+          "date": "2021-11-22"
+        },
+        {
+          "week": 9,
+          "map": "Playoffs",
+          "date": "2021-11-29"
+        },
+        {
+          "week": 10,
+          "map": "Playoff Week 2",
+          "date": "2021-12-06"
+        },
+        {
+          "week": 11,
+          "map": "Playoff Week 3",
+          "date": "2021-12-13"
+        }
+      ]
+    },
+    {
+      "season": 34,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2021-06-14"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rcx",
+          "date": "2021-06-21"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2021-06-28"
+        },
+        {
+          "week": 4,
+          "map": "koth_ashville_rc1_nb7",
+          "date": "2021-07-05"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel_f4",
+          "date": "2021-07-12"
+        },
+        {
+          "week": 6,
+          "map": "pl_vigil_rc7",
+          "date": "2021-07-19"
+        },
+        {
+          "week": 7,
+          "map": "koth_lakeside_r2",
+          "date": "2021-07-26"
+        },
+        {
+          "week": 8,
+          "map": "pl_borneo",
+          "date": "2021-08-02"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-09"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-16"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2021-08-23"
+        }
+      ]
+    },
+    {
+      "season": 33,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_cascade_v2_b5",
+          "date": "2021-02-15"
+        },
+        {
+          "week": 2,
+          "map": "pl_borneo",
+          "date": "2021-02-22"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_rcx",
+          "date": "2021-03-01"
+        },
+        {
+          "week": 4,
+          "map": "pl_swiftwater_final1",
+          "date": "2021-03-08"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2021-03-15"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1_nb7",
+          "date": "2021-03-22"
+        },
+        {
+          "week": 7,
+          "map": "pl_upward",
+          "date": "2021-03-29"
+        },
+        {
+          "week": 8,
+          "map": "koth_lakeside_r",
+          "date": "2021-04-05"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-12"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2021-04-19"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2021-04-26"
+        }
+      ]
+    },
+    {
+      "season": 32,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_lakeside_r",
+          "date": "2020-10-05"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rcx",
+          "date": "2020-10-12"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2020-10-19"
+        },
+        {
+          "week": 4,
+          "map": "koth_clearcut_b15c",
+          "date": "2020-10-26"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2020-11-02"
+        },
+        {
+          "week": 6,
+          "map": "pl_upward",
+          "date": "2020-11-09"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc2b",
+          "date": "2020-11-16"
+        },
+        {
+          "week": 8,
+          "map": "pl_prowater_b11",
+          "date": "2020-11-23"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-11-30"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-12-07"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2020-12-14"
+        }
+      ]
+    },
+    {
+      "season": 31,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2020-06-08"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2020-06-15"
+        },
+        {
+          "week": 3,
+          "map": "pl_summercoast_rc8d",
+          "date": "2020-06-22"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rcx",
+          "date": "2020-06-29"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2020-07-06"
+        },
+        {
+          "week": 6,
+          "map": "pl_swiftwater_final1",
+          "date": "2020-07-13"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2020-07-20"
+        },
+        {
+          "week": 8,
+          "map": "pl_badwater_pro_v12",
+          "date": "2020-07-27"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-03"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-08-10"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2020-08-17"
+        }
+      ]
+    },
+    {
+      "season": 30,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_lakeside_final",
+          "date": "2020-02-17"
+        },
+        {
+          "week": 2,
+          "map": "pl_badwater_pro_v12",
+          "date": "2020-02-24"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_rcx",
+          "date": "2020-03-02"
+        },
+        {
+          "week": 4,
+          "map": "pl_swiftwater_final1",
+          "date": "2020-03-09"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2020-03-16"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1",
+          "date": "2020-03-23"
+        },
+        {
+          "week": 7,
+          "map": "pl_upward",
+          "date": "2020-03-30"
+        },
+        {
+          "week": 8,
+          "map": "koth_cascade_rc1a",
+          "date": "2020-04-06"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-13"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2020-04-20"
+        },
+        {
+          "week": 11,
+          "map": "Grand Finals 3 Maps",
+          "date": "2020-04-27"
+        }
+      ]
+    },
+    {
+      "season": 29,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2019-10-07"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2019-10-14"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2019-10-21"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rcx",
+          "date": "2019-10-28"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2019-11-04"
+        },
+        {
+          "week": 6,
+          "map": "pl_borneo",
+          "date": "2019-11-11"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2019-11-18"
+        },
+        {
+          "week": 8,
+          "map": "pl_vigil_rc6",
+          "date": "2019-11-25"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-02"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-09"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2019-12-16"
+        }
+      ]
+    },
+    {
+      "season": 28,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2019-06-17"
+        },
+        {
+          "week": 2,
+          "map": "koth_ashville_rc1",
+          "date": "2019-06-24"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2019-07-01"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rcx",
+          "date": "2019-07-08"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2019-07-15"
+        },
+        {
+          "week": 6,
+          "map": "pl_vigil_rc5",
+          "date": "2019-07-22"
+        },
+        {
+          "week": 7,
+          "map": "Best of 3 Maps",
+          "date": "2019-07-29"
+        },
+        {
+          "week": 8,
+          "map": "Best of 3 Maps",
+          "date": "2019-08-05"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2019-08-12"
+        }
+      ]
+    },
+    {
+      "season": 27,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_swiftwater_final1",
+          "date": "2019-01-28"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2019-02-04"
+        },
+        {
+          "week": 3,
+          "map": "pl_borneo",
+          "date": "2019-02-11"
+        },
+        {
+          "week": 4,
+          "map": "cp_steel",
+          "date": "2019-02-18"
+        },
+        {
+          "week": 5,
+          "map": "koth_product_rc9",
+          "date": "2019-02-25"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1",
+          "date": "2019-03-04"
+        },
+        {
+          "week": 7,
+          "map": "pl_badwater_pro_v12",
+          "date": "2019-03-11"
+        },
+        {
+          "week": 8,
+          "map": "pl_upward",
+          "date": "2019-03-18"
+        },
+        {
+          "week": 9,
+          "map": "Playoffs",
+          "date": "2019-03-25"
+        },
+        {
+          "week": 10,
+          "map": "Playoff week 2",
+          "date": "2019-04-01"
+        },
+        {
+          "week": 11,
+          "map": "Playoffs",
+          "date": "2019-04-08"
+        },
+        {
+          "week": 12,
+          "map": "Playoffs",
+          "date": "2019-04-08"
+        },
+        {
+          "week": 13,
+          "map": "Playoffs",
+          "date": "2019-04-15"
+        }
+      ]
+    },
+    {
+      "season": 26,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_swiftwater_final1",
+          "date": "2018-10-01"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2018-10-08"
+        },
+        {
+          "week": 3,
+          "map": "pl_borneo",
+          "date": "2018-10-15"
+        },
+        {
+          "week": 4,
+          "map": "cp_gullywash_final1",
+          "date": "2018-10-22"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2018-10-29"
+        },
+        {
+          "week": 6,
+          "map": "koth_product_rc9",
+          "date": "2018-11-05"
+        },
+        {
+          "week": 7,
+          "map": "pl_upward",
+          "date": "2018-11-12"
+        },
+        {
+          "week": 8,
+          "map": "koth_ashville_rc1",
+          "date": "2018-11-19"
+        },
+        {
+          "week": 9,
+          "map": "Playoff week 2",
+          "date": "2018-11-26"
+        },
+        {
+          "week": 10,
+          "map": "Playoff week 2",
+          "date": "2018-12-03"
+        },
+        {
+          "week": 11,
+          "map": "Playoff week 2",
+          "date": "2018-12-10"
+        },
+        {
+          "week": 12,
+          "map": "Dbl Elim Week",
+          "date": "2018-12-13"
+        },
+        {
+          "week": 13,
+          "map": "Dbl Elim Week",
+          "date": "2018-12-16"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2018-12-17"
+        },
+        {
+          "week": 15,
+          "map": "Best of 3 Maps",
+          "date": "2018-12-20"
+        }
+      ]
+    },
+    {
+      "season": 25,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2018-05-21"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rc9",
+          "date": "2018-06-04"
+        },
+        {
+          "week": 3,
+          "map": "cp_gullywash_final1",
+          "date": "2018-06-11"
+        },
+        {
+          "week": 4,
+          "map": "pl_borneo",
+          "date": "2018-06-18"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2018-06-25"
+        },
+        {
+          "week": 6,
+          "map": "koth_lakeside_final",
+          "date": "2018-07-02"
+        },
+        {
+          "week": 7,
+          "map": "pl_vigil_rc4",
+          "date": "2018-07-09"
+        },
+        {
+          "week": 8,
+          "map": "koth_cascade_rc1a",
+          "date": "2018-07-16"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2018-07-23"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2018-07-30"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2018-08-02"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2018-08-06"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2018-08-09"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2018-08-13"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2018-08-16"
+        }
+      ]
+    },
+    {
+      "season": 24,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2018-01-22"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2018-01-29"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2018-02-05"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rc8",
+          "date": "2018-02-12"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2018-02-19"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1",
+          "date": "2018-02-26"
+        },
+        {
+          "week": 7,
+          "map": "pl_badwater_pro_v12",
+          "date": "2018-03-05"
+        },
+        {
+          "week": 8,
+          "map": "koth_ramjam_rc1",
+          "date": "2018-03-12"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2018-03-19"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2018-03-26"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2018-03-29"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2018-04-02"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2018-04-05"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2018-04-09"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2018-04-12"
+        }
+      ]
+    },
+    {
+      "season": 23,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_borneo",
+          "date": "2017-09-11"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2017-09-18"
+        },
+        {
+          "week": 3,
+          "map": "cp_vanguard",
+          "date": "2017-09-25"
+        },
+        {
+          "week": 4,
+          "map": "pl_swiftwater_final1",
+          "date": "2017-10-02"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2017-10-09"
+        },
+        {
+          "week": 6,
+          "map": "koth_product_rc8",
+          "date": "2017-10-16"
+        },
+        {
+          "week": 7,
+          "map": "pl_upward",
+          "date": "2017-10-23"
+        },
+        {
+          "week": 8,
+          "map": "koth_cascade_b6",
+          "date": "2017-10-30"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-06"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-13"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-16"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-20"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2017-11-23"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-11-27"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-11-30"
+        }
+      ]
+    },
+    {
+      "season": 22,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2017-05-15"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2017-05-22"
+        },
+        {
+          "week": 3,
+          "map": "cp_gullywash_final1",
+          "date": "2017-06-05"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rc8",
+          "date": "2017-06-12"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2017-06-19"
+        },
+        {
+          "week": 6,
+          "map": "pl_millstone_ugc_7",
+          "date": "2017-06-26"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2017-07-03"
+        },
+        {
+          "week": 8,
+          "map": "pl_vigil_b5",
+          "date": "2017-07-10"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2017-07-17"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2017-07-24"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-07-27"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2017-07-31"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2017-08-03"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-08-07"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-08-10"
+        }
+      ]
+    },
+    {
+      "season": 21,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2017-01-23"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rc8",
+          "date": "2017-01-30"
+        },
+        {
+          "week": 3,
+          "map": "pl_swiftwater_final1",
+          "date": "2017-02-06"
+        },
+        {
+          "week": 4,
+          "map": "koth_lakeside_final",
+          "date": "2017-02-13"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2017-02-20"
+        },
+        {
+          "week": 6,
+          "map": "cp_process_final",
+          "date": "2017-02-27"
+        },
+        {
+          "week": 7,
+          "map": "pl_badwater_pro_v9",
+          "date": "2017-03-06"
+        },
+        {
+          "week": 8,
+          "map": "koth_ashville_rc1",
+          "date": "2017-03-13"
+        },
+        {
+          "week": 9,
+          "map": "Best of 3 Maps",
+          "date": "2017-03-20"
+        },
+        {
+          "week": 10,
+          "map": "Best of 3 Maps",
+          "date": "2017-03-27"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2017-03-30"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2017-04-03"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2017-04-06"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-04-10"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2017-04-13"
+        }
+      ]
+    },
+    {
+      "season": 20,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_swiftwater_final1",
+          "date": "2016-09-26"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2016-10-03"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward",
+          "date": "2016-10-10"
+        },
+        {
+          "week": 4,
+          "map": "koth_ashville_rc1",
+          "date": "2016-10-17"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2016-10-24"
+        },
+        {
+          "week": 6,
+          "map": "pl_borneo",
+          "date": "2016-10-31"
+        },
+        {
+          "week": 7,
+          "map": "pl_millstone_ugc_4",
+          "date": "2016-11-07"
+        },
+        {
+          "week": 8,
+          "map": "koth_product_rc8",
+          "date": "2016-11-14"
+        },
+        {
+          "week": 9,
+          "map": "pl_upward",
+          "date": "2016-11-21"
+        },
+        {
+          "week": 10,
+          "map": "koth_ashville_rc1",
+          "date": "2016-11-28"
+        },
+        {
+          "week": 11,
+          "map": "Best of 3 Maps",
+          "date": "2016-12-01"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2016-11-14"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2016-11-21"
+        },
+        {
+          "week": 14,
+          "map": "Best of 3 Maps",
+          "date": "2016-11-28"
+        },
+        {
+          "week": 15,
+          "map": "Best of 3 Maps",
+          "date": "2016-12-05"
+        },
+        {
+          "week": 16,
+          "map": "Best of 3 Maps",
+          "date": "2016-12-08"
+        }
+      ]
+    },
+    {
+      "season": 19,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_borneo",
+          "date": "2016-06-06"
+        },
+        {
+          "week": 2,
+          "map": "koth_product_rc8",
+          "date": "2016-06-13"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward",
+          "date": "2016-06-20"
+        },
+        {
+          "week": 4,
+          "map": "cp_vanguard",
+          "date": "2016-06-27"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2016-07-11"
+        },
+        {
+          "week": 6,
+          "map": "koth_ramjam_rc1",
+          "date": "2016-07-18"
+        },
+        {
+          "week": 7,
+          "map": "pl_swiftwater_ugc",
+          "date": "2016-07-25"
+        },
+        {
+          "week": 8,
+          "map": "koth_ashville_rc1",
+          "date": "2016-08-01"
+        },
+        {
+          "week": 9,
+          "map": "cp_steel",
+          "date": "2016-08-08"
+        },
+        {
+          "week": 10,
+          "map": "koth_product_rc8",
+          "date": "2016-08-15"
+        },
+        {
+          "week": 11,
+          "map": "koth_product_rc8",
+          "date": "2016-08-18"
+        },
+        {
+          "week": 12,
+          "map": "pl_upward",
+          "date": "2016-08-22"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2016-08-25"
+        },
+        {
+          "week": 14,
+          "map": "Best of 3 Maps",
+          "date": "2016-08-29"
+        },
+        {
+          "week": 15,
+          "map": "Best of 3 Maps",
+          "date": "2016-09-01"
+        }
+      ]
+    },
+    {
+      "season": 18,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2016-01-18"
+        },
+        {
+          "week": 2,
+          "map": "koth_ashville_rc1",
+          "date": "2016-01-25"
+        },
+        {
+          "week": 3,
+          "map": "cp_gullywash_final1",
+          "date": "2016-02-01"
+        },
+        {
+          "week": 4,
+          "map": "koth_product_rc8",
+          "date": "2016-02-08"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2016-02-15"
+        },
+        {
+          "week": 6,
+          "map": "pl_swiftwater_ugc",
+          "date": "2016-02-22"
+        },
+        {
+          "week": 7,
+          "map": "koth_lakeside_final",
+          "date": "2016-02-29"
+        },
+        {
+          "week": 8,
+          "map": "pl_badwater_pro_v9",
+          "date": "2016-03-07"
+        },
+        {
+          "week": 9,
+          "map": "cp_steel",
+          "date": "2016-03-14"
+        },
+        {
+          "week": 10,
+          "map": "pl_upward",
+          "date": "2016-03-21"
+        },
+        {
+          "week": 11,
+          "map": "pl_upward",
+          "date": "2016-03-24"
+        },
+        {
+          "week": 12,
+          "map": "koth_product_rc8",
+          "date": "2016-03-28"
+        },
+        {
+          "week": 13,
+          "map": "koth_product_rc8",
+          "date": "2016-03-31"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2016-04-04"
+        },
+        {
+          "week": 15,
+          "map": "cp_gullywash_final1",
+          "date": "2016-04-04"
+        },
+        {
+          "week": 16,
+          "map": "Grand Finals 3 Maps",
+          "date": "2016-04-07"
+        },
+        {
+          "week": 17,
+          "map": "cp_gullywash_final1",
+          "date": "2016-04-07"
+        },
+        {
+          "week": 18,
+          "map": "Grand Finals 3 Maps",
+          "date": "2016-04-11"
+        },
+        {
+          "week": 19,
+          "map": "Grand Finals 3 Maps",
+          "date": "2016-04-14"
+        }
+      ]
+    },
+    {
+      "season": 17,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_borneo",
+          "date": "2015-09-28"
+        },
+        {
+          "week": 2,
+          "map": "cp_process_final",
+          "date": "2015-10-05"
+        },
+        {
+          "week": 3,
+          "map": "koth_product_rc8",
+          "date": "2015-10-12"
+        },
+        {
+          "week": 4,
+          "map": "pl_upward",
+          "date": "2015-10-19"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2015-10-26"
+        },
+        {
+          "week": 6,
+          "map": "koth_warmtic_b6",
+          "date": "2015-11-02"
+        },
+        {
+          "week": 7,
+          "map": "pl_badwater_pro_v8",
+          "date": "2015-11-09"
+        },
+        {
+          "week": 8,
+          "map": "cp_vanguard_rc3",
+          "date": "2015-11-16"
+        }
+      ]
+    },
+    {
+      "season": 16,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2015-06-01"
+        },
+        {
+          "week": 2,
+          "map": "cp_gullywash_final1",
+          "date": "2015-06-08"
+        },
+        {
+          "week": 3,
+          "map": "koth_viaduct_pro7",
+          "date": "2015-06-15"
+        },
+        {
+          "week": 4,
+          "map": "cp_steel",
+          "date": "2015-06-22"
+        },
+        {
+          "week": 5,
+          "map": "pl_badwater_pro_v7",
+          "date": "2015-06-29"
+        },
+        {
+          "week": 6,
+          "map": "koth_ashville_rc1",
+          "date": "2015-07-06"
+        },
+        {
+          "week": 7,
+          "map": "cp_glassworks_rc6a",
+          "date": "2015-07-13"
+        },
+        {
+          "week": 8,
+          "map": "koth_lakeside_final",
+          "date": "2015-07-20"
+        },
+        {
+          "week": 9,
+          "map": "pl_upward",
+          "date": "2015-07-27"
+        },
+        {
+          "week": 10,
+          "map": "koth_viaduct_pro7",
+          "date": "2015-08-03"
+        },
+        {
+          "week": 11,
+          "map": "koth_viaduct_pro7",
+          "date": "2015-08-06"
+        },
+        {
+          "week": 12,
+          "map": "cp_gullywash_final1",
+          "date": "2015-08-10"
+        },
+        {
+          "week": 13,
+          "map": "cp_gullywash_final1",
+          "date": "2015-08-13"
+        },
+        {
+          "week": 14,
+          "map": "Best of 3 Maps",
+          "date": "2015-08-17"
+        },
+        {
+          "week": 15,
+          "map": "Best of 3 Maps",
+          "date": "2015-08-20"
+        }
+      ]
+    },
+    {
+      "season": 15,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2015-01-26"
+        },
+        {
+          "week": 2,
+          "map": "cp_process_final",
+          "date": "2015-02-02"
+        },
+        {
+          "week": 3,
+          "map": "pl_borneo_rc4",
+          "date": "2015-02-09"
+        },
+        {
+          "week": 4,
+          "map": "koth_viaduct_pro5",
+          "date": "2015-02-16"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2015-02-23"
+        },
+        {
+          "week": 6,
+          "map": "cp_sunshine_rc5",
+          "date": "2015-03-02"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2015-03-16"
+        },
+        {
+          "week": 8,
+          "map": "pl_swiftwater_ugc",
+          "date": "2015-03-23"
+        },
+        {
+          "week": 9,
+          "map": "cp_process_final",
+          "date": "2015-03-30"
+        },
+        {
+          "week": 10,
+          "map": "koth_viaduct_pro5",
+          "date": "2015-04-06"
+        },
+        {
+          "week": 11,
+          "map": "koth_viaduct_pro5",
+          "date": "2015-04-09"
+        },
+        {
+          "week": 12,
+          "map": "pl_upward",
+          "date": "2015-04-13"
+        },
+        {
+          "week": 13,
+          "map": "pl_upward",
+          "date": "2015-04-16"
+        },
+        {
+          "week": 14,
+          "map": "Best of 3 Maps",
+          "date": "2015-04-20"
+        },
+        {
+          "week": 15,
+          "map": "Best of 3 Maps",
+          "date": "2015-04-23"
+        }
+      ]
+    },
+    {
+      "season": 14,
+      "maps": [
+        {
+          "week": 1,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-09-22"
+        },
+        {
+          "week": 2,
+          "map": "pl_badwater",
+          "date": "2014-09-29"
+        },
+        {
+          "week": 3,
+          "map": "koth_lakeside_final",
+          "date": "2014-10-06"
+        },
+        {
+          "week": 4,
+          "map": "cp_steel",
+          "date": "2014-10-13"
+        },
+        {
+          "week": 5,
+          "map": "cp_gullywash_final1",
+          "date": "2014-10-20"
+        },
+        {
+          "week": 6,
+          "map": "koth_ramjam_b8b",
+          "date": "2014-10-27"
+        },
+        {
+          "week": 7,
+          "map": "cp_process_final",
+          "date": "2014-11-03"
+        },
+        {
+          "week": 8,
+          "map": "pl_upward",
+          "date": "2014-11-10"
+        },
+        {
+          "week": 9,
+          "map": "cp_steel",
+          "date": "2014-11-17"
+        },
+        {
+          "week": 10,
+          "map": "BYE-Holiday",
+          "date": "2014-11-24"
+        },
+        {
+          "week": 11,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-12-01"
+        },
+        {
+          "week": 12,
+          "map": "pl_badwater",
+          "date": "2014-12-08"
+        },
+        {
+          "week": 13,
+          "map": "Best of 3 Maps",
+          "date": "2014-12-15"
+        },
+        {
+          "week": 14,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-12-01"
+        },
+        {
+          "week": 15,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-12-04"
+        },
+        {
+          "week": 16,
+          "map": "pl_badwater",
+          "date": "2014-12-08"
+        },
+        {
+          "week": 17,
+          "map": "pl_badwater",
+          "date": "2014-12-11"
+        },
+        {
+          "week": 18,
+          "map": "Best of 3 Maps",
+          "date": "2014-12-18"
+        }
+      ]
+    },
+    {
+      "season": 13,
+      "maps": [
+        {
+          "week": 0,
+          "map": "cp_granary",
+          "date": "2014-05-19"
+        },
+        {
+          "week": 1,
+          "map": "pl_upward",
+          "date": "2014-05-26"
+        },
+        {
+          "week": 2,
+          "map": "cp_gullywash_final1",
+          "date": "2014-06-02"
+        },
+        {
+          "week": 3,
+          "map": "koth_lakeside_final",
+          "date": "2014-06-09"
+        },
+        {
+          "week": 4,
+          "map": "cp_steel",
+          "date": "2014-06-16"
+        },
+        {
+          "week": 5,
+          "map": "pl_badwater",
+          "date": "2014-06-23"
+        },
+        {
+          "week": 6,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-06-30"
+        },
+        {
+          "week": 7,
+          "map": "cp_snakewater_final1",
+          "date": "2014-07-07"
+        },
+        {
+          "week": 8,
+          "map": "koth_ashville_rc1",
+          "date": "2014-07-14"
+        },
+        {
+          "week": 9,
+          "map": "cp_steel",
+          "date": "2014-07-21"
+        },
+        {
+          "week": 10,
+          "map": "pl_upward",
+          "date": "2014-07-28"
+        },
+        {
+          "week": 11,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-08-04"
+        },
+        {
+          "week": 12,
+          "map": "Grand Finals 3 Maps",
+          "date": "2014-08-11"
+        },
+        {
+          "week": 13,
+          "map": "pl_upward",
+          "date": "2014-07-28"
+        },
+        {
+          "week": 14,
+          "map": "pl_upward",
+          "date": "2014-07-31"
+        },
+        {
+          "week": 15,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-08-04"
+        },
+        {
+          "week": 16,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-08-07"
+        },
+        {
+          "week": 17,
+          "map": "Grand Finals 3 Maps",
+          "date": "2014-08-14"
+        }
+      ]
+    },
+    {
+      "season": 12,
+      "maps": [
+        {
+          "week": 0,
+          "map": "pl_barnblitz_pro4",
+          "date": "2014-01-20"
+        },
+        {
+          "week": 1,
+          "map": "koth_lakeside_final",
+          "date": "2014-01-27"
+        },
+        {
+          "week": 2,
+          "map": "cp_gravelpit",
+          "date": "2014-02-03"
+        },
+        {
+          "week": 3,
+          "map": "pl_upward",
+          "date": "2014-02-10"
+        },
+        {
+          "week": 4,
+          "map": "koth_coalplant_b7",
+          "date": "2014-02-17"
+        },
+        {
+          "week": 5,
+          "map": "cp_process_final",
+          "date": "2014-02-24"
+        },
+        {
+          "week": 6,
+          "map": "pl_borneo_rc3",
+          "date": "2014-03-03"
+        },
+        {
+          "week": 7,
+          "map": "cp_steel",
+          "date": "2014-03-10"
+        },
+        {
+          "week": 8,
+          "map": "pl_swiftwater_ugc",
+          "date": "2014-03-17"
+        },
+        {
+          "week": 9,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2014-03-24"
+        },
+        {
+          "week": 10,
+          "map": "cp_gullywash_final1",
+          "date": "2014-03-31"
+        },
+        {
+          "week": 11,
+          "map": "pl_badwater",
+          "date": "2014-04-07"
+        },
+        {
+          "week": 12,
+          "map": "Best of 3 Maps",
+          "date": "2014-04-14"
+        },
+        {
+          "week": 13,
+          "map": "cp_gullywash_final1",
+          "date": "2014-03-31"
+        },
+        {
+          "week": 14,
+          "map": "cp_gullywash_final1",
+          "date": "2014-04-03"
+        },
+        {
+          "week": 15,
+          "map": "pl_badwater",
+          "date": "2014-04-07"
+        },
+        {
+          "week": 16,
+          "map": "pl_badwater",
+          "date": "2014-04-10"
+        },
+        {
+          "week": 17,
+          "map": "Best of 3 Maps",
+          "date": "2014-04-17"
+        }
+      ]
+    },
+    {
+      "season": 11,
+      "maps": [
+        {
+          "week": 0,
+          "map": "pl_borneo_rc2",
+          "date": "2013-09-09"
+        },
+        {
+          "week": 1,
+          "map": "cp_granary",
+          "date": "2013-09-16"
+        },
+        {
+          "week": 2,
+          "map": "cp_gravelpit",
+          "date": "2013-09-23"
+        },
+        {
+          "week": 3,
+          "map": "pl_barnblitz_pro4",
+          "date": "2013-09-30"
+        },
+        {
+          "week": 4,
+          "map": "koth_lakeside_final",
+          "date": "2013-10-07"
+        },
+        {
+          "week": 5,
+          "map": "pl_swiftwater_ugc",
+          "date": "2013-10-14"
+        },
+        {
+          "week": 6,
+          "map": "cp_gullywash_final1",
+          "date": "2013-10-21"
+        },
+        {
+          "week": 7,
+          "map": "koth_ashville_rc1",
+          "date": "2013-10-28"
+        },
+        {
+          "week": 8,
+          "map": "pl_badwater",
+          "date": "2013-11-04"
+        },
+        {
+          "week": 9,
+          "map": "cp_process_final",
+          "date": "2013-11-11"
+        },
+        {
+          "week": 10,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2013-11-18"
+        },
+        {
+          "week": 11,
+          "map": "BYE-Holiday",
+          "date": "2013-11-25"
+        },
+        {
+          "week": 12,
+          "map": "pl_upward",
+          "date": "2013-12-02"
+        },
+        {
+          "week": 13,
+          "map": "Grand Finals 3 Maps",
+          "date": "2013-12-09"
+        },
+        {
+          "week": 14,
+          "map": "koth_pro_viaduct_rc4",
+          "date": "2013-11-21"
+        },
+        {
+          "week": 15,
+          "map": "pl_upward",
+          "date": "2013-12-05"
+        },
+        {
+          "week": 16,
+          "map": "Grand Finals 3 Maps",
+          "date": "2013-12-12"
+        }
+      ]
+    },
+    {
+      "season": 10,
+      "maps": [
+        {
+          "week": 1,
+          "map": "Preseason Bye Week",
+          "date": "2013-06-03"
+        },
+        {
+          "week": 2,
+          "map": "pl_swiftwater_ugc",
+          "date": "2013-06-10"
+        },
+        {
+          "week": 3,
+          "map": "cp_gullywash_final1",
+          "date": "2013-06-17"
+        },
+        {
+          "week": 4,
+          "map": "koth_pro_viaduct_rc3",
+          "date": "2013-06-24"
+        },
+        {
+          "week": 5,
+          "map": "cp_steel",
+          "date": "2013-07-01"
+        },
+        {
+          "week": 6,
+          "map": "pl_upward",
+          "date": "2013-07-08"
+        },
+        {
+          "week": 7,
+          "map": "cp_granary",
+          "date": "2013-07-15"
+        },
+        {
+          "week": 8,
+          "map": "koth_lakeside_final",
+          "date": "2013-07-22"
+        },
+        {
+          "week": 9,
+          "map": "pl_badwater",
+          "date": "2013-07-29"
+        }
+      ]
+    },
+    {
+      "season": 9,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_waste_v2",
+          "date": "2013-01-21"
+        },
+        {
+          "week": 2,
+          "map": "koth_lakeside_final",
+          "date": "2013-01-28"
+        },
+        {
+          "week": 3,
+          "map": "cp_croissant_rc6",
+          "date": "2013-02-04"
+        },
+        {
+          "week": 4,
+          "map": "pl_badwater",
+          "date": "2013-02-11"
+        },
+        {
+          "week": 5,
+          "map": "ctf_haunt_b2",
+          "date": "2013-02-18"
+        },
+        {
+          "week": 6,
+          "map": "pl_barnblitz_pro",
+          "date": "2013-02-25"
+        },
+        {
+          "week": 7,
+          "map": "cp_steel",
+          "date": "2013-03-04"
+        },
+        {
+          "week": 8,
+          "map": "koth_arctic_b3",
+          "date": "2013-03-11"
+        },
+        {
+          "week": 9,
+          "map": "cp_process_rc2",
+          "date": "2013-03-18"
+        },
+        {
+          "week": 10,
+          "map": "pl_upward",
+          "date": "2013-03-25"
+        },
+        {
+          "week": 11,
+          "map": "koth_pro_viaduct_rc3",
+          "date": "2013-04-01"
+        },
+        {
+          "week": 12,
+          "map": "cp_gullywash_final1",
+          "date": "2013-04-08"
+        },
+        {
+          "week": 13,
+          "map": "pl_swiftwater_ugc",
+          "date": "2013-04-15"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2013-04-22"
+        },
+        {
+          "week": 15,
+          "map": "koth_pro_viaduct_rc3",
+          "date": "2013-04-04"
+        },
+        {
+          "week": 16,
+          "map": "cp_gullywash_final1",
+          "date": "2013-04-11"
+        },
+        {
+          "week": 17,
+          "map": "pl_swiftwater_ugc",
+          "date": "2013-04-18"
+        }
+      ]
+    },
+    {
+      "season": 8,
+      "maps": [
+        {
+          "week": 1,
+          "map": "Preseason Bye Week",
+          "date": "2012-09-10"
+        },
+        {
+          "week": 2,
+          "map": "pl_upward",
+          "date": "2012-09-17"
+        },
+        {
+          "week": 3,
+          "map": "cp_foundry",
+          "date": "2012-09-24"
+        },
+        {
+          "week": 4,
+          "map": "koth_lakeside_final",
+          "date": "2012-10-01"
+        },
+        {
+          "week": 5,
+          "map": "ctf_turbine_pro_rc2",
+          "date": "2012-10-08"
+        },
+        {
+          "week": 6,
+          "map": "pl_swiftwater_ugc",
+          "date": "2012-10-15"
+        },
+        {
+          "week": 7,
+          "map": "cp_granary",
+          "date": "2012-10-22"
+        },
+        {
+          "week": 8,
+          "map": "koth_pro_viaduct_rc3",
+          "date": "2012-10-29"
+        },
+        {
+          "week": 9,
+          "map": "cp_gravelpit",
+          "date": "2012-11-05"
+        },
+        {
+          "week": 10,
+          "map": "koth_ashville_rc1",
+          "date": "2012-11-12"
+        },
+        {
+          "week": 11,
+          "map": "cp_gullywash_final1",
+          "date": "2012-11-19"
+        },
+        {
+          "week": 12,
+          "map": "pl_badwater",
+          "date": "2012-11-26"
+        },
+        {
+          "week": 13,
+          "map": "Grand Finals 3 Maps",
+          "date": "2012-12-03"
+        }
+      ]
+    },
+    {
+      "season": 7,
+      "maps": [
+        {
+          "week": 1,
+          "map": "Preseason Bye Week",
+          "date": "2012-06-04"
+        },
+        {
+          "week": 2,
+          "map": "cp_croissant_rc6",
+          "date": "2012-06-11"
+        },
+        {
+          "week": 3,
+          "map": "pl_barnblitz",
+          "date": "2012-06-18"
+        },
+        {
+          "week": 4,
+          "map": "ctf_vitalism_b2",
+          "date": "2012-06-25"
+        },
+        {
+          "week": 5,
+          "map": "cp_standin_rc1",
+          "date": "2012-07-02"
+        },
+        {
+          "week": 6,
+          "map": "dom_canalzone",
+          "date": "2012-07-09"
+        },
+        {
+          "week": 7,
+          "map": "koth_waste",
+          "date": "2012-07-16"
+        },
+        {
+          "week": 8,
+          "map": "cp_obscure_remake_ugc_rc2",
+          "date": "2012-07-23"
+        },
+        {
+          "week": 9,
+          "map": "pl_borneo_v3",
+          "date": "2012-07-30"
+        }
+      ]
+    },
+    {
+      "season": 6,
+      "maps": [
+        {
+          "week": 1,
+          "map": "cp_foundry",
+          "date": "2012-01-23"
+        },
+        {
+          "week": 2,
+          "map": "pl_badwater",
+          "date": "2012-01-30"
+        },
+        {
+          "week": 3,
+          "map": "cp_warmfront",
+          "date": "2012-02-06"
+        },
+        {
+          "week": 4,
+          "map": "cp_follower",
+          "date": "2012-02-13"
+        },
+        {
+          "week": 5,
+          "map": "koth_lakeside_final",
+          "date": "2012-02-20"
+        },
+        {
+          "week": 6,
+          "map": "cp_gullywash_final1",
+          "date": "2012-02-27"
+        },
+        {
+          "week": 7,
+          "map": "cp_steel",
+          "date": "2012-03-05"
+        },
+        {
+          "week": 8,
+          "map": "pl_swiftwater_ugc",
+          "date": "2012-03-12"
+        },
+        {
+          "week": 9,
+          "map": "ctf_turbine_pro_b1",
+          "date": "2012-03-19"
+        },
+        {
+          "week": 10,
+          "map": "koth_pro_viaduct_rc3",
+          "date": "2012-03-26"
+        },
+        {
+          "week": 11,
+          "map": "cp_granary",
+          "date": "2012-04-02"
+        },
+        {
+          "week": 12,
+          "map": "Playoff 1 - pl_upward",
+          "date": "2012-04-09"
+        },
+        {
+          "week": 13,
+          "map": "Playoff 2 - koth_ashville",
+          "date": "2012-04-16"
+        },
+        {
+          "week": 14,
+          "map": "Playoff 3 - cp_gravelpit",
+          "date": "2012-04-23"
+        },
+        {
+          "week": 15,
+          "map": "Grand Finals 3 Maps",
+          "date": "2012-04-30"
+        }
+      ]
+    },
+    {
+      "season": 5,
+      "maps": [
+        {
+          "week": 1,
+          "map": "pl_badwater",
+          "date": "2011-09-12"
+        },
+        {
+          "week": 2,
+          "map": "cp_yukon_final",
+          "date": "2011-09-19"
+        },
+        {
+          "week": 3,
+          "map": "koth_lakeside_final",
+          "date": "2011-09-26"
+        },
+        {
+          "week": 4,
+          "map": "cp_freight_final1",
+          "date": "2011-10-03"
+        },
+        {
+          "week": 5,
+          "map": "pl_swiftwater_final_rc",
+          "date": "2011-10-10"
+        },
+        {
+          "week": 6,
+          "map": "cp_gullywash_pro",
+          "date": "2011-10-17"
+        },
+        {
+          "week": 7,
+          "map": "ctf_turbine_pro_b1",
+          "date": "2011-10-24"
+        },
+        {
+          "week": 8,
+          "map": "Holloween Community Event",
+          "date": "2011-10-31"
+        },
+        {
+          "week": 9,
+          "map": "koth_ashville_rc1",
+          "date": "2011-11-07"
+        },
+        {
+          "week": 10,
+          "map": "cp_gravelpit",
+          "date": "2011-11-14"
+        },
+        {
+          "week": 11,
+          "map": "Playoff 1- cp_granary",
+          "date": "2011-11-21"
+        },
+        {
+          "week": 12,
+          "map": "Playoff 2- koth_viaduct",
+          "date": "2011-11-28"
+        },
+        {
+          "week": 13,
+          "map": "Playoff 3- pl_upward",
+          "date": "2011-12-05"
+        },
+        {
+          "week": 14,
+          "map": "Grand Finals 3 Maps",
+          "date": "2011-12-12"
+        }
+      ]
+    },
+    {
+      "season": 4,
+      "maps": [
+        {
+          "week": 1,
+          "map": "cp_freight_final1",
+          "date": "2011-07-11"
+        },
+        {
+          "week": 2,
+          "map": "cp_warmfront",
+          "date": "2011-07-18"
+        },
+        {
+          "week": 3,
+          "map": "cp_pro_dustbowl",
+          "date": "2011-07-25"
+        },
+        {
+          "week": 4,
+          "map": "koth_lakeside_final",
+          "date": "2011-08-01"
+        },
+        {
+          "week": 5,
+          "map": "pl_swiftwater_frc16",
+          "date": "2011-08-08"
+        },
+        {
+          "week": 6,
+          "map": "pl_upward",
+          "date": "2011-08-15"
+        },
+        {
+          "week": 7,
+          "map": "ctf_haarp_test8/cp_gravelpit",
+          "date": "2011-08-22"
+        },
+        {
+          "week": 8,
+          "map": "ctf_turbine_pro_b1",
+          "date": "2011-08-29"
+        }
+      ]
+    },
+    {
+      "season": 3,
+      "maps": [
+        {
+          "week": 1,
+          "map": "cp_freight_final1",
+          "date": "2011-01-10"
+        },
+        {
+          "week": 2,
+          "map": "pl_upward",
+          "date": "2011-01-17"
+        },
+        {
+          "week": 3,
+          "map": "ctf_doublecross",
+          "date": "2011-01-24"
+        },
+        {
+          "week": 4,
+          "map": "cp_badlands",
+          "date": "2011-01-31"
+        },
+        {
+          "week": 5,
+          "map": "koth_viaduct",
+          "date": "2011-02-07"
+        },
+        {
+          "week": 6,
+          "map": "Valentines Day Bye",
+          "date": "2011-02-14"
+        },
+        {
+          "week": 7,
+          "map": "cp_coldfront",
+          "date": "2011-02-21"
+        },
+        {
+          "week": 8,
+          "map": "cp_gravelpit",
+          "date": "2011-02-28"
+        },
+        {
+          "week": 9,
+          "map": "ctf_turbine",
+          "date": "2011-03-07"
+        },
+        {
+          "week": 10,
+          "map": "pl_goldrush",
+          "date": "2011-03-14"
+        },
+        {
+          "week": 11,
+          "map": "cp_steel",
+          "date": "2011-03-21"
+        },
+        {
+          "week": 12,
+          "map": "koth_sawmill",
+          "date": "2011-03-28"
+        },
+        {
+          "week": 13,
+          "map": "ctf_impact2",
+          "date": "2011-04-04"
+        },
+        {
+          "week": 14,
+          "map": "cp_granary",
+          "date": "2011-04-11"
+        },
+        {
+          "week": 15,
+          "map": "pl_badwater",
+          "date": "2011-04-25"
+        },
+        {
+          "week": 16,
+          "map": "cp_pro_dustbowl",
+          "date": "2011-05-02"
+        },
+        {
+          "week": 17,
+          "map": "cp_prolane",
+          "date": "2011-05-09"
+        },
+        {
+          "week": 18,
+          "map": "pl_upward",
+          "date": "2011-05-16"
+        },
+        {
+          "week": 19,
+          "map": "ctf_chaos",
+          "date": "2011-05-23"
+        },
+        {
+          "week": 20,
+          "map": "Grand Finals 3 Maps",
+          "date": "2011-05-30"
+        }
+      ]
+    },
+    {
+      "season": 2,
+      "maps": [
+        {
+          "week": 3,
+          "map": "BYE",
+          "date": "2010-02-01"
+        },
+        {
+          "week": 4,
+          "map": "cp_badlands",
+          "date": "2010-02-08"
+        },
+        {
+          "week": 5,
+          "map": "cp_dustbowl",
+          "date": "2010-02-15"
+        },
+        {
+          "week": 6,
+          "map": "cp_granary",
+          "date": "2010-02-22"
+        },
+        {
+          "week": 7,
+          "map": "cp_gullywash_imp3",
+          "date": "2010-03-01"
+        },
+        {
+          "week": 8,
+          "map": "cp_gravelpit",
+          "date": "2010-03-08"
+        },
+        {
+          "week": 9,
+          "map": "dom_canalzone",
+          "date": "2010-03-15"
+        },
+        {
+          "week": 10,
+          "map": "cp_well",
+          "date": "2010-03-22"
+        },
+        {
+          "week": 11,
+          "map": "ctf_turbine",
+          "date": "2010-03-29"
+        },
+        {
+          "week": 12,
+          "map": "cp_indulge",
+          "date": "2010-04-05"
+        },
+        {
+          "week": 13,
+          "map": "cp_yukon_final",
+          "date": "2010-04-12"
+        },
+        {
+          "week": 14,
+          "map": "ctf_chaos",
+          "date": "2010-04-19"
+        },
+        {
+          "week": 15,
+          "map": "cp_follower",
+          "date": "2010-04-26"
+        },
+        {
+          "week": 16,
+          "map": "Playoff week 2",
+          "date": "2010-05-03"
+        },
+        {
+          "week": 17,
+          "map": "Playoff week 2",
+          "date": "2010-05-10"
+        },
+        {
+          "week": 18,
+          "map": "Playoff week 2",
+          "date": "2010-05-17"
+        }
+      ]
+    },
+    {
+      "season": 1,
+      "maps": [
+        {
+          "week": 1,
+          "map": "cp_granary",
+          "date": "2007-10-10"
+        },
+        {
+          "week": 2,
+          "map": "cp_well",
+          "date": "2007-10-17"
+        },
+        {
+          "week": 3,
+          "map": "cp_gravelpit",
+          "date": "2007-10-24"
+        },
+        {
+          "week": 4,
+          "map": "cp_granary",
+          "date": "2007-11-07"
+        },
+        {
+          "week": 5,
+          "map": "cp_granary",
+          "date": "2007-11-14"
+        },
+        {
+          "week": 6,
+          "map": "cp_well",
+          "date": "2007-11-28"
+        },
+        {
+          "week": 7,
+          "map": "cp_well",
+          "date": "2007-11-28"
+        },
+        {
+          "week": 8,
+          "map": "ctf_2fort",
+          "date": "2007-12-05"
+        },
+        {
+          "week": 9,
+          "map": "ctf_2fort",
+          "date": "2007-12-12"
+        },
+        {
+          "week": 10,
+          "map": "cp_yukon_final",
+          "date": "2007-12-19"
+        },
+        {
+          "week": 11,
+          "map": "cp_gullywash_imp3",
+          "date": "2008-01-02"
+        },
+        {
+          "week": 12,
+          "map": "cp_follower",
+          "date": "2008-01-09"
+        },
+        {
+          "week": 13,
+          "map": "cp_science",
+          "date": "2008-01-16"
+        },
+        {
+          "week": 14,
+          "map": "cp_warpath",
+          "date": "2008-01-23"
+        }
+      ]
+    }
+  ]
+}

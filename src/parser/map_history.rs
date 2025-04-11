@@ -162,10 +162,7 @@ impl Parser for MapHistoryParser {
                         )?;
                         let date = parse_date(date)?;
                         let map = select_text(row, &self.selector_previous_map)
-                            .ok_or(ParseError::ElementNotFound {
-                                selector: SELECTOR_PREVIOUS_MAP,
-                                role: "previous season map",
-                            })?
+                            .unwrap_or_default()
                             .to_string();
                         season.maps.push(PreviousSeasonMap { week, date, map })
                     }

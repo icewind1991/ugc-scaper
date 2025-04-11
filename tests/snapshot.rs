@@ -101,6 +101,7 @@ fn test_parse_transaction_html(input: &str, name: &str) {
 }
 
 #[test_case("map_9v9.html", "maps_9")]
+#[test_case("map_9v9_2.html", "maps_9_2")]
 #[test_case("map_6v6.html", "maps_6")]
 #[test_case("map_4v4.html", "maps_4")]
 #[test_case("map_2v2.html", "maps_2")]
