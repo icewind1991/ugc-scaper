@@ -1,6 +1,6 @@
 [package]
 name = "ugc-scraper"
-version = "0.4.3"
+version = "0.4.4"
 edition = "2021"
 rust-version = "1.71.1"
 description = "Scraper for ugcleague.com"
@@ -14,7 +14,7 @@ scraper = "0.21.0"
 thiserror = "2.0.3"
 time = { version = "0.3.36", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
-ugc-scraper-types = { version = "0.1.0", path = "./types" }
+ugc-scraper-types = { version = "0.1.2", path = "./types" }
 
 [dev-dependencies]
 tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread", "rt"] }
