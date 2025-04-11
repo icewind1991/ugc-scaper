@@ -1,3 +1,4 @@
+use std::fmt::Display;
 use std::str::FromStr;
 pub use steamid_ng::SteamID;
 use time::{Date, OffsetDateTime};
@@ -296,6 +297,21 @@ impl GameMode {
             GameMode::Fours => '4',
             GameMode::Ultiduo => '2',
         }
+    }
+
+    fn as_str(&self) -> &'static str {
+        match self {
+            GameMode::Highlander => "9v9",
+            GameMode::Sixes => "6v6",
+            GameMode::Fours => "4v4",
+            GameMode::Ultiduo => "2v2",
+        }
+    }
+}
+
+impl Display for GameMode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(self.as_str())
     }
 }
 
