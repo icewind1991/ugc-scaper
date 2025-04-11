@@ -41,8 +41,16 @@ impl Default for UgcClient {
 /// "API client" for ugc by scraping the website
 impl UgcClient {
     pub fn new() -> Self {
+        let redirect_policy = Policy::custom(|attempt| {
+            // the different matchpage_* redirect to each other if you use the match id from a different game mode
+            if attempt.url().path().contains("matchpage_") {
+                attempt.follow()
+            } else {
+                attempt.stop()
+            }
+        });
         UgcClient {
-            client: Client::builder().redirect(Policy::none()).build().unwrap(),
+            client: Client::builder().redirect(redirect_policy).build().unwrap(),
             player_parser: PlayerParser::new(),
             player_detail_parser: PlayerDetailsParser::new(),
             team_parser: TeamParser::new(),
