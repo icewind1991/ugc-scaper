@@ -2020,6 +2020,8 @@ dependencies = [
 [[package]]
 name = "ugc-scraper"
 version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "10e71ed553700c0e6dae5eb2bbd9cac6951499273f8b65772c67e1ad12fe646a"
 dependencies = [
  "reqwest",
  "scraper",
@@ -2033,6 +2035,8 @@ dependencies = [
 [[package]]
 name = "ugc-scraper-types"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd137f0bbb4c856ce7180b809e3a7d5bc01e36dd5b2f58f14787d687ee335d11"
 dependencies = [
  "serde",
  "steamid-ng",
