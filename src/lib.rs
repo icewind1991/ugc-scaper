@@ -83,6 +83,7 @@ impl UgcClient {
             .send()
             .await?
             .check_not_found()?
+            .text()
             .await?;
         self.player_detail_parser.parse(&body)
     }
