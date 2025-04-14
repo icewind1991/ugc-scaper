@@ -378,6 +378,7 @@ impl FromStr for Region {
             "ASIA" => Ok(Region::Asia),
             "NA" => Ok(Region::NorthAmerica),
             "North America" => Ok(Region::NorthAmerica),
+            "N.Amer" => Ok(Region::NorthAmerica),
             "South American" => Ok(Region::SouthAmerica),
             "SA" => Ok(Region::SouthAmerica),
             "AUS" => Ok(Region::Australia),

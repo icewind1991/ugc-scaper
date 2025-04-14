@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage rec {
   cargoLock = {
     lockFile = ./api-server/Cargo.lock;
     outputHashes = {
-      "ugc-scraper-0.5.0" = "sha256-xuvuhNLKCgI/wPhMXPxBlgZGdkn6qnpxCV17TCNg/xM=";
+      "ugc-scraper-0.5.0" = "sha256-akmSE/AwxsBhF+SiUQWV2oTzlNi4s61AztGShYMohr4=";
     };
   };
 }

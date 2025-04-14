@@ -1,0 +1,219 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Banananana Boat",
+  "tag": "-BB-",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4c/4c75e24cd642d648ae3105fc9e66580e6064e393_full.jpg",
+  "format": "4v4",
+  "region": "NorthAmerica",
+  "timezone": "East",
+  "steam_group": "http://steamcommunity.com/groups/banananana_boat",
+  "division": "Gold N.Amer",
+  "description": "",
+  "titles": [
+    "TF2 4v4 NA Steel Runner-up Season 2",
+    "TF2 4v4 NA Silver 3rd Place Season 4",
+    "TF2 4v4 NA Gold Champions Season 8",
+    "TF2 4v4 NA Gold Runner-up Season 10",
+    "TF2 4v4 NA Gold Champions Season 11",
+    "TF2 4v4 NA Gold Runner-up Season 12",
+    "TF2 4v4 NA Gold 3rd Place Season 13",
+    "TF2 4v4 NA Gold Champions Season 14",
+    "TF2 4v4 NA Gold Runner-Up Season 15",
+    "TF2 4v4 NA Gold Champions Season 16",
+    "TF2 4v4 NA Gold Runner-Up Season 17",
+    "TF2 4v4 NA Gold Champions Season 18",
+    "TF2 4v4 NA Gold Champions Season 19",
+    "TF2 4v4 NA Gold Champions Season 20",
+    "TF2 4v4 NA Gold Champions Season 21",
+    "TF2 4v4 NA Gold Champions Season 22",
+    "TF2 4v4 NA 2nd Place Season 23"
+  ],
+  "members": [
+    {
+      "name": "Bonesaw",
+      "steam_id": "76561198008087350",
+      "role": "Leader",
+      "since": "+002014-04-17T11:16:00.000000000-05:00"
+    },
+    {
+      "name": "ether",
+      "steam_id": "76561198064711665",
+      "role": "Member",
+      "since": "+002019-11-22T05:40:00.000000000-05:00"
+    },
+    {
+      "name": "eerie",
+      "steam_id": "76561198044268201",
+      "role": "Member",
+      "since": "+002020-06-13T12:11:00.000000000-05:00"
+    },
+    {
+      "name": "bug",
+      "steam_id": "76561198078731479",
+      "role": "Member",
+      "since": "+002020-10-09T07:29:00.000000000-05:00"
+    },
+    {
+      "name": "blank",
+      "steam_id": "76561198105529673",
+      "role": "Member",
+      "since": "+002021-10-22T08:07:00.000000000-05:00"
+    },
+    {
+      "name": "JohhnyFromCali 7",
+      "steam_id": "76561198044015725",
+      "role": "Member",
+      "since": "+002021-11-19T09:13:00.000000000-05:00"
+    }
+  ],
+  "results": [
+    {
+      "season": 29,
+      "division": "Gold N.Amer",
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "season": 24,
+      "division": "Gold N.Amer",
+      "wins": 6,
+      "losses": 4
+    },
+    {
+      "season": 23,
+      "division": "North America",
+      "wins": 8,
+      "losses": 3
+    },
+    {
+      "season": 22,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 0
+    },
+    {
+      "season": 21,
+      "division": "Gold N.Amer",
+      "wins": 7,
+      "losses": 3
+    },
+    {
+      "season": 20,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 0
+    },
+    {
+      "season": 19,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 0
+    },
+    {
+      "season": 18,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 0
+    },
+    {
+      "season": 17,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 1
+    },
+    {
+      "season": 16,
+      "division": "Gold N.Amer",
+      "wins": 11,
+      "losses": 0
+    },
+    {
+      "season": 15,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 1
+    },
+    {
+      "season": 14,
+      "division": "Gold N.Amer",
+      "wins": 10,
+      "losses": 1
+    },
+    {
+      "season": 13,
+      "division": "Gold N.Amer",
+      "wins": 9,
+      "losses": 2
+    },
+    {
+      "season": 12,
+      "division": "Gold N.Amer",
+      "wins": 7,
+      "losses": 3
+    },
+    {
+      "season": 11,
+      "division": "Gold N.Amer",
+      "wins": 11,
+      "losses": 0
+    },
+    {
+      "season": 10,
+      "division": "Gold N.Amer",
+      "wins": 9,
+      "losses": 2
+    },
+    {
+      "season": 9,
+      "division": "Gold N.Amer",
+      "wins": 7,
+      "losses": 4
+    },
+    {
+      "season": 8,
+      "division": "Gold N.Amer",
+      "wins": 12,
+      "losses": 0
+    },
+    {
+      "season": 7,
+      "division": "Gold N.Amer",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 6,
+      "division": "Gold N.Amer",
+      "wins": 4,
+      "losses": 4
+    },
+    {
+      "season": 5,
+      "division": "Gold N.Amer",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 4,
+      "division": "Silver N.Amer",
+      "wins": 9,
+      "losses": 3
+    },
+    {
+      "season": 3,
+      "division": "Silver N.Amer",
+      "wins": 4,
+      "losses": 5
+    },
+    {
+      "season": 2,
+      "division": "Steel N.Amer",
+      "wins": 8,
+      "losses": 4
+    }
+  ],
+  "name_changes": []
+}
