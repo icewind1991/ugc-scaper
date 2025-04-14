@@ -34,6 +34,7 @@ fn test_parse_player_details_html(input: &str, name: &str) {
 #[test_case("team_8157.html", "team_no_tz")]
 #[test_case("team_6929.html", "team_changed_name")]
 #[test_case("team_32437.html", "team_empty_name_change")]
+#[test_case("team_29228.html", "team_newlines_join_date")]
 #[cfg(feature = "serde")]
 fn test_parse_team_html(input: &str, name: &str) {
     let body = read_to_string(format!("tests/data/{input}")).unwrap();

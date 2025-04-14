@@ -1884,6 +1884,7 @@ version = "0.5.0"
 dependencies = [
  "insta",
  "main_error",
+ "regex",
  "reqwest",
  "scraper",
  "steamid-ng",

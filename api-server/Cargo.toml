@@ -7,7 +7,8 @@ edition = "2021"
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread", "rt", "signal"] }
 main_error = "0.1.2"
 #ugc-scraper = { version = "*", path = ".." }
-ugc-scraper = "0.4.4"
+ugc-scraper = { version = "0.5.0", git = "https://github.com/icewind1991/ugc-scaper" }
+#ugc-scraper = "0.5.0"
 axum = "0.8.3"
 steamid-ng = "1.0.0"
 thiserror = "2.0.12"

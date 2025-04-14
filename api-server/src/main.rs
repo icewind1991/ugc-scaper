@@ -62,15 +62,15 @@ async fn main() -> MainResult {
     // build our application with a route
     let app = Router::new()
         .route("/", get(handler))
-        .route("/player/:id", get(player))
-        .route("/player/:id/history", get(player_history))
-        .route("/teams/:format", get(teams))
-        .route("/transactions/:format", get(transactions))
-        .route("/team/:id", get(team))
-        .route("/team/:id/roster", get(team_roster))
-        .route("/team/:id/matches", get(team_matches))
-        .route("/match/:id", get(match_page))
-        .route("/maps/:format", get(map_history))
+        .route("/player/{id}", get(player))
+        .route("/player/{id}/history", get(player_history))
+        .route("/teams/{format}", get(teams))
+        .route("/transactions/{format}", get(transactions))
+        .route("/team/{id}", get(team))
+        .route("/team/{id}/roster", get(team_roster))
+        .route("/team/{id}/matches", get(team_matches))
+        .route("/match/{id}", get(match_page))
+        .route("/maps/{format}", get(map_history))
         .with_state(AppState::default());
 
     let listener = TcpListener::bind((Ipv4Addr::new(127, 0, 0, 1), port)).await?;

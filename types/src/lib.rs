@@ -359,7 +359,7 @@ pub struct InvalidRegion {
 
 #[derive(Serialize, Deserialize, Copy, Clone, Debug)]
 pub enum Region {
-    Euro,
+    Europe,
     NorthAmerica,
     SouthAmerica,
     Asia,
@@ -371,11 +371,13 @@ impl FromStr for Region {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
-            "Euro" => Ok(Region::Euro),
-            "EU" => Ok(Region::Euro),
+            "Euro" => Ok(Region::Europe),
+            "Europe" => Ok(Region::Europe),
+            "EU" => Ok(Region::Europe),
             "Asia" => Ok(Region::Asia),
             "ASIA" => Ok(Region::Asia),
             "NA" => Ok(Region::NorthAmerica),
+            "North America" => Ok(Region::NorthAmerica),
             "South American" => Ok(Region::SouthAmerica),
             "SA" => Ok(Region::SouthAmerica),
             "AUS" => Ok(Region::Australia),

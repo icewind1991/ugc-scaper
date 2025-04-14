@@ -58,7 +58,7 @@ fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a s
 const DATE_FORMAT: &[FormatItem<'static>] =
     format_description!("[month padding:none]/[day padding:none]/[year]");
 const MEMBER_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
-    "[month repr:short] [day padding:none], [year]\n/\n[hour padding:none]:[minute] [period]\n(ET)"
+    "[month repr:short] [day padding:none], [year] / [hour padding:none]:[minute] [period] (ET)"
 );
 const MEMBER_DATE_ALT_FORMAT: &[FormatItem<'static>] =
     format_description!("[month repr:short] [day padding:none], [year]");

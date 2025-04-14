@@ -4,8 +4,10 @@ use crate::parser::{
     select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_ALT_FORMAT, MEMBER_DATE_FORMAT,
 };
 use crate::{ParseError, Result, ScrapeError};
+use regex::Regex;
 use scraper::{Html, Selector};
 use std::str::FromStr;
+use std::sync::OnceLock;
 use time::{Date, PrimitiveDateTime, Time, UtcOffset};
 use ugc_scraper_types::{GameMode, Region};
 
@@ -112,10 +114,14 @@ impl TeamParser {
     }
 }
 
+static WHITESPACE_REGEX: OnceLock<Regex> = OnceLock::new();
+
 impl Parser for TeamParser {
     type Output = Team;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
+        let whitespace_regex = WHITESPACE_REGEX.get_or_init(|| Regex::new("[\n\t ]+").unwrap());
+
         let document = Html::parse_document(document);
         let root = document.root_element();
         let mut name = select_text(root, &self.selector_name)
@@ -175,6 +181,7 @@ impl Parser for TeamParser {
         let region = division
             .split(' ')
             .find_map(|part| Region::from_str(part).ok())
+            .or_else(|| Region::from_str(&division).ok())
             .ok_or_else(|| ParseError::InvalidText {
                 text: division.clone(),
                 role: "team region",
@@ -279,7 +286,7 @@ impl Parser for TeamParser {
                     },
                 )?;
                 let role = role.trim().to_string();
-                let since = since.trim();
+                let since = whitespace_regex.replace_all(since.trim(), " ");
                 let since = if since.starts_with('(') {
                     let part = since
                         .split_once('-')
@@ -295,7 +302,7 @@ impl Parser for TeamParser {
                     })?;
                     PrimitiveDateTime::new(date, Time::MIDNIGHT).assume_offset(UtcOffset::UTC)
                 } else {
-                    PrimitiveDateTime::parse(since, MEMBER_DATE_FORMAT)
+                    PrimitiveDateTime::parse(&since, MEMBER_DATE_FORMAT)
                         .map_err(|_| ParseError::InvalidDate {
                             role: "member join date",
                             date: since.to_string(),

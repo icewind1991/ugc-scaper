@@ -1,0 +1,87 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "#1 Intercollegiate TF2 Team",
+  "tag": "#1TF2Team",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b9/b9cc1e4949f5e6d0364f9ee59a13cc931fd3aab1_full.jpg",
+  "format": "9v9",
+  "region": "NorthAmerica",
+  "timezone": "East",
+  "steam_group": "http://steamcommunity.com/groups/NumberOneTF2Team",
+  "division": "Main NA",
+  "description": "We're uncontested #1.                                     (pls contact copycat                                     for any team stuff)",
+  "titles": [],
+  "members": [
+    {
+      "name": "copycat",
+      "steam_id": "76561198072397106",
+      "role": "Leader",
+      "since": "+002019-01-22T11:04:00.000000000-05:00"
+    },
+    {
+      "name": "Mei",
+      "steam_id": "76561198134574357",
+      "role": "Member",
+      "since": "+002019-01-22T11:07:00.000000000-05:00"
+    },
+    {
+      "name": "melstrom",
+      "steam_id": "76561198068890768",
+      "role": "Member",
+      "since": "+002019-01-22T11:07:00.000000000-05:00"
+    },
+    {
+      "name": "Otter Speaking Eng",
+      "steam_id": "76561198073466450",
+      "role": "Member",
+      "since": "+002019-01-22T11:13:00.000000000-05:00"
+    },
+    {
+      "name": "DarkSlayer415",
+      "steam_id": "76561198053913751",
+      "role": "Member",
+      "since": "+002019-01-22T05:54:00.000000000-05:00"
+    },
+    {
+      "name": "corn face",
+      "steam_id": "76561198066113821",
+      "role": "Member",
+      "since": "+002019-01-22T06:59:00.000000000-05:00"
+    },
+    {
+      "name": "erin",
+      "steam_id": "76561198307572837",
+      "role": "Member",
+      "since": "+002019-01-22T07:17:00.000000000-05:00"
+    },
+    {
+      "name": "Naps",
+      "steam_id": "76561198061524698",
+      "role": "Member",
+      "since": "+002019-01-23T04:16:00.000000000-05:00"
+    },
+    {
+      "name": "java",
+      "steam_id": "76561198158291013",
+      "role": "Member",
+      "since": "+002019-01-23T08:52:00.000000000-05:00"
+    }
+  ],
+  "results": [
+    {
+      "season": 43,
+      "division": "Main NA",
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "season": 27,
+      "division": "Main NA",
+      "wins": 2,
+      "losses": 4
+    }
+  ],
+  "name_changes": []
+}
