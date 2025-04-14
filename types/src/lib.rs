@@ -115,7 +115,7 @@ pub struct Team {
     pub tag: String,
     pub image: String,
     pub format: GameMode,
-    pub region: Region,
+    pub region: Option<Region>,
     pub timezone: Option<String>,
     pub steam_group: Option<String>,
     pub division: String,
@@ -280,6 +280,7 @@ pub struct InvalidGameMode {
 #[derive(Debug, Clone, Copy)]
 pub enum GameMode {
     Highlander,
+    Eights,
     Sixes,
     Fours,
     Ultiduo,
@@ -291,11 +292,13 @@ impl FromStr for GameMode {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
             "9v9" => Ok(GameMode::Highlander),
+            "8v8" => Ok(GameMode::Eights),
             "6v6" => Ok(GameMode::Sixes),
             "4v4" => Ok(GameMode::Fours),
             "2v2" => Ok(GameMode::Ultiduo),
             "TF2 Highlander" => Ok(GameMode::Highlander),
             "ASIA TF2-H" => Ok(GameMode::Highlander),
+            "TF2 8vs8" => Ok(GameMode::Eights),
             "TF2 6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
             "TF2 2vs2" => Ok(GameMode::Ultiduo),
@@ -310,6 +313,7 @@ impl GameMode {
     pub fn letter(&self) -> char {
         match self {
             GameMode::Highlander => 'h',
+            GameMode::Eights => '8',
             GameMode::Sixes => '6',
             GameMode::Fours => '4',
             GameMode::Ultiduo => '2',
@@ -319,6 +323,7 @@ impl GameMode {
     fn as_str(&self) -> &'static str {
         match self {
             GameMode::Highlander => "9v9",
+            GameMode::Eights => "8v8",
             GameMode::Sixes => "6v6",
             GameMode::Fours => "4v4",
             GameMode::Ultiduo => "2v2",
@@ -358,6 +363,7 @@ pub struct InvalidRegion {
 }
 
 #[derive(Serialize, Deserialize, Copy, Clone, Debug)]
+#[serde(rename_all = "kebab-case")]
 pub enum Region {
     Europe,
     NorthAmerica,
