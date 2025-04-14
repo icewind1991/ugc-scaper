@@ -9,7 +9,7 @@ use scraper::{Html, Selector};
 use std::str::FromStr;
 use std::sync::OnceLock;
 use time::{Date, PrimitiveDateTime, Time, UtcOffset};
-use ugc_scraper_types::{GameMode, Region};
+use ugc_scraper_types::{GameMode, MembershipRole, Region};
 
 const SELECTOR_TEAM_NAME: &str = ".container .col-md-12 h1 > b";
 const SELECTOR_TEAM_TAG: &str = ".container .col-md-12 h1 > span";
@@ -274,14 +274,19 @@ impl Parser for TeamParser {
                     })?
                     .split('\n')
                     .next()
-                    .unwrap();
+                    .unwrap()
+                    .parse::<MembershipRole>()
+                    .map_err(|err| ParseError::InvalidText {
+                        role: "member role",
+                        text: err.text,
+                    })?;
+
                 let since = select_text(row, &self.selector_team_member_since).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_MEMBER_SINCE,
                         role: "team member since",
                     },
                 )?;
-                let role = role.trim().to_string();
                 let since = whitespace_regex.replace_all(since.trim(), " ");
                 let since = if since.starts_with('(') {
                     let part = since

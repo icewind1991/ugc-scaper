@@ -1,4 +1,4 @@
-CREATE TABLE matches
+CREATE TABLE IF NOT EXISTS matches
 (
     id             INTEGER  NOT NULL,
     team_home      INTEGER  NOT NULL,

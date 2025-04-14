@@ -17,55 +17,55 @@ expression: parsed
     {
       "name": "copycat",
       "steam_id": "76561198072397106",
-      "role": "Leader",
+      "role": "leader",
       "since": "+002019-01-22T11:04:00.000000000-05:00"
     },
     {
       "name": "Mei",
       "steam_id": "76561198134574357",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T11:07:00.000000000-05:00"
     },
     {
       "name": "melstrom",
       "steam_id": "76561198068890768",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T11:07:00.000000000-05:00"
     },
     {
       "name": "Otter Speaking Eng",
       "steam_id": "76561198073466450",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T11:13:00.000000000-05:00"
     },
     {
       "name": "DarkSlayer415",
       "steam_id": "76561198053913751",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T05:54:00.000000000-05:00"
     },
     {
       "name": "corn face",
       "steam_id": "76561198066113821",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T06:59:00.000000000-05:00"
     },
     {
       "name": "erin",
       "steam_id": "76561198307572837",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-22T07:17:00.000000000-05:00"
     },
     {
       "name": "Naps",
       "steam_id": "76561198061524698",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-23T04:16:00.000000000-05:00"
     },
     {
       "name": "java",
       "steam_id": "76561198158291013",
-      "role": "Member",
+      "role": "member",
       "since": "+002019-01-23T08:52:00.000000000-05:00"
     }
   ],

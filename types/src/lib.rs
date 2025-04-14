@@ -1,5 +1,4 @@
 use serde::de::Error;
-use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::fmt::Display;
 use std::str::FromStr;
 pub use steamid_ng::SteamID;
@@ -175,9 +174,48 @@ pub struct Membership {
     pub name: String,
     #[cfg_attr(feature = "serde", serde(with = "serde_steam_id_as_string"))]
     pub steam_id: SteamID,
-    pub role: String,
+    pub role: MembershipRole,
     #[cfg_attr(feature = "serde", serde(with = "time::serde::iso8601"))]
     pub since: OffsetDateTime,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+#[cfg_attr(feature = "serde", serde(rename_all = "lowercase"))]
+pub enum MembershipRole {
+    Leader,
+    Member,
+}
+
+#[derive(Debug, Clone, Error)]
+#[error("Invalid membership role {text}")]
+pub struct InvalidMembershipRole {
+    pub text: String,
+}
+
+impl FromStr for MembershipRole {
+    type Err = InvalidMembershipRole;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s.trim() {
+            "leader" => Ok(MembershipRole::Leader),
+            "member" => Ok(MembershipRole::Member),
+            "Leader" => Ok(MembershipRole::Leader),
+            "Member" => Ok(MembershipRole::Member),
+            _ => Err(InvalidMembershipRole { text: s.into() }),
+        }
+    }
+}
+
+#[cfg(feature = "serde")]
+impl<'de> serde::Deserialize<'de> for MembershipRole {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let s = <&str>::deserialize(deserializer)?;
+        Self::from_str(s).map_err(D::Error::custom)
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -331,19 +369,21 @@ impl GameMode {
     }
 }
 
-impl Serialize for GameMode {
+#[cfg(feature = "serde")]
+impl serde::Serialize for GameMode {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
-        S: Serializer,
+        S: serde::Serializer,
     {
         self.as_str().serialize(serializer)
     }
 }
 
-impl<'de> Deserialize<'de> for GameMode {
+#[cfg(feature = "serde")]
+impl<'de> serde::Deserialize<'de> for GameMode {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
-        D: Deserializer<'de>,
+        D: serde::Deserializer<'de>,
     {
         let s = <&str>::deserialize(deserializer)?;
         Self::from_str(s).map_err(D::Error::custom)
@@ -362,7 +402,8 @@ pub struct InvalidRegion {
     pub text: String,
 }
 
-#[derive(Serialize, Deserialize, Copy, Clone, Debug)]
+#[derive(Copy, Clone, Debug)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[serde(rename_all = "kebab-case")]
 pub enum Region {
     Europe,
