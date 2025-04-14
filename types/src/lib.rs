@@ -115,6 +115,7 @@ pub struct Team {
     pub tag: String,
     pub image: String,
     pub format: GameMode,
+    pub region: Region,
     pub timezone: Option<String>,
     pub steam_group: Option<String>,
     pub division: String,
@@ -347,6 +348,42 @@ impl<'de> Deserialize<'de> for GameMode {
 impl Display for GameMode {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.write_str(self.as_str())
+    }
+}
+
+#[derive(Debug, Clone, Error)]
+#[error("Invalid team region: {text}")]
+pub struct InvalidRegion {
+    pub text: String,
+}
+
+#[derive(Serialize, Deserialize, Copy, Clone, Debug)]
+pub enum Region {
+    Euro,
+    NorthAmerica,
+    SouthAmerica,
+    Asia,
+    Australia,
+}
+
+impl FromStr for Region {
+    type Err = InvalidRegion;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "Euro" => Ok(Region::Euro),
+            "EU" => Ok(Region::Euro),
+            "Asia" => Ok(Region::Asia),
+            "ASIA" => Ok(Region::Asia),
+            "NA" => Ok(Region::NorthAmerica),
+            "South American" => Ok(Region::SouthAmerica),
+            "SA" => Ok(Region::SouthAmerica),
+            "AUS" => Ok(Region::Australia),
+            "AUS/NZ" => Ok(Region::Australia),
+            _ => Err(InvalidRegion {
+                text: s.to_string(),
+            }),
+        }
     }
 }
 

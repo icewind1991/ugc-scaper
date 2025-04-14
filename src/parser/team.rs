@@ -5,8 +5,9 @@ use crate::parser::{
 };
 use crate::{ParseError, Result, ScrapeError};
 use scraper::{Html, Selector};
+use std::str::FromStr;
 use time::{Date, PrimitiveDateTime, Time, UtcOffset};
-use ugc_scraper_types::GameMode;
+use ugc_scraper_types::{GameMode, Region};
 
 const SELECTOR_TEAM_NAME: &str = ".container .col-md-12 h1 > b";
 const SELECTOR_TEAM_TAG: &str = ".container .col-md-12 h1 > span";
@@ -170,6 +171,14 @@ impl Parser for TeamParser {
                 role: "team division",
             })?
             .to_string();
+
+        let region = division
+            .split(' ')
+            .find_map(|part| Region::from_str(part).ok())
+            .ok_or_else(|| ParseError::InvalidText {
+                text: division.clone(),
+                role: "team region",
+            })?;
 
         let timezone = select_text(root, &self.selector_team_timezone).map(String::from);
 
@@ -354,6 +363,7 @@ impl Parser for TeamParser {
             results,
             members,
             name_changes,
+            region,
         })
     }
 }
