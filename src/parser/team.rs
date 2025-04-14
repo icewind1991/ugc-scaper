@@ -25,6 +25,7 @@ const SELECTOR_TEAM_TITLES: &str = ".container .col-md-3 .white-row-small p > .t
 const SELECTOR_TEAM_MEMBER_ROW: &str =
     ".container .white-row-small > .row-fluid > .col-md-12 > .white-row-light-small";
 const SELECTOR_TEAM_MEMBER_LINK: &str = "b > a[href^=\"players_page\"]";
+const SELECTOR_TEAM_MEMBER_STEAM_LINK: &str = "div > a[href*=\"profiles/\"]";
 const SELECTOR_TEAM_MEMBER_ROLE: &str = ".tinytext";
 const SELECTOR_TEAM_MEMBER_SINCE: &str = ".tinytext > em";
 
@@ -58,6 +59,7 @@ pub struct TeamParser {
 
     selector_team_member_row: Selector,
     selector_team_member_link: Selector,
+    selector_team_member_steam_link: Selector,
     selector_team_member_role: Selector,
     selector_team_member_since: Selector,
 
@@ -96,6 +98,8 @@ impl TeamParser {
 
             selector_team_member_row: Selector::parse(SELECTOR_TEAM_MEMBER_ROW).unwrap(),
             selector_team_member_link: Selector::parse(SELECTOR_TEAM_MEMBER_LINK).unwrap(),
+            selector_team_member_steam_link: Selector::parse(SELECTOR_TEAM_MEMBER_STEAM_LINK)
+                .unwrap(),
             selector_team_member_role: Selector::parse(SELECTOR_TEAM_MEMBER_ROLE).unwrap(),
             selector_team_member_since: Selector::parse(SELECTOR_TEAM_MEMBER_SINCE).unwrap(),
 
@@ -247,19 +251,15 @@ impl Parser for TeamParser {
         let members = document
             .select(&self.selector_team_member_row)
             .map(|row| {
-                let link = row.select(&self.selector_team_member_link).next().ok_or(
-                    ParseError::ElementNotFound {
+                let link = row
+                    .select(&self.selector_team_member_link)
+                    .next()
+                    .or_else(|| row.select(&self.selector_team_member_steam_link).next())
+                    .ok_or(ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_MEMBER_LINK,
                         role: "team member link",
-                    },
-                )?;
-                let name = link
-                    .first_text()
-                    .ok_or(ParseError::EmptyText {
-                        selector: SELECTOR_TEAM_MEMBER_LINK,
-                        role: "team member link",
-                    })?
-                    .to_string();
+                    })?;
+                let name = link.first_text().unwrap_or_default().to_string();
                 let link = link.attr("href").unwrap_or_default();
 
                 let role = select_text(row, &self.selector_team_member_role)

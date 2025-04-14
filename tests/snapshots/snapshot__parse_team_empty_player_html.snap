@@ -1,0 +1,45 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Penguin Doom Squad",
+  "tag": "{pDs}",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7d/7d23af88d8b08b555db373ab5b65ce973b02f35c.jpg",
+  "format": "9v9",
+  "region": "north-america",
+  "timezone": "West",
+  "steam_group": "http://steamcommunity.com/groups/pds_team",
+  "division": "NA Steel",
+  "description": "",
+  "titles": [],
+  "members": [
+    {
+      "name": "Muffalopadus",
+      "steam_id": "76561198007659326",
+      "role": "member",
+      "since": "+002012-01-23T00:00:00.000000000Z"
+    },
+    {
+      "name": "pDs DaLton",
+      "steam_id": "76561197960632490",
+      "role": "member",
+      "since": "+002012-01-23T00:00:00.000000000Z"
+    },
+    {
+      "name": "",
+      "steam_id": "76561197967332647",
+      "role": "member",
+      "since": "+002012-01-23T00:00:00.000000000Z"
+    }
+  ],
+  "results": [
+    {
+      "season": 6,
+      "division": "NA Steel",
+      "wins": 8,
+      "losses": 5
+    }
+  ],
+  "name_changes": []
+}

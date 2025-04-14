@@ -12,6 +12,7 @@ use ugc_scraper::parser::{
 
 #[test_case("player_76561198024494988.html", "player")]
 #[test_case("player_76561198049312442.html", "player_classes")]
+#[test_case("player_76561197967332647.html", "player_empty")]
 #[cfg(feature = "serde")]
 fn test_parse_player_html(input: &str, name: &str) {
     let body = read_to_string(format!("tests/data/{input}")).unwrap();
@@ -36,6 +37,7 @@ fn test_parse_player_details_html(input: &str, name: &str) {
 #[test_case("team_32437.html", "team_empty_name_change")]
 #[test_case("team_29228.html", "team_newlines_join_date")]
 #[test_case("team_10763.html", "team_na_4v4")]
+#[test_case("team_3975.html", "team_empty_player")]
 #[cfg(feature = "serde")]
 fn test_parse_team_html(input: &str, name: &str) {
     let body = read_to_string(format!("tests/data/{input}")).unwrap();

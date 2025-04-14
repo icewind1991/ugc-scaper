@@ -1,0 +1,18 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "",
+  "avatar": "",
+  "steam_id": "76561197967332647",
+  "honors": [
+    {
+      "format": "TF2 Highlander",
+      "season": "Season 6 NA Steel",
+      "team": "Penguin Doom Squad"
+    }
+  ],
+  "teams": [],
+  "favorite_classes": []
+}
