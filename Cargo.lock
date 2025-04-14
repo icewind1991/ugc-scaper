@@ -1695,11 +1695,11 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "2.0.3"
+version = "2.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c006c85c7651b3cf2ada4584faa36773bd07bac24acfb39f3c431b36d7e667aa"
+checksum = "567b8a2dae586314f7be2a752ec7474332959c6460e02bde30d702a66d488708"
 dependencies = [
- "thiserror-impl 2.0.3",
+ "thiserror-impl 2.0.12",
 ]
 
 [[package]]
@@ -1715,9 +1715,9 @@ dependencies = [
 
 [[package]]
 name = "thiserror-impl"
-version = "2.0.3"
+version = "2.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f077553d607adc1caf65430528a576c757a71ed73944b66ebb58ef2bbd243568"
+checksum = "7f7cf42b4507d8ea322120659672cf1b9dbb93f8f2d4ecfd6e51350ff5b17a1d"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1880,7 +1880,7 @@ checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
 name = "ugc-scraper"
-version = "0.4.4"
+version = "0.5.0"
 dependencies = [
  "insta",
  "main_error",
@@ -1888,7 +1888,7 @@ dependencies = [
  "scraper",
  "steamid-ng",
  "test-case",
- "thiserror 2.0.3",
+ "thiserror 2.0.12",
  "time",
  "tokio",
  "ugc-scraper-types",
@@ -1896,10 +1896,11 @@ dependencies = [
 
 [[package]]
 name = "ugc-scraper-types"
-version = "0.1.2"
+version = "0.2.0"
 dependencies = [
  "serde",
  "steamid-ng",
+ "thiserror 2.0.12",
  "time",
 ]
 

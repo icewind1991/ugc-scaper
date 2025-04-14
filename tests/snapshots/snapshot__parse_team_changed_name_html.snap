@@ -6,7 +6,7 @@ expression: parsed
   "name": "UGC 6s",
   "tag": "Europe",
   "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/09/096a30b1025c586f9d41c686077129f6e86998d0_full.jpg",
-  "format": "TF2 6vs6",
+  "format": "6v6",
   "timezone": "West-Euro",
   "steam_group": null,
   "division": "Europe",

@@ -1,6 +1,9 @@
+use serde::de::Error;
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::fmt::Display;
 use std::str::FromStr;
 pub use steamid_ng::SteamID;
+use thiserror::Error;
 use time::{Date, OffsetDateTime};
 
 #[cfg(feature = "serde")]
@@ -111,7 +114,7 @@ pub struct Team {
     pub name: String,
     pub tag: String,
     pub image: String,
-    pub format: String,
+    pub format: GameMode,
     pub timezone: Option<String>,
     pub steam_group: Option<String>,
     pub division: String,
@@ -267,6 +270,12 @@ pub struct MatchInfo {
     pub score_away: u8,
 }
 
+#[derive(Debug, Clone, Error)]
+#[error("Invalid game mode {text}")]
+pub struct InvalidGameMode {
+    pub text: String,
+}
+
 #[derive(Debug, Clone, Copy)]
 pub enum GameMode {
     Highlander,
@@ -276,7 +285,7 @@ pub enum GameMode {
 }
 
 impl FromStr for GameMode {
-    type Err = ();
+    type Err = InvalidGameMode;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
@@ -284,7 +293,14 @@ impl FromStr for GameMode {
             "6v6" => Ok(GameMode::Sixes),
             "4v4" => Ok(GameMode::Fours),
             "2v2" => Ok(GameMode::Ultiduo),
-            _ => Err(()),
+            "TF2 Highlander" => Ok(GameMode::Highlander),
+            "ASIA TF2-H" => Ok(GameMode::Highlander),
+            "TF2 6vs6" => Ok(GameMode::Sixes),
+            "TF2 4vs4" => Ok(GameMode::Fours),
+            "TF2 2vs2" => Ok(GameMode::Ultiduo),
+            _ => Err(InvalidGameMode {
+                text: s.to_string(),
+            }),
         }
     }
 }
@@ -306,6 +322,25 @@ impl GameMode {
             GameMode::Fours => "4v4",
             GameMode::Ultiduo => "2v2",
         }
+    }
+}
+
+impl Serialize for GameMode {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        self.as_str().serialize(serializer)
+    }
+}
+
+impl<'de> Deserialize<'de> for GameMode {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let s = <&str>::deserialize(deserializer)?;
+        Self::from_str(s).map_err(D::Error::custom)
     }
 }
 

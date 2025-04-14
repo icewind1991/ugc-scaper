@@ -6,6 +6,7 @@ use crate::parser::{
 use crate::{ParseError, Result, ScrapeError};
 use scraper::{Html, Selector};
 use time::{Date, PrimitiveDateTime, Time, UtcOffset};
+use ugc_scraper_types::GameMode;
 
 const SELECTOR_TEAM_NAME: &str = ".container .col-md-12 h1 > b";
 const SELECTOR_TEAM_TAG: &str = ".container .col-md-12 h1 > span";
@@ -149,7 +150,11 @@ impl Parser for TeamParser {
                 selector: SELECTOR_TEAM_FORMAT,
                 role: "team format",
             })?
-            .to_string();
+            .parse::<GameMode>()
+            .map_err(|e| ParseError::InvalidText {
+                text: e.text,
+                role: "team game mode",
+            })?;
 
         let steam_group = root
             .select(&self.selector_steam_group)
