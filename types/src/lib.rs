@@ -203,6 +203,7 @@ impl FromStr for MembershipRole {
         match s.trim() {
             "leader" => Ok(MembershipRole::Leader),
             "member" => Ok(MembershipRole::Member),
+            "-" => Ok(MembershipRole::Member),
             "Leader" => Ok(MembershipRole::Leader),
             "Member" => Ok(MembershipRole::Member),
             _ => Err(InvalidMembershipRole { text: s.into() }),
@@ -347,6 +348,7 @@ impl FromStr for GameMode {
             "TF2 6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
             "TF2 2vs2" => Ok(GameMode::Ultiduo),
+            "ff4v4" => Ok(GameMode::FFFours),
             "FF 4vs4 OvsD" => Ok(GameMode::FFFours),
             _ => Err(InvalidGameMode {
                 text: s.to_string(),
