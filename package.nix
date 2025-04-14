@@ -7,11 +7,12 @@
 let
   inherit (lib.sources) sourceByRegex;
   inherit (builtins) fromTOML readFile;
-  src = sourceByRegex ./api-server [ "Cargo.*" "(src)(/.*)?" "README.md" ];
+  src = sourceByRegex ./. [ "Cargo.*" "((types|api-server|)/?(src)?)(/.*)?" "README.md" ];
   version = (fromTOML (readFile api-server/Cargo.toml)).package.version;
 in
 rustPlatform.buildRustPackage rec {
   pname = "ugc-api-server";
+  sourceRoot = "${src.name}/api-server";
 
   inherit src version;
 
@@ -29,8 +30,5 @@ rustPlatform.buildRustPackage rec {
 
   cargoLock = {
     lockFile = ./api-server/Cargo.lock;
-    outputHashes = {
-      "ugc-scraper-0.5.0" = "sha256-G5QCu2BJxyxMH7AuRsr122qAxzABQ/5DY12vCQ9uTCM=";
-    };
   };
 }
