@@ -328,6 +328,7 @@ pub enum GameMode {
     Sixes,
     Fours,
     Ultiduo,
+    FFFours,
 }
 
 impl FromStr for GameMode {
@@ -346,6 +347,7 @@ impl FromStr for GameMode {
             "TF2 6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
             "TF2 2vs2" => Ok(GameMode::Ultiduo),
+            "FF 4vs4 OvsD" => Ok(GameMode::FFFours),
             _ => Err(InvalidGameMode {
                 text: s.to_string(),
             }),
@@ -354,23 +356,36 @@ impl FromStr for GameMode {
 }
 
 impl GameMode {
-    pub fn letter(&self) -> char {
+    pub fn letter(&self) -> &'static str {
         match self {
-            GameMode::Highlander => 'h',
-            GameMode::Eights => '8',
-            GameMode::Sixes => '6',
-            GameMode::Fours => '4',
-            GameMode::Ultiduo => '2',
+            GameMode::Highlander => "h",
+            GameMode::Eights => "8",
+            GameMode::Sixes => "6",
+            GameMode::Fours => "4",
+            GameMode::Ultiduo => "2",
+            GameMode::FFFours => "ff4",
         }
     }
 
-    fn as_str(&self) -> &'static str {
+    pub fn as_str(&self) -> &'static str {
         match self {
             GameMode::Highlander => "9v9",
             GameMode::Eights => "8v8",
             GameMode::Sixes => "6v6",
             GameMode::Fours => "4v4",
             GameMode::Ultiduo => "2v2",
+            GameMode::FFFours => "ff4v4",
+        }
+    }
+
+    pub fn is_tf2(&self) -> bool {
+        match self {
+            GameMode::Highlander => true,
+            GameMode::Eights => true,
+            GameMode::Sixes => true,
+            GameMode::Fours => true,
+            GameMode::Ultiduo => true,
+            _ => false,
         }
     }
 }
