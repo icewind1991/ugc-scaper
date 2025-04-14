@@ -1964,7 +1964,7 @@ dependencies = [
 [[package]]
 name = "ugc-scraper"
 version = "0.5.0"
-source = "git+https://github.com/icewind1991/ugc-scaper#2d1565117d2b9e9933c0608f00809f6815420156"
+source = "git+https://github.com/icewind1991/ugc-scaper#11fd39295c24cabb6198be51f0107df9cfb740e7"
 dependencies = [
  "regex",
  "reqwest",
@@ -1979,7 +1979,7 @@ dependencies = [
 [[package]]
 name = "ugc-scraper-types"
 version = "0.2.0"
-source = "git+https://github.com/icewind1991/ugc-scaper#2d1565117d2b9e9933c0608f00809f6815420156"
+source = "git+https://github.com/icewind1991/ugc-scaper#11fd39295c24cabb6198be51f0107df9cfb740e7"
 dependencies = [
  "serde",
  "steamid-ng",

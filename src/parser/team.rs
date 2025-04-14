@@ -138,19 +138,14 @@ impl Parser for TeamParser {
             _ => {}
         };
 
-        let image =
-            document
-                .select(&self.selector_image)
-                .next()
-                .ok_or(ParseError::ElementNotFound {
-                    selector: SELECTOR_TEAM_IMAGE,
-                    role: "team image",
-                })?;
-        let image = image
-            .attr("data-cfsrc")
-            .or_else(|| image.attr("src"))
-            .unwrap_or_default()
-            .to_string();
+        let image = document.select(&self.selector_image).next();
+        let image = image.and_then(|image| {
+            image
+                .attr("data-cfsrc")
+                .or_else(|| image.attr("src"))
+                .filter(|image| !image.ends_with("team_avatar_placeholder.png"))
+                .map(String::from)
+        });
 
         let format = select_text(root, &self.selector_team_format)
             .ok_or(ParseError::ElementNotFound {

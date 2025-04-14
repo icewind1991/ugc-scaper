@@ -112,7 +112,7 @@ pub struct MembershipHistory {
 pub struct Team {
     pub name: String,
     pub tag: String,
-    pub image: String,
+    pub image: Option<String>,
     pub format: GameMode,
     pub region: Option<Region>,
     pub timezone: Option<String>,
@@ -125,7 +125,7 @@ pub struct Team {
     pub name_changes: Vec<NameChange>,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(rename_all = "lowercase"))]
 pub enum Class {
@@ -179,9 +179,12 @@ pub struct Membership {
     pub since: OffsetDateTime,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 #[cfg_attr(feature = "serde", serde(rename_all = "lowercase"))]
+#[cfg_attr(feature = "sqlx", derive(sqlx::Type))]
+#[cfg_attr(feature = "sqlx", sqlx(type_name = "membership_role"))]
+#[cfg_attr(feature = "sqlx", sqlx(rename_all = "lowercase"))]
 pub enum MembershipRole {
     Leader,
     Member,
@@ -316,6 +319,9 @@ pub struct InvalidGameMode {
 }
 
 #[derive(Debug, Clone, Copy)]
+#[cfg_attr(feature = "sqlx", derive(sqlx::Type))]
+#[cfg_attr(feature = "sqlx", sqlx(type_name = "game_mode"))]
+#[cfg_attr(feature = "sqlx", sqlx(rename_all = "lowercase"))]
 pub enum GameMode {
     Highlander,
     Eights,
@@ -405,6 +411,9 @@ pub struct InvalidRegion {
 #[derive(Copy, Clone, Debug)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[serde(rename_all = "kebab-case")]
+#[cfg_attr(feature = "sqlx", derive(sqlx::Type))]
+#[cfg_attr(feature = "sqlx", sqlx(type_name = "region"))]
+#[cfg_attr(feature = "sqlx", sqlx(rename_all = "kebab-case"))]
 pub enum Region {
     Europe,
     NorthAmerica,
@@ -526,7 +535,6 @@ mod serde_steam_id_as_string {
     where
         D: Deserializer<'de>,
     {
-        let id = u64::deserialize(deserializer)?;
-        Ok(SteamID::from(id))
+        SteamID::deserialize(deserializer)
     }
 }

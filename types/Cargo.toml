@@ -12,7 +12,9 @@ steamid-ng = "1.0.0"
 serde = { version = "1.0.215", features = ["derive"], optional = true }
 time = { version = "0.3.36", features = ["parsing", "macros"] }
 thiserror = "2.0.12"
+sqlx = { version = "0.8.4", default-features = false, features = ["derive"], optional = true }
 
 [features]
 serde = ["dep:serde", "time/serde", "time/formatting"]
+sqlx = ["dep:sqlx"]
 default = ["serde"]
