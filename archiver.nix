@@ -7,11 +7,12 @@
 let
   inherit (lib.sources) sourceByRegex;
   inherit (builtins) fromTOML readFile;
-  src = sourceByRegex ./archiver [ "Cargo.*" "(src)(/.*)?" "README.md" "(.sqlx)(/.*)?"  ];
+  src = sourceByRegex ./. [ "Cargo.*" "((types|archiver|)/?(src)?)(/.*)?" "README.md" ];
   version = (fromTOML (readFile archiver/Cargo.toml)).package.version;
 in
 rustPlatform.buildRustPackage rec {
   pname = "ugc-api-archiver";
+  sourceRoot = "${src.name}/archiver";
 
   inherit src version;
 

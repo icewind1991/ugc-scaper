@@ -1,5 +1,5 @@
 use super::Parser;
-use crate::data::{RosterHistory, TeamRosterData, MembershipRole};
+use crate::data::{MembershipRole, RosterHistory, TeamRosterData};
 use crate::parser::{select_text, ROSTER_HISTORY_DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
@@ -60,11 +60,7 @@ impl Parser for TeamRosterHistoryParser {
         let history = document
             .select(&self.selector_item)
             .map(|item| {
-                let name =
-                    select_text(item, &self.selector_name).ok_or(ParseError::ElementNotFound {
-                        selector: SELECTOR_ROSTER_NAME,
-                        role: "member name",
-                    })?;
+                let name = select_text(item, &self.selector_name).unwrap_or_default();
                 let steam_id =
                     select_text(item, &self.selector_id).ok_or(ParseError::ElementNotFound {
                         selector: SELECTOR_ROSTER_ID,
@@ -78,12 +74,10 @@ impl Parser for TeamRosterHistoryParser {
                 )?;
                 let left = select_text(item, &self.selector_left);
                 let role = select_text(item, &self.selector_role)
-                    .ok_or(ParseError::ElementNotFound {
-                        selector: SELECTOR_ROSTER_ROLE,
-                        role: "member role",
-                    })?
+                    .unwrap_or_default()
                     .trim_start_matches("Former ")
-                    .parse::<MembershipRole>().unwrap_or(MembershipRole::Member);
+                    .parse::<MembershipRole>()
+                    .unwrap_or(MembershipRole::Member);
 
                 Ok(RosterHistory {
                     name: name.to_string(),
