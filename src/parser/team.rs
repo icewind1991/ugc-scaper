@@ -151,11 +151,12 @@ impl Parser for TeamParser {
                 .map(String::from)
         });
 
-        let format = select_text(root, &self.selector_team_format)
+        let format_text = select_text(root, &self.selector_team_format)
             .ok_or(ParseError::ElementNotFound {
                 selector: SELECTOR_TEAM_FORMAT,
                 role: "team format",
-            })?
+            })?;
+        let format = format_text
             .parse::<GameMode>()
             .map_err(|e| ParseError::InvalidText {
                 text: e.text,
@@ -189,6 +190,12 @@ impl Parser for TeamParser {
             if region.is_none() {
                 region = Region::from_str(timezone).ok();
             }
+        }
+
+        if region.is_none() {
+            region = format_text
+                .split(' ')
+                .find_map(|part| Region::from_str(part).ok());
         }
 
         let description = select_text(root, &self.selector_team_description)
