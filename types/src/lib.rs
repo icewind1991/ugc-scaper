@@ -329,6 +329,7 @@ pub enum GameMode {
     Sixes,
     Fours,
     Ultiduo,
+    Ones,
     FFFours,
 }
 
@@ -342,12 +343,14 @@ impl FromStr for GameMode {
             "6v6" => Ok(GameMode::Sixes),
             "4v4" => Ok(GameMode::Fours),
             "2v2" => Ok(GameMode::Ultiduo),
+            "1v1" => Ok(GameMode::Ones),
             "TF2 Highlander" => Ok(GameMode::Highlander),
             "ASIA TF2-H" => Ok(GameMode::Highlander),
             "TF2 8vs8" => Ok(GameMode::Eights),
             "TF2 6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
             "TF2 2vs2" => Ok(GameMode::Ultiduo),
+            "TF2 Sol 1vs1" => Ok(GameMode::Ones),
             "ff4v4" => Ok(GameMode::FFFours),
             "FF 4vs4 OvsD" => Ok(GameMode::FFFours),
             _ => Err(InvalidGameMode {
@@ -365,6 +368,7 @@ impl GameMode {
             GameMode::Sixes => "6",
             GameMode::Fours => "4",
             GameMode::Ultiduo => "2",
+            GameMode::Ones => "1",
             GameMode::FFFours => "ff4",
         }
     }
@@ -376,6 +380,7 @@ impl GameMode {
             GameMode::Sixes => "6v6",
             GameMode::Fours => "4v4",
             GameMode::Ultiduo => "2v2",
+            GameMode::Ones => "1v1",
             GameMode::FFFours => "ff4v4",
         }
     }
@@ -387,6 +392,7 @@ impl GameMode {
             GameMode::Sixes => true,
             GameMode::Fours => true,
             GameMode::Ultiduo => true,
+            GameMode::Ones => true,
             _ => false,
         }
     }

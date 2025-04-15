@@ -1,0 +1,19 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "TruckerPete",
+  "tag": "{RoFL}",
+  "image": null,
+  "format": "1v1",
+  "region": null,
+  "timezone": null,
+  "steam_group": null,
+  "division": "Eliminated Players",
+  "description": "",
+  "titles": [],
+  "members": [],
+  "results": [],
+  "name_changes": []
+}
