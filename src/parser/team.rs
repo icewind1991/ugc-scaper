@@ -177,13 +177,19 @@ impl Parser for TeamParser {
             })?
             .to_string();
 
-        let region = division
+        let mut region = division
             .split(' ')
             .find_map(|part| Region::from_str(part).ok())
             .or_else(|| Region::from_str(division.trim_end_matches("New Teams").trim()).ok())
             .or_else(|| Region::from_str(&division).ok());
 
         let timezone = select_text(root, &self.selector_team_timezone).map(String::from);
+
+        if let Some(timezone) = timezone.as_deref() {
+            if region.is_none() {
+                region = Region::from_str(timezone).ok();
+            }
+        }
 
         let description = select_text(root, &self.selector_team_description)
             .unwrap_or_default()
