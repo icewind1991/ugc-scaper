@@ -1,0 +1,96 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Forest of BEARs",
+  "tag": "||BEAR||",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4b/4b44f0549a072bb80829de501ed5f4475a4f6057.jpg",
+  "format": "9v9",
+  "region": "north-america",
+  "timezone": null,
+  "steam_group": null,
+  "division": "NA Steel",
+  "description": "",
+  "titles": [],
+  "members": [
+    {
+      "name": "Brave Toaster",
+      "steam_id": "76561198048460099",
+      "role": "leader",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "Smamp",
+      "steam_id": "76561198024029524",
+      "role": "leader",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "Bammey",
+      "steam_id": "76561198013984831",
+      "role": "leader",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "stalphy",
+      "steam_id": "76561198037765614",
+      "role": "member",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "alex fünke",
+      "steam_id": "76561198004769212",
+      "role": "member",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "AndyHUNGRY Darkpro",
+      "steam_id": "76561198045789913",
+      "role": "member",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "audoo",
+      "steam_id": "76561198037724858",
+      "role": "member",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "A Light Green Coat",
+      "steam_id": "76561198039469761",
+      "role": "member",
+      "since": "+002012-09-04T00:00:00.000000000Z"
+    },
+    {
+      "name": "Tiny",
+      "steam_id": "76561198054203986",
+      "role": "member",
+      "since": "+002012-10-03T00:00:00.000000000Z"
+    }
+  ],
+  "results": [
+    {
+      "season": 8,
+      "division": "NA Iron",
+      "wins": 5,
+      "losses": 4
+    }
+  ],
+  "name_changes": [
+    {
+      "from_tag": "||BEAR||",
+      "from": "",
+      "to_tag": "||BEAR||",
+      "to": "Forest of BEARs",
+      "date": "2012-09-17"
+    },
+    {
+      "from_tag": "||BEAR||",
+      "from": "Forest of BEARs",
+      "to_tag": "||BEAR||",
+      "to": "",
+      "date": "2012-09-15"
+    }
+  ]
+}

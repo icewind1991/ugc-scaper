@@ -1,4 +1,4 @@
-use super::{ElementExt, Parser};
+use super::{select_text_empty, ElementExt, Parser};
 use crate::data::{Membership, NameChange, Record, Team};
 use crate::parser::{
     select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_ALT_FORMAT, MEMBER_DATE_FORMAT,
@@ -320,17 +320,17 @@ impl Parser for TeamParser {
             .map(|row| {
                 let from_tag =
                     select_text(row, &self.selector_team_name_from_tag).unwrap_or_default();
-                let from_name = select_text(row, &self.selector_team_name_from_name).ok_or(
+                let from_name = select_text_empty(row, &self.selector_team_name_from_name).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_NAME_FROM_NAME,
                         role: "team name change from name",
                     },
                 )?;
                 let to_tag = select_text(row, &self.selector_team_name_to_tag).unwrap_or_default();
-                let to_name = select_text(row, &self.selector_team_name_to_name).ok_or(
+                let to_name = select_text_empty(row, &self.selector_team_name_to_name).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_TEAM_NAME_TO_NAME,
-                        role: "team name change from name",
+                        role: "team name change to name",
                     },
                 )?;
                 let date = select_text(row, &self.selector_team_name_date).ok_or(

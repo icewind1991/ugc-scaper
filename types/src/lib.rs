@@ -392,7 +392,6 @@ impl GameMode {
             GameMode::Sixes => true,
             GameMode::Fours => true,
             GameMode::Ultiduo => true,
-            GameMode::Ones => true,
             _ => false,
         }
     }

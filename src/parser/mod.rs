@@ -48,6 +48,17 @@ fn select_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a str> {
         .map(str::trim)
 }
 
+fn select_text_empty<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a str> {
+    el.select(selector)
+        .next()
+        .map(|item| {
+            item.text()
+                .find(|s| !s.trim().is_empty())
+                .unwrap_or_default()
+        })
+        .map(str::trim)
+}
+
 fn select_last_text<'a>(el: ElementRef<'a>, selector: &Selector) -> Option<&'a str> {
     el.select(selector)
         .next()
