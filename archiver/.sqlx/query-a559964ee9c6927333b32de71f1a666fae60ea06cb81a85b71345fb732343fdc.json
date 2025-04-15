@@ -1,0 +1,23 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select greatest(max(team_home), max(team_away)) as max, least(min(team_home), min(team_away)) as min from matches limit 1;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "max",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "min",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [null, null]
+  },
+  "hash": "a559964ee9c6927333b32de71f1a666fae60ea06cb81a85b71345fb732343fdc"
+}

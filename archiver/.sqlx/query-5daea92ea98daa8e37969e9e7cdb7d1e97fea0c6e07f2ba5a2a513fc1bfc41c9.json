@@ -1,0 +1,12 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO team_name_changes (\n                team_id, from_tag, from_name, to_tag, to_name, date\n              ) VALUES ($1, $2, $3, $4, $5, $6)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": ["Int4", "Varchar", "Varchar", "Varchar", "Varchar", "Date"]
+    },
+    "nullable": []
+  },
+  "hash": "5daea92ea98daa8e37969e9e7cdb7d1e97fea0c6e07f2ba5a2a513fc1bfc41c9"
+}

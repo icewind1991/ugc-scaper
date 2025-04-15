@@ -5,11 +5,12 @@ CREATE TYPE membership_role AS ENUM ('leader', 'member');
 CREATE TABLE teams
 (
     id          INTEGER   NOT NULL,
+    tag         VARCHAR   NOT NULL,
     name        VARCHAR   NOT NULL,
-    image       VARCHAR   NOT NULL,
+    image       VARCHAR,
     format      game_mode NOT NULL,
     region      region,
-    timezone    VARCHAR   NOT NULL,
+    timezone    VARCHAR,
     steam_group VARCHAR,
     division    VARCHAR   NOT NULL,
     description VARCHAR   NOT NULL
@@ -39,7 +40,7 @@ CREATE TABLE titles
 CREATE INDEX titles_team_id_idx
     ON titles USING BTREE (team_id);
 
-CREATE TABLE name_changes
+CREATE TABLE team_name_changes
 (
     team_id   INTEGER NOT NULL,
     from_tag  VARCHAR NOT NULL,
@@ -49,8 +50,8 @@ CREATE TABLE name_changes
     date      DATE
 );
 
-CREATE INDEX name_changes_team_id_idx
-    ON name_changes USING BTREE (team_id);
+CREATE INDEX team_name_changes_team_id_idx
+    ON team_name_changes USING BTREE (team_id);
 
 CREATE TABLE records
 (

@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ugc-scraper-types = "0.1.2"
+# ugc-scraper-types = "0.1.2"
+ugc-scraper-types = { version = "0.2.0", path = "../types", features = ["sqlx"] }
 reqwest = { version = "0.12.15", features = ["json"] }
 clap = { version = "4.5.35", features = ["derive"] }
 tracing = "0.1.41"
@@ -13,6 +14,8 @@ serde = { version = "1.0.219", features = ["derive"] }
 toml = "0.8.20"
 secretfile = "0.1.0"
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
-sqlx = { version = "0.8.3", features = ["postgres", "runtime-tokio"] }
+sqlx = { version = "0.8.3", features = ["postgres", "runtime-tokio", "time"] }
 thiserror = "2.0.12"
 main_error = "0.1.2"
+tokio-stream = "0.1.17"
+futures-util = "0.3.31"

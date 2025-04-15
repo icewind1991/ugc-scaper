@@ -151,8 +151,8 @@ impl Parser for TeamParser {
                 .map(String::from)
         });
 
-        let format_text = select_text(root, &self.selector_team_format)
-            .ok_or(ParseError::ElementNotFound {
+        let format_text =
+            select_text(root, &self.selector_team_format).ok_or(ParseError::ElementNotFound {
                 selector: SELECTOR_TEAM_FORMAT,
                 role: "team format",
             })?;

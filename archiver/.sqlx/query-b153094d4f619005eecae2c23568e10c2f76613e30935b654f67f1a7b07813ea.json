@@ -1,0 +1,12 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO titles (\n                team_id, title\n              ) VALUES ($1, $2)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": ["Int4", "Varchar"]
+    },
+    "nullable": []
+  },
+  "hash": "b153094d4f619005eecae2c23568e10c2f76613e30935b654f67f1a7b07813ea"
+}

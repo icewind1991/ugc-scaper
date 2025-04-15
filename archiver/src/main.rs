@@ -8,8 +8,10 @@ use crate::config::Config;
 use clap::{Parser, Subcommand};
 use main_error::MainResult;
 use std::path::PathBuf;
+use std::pin::pin;
 use std::time::Duration;
 use tokio::time::sleep;
+use tokio_stream::StreamExt;
 use tracing::{error, info, span, warn, Level};
 
 #[derive(Debug, Parser)]
@@ -23,6 +25,8 @@ struct Args {
 #[derive(Debug, Subcommand)]
 enum Command {
     Matches,
+    Teams,
+    FixupTeams,
 }
 
 const LAST_MATCH: u32 = 117047;
@@ -39,6 +43,12 @@ async fn main() -> MainResult {
     match args.command {
         Command::Matches => {
             archive_matches(&client, &archive).await?;
+        }
+        Command::Teams => {
+            archive_teams(&client, &archive).await?;
+        }
+        Command::FixupTeams => {
+            fixup_teams(&client, &archive).await?;
         }
     }
     Ok(())
@@ -62,6 +72,61 @@ async fn archive_matches(client: &UgcClient, archive: &Archive) -> MainResult {
             }
             Err(e) => {
                 error!("error fetching match: {}", e);
+            }
+        }
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+async fn archive_teams(client: &UgcClient, archive: &Archive) -> MainResult {
+    let range = archive.get_team_range().await?;
+    let next_team = archive.get_last_team_id().await?.unwrap_or(range.start - 1) + 1;
+
+    for id in next_team..=range.end {
+        let _span = span!(Level::INFO, "archive_team", id = id).entered();
+        match client.get_team(id).await.check_not_found() {
+            Ok(Some(team_data)) => {
+                if team_data.format.is_tf2() {
+                    info!("storing team");
+                    archive.store_team(id, &team_data).await?;
+                } else {
+                    info!("skipping non-tf2 team");
+                }
+            }
+            Ok(None) => {
+                warn!("team not found");
+            }
+            Err(e) => {
+                error!("error fetching team: {:?}", e);
+                panic!();
+            }
+        }
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+async fn fixup_teams(client: &UgcClient, archive: &Archive) -> MainResult {
+    let mut ids = pin!(archive.get_no_region_teams());
+
+    while let Some(Ok(id)) = ids.next().await {
+        let _span = span!(Level::INFO, "fixup_team", id = id).entered();
+        match client.get_team(id).await.check_not_found() {
+            Ok(Some(team_data)) => {
+                if team_data.format.is_tf2() {
+                    info!(region = ?team_data.region, "updating team region");
+                    archive.update_team_region(id, &team_data).await?;
+                } else {
+                    info!("skipping non-tf2 team");
+                }
+            }
+            Ok(None) => {
+                warn!("team not found");
+            }
+            Err(e) => {
+                error!("error fetching team: {:?}", e);
+                panic!();
             }
         }
         sleep(Duration::from_millis(500)).await;

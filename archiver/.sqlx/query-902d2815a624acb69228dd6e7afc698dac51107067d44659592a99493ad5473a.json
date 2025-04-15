@@ -1,0 +1,28 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE teams SET region = $2 WHERE id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int4",
+        {
+          "Custom": {
+            "name": "region",
+            "kind": {
+              "Enum": [
+                "europe",
+                "north-america",
+                "south-america",
+                "asia",
+                "australia"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "902d2815a624acb69228dd6e7afc698dac51107067d44659592a99493ad5473a"
+}

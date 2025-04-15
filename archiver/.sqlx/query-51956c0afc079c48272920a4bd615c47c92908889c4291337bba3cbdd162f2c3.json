@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select id from teams where region IS NULL and format != 'eights' order by id desc",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [false]
+  },
+  "hash": "51956c0afc079c48272920a4bd615c47c92908889c4291337bba3cbdd162f2c3"
+}
