@@ -9,943 +9,1100 @@ expression: parsed
       "name": "marko",
       "steam_id": "76561198274165935",
       "joined": "2023-10-19",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "NioH",
       "steam_id": "76561198218881647",
       "joined": "2023-07-22",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Teroantero2007",
       "steam_id": "76561197996902035",
       "joined": "2023-06-26",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Raipe",
       "steam_id": "76561198061082936",
       "joined": "2023-03-19",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "drew",
       "steam_id": "76561198012304706",
       "joined": "2023-02-12",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "BaaBo",
       "steam_id": "76561198004331478",
       "joined": "2023-01-09",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "bat",
       "steam_id": "76561198019511460",
       "joined": "2022-10-08",
-      "left": "2023-03-19"
+      "left": "2023-03-19",
+      "role": "member"
     },
     {
       "name": "Houf",
       "steam_id": "76561198448050535",
       "joined": "2022-09-26",
-      "left": "2022-10-05"
+      "left": "2022-10-05",
+      "role": "member"
     },
     {
       "name": "Royal Flush",
       "steam_id": "76561198052084714",
       "joined": "2022-05-08",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Kireek",
       "steam_id": "76561198052694464",
       "joined": "2022-01-27",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Husky",
       "steam_id": "76561198176360750",
       "joined": "2021-11-07",
-      "left": "2022-05-15"
+      "left": "2022-05-15",
+      "role": "member"
     },
     {
       "name": "Croc",
       "steam_id": "76561198902479382",
       "joined": "2021-10-04",
-      "left": "2022-05-02"
+      "left": "2022-05-02",
+      "role": "member"
     },
     {
       "name": "Piney",
       "steam_id": "76561198050910939",
       "joined": "2021-10-04",
-      "left": "2023-08-04"
+      "left": "2023-08-04",
+      "role": "member"
     },
     {
       "name": "Airplay",
       "steam_id": "76561198286047751",
       "joined": "2021-10-04",
-      "left": "2023-06-26"
+      "left": "2023-06-26",
+      "role": "member"
     },
     {
       "name": "kanon",
       "steam_id": "76561198154189208",
       "joined": "2021-09-29",
-      "left": "2022-01-04"
+      "left": "2022-01-04",
+      "role": "member"
     },
     {
       "name": "Husky",
       "steam_id": "76561198176360750",
       "joined": "2021-07-06",
-      "left": "2021-10-03"
+      "left": "2021-10-03",
+      "role": "member"
     },
     {
       "name": "schaffi",
       "steam_id": "76561198061369274",
       "joined": "2021-06-12",
-      "left": "2023-07-22"
+      "left": "2023-07-22",
+      "role": "member"
     },
     {
       "name": "Solar",
       "steam_id": "76561198015394193",
       "joined": "2021-06-10",
-      "left": "2021-09-17"
+      "left": "2021-09-17",
+      "role": "member"
     },
     {
       "name": "Spork",
       "steam_id": "76561198208448312",
       "joined": "2021-06-09",
-      "left": "2022-09-30"
+      "left": "2022-09-30",
+      "role": "member"
     },
     {
       "name": "Royal Flush",
       "steam_id": "76561198052084714",
       "joined": "2021-06-09",
-      "left": "2022-01-31"
+      "left": "2022-01-31",
+      "role": "member"
     },
     {
       "name": "Derakusa",
       "steam_id": "76561198011495003",
       "joined": "2020-10-01",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Schaffi",
       "steam_id": "76561198061369274",
       "joined": "2020-10-01",
-      "left": "2021-02-15"
+      "left": "2021-02-15",
+      "role": "member"
     },
     {
       "name": "Bonobo",
       "steam_id": "76561198038822935",
       "joined": "2020-06-07",
-      "left": "2021-07-06"
+      "left": "2021-07-06",
+      "role": "member"
     },
     {
       "name": "Dempsey",
       "steam_id": "76561198049405872",
       "joined": "2020-06-04",
-      "left": "2021-11-07"
+      "left": "2021-11-07",
+      "role": "member"
     },
     {
       "name": "clx",
       "steam_id": "76561198310925535",
       "joined": "2020-05-20",
-      "left": "2020-05-25"
+      "left": "2020-05-25",
+      "role": "member"
     },
     {
       "name": "viking",
       "steam_id": "76561198162124761",
       "joined": "2020-02-16",
-      "left": "2021-10-04"
+      "left": "2021-10-04",
+      "role": "member"
     },
     {
       "name": "Ikaros",
       "steam_id": "76561198158482651",
       "joined": "2019-11-03",
-      "left": "2021-10-04"
+      "left": "2021-10-04",
+      "role": "member"
     },
     {
       "name": "StelaZ",
       "steam_id": "76561198036824480",
       "joined": "2019-09-29",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "dt",
       "steam_id": "76561198120760515",
       "joined": "2019-09-22",
-      "left": "2021-02-15"
+      "left": "2021-02-15",
+      "role": "member"
     },
     {
       "name": "brandon",
       "steam_id": "76561198073579100",
       "joined": "2019-09-12",
-      "left": "2020-03-10"
+      "left": "2020-03-10",
+      "role": "member"
     },
     {
       "name": "Derakusa",
       "steam_id": "76561198011495003",
       "joined": "2019-06-21",
-      "left": "2020-09-21"
+      "left": "2020-09-21",
+      "role": "member"
     },
     {
       "name": "WiseGenie",
       "steam_id": "76561198405968967",
       "joined": "2019-06-05",
-      "left": "2021-03-01"
+      "left": "2021-03-01",
+      "role": "member"
     },
     {
       "name": "Amadeus",
       "steam_id": "76561198052198679",
       "joined": "2019-05-18",
-      "left": "2020-02-16"
+      "left": "2020-02-16",
+      "role": "member"
     },
     {
       "name": "Sebbo",
       "steam_id": "76561198054395451",
       "joined": "2019-02-23",
-      "left": "2019-09-30"
+      "left": "2019-09-30",
+      "role": "member"
     },
     {
       "name": "Scrambled",
       "steam_id": "76561198058283562",
       "joined": "2019-02-20",
-      "left": "2019-09-12"
+      "left": "2019-09-12",
+      "role": "leader"
     },
     {
       "name": "Peace Sells",
       "steam_id": "76561198224755980",
       "joined": "2019-02-03",
-      "left": "2020-10-01"
+      "left": "2020-10-01",
+      "role": "member"
     },
     {
       "name": "Slappy",
       "steam_id": "76561198017238822",
       "joined": "2019-01-20",
-      "left": "2019-06-21"
+      "left": "2019-06-21",
+      "role": "member"
     },
     {
       "name": "Polarium",
       "steam_id": "76561198208448312",
       "joined": "2019-01-16",
-      "left": "2019-05-03"
+      "left": "2019-05-03",
+      "role": "member"
     },
     {
       "name": "Chochy",
       "steam_id": "76561198275783619",
       "joined": "2019-01-14",
-      "left": "2019-01-29"
+      "left": "2019-01-29",
+      "role": "member"
     },
     {
       "name": "Kaga",
       "steam_id": "76561198040965137",
       "joined": "2018-11-08",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Quaddeln",
       "steam_id": "76561198079948125",
       "joined": "2018-10-20",
-      "left": "2019-09-29"
+      "left": "2019-09-29",
+      "role": "member"
     },
     {
       "name": "supra",
       "steam_id": "76561198011558250",
       "joined": "2018-10-03",
-      "left": "2018-12-13"
+      "left": "2018-12-13",
+      "role": "member"
     },
     {
       "name": "GibZ",
       "steam_id": "76561198027463207",
       "joined": "2018-09-27",
-      "left": "2019-01-17"
+      "left": "2019-01-17",
+      "role": "member"
     },
     {
       "name": "Pine",
       "steam_id": "76561198050910939",
       "joined": "2018-09-20",
-      "left": "2021-01-25"
+      "left": "2021-01-25",
+      "role": "member"
     },
     {
       "name": "Polarium",
       "steam_id": "76561198208448312",
       "joined": "2018-09-06",
-      "left": "2018-11-29"
+      "left": "2018-11-29",
+      "role": "member"
     },
     {
       "name": "Mr British",
       "steam_id": "76561198046899720",
       "joined": "2018-05-27",
-      "left": "2018-10-28"
+      "left": "2018-10-28",
+      "role": "member"
     },
     {
       "name": "MrTK",
       "steam_id": "76561198049707157",
       "joined": "2018-05-21",
-      "left": "2019-02-20"
+      "left": "2019-02-20",
+      "role": "member"
     },
     {
       "name": "Pretzel",
       "steam_id": "76561197996215628",
       "joined": "2018-05-18",
-      "left": "2018-10-20"
+      "left": "2018-10-20",
+      "role": "member"
     },
     {
       "name": "Teeru",
       "steam_id": "76561198148148180",
       "joined": "2018-05-15",
-      "left": "2018-09-11"
+      "left": "2018-09-11",
+      "role": "member"
     },
     {
       "name": "Deepfried Monk",
       "steam_id": "76561198028288946",
       "joined": "2018-05-15",
-      "left": "2020-06-07"
+      "left": "2020-06-07",
+      "role": "member"
     },
     {
       "name": "Leonio",
       "steam_id": "76561198078395610",
       "joined": "2018-05-15",
-      "left": "2019-09-22"
+      "left": "2019-09-22",
+      "role": "member"
     },
     {
       "name": "Vinegar",
       "steam_id": "76561197983224631",
       "joined": "2018-02-26",
-      "left": "2018-04-29"
+      "left": "2018-04-29",
+      "role": "member"
     },
     {
       "name": "disabled caiz",
       "steam_id": "76561198082325306",
       "joined": "2018-01-29",
-      "left": "2018-10-03"
+      "left": "2018-10-03",
+      "role": "member"
     },
     {
       "name": "Mankind LFT",
       "steam_id": "76561197999362239",
       "joined": "2017-12-26",
-      "left": "2018-01-22"
+      "left": "2018-01-22",
+      "role": "member"
     },
     {
       "name": "Tatty G",
       "steam_id": "76561198091359665",
       "joined": "2017-10-21",
-      "left": "2018-09-20"
+      "left": "2018-09-20",
+      "role": "member"
     },
     {
       "name": "Rem",
       "steam_id": "76561198065231718",
       "joined": "2017-10-21",
-      "left": "2018-07-04"
+      "left": "2018-07-04",
+      "role": "member"
     },
     {
       "name": "Mr British 3",
       "steam_id": "76561198046899720",
       "joined": "2017-10-13",
-      "left": "2018-03-22"
+      "left": "2018-03-22",
+      "role": "member"
     },
     {
       "name": "Polarium",
       "steam_id": "76561198208448312",
       "joined": "2017-10-05",
-      "left": "2017-11-28"
+      "left": "2017-11-28",
+      "role": "member"
     },
     {
       "name": "PlayerProDG",
       "steam_id": "76561198087728099",
       "joined": "2017-06-03",
-      "left": "2018-04-21"
+      "left": "2018-04-21",
+      "role": "member"
     },
     {
       "name": "Royal Flush",
       "steam_id": "76561198052084714",
       "joined": "2017-05-22",
-      "left": "2019-02-23"
+      "left": "2019-02-23",
+      "role": "member"
     },
     {
       "name": "Vinegar TheWon",
       "steam_id": "76561197983224631",
       "joined": "2017-05-14",
-      "left": "2018-01-05"
+      "left": "2018-01-05",
+      "role": "member"
     },
     {
       "name": "HiipFire",
       "steam_id": "76561198012785231",
       "joined": "2017-05-14",
-      "left": "2017-05-26"
+      "left": "2017-05-26",
+      "role": "member"
     },
     {
       "name": "coca",
       "steam_id": "76561198077605729",
       "joined": "2017-04-20",
-      "left": "2017-08-23"
+      "left": "2017-08-23",
+      "role": "member"
     },
     {
       "name": "Vouri",
       "steam_id": "76561198106656127",
       "joined": "2017-02-19",
-      "left": "2017-12-29"
+      "left": "2017-12-29",
+      "role": "member"
     },
     {
       "name": "Jedi(fla)maste",
       "steam_id": "76561197990486664",
       "joined": "2017-01-17",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Teroantero",
       "steam_id": "76561197996902035",
       "joined": "2017-01-17",
-      "left": "2017-05-16"
+      "left": "2017-05-16",
+      "role": "member"
     },
     {
       "name": "TC Coca",
       "steam_id": "76561198077605729",
       "joined": "2017-01-09",
-      "left": "2017-01-20"
+      "left": "2017-01-20",
+      "role": "member"
     },
     {
       "name": "Pendulum",
       "steam_id": "76561198103892101",
       "joined": "2016-12-30",
-      "left": "2018-05-14"
+      "left": "2018-05-14",
+      "role": "member"
     },
     {
       "name": "Strix",
       "steam_id": "76561198078178141",
       "joined": "2016-12-17",
-      "left": "2016-12-22"
+      "left": "2016-12-22",
+      "role": "member"
     },
     {
       "name": "Deepfried Monk",
       "steam_id": "76561198028288946",
       "joined": "2016-09-26",
-      "left": "2016-12-30"
+      "left": "2016-12-30",
+      "role": "member"
     },
     {
       "name": "bfisch",
       "steam_id": "76561198052461274",
       "joined": "2016-09-25",
-      "left": "2017-01-06"
+      "left": "2017-01-06",
+      "role": "member"
     },
     {
       "name": "SF Iro",
       "steam_id": "76561198025643013",
       "joined": "2016-09-22",
-      "left": "2016-12-27"
+      "left": "2016-12-27",
+      "role": "member"
     },
     {
       "name": "meZz09",
       "steam_id": "76561198059887260",
       "joined": "2016-09-15",
-      "left": "2016-12-22"
+      "left": "2016-12-22",
+      "role": "member"
     },
     {
       "name": "denkra",
       "steam_id": "76561198074899144",
       "joined": "2016-09-13",
-      "left": "2016-10-04"
+      "left": "2016-10-04",
+      "role": "member"
     },
     {
       "name": "Capu",
       "steam_id": "76561198044857348",
       "joined": "2016-06-26",
-      "left": "2016-09-26"
+      "left": "2016-09-26",
+      "role": "member"
     },
     {
       "name": "GIELE JohsKo2",
       "steam_id": "76561198058301893",
       "joined": "2016-06-21",
-      "left": "2017-01-12"
+      "left": "2017-01-12",
+      "role": "member"
     },
     {
       "name": "Kimo",
       "steam_id": "76561197992327511",
       "joined": "2016-06-19",
-      "left": null
+      "left": null,
+      "role": "leader"
     },
     {
       "name": "Deepfried Monk",
       "steam_id": "76561198028288946",
       "joined": "2016-05-29",
-      "left": "2016-09-15"
+      "left": "2016-09-15",
+      "role": "member"
     },
     {
       "name": "Foz",
       "steam_id": "76561198076014163",
       "joined": "2016-05-25",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Cmm Bert",
       "steam_id": "76561198016658674",
       "joined": "2016-05-23",
-      "left": "2017-10-21"
+      "left": "2017-10-21",
+      "role": "member"
     },
     {
       "name": "Vinegar",
       "steam_id": "76561197983224631",
       "joined": "2016-05-15",
-      "left": "2016-06-12"
+      "left": "2016-06-12",
+      "role": "member"
     },
     {
       "name": "Kireek",
       "steam_id": "76561198052694464",
       "joined": "2016-05-12",
-      "left": "2019-05-13"
+      "left": "2019-05-13",
+      "role": "member"
     },
     {
       "name": "Ghillie",
       "steam_id": "76561198033193346",
       "joined": "2016-02-26",
-      "left": "2016-09-18"
+      "left": "2016-09-18",
+      "role": "member"
     },
     {
       "name": "jojo",
       "steam_id": "76561197995029224",
       "joined": "2016-01-17",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "BaaBo",
       "steam_id": "76561198004331478",
       "joined": "2016-01-15",
-      "left": "2017-03-10"
+      "left": "2017-03-10",
+      "role": "leader"
     },
     {
       "name": "Deity",
       "steam_id": "76561198076020012",
       "joined": "2015-12-29",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Bencer",
       "steam_id": "76561198042734399",
       "joined": "2015-11-05",
-      "left": "2015-12-17"
+      "left": "2015-12-17",
+      "role": "member"
     },
     {
       "name": "froggie",
       "steam_id": "76561197980091914",
       "joined": "2015-10-15",
-      "left": "2015-12-12"
+      "left": "2015-12-12",
+      "role": "member"
     },
     {
       "name": "Mak",
       "steam_id": "76561198049312442",
       "joined": "2015-09-23",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Vouri",
       "steam_id": "76561198106656127",
       "joined": "2015-09-22",
-      "left": "2016-09-21"
+      "left": "2016-09-21",
+      "role": "member"
     },
     {
       "name": "cheesey",
       "steam_id": "76561198058352657",
       "joined": "2015-09-21",
-      "left": "2017-10-21"
+      "left": "2017-10-21",
+      "role": "member"
     },
     {
       "name": "Teo",
       "steam_id": "76561198030853412",
       "joined": "2015-09-21",
-      "left": "2016-05-23"
+      "left": "2016-05-23",
+      "role": "member"
     },
     {
       "name": "corr",
       "steam_id": "76561198046921199",
       "joined": "2015-07-13",
-      "left": "2015-09-02"
+      "left": "2015-09-02",
+      "role": "member"
     },
     {
       "name": "Strno",
       "steam_id": "76561198015251809",
       "joined": "2015-07-05",
-      "left": "2016-12-04"
+      "left": "2016-12-04",
+      "role": "leader"
     },
     {
       "name": "cobz",
       "steam_id": "76561198016371188",
       "joined": "2015-06-28",
-      "left": "2015-11-05"
+      "left": "2015-11-05",
+      "role": "member"
     },
     {
       "name": "Fourty",
       "steam_id": "76561197970532785",
       "joined": "2015-06-26",
-      "left": "2016-06-18"
+      "left": "2016-06-18",
+      "role": "member"
     },
     {
       "name": "NightWing",
       "steam_id": "76561198010561736",
       "joined": "2015-06-25",
-      "left": "2015-09-22"
+      "left": "2015-09-22",
+      "role": "member"
     },
     {
       "name": "Feyne",
       "steam_id": "76561198028389239",
       "joined": "2015-06-24",
-      "left": "2016-05-25"
+      "left": "2016-05-25",
+      "role": "member"
     },
     {
       "name": "DereK",
       "steam_id": "76561198072932719",
       "joined": "2015-05-31",
-      "left": "2015-09-17"
+      "left": "2015-09-17",
+      "role": "member"
     },
     {
       "name": "Rem",
       "steam_id": "76561198065231718",
       "joined": "2015-05-28",
-      "left": "2016-01-01"
+      "left": "2016-01-01",
+      "role": "member"
     },
     {
       "name": "Capu",
       "steam_id": "76561198044857348",
       "joined": "2015-01-26",
-      "left": "2015-05-05"
+      "left": "2015-05-05",
+      "role": "member"
     },
     {
       "name": "Janqe",
       "steam_id": "76561198025732057",
       "joined": "2015-01-26",
-      "left": "2015-07-13"
+      "left": "2015-07-13",
+      "role": "member"
     },
     {
       "name": "THE METHVAN",
       "steam_id": "76561198130935924",
       "joined": "2015-01-25",
-      "left": "2015-05-01"
+      "left": "2015-05-01",
+      "role": "member"
     },
     {
       "name": "Panther",
       "steam_id": "76561198062889828",
       "joined": "2015-01-24",
-      "left": "2015-05-25"
+      "left": "2015-05-25",
+      "role": "member"
     },
     {
       "name": "Slappy",
       "steam_id": "76561198017238822",
       "joined": "2015-01-23",
-      "left": "2017-09-10"
+      "left": "2017-09-10",
+      "role": "member"
     },
     {
       "name": "Gatinmnsok",
       "steam_id": "76561198064715318",
       "joined": "2015-01-01",
-      "left": "2016-06-26"
+      "left": "2016-06-26",
+      "role": "member"
     },
     {
       "name": "Rosstisfer",
       "steam_id": "76561198019933879",
       "joined": "2014-11-04",
-      "left": "2016-09-10"
+      "left": "2016-09-10",
+      "role": "member"
     },
     {
       "name": "Darkes",
       "steam_id": "76561198058253854",
       "joined": "2014-11-04",
-      "left": "2014-12-26"
+      "left": "2014-12-26",
+      "role": "member"
     },
     {
       "name": "khaos",
       "steam_id": "76561198044610420",
       "joined": "2014-10-13",
-      "left": "2015-07-05"
+      "left": "2015-07-05",
+      "role": "member"
     },
     {
       "name": "Super",
       "steam_id": "76561198038067254",
       "joined": "2014-10-07",
-      "left": "2014-12-26"
+      "left": "2014-12-26",
+      "role": "member"
     },
     {
       "name": "DeevoDwarf",
       "steam_id": "76561198058182064",
       "joined": "2014-09-22",
-      "left": "2014-09-22"
+      "left": "2014-09-22",
+      "role": "member"
     },
     {
       "name": "Derakusa",
       "steam_id": "76561198011495003",
       "joined": "2014-09-18",
-      "left": "2015-09-23"
+      "left": "2015-09-23",
+      "role": "member"
     },
     {
       "name": "Shoosh",
       "steam_id": "76561198049593717",
       "joined": "2014-09-12",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "Rem",
       "steam_id": "76561198065231718",
       "joined": "2014-08-17",
-      "left": "2015-05-28"
+      "left": "2015-05-28",
+      "role": "leader"
     },
     {
       "name": "DemoN",
       "steam_id": "76561198059584839",
       "joined": "2014-06-21",
-      "left": "2016-05-01"
+      "left": "2016-05-01",
+      "role": "member"
     },
     {
       "name": "DevilHunter",
       "steam_id": "76561198049826730",
       "joined": "2014-06-21",
-      "left": "2016-05-01"
+      "left": "2016-05-01",
+      "role": "member"
     },
     {
       "name": "Arty",
       "steam_id": "76561198061685333",
       "joined": "2014-06-07",
-      "left": "2014-08-29"
+      "left": "2014-08-29",
+      "role": "member"
     },
     {
       "name": "Boskov",
       "steam_id": "76561198054280187",
       "joined": "2014-05-18",
-      "left": "2014-08-20"
+      "left": "2014-08-20",
+      "role": "member"
     },
     {
       "name": "TinyTerror",
       "steam_id": "76561197996307844",
       "joined": "2014-05-10",
-      "left": "2016-01-30"
+      "left": "2016-01-30",
+      "role": "member"
     },
     {
       "name": "hjarteknusar",
       "steam_id": "76561198023996045",
       "joined": "2014-04-30",
-      "left": "2015-01-23"
+      "left": "2015-01-23",
+      "role": "member"
     },
     {
       "name": "Fish",
       "steam_id": "76561198052362074",
       "joined": "2014-04-30",
-      "left": null
+      "left": null,
+      "role": "leader"
     },
     {
       "name": "drtyeyeball",
       "steam_id": "76561198056603660",
       "joined": "2014-04-29",
-      "left": "2015-01-22"
+      "left": "2015-01-22",
+      "role": "member"
     },
     {
       "name": "Bencer",
       "steam_id": "76561198042734399",
       "joined": "2014-04-26",
-      "left": "2014-05-27"
+      "left": "2014-05-27",
+      "role": "member"
     },
     {
       "name": "Mircea YK",
       "steam_id": "76561198047488650",
       "joined": "2014-04-26",
-      "left": "2014-07-31"
+      "left": "2014-07-31",
+      "role": "member"
     },
     {
       "name": "smarties",
       "steam_id": "76561198054288197",
       "joined": "2014-03-09",
-      "left": "2014-04-27"
+      "left": "2014-04-27",
+      "role": "member"
     },
     {
       "name": "DevilHunter",
       "steam_id": "76561198049826730",
       "joined": "2014-03-05",
-      "left": "2014-04-26"
+      "left": "2014-04-26",
+      "role": "member"
     },
     {
       "name": "theshinyspy",
       "steam_id": "76561198067493714",
       "joined": "2014-03-05",
-      "left": "2014-06-06"
+      "left": "2014-06-06",
+      "role": "member"
     },
     {
       "name": "Rosstisfer",
       "steam_id": "76561198019933879",
       "joined": "2014-03-03",
-      "left": "2014-09-11"
+      "left": "2014-09-11",
+      "role": "member"
     },
     {
       "name": "Royal Nipple",
       "steam_id": "76561198072518628",
       "joined": "2014-02-22",
-      "left": "2014-06-16"
+      "left": "2014-06-16",
+      "role": "member"
     },
     {
       "name": "dr bad bone ty",
       "steam_id": "76561198052922917",
       "joined": "2014-02-13",
-      "left": "2014-02-17"
+      "left": "2014-02-17",
+      "role": "member"
     },
     {
       "name": "hjarteknusar",
       "steam_id": "76561198023996045",
       "joined": "2014-01-17",
-      "left": "2014-03-11"
+      "left": "2014-03-11",
+      "role": "member"
     },
     {
       "name": "Deepfried Monk",
       "steam_id": "76561198028288946",
       "joined": "2014-01-01",
-      "left": "2014-01-17"
+      "left": "2014-01-17",
+      "role": "member"
     },
     {
       "name": "Ghillie",
       "steam_id": "76561198033193346",
       "joined": "2014-01-01",
-      "left": "2014-09-17"
+      "left": "2014-09-17",
+      "role": "member"
     },
     {
       "name": "ekkelund",
       "steam_id": "76561197997105682",
       "joined": "2013-12-31",
-      "left": "2014-02-03"
+      "left": "2014-02-03",
+      "role": "member"
     },
     {
       "name": "-Xe- Vappppppp",
       "steam_id": "76561198019933879",
       "joined": "2013-12-27",
-      "left": "2014-02-21"
+      "left": "2014-02-21",
+      "role": "leader"
     },
     {
       "name": "wardemon mix",
       "steam_id": "76561198054462519",
       "joined": "2013-12-27",
-      "left": "2014-05-04"
+      "left": "2014-05-04",
+      "role": "member"
     },
     {
       "name": "DudeoftheRock",
       "steam_id": "76561198059401865",
       "joined": "2013-09-28",
-      "left": "2015-01-23"
+      "left": "2015-01-23",
+      "role": "member"
     },
     {
       "name": "Spannzer",
       "steam_id": "76561198057121917",
       "joined": "2013-09-19",
-      "left": "2013-10-21"
+      "left": "2013-10-21",
+      "role": "member"
     },
     {
       "name": "Feyne",
       "steam_id": "76561198028389239",
       "joined": "2013-09-03",
-      "left": "2015-01-23"
+      "left": "2015-01-23",
+      "role": "member"
     },
     {
       "name": "Shoosh!",
       "steam_id": "76561198049593717",
       "joined": "2013-08-22",
-      "left": "2014-05-21"
+      "left": "2014-05-21",
+      "role": "member"
     },
     {
       "name": "Crazy3k",
       "steam_id": "76561198056225108",
       "joined": "2013-08-15",
-      "left": "2014-04-28"
+      "left": "2014-04-28",
+      "role": "member"
     },
     {
       "name": "Hayras",
       "steam_id": "76561198003255057",
       "joined": "2013-08-12",
-      "left": "2013-08-22"
+      "left": "2013-08-22",
+      "role": "member"
     },
     {
       "name": "Gardener Gnome",
       "steam_id": "76561198010266253",
       "joined": "2013-08-11",
-      "left": "2015-01-23"
+      "left": "2015-01-23",
+      "role": "member"
     },
     {
       "name": "HardCoreMother",
       "steam_id": "76561198021813586",
       "joined": "2013-08-11",
-      "left": "2013-08-12"
+      "left": "2013-08-12",
+      "role": "member"
     },
     {
       "name": "drtyeyeball_#0",
       "steam_id": "76561198056603660",
       "joined": "2013-08-09",
-      "left": "2013-12-27"
+      "left": "2013-12-27",
+      "role": "member"
     },
     {
       "name": "iTouch",
       "steam_id": "76561198041855608",
       "joined": "2013-08-09",
-      "left": "2014-01-01"
+      "left": "2014-01-01",
+      "role": "member"
     },
     {
       "name": "? Wolfy ?",
       "steam_id": "76561198072470593",
       "joined": "2013-08-09",
-      "left": "2013-12-27"
+      "left": "2013-12-27",
+      "role": "member"
     },
     {
       "name": "Icewind",
       "steam_id": "76561198024494988",
       "joined": "2013-08-09",
-      "left": null
+      "left": null,
+      "role": "leader"
     },
     {
       "name": "Huper",
       "steam_id": "76561198007918526",
       "joined": "2013-08-06",
-      "left": "2014-04-28"
+      "left": "2014-04-28",
+      "role": "member"
     },
     {
       "name": "BenceMate",
       "steam_id": "76561198042734399",
       "joined": "2013-08-06",
-      "left": "2014-01-01"
+      "left": "2014-01-01",
+      "role": "member"
     },
     {
       "name": "ShakeNova",
       "steam_id": "76561198054279994",
       "joined": "2013-08-06",
-      "left": "2015-01-23"
+      "left": "2015-01-23",
+      "role": "member"
     },
     {
       "name": "jojo",
       "steam_id": "76561197995029224",
       "joined": "2013-08-06",
-      "left": "2015-10-04"
+      "left": "2015-10-04",
+      "role": "member"
     },
     {
       "name": "NoSocks",
       "steam_id": "76561198012110404",
       "joined": "2013-08-06",
-      "left": null
+      "left": null,
+      "role": "member"
     },
     {
       "name": "-Xe-Shoosh!",
       "steam_id": "76561198049593717",
       "joined": "2013-08-06",
-      "left": "2013-08-22"
+      "left": "2013-08-22",
+      "role": "member"
     },
     {
       "name": "-Xe-Mezzoo!",
       "steam_id": "76561198060782652",
       "joined": "2013-08-06",
-      "left": "2013-12-27"
+      "left": "2013-12-27",
+      "role": "leader"
     },
     {
       "name": "-Xe-Vaporean",
       "steam_id": "76561198019933879",
       "joined": "2013-08-06",
-      "left": "2013-12-27"
+      "left": "2013-12-27",
+      "role": "leader"
     },
     {
       "name": "Exe",
       "steam_id": "76561198053667422",
       "joined": "2013-08-06",
-      "left": "2016-05-27"
+      "left": "2016-05-27",
+      "role": "leader"
     }
   ]
 }

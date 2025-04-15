@@ -248,6 +248,7 @@ pub struct RosterHistory {
     pub joined: Date,
     #[cfg_attr(feature = "serde", serde(with = "serde_date::opt"))]
     pub left: Option<Date>,
+    pub role: MembershipRole,
 }
 
 #[derive(Debug, Clone)]

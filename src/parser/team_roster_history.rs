@@ -1,5 +1,5 @@
 use super::Parser;
-use crate::data::{RosterHistory, TeamRosterData};
+use crate::data::{RosterHistory, TeamRosterData, MembershipRole};
 use crate::parser::{select_text, ROSTER_HISTORY_DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
@@ -10,6 +10,7 @@ const SELECTOR_ROSTER_ITEM: &str =
     ".container .white-row-small .row-fluid > .col-md-12 > .clearfix";
 const SELECTOR_ROSTER_NAME: &str = "h5 b";
 const SELECTOR_ROSTER_ID: &str = "h5 small";
+const SELECTOR_ROSTER_ROLE: &str = "div > small";
 const SELECTOR_ROSTER_JOINED: &str = "span.text-success small";
 const SELECTOR_ROSTER_LEFT: &str = "span.text-danger small";
 
@@ -22,6 +23,7 @@ pub struct TeamRosterHistoryParser {
     selector_joined: Selector,
     selector_left: Selector,
     selector_steam_group: Selector,
+    selector_role: Selector,
 }
 
 impl Default for TeamRosterHistoryParser {
@@ -39,6 +41,7 @@ impl TeamRosterHistoryParser {
             selector_joined: Selector::parse(SELECTOR_ROSTER_JOINED).unwrap(),
             selector_left: Selector::parse(SELECTOR_ROSTER_LEFT).unwrap(),
             selector_steam_group: Selector::parse(SELECTOR_STEAM).unwrap(),
+            selector_role: Selector::parse(SELECTOR_ROSTER_ROLE).unwrap(),
         }
     }
 }
@@ -74,6 +77,13 @@ impl Parser for TeamRosterHistoryParser {
                     },
                 )?;
                 let left = select_text(item, &self.selector_left);
+                let role = select_text(item, &self.selector_role)
+                    .ok_or(ParseError::ElementNotFound {
+                        selector: SELECTOR_ROSTER_ROLE,
+                        role: "member role",
+                    })?
+                    .trim_start_matches("Former ")
+                    .parse::<MembershipRole>().unwrap_or(MembershipRole::Member);
 
                 Ok(RosterHistory {
                     name: name.to_string(),
@@ -99,6 +109,7 @@ impl Parser for TeamRosterHistoryParser {
                             })
                         })
                         .transpose()?,
+                    role,
                 })
             })
             .collect::<Result<Vec<_>>>()?;

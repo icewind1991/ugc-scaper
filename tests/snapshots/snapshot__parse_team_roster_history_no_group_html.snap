@@ -9,25 +9,29 @@ expression: parsed
       "name": "elwood",
       "steam_id": "76561197961197074",
       "joined": "2007-10-04",
-      "left": "2008-01-14"
+      "left": "2008-01-14",
+      "role": "member"
     },
     {
       "name": "crumbles",
       "steam_id": "76561197963844061",
       "joined": "2007-10-04",
-      "left": "2008-01-14"
+      "left": "2008-01-14",
+      "role": "member"
     },
     {
       "name": "AO",
       "steam_id": "76561197960464501",
       "joined": "2007-10-04",
-      "left": "2008-01-14"
+      "left": "2008-01-14",
+      "role": "member"
     },
     {
       "name": "Klone",
       "steam_id": "76561197961272077",
       "joined": "2007-10-04",
-      "left": "2008-01-14"
+      "left": "2008-01-14",
+      "role": "member"
     }
   ]
 }
