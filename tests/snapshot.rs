@@ -40,6 +40,7 @@ fn test_parse_player_details_html(input: &str, name: &str) {
 #[test_case("team_3975.html", "team_empty_player")]
 #[test_case("team_2909.html", "team_1v1_sol")]
 #[test_case("team_5058.html", "team_empty_name_change2")]
+#[test_case("team_11789.html", "team_space_region")]
 #[cfg(feature = "serde")]
 fn test_parse_team_html(input: &str, name: &str) {
     let body = read_to_string(format!("tests/data/{input}")).unwrap();

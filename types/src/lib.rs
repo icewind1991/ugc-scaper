@@ -450,19 +450,31 @@ impl FromStr for Region {
     type Err = InvalidRegion;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let s = s.trim_matches(&['*', '(', ')']);
         match s {
             "Euro" => Ok(Region::Europe),
             "Europe" => Ok(Region::Europe),
+            "European" => Ok(Region::Europe),
             "EU" => Ok(Region::Europe),
+            "E.U." => Ok(Region::Europe),
             "Asia" => Ok(Region::Asia),
             "ASIA" => Ok(Region::Asia),
             "NA" => Ok(Region::NorthAmerica),
+            "N.A." => Ok(Region::NorthAmerica),
             "North America" => Ok(Region::NorthAmerica),
+            "N.America" => Ok(Region::NorthAmerica),
+            "N. America" => Ok(Region::NorthAmerica),
             "N.Amer" => Ok(Region::NorthAmerica),
+            "S.Amer" => Ok(Region::SouthAmerica),
             "South American" => Ok(Region::SouthAmerica),
+            "South America" => Ok(Region::SouthAmerica),
+            "S.America" => Ok(Region::SouthAmerica),
+            "S. America" => Ok(Region::SouthAmerica),
             "SA" => Ok(Region::SouthAmerica),
+            "S.A." => Ok(Region::SouthAmerica),
             "AUS" => Ok(Region::Australia),
             "AUS/NZ" => Ok(Region::Australia),
+            "AUS-NZ" => Ok(Region::Australia),
             _ => Err(InvalidRegion {
                 text: s.to_string(),
             }),

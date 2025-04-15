@@ -1,0 +1,56 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+{
+  "name": "Potato Game Sense",
+  "tag": "pgs",
+  "image": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/41/41d8336613741e77adfe57ccf747abad9e1209ce_full.jpg",
+  "format": "9v9",
+  "region": "south-america",
+  "timezone": "SA-East",
+  "steam_group": "http://steamcommunity.com/groups/potatogshl",
+  "division": "*S. America New Teams",
+  "description": "Batata",
+  "titles": [],
+  "members": [
+    {
+      "name": "boomer",
+      "steam_id": "76561198068200396",
+      "role": "leader",
+      "since": "+002014-05-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "Angra",
+      "steam_id": "76561198049967350",
+      "role": "member",
+      "since": "+002014-05-13T00:00:00.000000000Z"
+    },
+    {
+      "name": "jota",
+      "steam_id": "76561198044420376",
+      "role": "member",
+      "since": "+002014-05-14T00:00:00.000000000Z"
+    },
+    {
+      "name": "ap Kiyoshi",
+      "steam_id": "76561198057649052",
+      "role": "member",
+      "since": "+002014-05-14T00:00:00.000000000Z"
+    },
+    {
+      "name": "darondrunk",
+      "steam_id": "76561198050145901",
+      "role": "member",
+      "since": "+002014-05-14T00:00:00.000000000Z"
+    },
+    {
+      "name": "Jacksideh",
+      "steam_id": "76561198045916617",
+      "role": "member",
+      "since": "+002014-05-14T00:00:00.000000000Z"
+    }
+  ],
+  "results": [],
+  "name_changes": []
+}

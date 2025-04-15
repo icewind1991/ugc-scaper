@@ -180,6 +180,7 @@ impl Parser for TeamParser {
         let region = division
             .split(' ')
             .find_map(|part| Region::from_str(part).ok())
+            .or_else(|| Region::from_str(division.trim_end_matches("New Teams").trim()).ok())
             .or_else(|| Region::from_str(&division).ok());
 
         let timezone = select_text(root, &self.selector_team_timezone).map(String::from);
