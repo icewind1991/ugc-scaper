@@ -346,6 +346,8 @@ impl FromStr for GameMode {
             "1v1" => Ok(GameMode::Ones),
             "TF2 Highlander" => Ok(GameMode::Highlander),
             "ASIA TF2-H" => Ok(GameMode::Highlander),
+            "ASIA TF2-6" => Ok(GameMode::Sixes),
+            "ASIA TF2-4" => Ok(GameMode::Fours),
             "TF2 8vs8" => Ok(GameMode::Eights),
             "TF2 6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
