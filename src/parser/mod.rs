@@ -1,5 +1,7 @@
 use crate::{ParseError, Result};
+use regex::Regex;
 use scraper::{ElementRef, Selector};
+use std::sync::OnceLock;
 use steamid_ng::SteamID;
 use time::format_description::FormatItem;
 use time::macros::format_description;
@@ -102,4 +104,9 @@ fn steam_id_from_link(link: &str) -> Result<SteamID, ParseError> {
             role: "user id",
         })
         .map(SteamID::from)
+}
+
+static WHITESPACE_REGEX: OnceLock<Regex> = OnceLock::new();
+fn whitespace_regex() -> &'static Regex {
+    WHITESPACE_REGEX.get_or_init(|| Regex::new("[\n\t ]+").unwrap())
 }

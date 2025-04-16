@@ -1,13 +1,11 @@
-use super::{select_text_empty, ElementExt, Parser};
+use super::{select_text_empty, whitespace_regex, ElementExt, Parser};
 use crate::data::{Membership, NameChange, Record, Team};
 use crate::parser::{
     select_text, steam_id_from_link, DATE_FORMAT, MEMBER_DATE_ALT_FORMAT, MEMBER_DATE_FORMAT,
 };
 use crate::{ParseError, Result, ScrapeError};
-use regex::Regex;
 use scraper::{Html, Selector};
 use std::str::FromStr;
-use std::sync::OnceLock;
 use time::{Date, PrimitiveDateTime, Time, UtcOffset};
 use ugc_scraper_types::{GameMode, MembershipRole, Region};
 
@@ -118,13 +116,11 @@ impl TeamParser {
     }
 }
 
-static WHITESPACE_REGEX: OnceLock<Regex> = OnceLock::new();
-
 impl Parser for TeamParser {
     type Output = Team;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
-        let whitespace_regex = WHITESPACE_REGEX.get_or_init(|| Regex::new("[\n\t ]+").unwrap());
+        let whitespace_regex = whitespace_regex();
 
         let document = Html::parse_document(document);
         let root = document.root_element();

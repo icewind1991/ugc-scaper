@@ -8,9 +8,13 @@ expression: parsed
   "steam_id": "76561197967332647",
   "honors": [
     {
-      "format": "TF2 Highlander",
-      "season": "Season 6 NA Steel",
-      "team": "Penguin Doom Squad"
+      "format": "9v9",
+      "division": "NA Steel",
+      "season": 6,
+      "team": {
+        "name": "Penguin Doom Squad",
+        "id": 3975
+      }
     }
   ],
   "teams": [],

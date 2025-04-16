@@ -8,204 +8,364 @@ expression: parsed
   "steam_id": "76561198024494988",
   "honors": [
     {
-      "format": "TF2 Highlander",
-      "season": "Season 32 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 32,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 31 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 31,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 30 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 30,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 29 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 29,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 28 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 28,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 27 Premium EU",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Premium EU",
+      "season": 27,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 26 Premium EU",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Premium EU",
+      "season": 26,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 25 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 25,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 24 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 24,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 23 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 23,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 22 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 22,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 21 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 21,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 20 Euro Platinum",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Platinum",
+      "season": 20,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 19 Euro Gold",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Gold",
+      "season": 19,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 18 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 18,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 17 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 17,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 16 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 16,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 15 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 15,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 14 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 14,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 13 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 13,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 12 Euro Silver",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Silver",
+      "season": 12,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 Highlander",
-      "season": "Season 11 Euro Steel",
-      "team": "Xenon"
+      "format": "9v9",
+      "division": "Euro Steel",
+      "season": 11,
+      "team": {
+        "name": "Xenon",
+        "id": 7861
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 35 Europe",
-      "team": "Controller Gamers"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 35,
+      "team": {
+        "name": "Controller Gamers",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 34 Europe",
-      "team": "Bye week"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 34,
+      "team": {
+        "name": "Bye week",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 33 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 33,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 32 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 32,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 31 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 31,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 30 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 30,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 29 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 29,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 28 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 28,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 27 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 27,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 26 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 26,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 25 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 25,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 24 Europe",
-      "team": "meta.tf"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 24,
+      "team": {
+        "name": "meta.tf",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 23 Europe",
-      "team": "Giel and the 9wiels"
+      "format": "6v6",
+      "division": "Europe",
+      "season": 23,
+      "team": {
+        "name": "Giel and the 9wiels",
+        "id": 6929
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 19 Euro Platinum",
-      "team": "sExy eSports"
+      "format": "6v6",
+      "division": "Euro Platinum",
+      "season": 19,
+      "team": {
+        "name": "sExy eSports",
+        "id": 17736
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 18 Euro Steel",
-      "team": "BigHorseDong"
+      "format": "6v6",
+      "division": "Euro Steel",
+      "season": 18,
+      "team": {
+        "name": "BigHorseDong",
+        "id": 16277
+      }
     },
     {
-      "format": "TF2 6vs6",
-      "season": "Season 13 Euro Steel",
-      "team": "Necronoms"
+      "format": "6v6",
+      "division": "Euro Steel",
+      "season": 13,
+      "team": {
+        "name": "Necronoms",
+        "id": 8622
+      }
     },
     {
-      "format": "TF2 4vs4",
-      "season": "Season 6 Silver Euro",
-      "team": "sExy eSports"
+      "format": "4v4",
+      "division": "Silver Euro",
+      "season": 6,
+      "team": {
+        "name": "sExy eSports",
+        "id": 17790
+      }
     },
     {
-      "format": "TF2 4vs4",
-      "season": "Season 5 Silver Euro",
-      "team": "sExy eSports"
+      "format": "4v4",
+      "division": "Silver Euro",
+      "season": 5,
+      "team": {
+        "name": "sExy eSports",
+        "id": 17790
+      }
     }
   ],
   "teams": [

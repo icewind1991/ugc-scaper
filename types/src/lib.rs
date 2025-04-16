@@ -69,14 +69,16 @@ pub struct Player {
     pub honors: Vec<Honors>,
     pub teams: Vec<TeamMemberShip>,
     pub favorite_classes: Vec<Class>,
+    pub country: Option<String>,
 }
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Honors {
-    pub format: String,
-    pub season: String,
-    pub team: String,
+    pub format: GameMode,
+    pub division: String,
+    pub season: u8,
+    pub team: TeamRef,
 }
 
 #[derive(Debug, Clone)]
@@ -128,11 +130,15 @@ pub struct Team {
 #[derive(Debug, Clone, Copy)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(rename_all = "lowercase"))]
+#[cfg_attr(feature = "sqlx", derive(sqlx::Type))]
+#[cfg_attr(feature = "sqlx", sqlx(type_name = "player_class"))]
+#[cfg_attr(feature = "sqlx", sqlx(rename_all = "lowercase"))]
 pub enum Class {
     Scout,
     Soldier,
     Pyro,
     Demoman,
+    Engineer,
     Heavy,
     Medic,
     Sniper,
@@ -148,6 +154,7 @@ impl FromStr for Class {
             "soldier" => Ok(Class::Soldier),
             "pyro" => Ok(Class::Pyro),
             "demoman" => Ok(Class::Demoman),
+            "engineer" => Ok(Class::Engineer),
             "heavy" => Ok(Class::Heavy),
             "medic" => Ok(Class::Medic),
             "sniper" => Ok(Class::Sniper),

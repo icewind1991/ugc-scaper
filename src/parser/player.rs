@@ -1,5 +1,5 @@
 use super::{ElementExt, Parser};
-use crate::data::{Class, Honors, Player, TeamMemberShip, TeamRef};
+use crate::data::{Class, GameMode, Honors, Player, TeamMemberShip, TeamRef};
 use crate::parser::{select_last_text, select_text, team_id_from_link, DATE_FORMAT};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
@@ -10,12 +10,13 @@ use time::Date;
 
 const SELECTOR_PLAYER_NAME: &str = ".container .col-md-4 > h3 > b";
 const SELECTOR_PLAYER_ID: &str = r#"a[href*="steam://friends/add"]"#;
+const SELECTOR_PLAYER_FLAG: &str = r#"img[data-cfsrc*="/images/flags/"]"#;
 
 const SELECTOR_PLAYER_HONORS_GROUP: &str =
     ".container .col-md-6:nth-child(2) .white-row-small .row-fluid";
 const SELECTOR_PLAYER_HONORS_HEADER: &str = "h5";
 const SELECTOR_PLAYER_HONORS_LEAGUE: &str = "li div";
-const SELECTOR_PLAYER_HONORS_TEAM: &str = "li small";
+const SELECTOR_PLAYER_HONORS_TEAM: &str = "li small a";
 
 const SELECTOR_PLAYER_TEAM_GROUP: &str =
     ".container .col-md-6:nth-child(1) .white-row-small .row-fluid";
@@ -32,6 +33,7 @@ const SELECTOR_CLASS: &str =
 pub struct PlayerParser {
     selector_name: Selector,
     selector_id: Selector,
+    selector_flag: Selector,
 
     selector_honors_header: Selector,
     selector_honors_group: Selector,
@@ -59,6 +61,7 @@ impl PlayerParser {
         PlayerParser {
             selector_name: Selector::parse(SELECTOR_PLAYER_NAME).unwrap(),
             selector_id: Selector::parse(SELECTOR_PLAYER_ID).unwrap(),
+            selector_flag: Selector::parse(SELECTOR_PLAYER_FLAG).unwrap(),
 
             selector_honors_header: Selector::parse(SELECTOR_PLAYER_HONORS_HEADER).unwrap(),
             selector_honors_group: Selector::parse(SELECTOR_PLAYER_HONORS_GROUP).unwrap(),
@@ -106,6 +109,12 @@ impl Parser for PlayerParser {
             .unwrap_or_default()
             .to_string();
 
+        let country = document
+            .select(&self.selector_flag)
+            .next()
+            .and_then(|e| e.attr("title"))
+            .map(String::from);
+
         let avatar_element =
             document
                 .select(&self.selector_avatar)
@@ -135,22 +144,44 @@ impl Parser for PlayerParser {
             })
             .map(|((format_res, season), team)| {
                 let format = format_res?;
+                let game_mode =
+                    GameMode::from_str(format).map_err(|_| ParseError::InvalidText {
+                        text: format.into(),
+                        role: "player honors format",
+                    })?;
+                let division = season.first_text().ok_or(ParseError::EmptyText {
+                    selector: SELECTOR_PLAYER_HONORS_LEAGUE,
+                    role: "player honors division",
+                })?;
+                let season = division
+                    .split(' ')
+                    .nth(1)
+                    .unwrap_or_default()
+                    .parse()
+                    .map_err(|_| ParseError::InvalidText {
+                        text: division.into(),
+                        role: "player honors season",
+                    })?;
+                let team_name = team.first_text().unwrap_or_default().to_string();
+                let team_link = team.attr("href").unwrap_or_default();
+                let team_id: u32 = team_link
+                    .rsplit('=')
+                    .next()
+                    .unwrap_or_default()
+                    .parse()
+                    .map_err(|_| ParseError::InvalidLink {
+                        link: team_link.into(),
+                        role: "player honors team",
+                    })?;
+
                 Ok(Honors {
-                    format: format.to_string(),
-                    season: season
-                        .first_text()
-                        .ok_or(ParseError::EmptyText {
-                            selector: SELECTOR_PLAYER_HONORS_LEAGUE,
-                            role: "player honors season",
-                        })?
-                        .to_string(),
-                    team: team
-                        .first_text()
-                        .ok_or(ParseError::EmptyText {
-                            selector: SELECTOR_PLAYER_HONORS_TEAM,
-                            role: "player honors team",
-                        })?
-                        .to_string(),
+                    format: game_mode,
+                    division: division.splitn(3, ' ').last().unwrap_or_default().into(),
+                    season,
+                    team: TeamRef {
+                        id: team_id,
+                        name: team_name,
+                    },
                 })
             })
             .collect::<Result<Vec<_>>>()?;
@@ -178,12 +209,7 @@ impl Parser for PlayerParser {
                     })?
                     .attr("href")
                     .unwrap_or_default();
-                let name = select_text(item, &self.selector_team_name).ok_or(
-                    ParseError::ElementNotFound {
-                        selector: SELECTOR_PLAYER_TEAM_NAME,
-                        role: "players team name",
-                    },
-                )?;
+                let name = select_text(item, &self.selector_team_name).unwrap_or_default();
                 let league = select_text(item, &self.selector_team_league).ok_or(
                     ParseError::ElementNotFound {
                         selector: SELECTOR_PLAYER_TEAM_LEAGUE,
@@ -198,8 +224,9 @@ impl Parser for PlayerParser {
                 )?;
 
                 let id = team_id_from_link(link)?;
-                let since = match since.rsplit_once('\n') {
+                let since = match since.rsplit_once(['\n', ' ', '\t']) {
                     Some((_, since)) => {
+                        let since = since.trim();
                         Date::parse(since, DATE_FORMAT).map_err(|_| ParseError::InvalidDate {
                             role: "team join date",
                             date: since.to_string(),
@@ -232,6 +259,7 @@ impl Parser for PlayerParser {
             honors,
             teams,
             favorite_classes,
+            country,
         })
     }
 }
