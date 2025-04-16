@@ -27,6 +27,7 @@ enum Command {
     Matches,
     Teams,
     FixupTeams,
+    MembershipHistory,
 }
 
 const LAST_MATCH: u32 = 117047;
@@ -49,6 +50,9 @@ async fn main() -> MainResult {
         }
         Command::FixupTeams => {
             fixup_teams(&client, &archive).await?;
+        }
+        Command::MembershipHistory => {
+            archive_team_roster_history(&client, &archive).await?;
         }
     }
     Ok(())
@@ -99,6 +103,30 @@ async fn archive_teams(client: &UgcClient, archive: &Archive) -> MainResult {
             }
             Err(e) => {
                 error!("error fetching team: {:?}", e);
+                panic!();
+            }
+        }
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+async fn archive_team_roster_history(client: &UgcClient, archive: &Archive) -> MainResult {
+    let last = archive.get_max_roster_history().await?;
+    let mut ids = pin!(archive.get_team_ids(last));
+
+    while let Some(Ok(id)) = ids.next().await {
+        let _span = span!(Level::INFO, "archive_team_roster_history", id = id).entered();
+        match client.get_team_roster(id).await.check_not_found() {
+            Ok(Some(team_data)) => {
+                info!(count = team_data.len(), "storing team roster history");
+                archive.store_membership_history(id, &team_data).await?;
+            }
+            Ok(None) => {
+                warn!("team roster history not found");
+            }
+            Err(e) => {
+                error!("error fetching team roster history: {:?}", e);
                 panic!();
             }
         }

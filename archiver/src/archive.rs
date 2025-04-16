@@ -6,7 +6,8 @@ use std::str::FromStr;
 use thiserror::Error;
 use tokio_stream::Stream;
 use ugc_scraper_types::{
-    GameMode, MatchInfo, Membership, MembershipRole, NameChange, Record, Region, Team,
+    GameMode, MatchInfo, Membership, MembershipRole, NameChange, Record, Region, RosterHistory,
+    Team,
 };
 
 #[derive(Debug, Error)]
@@ -167,6 +168,38 @@ impl Archive {
         Ok((row.min.unwrap_or_default() as u32)..(row.max.unwrap_or_default() as u32))
     }
 
+    pub fn get_team_ids(
+        &self,
+        min: u32,
+    ) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
+        query!(
+            "select id from teams where id > $1 order by id asc",
+            min as i32
+        )
+        .fetch(&self.pool)
+        .map_err(|error| ArchiveError::Query {
+            description: "getting team ids",
+            error,
+        })
+        .map_ok(|map| map.id as u32)
+    }
+
+    pub async fn get_max_roster_history(&self) -> Result<u32, ArchiveError> {
+        if let Some(row) =
+            query!("select team_id as max from membership_history order by team_id desc limit 1;")
+                .fetch_optional(&self.pool)
+                .await
+                .map_err(|error| ArchiveError::Query {
+                    description: "getting latest team membership history",
+                    error,
+                })?
+        {
+            Ok(row.max as u32)
+        } else {
+            Ok(0)
+        }
+    }
+
     pub fn get_no_region_teams(&self) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
         query!("select id from teams where region IS NULL and format != 'eights' order by id desc")
             .fetch(&self.pool)
@@ -266,6 +299,50 @@ impl Archive {
             description: "inserting record",
             error,
         })?;
+        Ok(())
+    }
+
+    pub async fn store_membership_history(
+        &self,
+        team_id: u32,
+        memberships: &[RosterHistory],
+    ) -> Result<(), ArchiveError> {
+        let mut transaction = self
+            .pool
+            .begin()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "beginning membership history transaction",
+                error,
+            })?;
+
+        for membership in memberships {
+            query!(
+                r#"INSERT INTO membership_history (
+                team_id, steam_id, role, joined, "left"
+              ) VALUES ($1, $2, $3, $4, $5)"#,
+                team_id as i32,
+                u64::from(membership.steam_id) as i64,
+                membership.role as MembershipRole,
+                membership.joined,
+                membership.left,
+            )
+            .execute(&mut *transaction)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "inserting membership history",
+                error,
+            })?;
+        }
+
+        transaction
+            .commit()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "commiting membership history transaction",
+                error,
+            })?;
+
         Ok(())
     }
 }

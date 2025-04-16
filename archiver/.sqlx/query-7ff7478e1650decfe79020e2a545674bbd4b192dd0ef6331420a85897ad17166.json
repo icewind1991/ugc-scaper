@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select id from teams where id > $1 order by id asc",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": ["Int4"]
+    },
+    "nullable": [false]
+  },
+  "hash": "7ff7478e1650decfe79020e2a545674bbd4b192dd0ef6331420a85897ad17166"
+}

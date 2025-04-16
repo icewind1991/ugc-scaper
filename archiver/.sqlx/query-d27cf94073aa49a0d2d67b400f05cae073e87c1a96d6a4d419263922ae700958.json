@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO membership_history (\n                team_id, steam_id, role, joined, \"left\"\n              ) VALUES ($1, $2, $3, $4, $5)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Int8",
+        {
+          "Custom": {
+            "name": "membership_role",
+            "kind": {
+              "Enum": ["leader", "member"]
+            }
+          }
+        },
+        "Date",
+        "Date"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d27cf94073aa49a0d2d67b400f05cae073e87c1a96d6a4d419263922ae700958"
+}
