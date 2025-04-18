@@ -94,6 +94,7 @@ dependencies = [
  "serde",
  "sqlx",
  "thiserror 2.0.12",
+ "time",
  "tokio",
  "tokio-stream",
  "toml",

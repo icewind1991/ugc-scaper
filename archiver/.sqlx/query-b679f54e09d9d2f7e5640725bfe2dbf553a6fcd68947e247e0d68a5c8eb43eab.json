@@ -1,0 +1,29 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT date FROM maps WHERE format = $1 AND week = $2 AND map = $3",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "date",
+        "type_info": "Date"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        },
+        "Int4",
+        "Text"
+      ]
+    },
+    "nullable": [false]
+  },
+  "hash": "b679f54e09d9d2f7e5640725bfe2dbf553a6fcd68947e247e0d68a5c8eb43eab"
+}

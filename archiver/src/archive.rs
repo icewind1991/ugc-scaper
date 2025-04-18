@@ -4,6 +4,10 @@ use sqlx::{query, Error, Executor, PgPool, Postgres};
 use std::ops::Range;
 use std::str::FromStr;
 use thiserror::Error;
+use time::format_description::FormatItem;
+use time::macros::format_description;
+use time::parsing::Parsed;
+use time::Date;
 use tokio_stream::Stream;
 use ugc_scraper_types::{
     Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
@@ -484,4 +488,126 @@ impl Archive {
 
         Ok(())
     }
+
+    pub fn get_match_ids_without_map(
+        &self,
+    ) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
+        query!("select id from matches where map IS NULL ORDER BY id ASC")
+            .fetch(&self.pool)
+            .map_err(|error| ArchiveError::Query {
+                description: "getting match ids",
+                error,
+            })
+            .map_ok(|map| map.id as u32)
+    }
+
+    pub async fn get_match_date(
+        &self,
+        match_info: &MatchInfo,
+    ) -> Result<Option<Date>, ArchiveError> {
+        const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short], [month repr:short] [day padding:none] [year]");
+        const MATCH_DATE_FORMAT2: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short] [month repr:short] [day padding:none] [year]");
+        if let Ok(match_date) = parse_old_match_date(&match_info.default_date) {
+            return Ok(Some(match_date));
+        } else if !match_info.format.is_tf2() {
+            return Ok(None);
+        }
+
+        let options = query!(
+            "SELECT date FROM maps WHERE format = $1 AND week = $2 AND map = $3",
+            match_info.format as GameMode,
+            match_info.week as i32,
+            match_info.map,
+        )
+        .fetch_all(&self.pool)
+        .await
+        .map_err(|error| ArchiveError::Query {
+            description: "searching map history",
+            error,
+        })?;
+
+        for row in options {
+            let possible_date: Date = row.date;
+            let Some(match_date) = try_date_formats(
+                match_info.default_date.as_str(),
+                possible_date.year(),
+                &[MATCH_DATE_FORMAT, MATCH_DATE_FORMAT2],
+            ) else {
+                break;
+            };
+
+            if match_date == possible_date {
+                return Ok(Some(possible_date));
+            }
+        }
+
+        Ok(None)
+    }
+
+    pub async fn update_match_details(
+        &self,
+        id: u32,
+        match_info: &MatchInfo,
+        date: Option<Date>,
+    ) -> Result<(), ArchiveError> {
+        let format = match_info.format.is_tf2().then_some(match_info.format);
+        if let Some(date) = date {
+            query!(
+                "UPDATE matches SET map = $2, week = $3, format = $4, default_data = $5 WHERE id = $1",
+                id as i32,
+                match_info.map,
+                match_info.week as i32,
+                format as Option<GameMode>,
+                date
+            )
+                .execute(&self.pool)
+                .await
+                .map_err(|error| ArchiveError::Query {
+                    description: "updating match",
+                    error,
+                })?;
+        } else {
+            query!(
+                "UPDATE matches SET map = $2, week = $3, format = $4 WHERE id = $1",
+                id as i32,
+                match_info.map,
+                match_info.week as i32,
+                format as Option<GameMode>,
+            )
+            .execute(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "updating match",
+                error,
+            })?;
+        }
+        Ok(())
+    }
+}
+
+fn parse_old_match_date(date: &str) -> Result<Date, time::Error> {
+    const MATCH_DATE_FORMAT_OLD: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short], [month padding:none]/[day padding:none]/[year repr:last_two]");
+    let mut parsed = Parsed::new();
+    parsed.parse_items(date.as_bytes(), MATCH_DATE_FORMAT_OLD)?;
+
+    let year = parsed.year_last_two().unwrap() as i32 + 2000;
+    parsed.set_year(year);
+    Ok(Date::try_from(parsed)?)
+}
+
+#[test]
+fn test_parse_old_match_date() {
+    assert_eq!(
+        Date::from_calendar_date(2009, time::Month::May, 13).unwrap(),
+        parse_old_match_date("Wed, 5/13/09").unwrap()
+    );
+}
+
+fn try_date_formats(date: &str, year: i32, formats: &[&[FormatItem<'static>]]) -> Option<Date> {
+    for format in formats {
+        if let Ok(match_date) = Date::parse(&format!("{} {}", date, year), format) {
+            return Some(match_date);
+        };
+    }
+    None
 }

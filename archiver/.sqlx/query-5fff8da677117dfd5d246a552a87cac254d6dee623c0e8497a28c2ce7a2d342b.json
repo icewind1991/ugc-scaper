@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO maps (\n                    format, season, week, date, map\n                  ) VALUES ($1, $2, $3, $4, $5)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        },
+        "Int4",
+        "Int4",
+        "Date",
+        "Varchar"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "5fff8da677117dfd5d246a552a87cac254d6dee623c0e8497a28c2ce7a2d342b"
+}

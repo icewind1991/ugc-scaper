@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select id from matches where map IS NULL ORDER BY id ASC",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [false]
+  },
+  "hash": "dbe1b2fc74c5390ebe7371c26bd1e9e6b1ed97f170f53e0f52bbb828e756eaae"
+}

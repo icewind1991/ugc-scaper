@@ -30,6 +30,7 @@ enum Command {
     Players,
     Teams,
     FixupTeams,
+    FixupMatches,
     MembershipHistory,
     MapHistory { format: String },
 }
@@ -54,6 +55,9 @@ async fn main() -> MainResult {
         }
         Command::FixupTeams => {
             fixup_teams(&client, &archive).await?;
+        }
+        Command::FixupMatches => {
+            fixup_matches(&client, &archive).await?;
         }
         Command::MembershipHistory => {
             archive_team_roster_history(&client, &archive).await?;
@@ -207,6 +211,29 @@ async fn archive_map_history(client: &UgcClient, archive: &Archive, mode: GameMo
     let history = client.get_maps(mode).await?;
     archive.store_map_history(mode, &history).await?;
 
+    Ok(())
+}
+
+async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
+    let mut match_ids = pin!(archive.get_match_ids_without_map());
+
+    while let Some(Ok(id)) = match_ids.next().await {
+        let _span = span!(Level::INFO, "fixup_match", id = id).entered();
+        let match_info = client.get_match(id).await?;
+        let date = archive.get_match_date(&match_info).await?;
+        if date.is_none()
+            && (match_info.format == GameMode::Highlander
+                || match_info.format == GameMode::Sixes
+                || match_info.format == GameMode::Fours
+                || match_info.format == GameMode::Ultiduo)
+        {
+            error!("failed to parse match date");
+            panic!();
+        }
+        info!(date = ?date, format = %match_info.format, "updating match");
+        archive.update_match_details(id, &match_info, date).await?;
+        sleep(Duration::from_millis(500)).await;
+    }
     Ok(())
 }
 
