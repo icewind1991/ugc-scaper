@@ -325,7 +325,7 @@ pub struct MatchInfo {
     pub map: String,
     pub week: u8,
     pub format: GameMode,
-    pub default_date: Date,
+    pub default_date: String,
 }
 
 #[derive(Debug, Clone, Error)]
@@ -334,7 +334,7 @@ pub struct InvalidGameMode {
     pub text: String,
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 #[cfg_attr(feature = "sqlx", derive(sqlx::Type))]
 #[cfg_attr(feature = "sqlx", sqlx(type_name = "game_mode"))]
 #[cfg_attr(feature = "sqlx", sqlx(rename_all = "lowercase"))]
@@ -346,6 +346,8 @@ pub enum GameMode {
     Ultiduo,
     Ones,
     FFFours,
+    Classic,
+    Left4Dead,
 }
 
 impl FromStr for GameMode {
@@ -359,17 +361,30 @@ impl FromStr for GameMode {
             "4v4" => Ok(GameMode::Fours),
             "2v2" => Ok(GameMode::Ultiduo),
             "1v1" => Ok(GameMode::Ones),
+            "Highlander" => Ok(GameMode::Highlander),
             "TF2 Highlander" => Ok(GameMode::Highlander),
             "ASIA TF2-H" => Ok(GameMode::Highlander),
             "ASIA TF2-6" => Ok(GameMode::Sixes),
             "ASIA TF2-4" => Ok(GameMode::Fours),
             "TF2 8vs8" => Ok(GameMode::Eights),
+            "8vs8" => Ok(GameMode::Eights),
             "TF2 6vs6" => Ok(GameMode::Sixes),
+            "6vs6" => Ok(GameMode::Sixes),
             "TF2 4vs4" => Ok(GameMode::Fours),
+            "4vs4" => Ok(GameMode::Fours),
             "TF2 2vs2" => Ok(GameMode::Ultiduo),
+            "2vs2" => Ok(GameMode::Ultiduo),
             "TF2 Sol 1vs1" => Ok(GameMode::Ones),
             "ff4v4" => Ok(GameMode::FFFours),
             "FF 4vs4 OvsD" => Ok(GameMode::FFFours),
+            "Fortress Forever 4vs4 OvsD" => Ok(GameMode::FFFours),
+            "Team Fortress Classic ADL" => Ok(GameMode::Classic),
+            "TeamFortressClassic" => Ok(GameMode::Classic),
+            "classic" => Ok(GameMode::Classic),
+            "Left For Dead" => Ok(GameMode::Left4Dead),
+            "Left 4 Dead 2 Versus League" => Ok(GameMode::Left4Dead),
+            "l4d" => Ok(GameMode::Left4Dead),
+            "Team Fortress 2 Soldier 1 vs 1 Tournament" => Ok(GameMode::Ones),
             _ => Err(InvalidGameMode {
                 text: s.to_string(),
             }),
@@ -387,6 +402,8 @@ impl GameMode {
             GameMode::Ultiduo => "2",
             GameMode::Ones => "1",
             GameMode::FFFours => "ff4",
+            GameMode::Classic => "classic",
+            GameMode::Left4Dead => "l4d",
         }
     }
 
@@ -399,6 +416,8 @@ impl GameMode {
             GameMode::Ultiduo => "2v2",
             GameMode::Ones => "1v1",
             GameMode::FFFours => "ff4v4",
+            GameMode::Classic => "classic",
+            GameMode::Left4Dead => "l4d",
         }
     }
 
