@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO player_honors (\n                steam_id, team_id, season, division, format\n              ) VALUES ($1, $2, $3, $4, $5)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int8",
+        "Int4",
+        "Int2",
+        "Varchar",
+        {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        }
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "104cec686e47c560a136e7ac479fc6a301ae08c7b339e18dda446d3a0990f655"
+}

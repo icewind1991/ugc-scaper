@@ -3,6 +3,9 @@ use std::fmt::Display;
 use std::str::FromStr;
 pub use steamid_ng::SteamID;
 use thiserror::Error;
+use time::error::Parse;
+use time::format_description::FormatItem;
+use time::macros::format_description;
 use time::{Date, OffsetDateTime};
 
 #[cfg(feature = "serde")]
@@ -319,6 +322,10 @@ pub struct MatchInfo {
     pub team_away: TeamRef,
     pub score_home: u8,
     pub score_away: u8,
+    pub map: String,
+    pub week: u8,
+    pub format: GameMode,
+    pub default_date: Date,
 }
 
 #[derive(Debug, Clone, Error)]
@@ -396,14 +403,14 @@ impl GameMode {
     }
 
     pub fn is_tf2(&self) -> bool {
-        match self {
-            GameMode::Highlander => true,
-            GameMode::Eights => true,
-            GameMode::Sixes => true,
-            GameMode::Fours => true,
-            GameMode::Ultiduo => true,
-            _ => false,
-        }
+        matches!(
+            self,
+            GameMode::Highlander
+                | GameMode::Eights
+                | GameMode::Sixes
+                | GameMode::Fours
+                | GameMode::Ultiduo
+        )
     }
 }
 
@@ -458,7 +465,7 @@ impl FromStr for Region {
     type Err = InvalidRegion;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let s = s.trim_matches(&['*', '(', ')']);
+        let s = s.trim_matches(['*', '(', ')']);
         match s {
             "Euro" => Ok(Region::Europe),
             "Europe" => Ok(Region::Europe),
@@ -531,6 +538,47 @@ impl FromStr for TransactionAction {
 pub struct MapHistory {
     pub current: CurrentSeasonMapList,
     pub previous: Vec<PreviousSeasonMapList>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+pub struct Week<'a> {
+    pub season: u8,
+    pub week: u8,
+    pub map: &'a str,
+    #[cfg_attr(feature = "serde", serde(with = "serde_date"))]
+    pub date: Date,
+}
+
+impl MapHistory {
+    pub fn weeks(&self, current_season_year: u16) -> impl Iterator<Item = Result<Week, Parse>> {
+        const CURRENT_DATE_FORMAT: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short], [month repr:short] [day padding:none] [year]");
+
+        let current_season = self.current.maps.iter().map(move |map| {
+            Ok(Week {
+                season: self.current.season,
+                week: map.week,
+                map: map.map.as_str(),
+                date: Date::parse(
+                    &format!("{} {current_season_year}", map.date),
+                    CURRENT_DATE_FORMAT,
+                )?,
+            })
+        });
+        let past_seasons = self
+            .previous
+            .iter()
+            .flat_map(|season| season.maps.iter().map(|map| (season.season, map)))
+            .map(|(season, map)| {
+                Ok(Week {
+                    season,
+                    week: map.week,
+                    map: map.map.as_str(),
+                    date: map.date,
+                })
+            });
+        current_season.chain(past_seasons)
+    }
 }
 
 #[derive(Debug, Clone)]

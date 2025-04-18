@@ -5,7 +5,8 @@ CREATE TABLE players
     steam_id         BIGINT         NOT NULL,
     name             VARCHAR        NOT NULL,
     avatar           VARCHAR,
-    favorite_classes player_class[] NOT NULL
+    favorite_classes player_class[] NOT NULL,
+    country          VARCHAR
 );
 
 CREATE UNIQUE INDEX players_steam_id_idx

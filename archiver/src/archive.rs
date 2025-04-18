@@ -6,8 +6,8 @@ use std::str::FromStr;
 use thiserror::Error;
 use tokio_stream::Stream;
 use ugc_scraper_types::{
-    GameMode, MatchInfo, Membership, MembershipRole, NameChange, Record, Region, RosterHistory,
-    Team,
+    Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
+    Region, RosterHistory, SteamID, Team,
 };
 
 #[derive(Debug, Error)]
@@ -21,6 +21,8 @@ pub enum ArchiveError {
         description: &'static str,
         error: sqlx::Error,
     },
+    #[error("Error while parsing dates for {format}")]
+    DateFormat { format: GameMode },
 }
 
 pub struct Archive {
@@ -200,6 +202,38 @@ impl Archive {
         }
     }
 
+    pub fn get_players_ids(
+        &self,
+        min: SteamID,
+    ) -> impl Stream<Item = Result<SteamID, ArchiveError>> + use<'_> {
+        query!(
+            "select distinct steam_id from membership_history where steam_id > $1 order by steam_id asc",
+            u64::from(min) as i64,
+        )
+            .fetch(&self.pool)
+            .map_err(|error| ArchiveError::Query {
+                description: "getting player steam ids",
+                error,
+            })
+            .map_ok(|map| (map.steam_id as u64).into())
+    }
+
+    pub async fn get_max_player(&self) -> Result<SteamID, ArchiveError> {
+        if let Some(row) =
+            query!("select steam_id as max from players order by steam_id desc limit 1;")
+                .fetch_optional(&self.pool)
+                .await
+                .map_err(|error| ArchiveError::Query {
+                    description: "getting latest team membership history",
+                    error,
+                })?
+        {
+            Ok((row.max as u64).into())
+        } else {
+            Ok(0.into())
+        }
+    }
+
     pub fn get_no_region_teams(&self) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
         query!("select id from teams where region IS NULL and format != 'eights' order by id desc")
             .fetch(&self.pool)
@@ -340,6 +374,111 @@ impl Archive {
             .await
             .map_err(|error| ArchiveError::Query {
                 description: "commiting membership history transaction",
+                error,
+            })?;
+
+        Ok(())
+    }
+
+    pub async fn store_player(&self, player: Player) -> Result<(), ArchiveError> {
+        let mut transaction = self
+            .pool
+            .begin()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "beginning player transaction",
+                error,
+            })?;
+
+        query!(
+            "INSERT INTO players (
+                steam_id, name, avatar, favorite_classes, country
+              ) VALUES ($1, $2, $3, $4, $5)",
+            u64::from(player.steam_id) as i64,
+            player.name,
+            player.avatar,
+            player.favorite_classes as Vec<Class>,
+            player.country,
+        )
+        .execute(&mut *transaction)
+        .await
+        .map_err(|error| ArchiveError::Query {
+            description: "inserting player",
+            error,
+        })?;
+
+        for honors in player.honors.iter() {
+            query!(
+                "INSERT INTO player_honors (
+                steam_id, team_id, season, division, format
+              ) VALUES ($1, $2, $3, $4, $5)",
+                u64::from(player.steam_id) as i64,
+                honors.team.id as i32,
+                honors.season as i16,
+                honors.division,
+                honors.format as GameMode,
+            )
+            .execute(&mut *transaction)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "inserting player honors",
+                error,
+            })?;
+        }
+
+        transaction
+            .commit()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "commiting player transaction",
+                error,
+            })?;
+
+        Ok(())
+    }
+
+    pub async fn store_map_history(
+        &self,
+        format: GameMode,
+        maps: &MapHistory,
+    ) -> Result<(), ArchiveError> {
+        let mut transaction = self
+            .pool
+            .begin()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "beginning map history transaction",
+                error,
+            })?;
+
+        // who knows, the website doesn't say
+        let current_season_year = 2024;
+
+        for week in maps.weeks(current_season_year) {
+            let week = week.map_err(|_| ArchiveError::DateFormat { format })?;
+            query!(
+                "INSERT INTO maps (
+                    format, season, week, date, map
+                  ) VALUES ($1, $2, $3, $4, $5)",
+                format as GameMode,
+                week.season as i32,
+                week.week as i32,
+                week.date,
+                week.map,
+            )
+            .execute(&mut *transaction)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "inserting map history",
+                error,
+            })?;
+        }
+
+        transaction
+            .commit()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "commiting map history transaction",
                 error,
             })?;
 

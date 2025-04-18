@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select distinct steam_id from membership_history where steam_id > $1 order by steam_id asc",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "steam_id",
+        "type_info": "Int8"
+      }
+    ],
+    "parameters": {
+      "Left": ["Int8"]
+    },
+    "nullable": [false]
+  },
+  "hash": "d06507f78e0ac005f9e978816ffea6441d19232d08b3205993ee76b86c3e558b"
+}

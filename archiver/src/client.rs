@@ -2,7 +2,7 @@ use reqwest::{Client, ClientBuilder, Error, Response, StatusCode};
 use serde::de::DeserializeOwned;
 use thiserror::Error;
 use ugc_scraper_types::{
-    GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, Team,
+    GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, SteamID, Team,
     TeamRosterData, TeamSeasonMatch, Transaction,
 };
 
@@ -65,11 +65,14 @@ impl UgcClient {
         self.send_request(Endpoint::TeamMatches { id }).await
     }
 
-    pub async fn get_player(&self, id: u32) -> Result<Player, UgcClientError> {
+    pub async fn get_player(&self, id: SteamID) -> Result<Player, UgcClientError> {
         self.send_request(Endpoint::Player { id }).await
     }
 
-    pub async fn get_player_history(&self, id: u32) -> Result<MembershipHistory, UgcClientError> {
+    pub async fn get_player_history(
+        &self,
+        id: SteamID,
+    ) -> Result<MembershipHistory, UgcClientError> {
         self.send_request(Endpoint::PlayerHistory { id }).await
     }
 
@@ -88,8 +91,8 @@ impl UgcClient {
 #[derive(Debug, Copy, Clone)]
 pub enum Endpoint {
     Match { id: u32 },
-    Player { id: u32 },
-    PlayerHistory { id: u32 },
+    Player { id: SteamID },
+    PlayerHistory { id: SteamID },
     Transactions { format: GameMode },
     Team { id: u32 },
     TeamRoster { id: u32 },
@@ -101,8 +104,10 @@ impl Endpoint {
     pub fn build_url(&self, api_url: &str) -> String {
         match self {
             Endpoint::Match { id } => format!("{}/match/{id}", api_url),
-            Endpoint::Player { id } => format!("{}/player/{id}", api_url),
-            Endpoint::PlayerHistory { id } => format!("{}/player/{id}/history", api_url),
+            Endpoint::Player { id } => format!("{}/player/{}", api_url, u64::from(*id)),
+            Endpoint::PlayerHistory { id } => {
+                format!("{}/player/{}/history", api_url, u64::from(*id))
+            }
             Endpoint::Transactions { format } => format!("{}/transactions/{format}", api_url),
             Endpoint::Team { id } => format!("{}/team/{id}", api_url),
             Endpoint::TeamRoster { id } => format!("{}/team/{id}/roster", api_url),

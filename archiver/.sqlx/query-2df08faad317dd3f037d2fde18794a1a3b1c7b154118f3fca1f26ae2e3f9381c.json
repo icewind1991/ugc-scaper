@@ -1,0 +1,42 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO players (\n                steam_id, name, avatar, favorite_classes, country\n              ) VALUES ($1, $2, $3, $4, $5)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int8",
+        "Varchar",
+        "Varchar",
+        {
+          "Custom": {
+            "name": "player_class[]",
+            "kind": {
+              "Array": {
+                "Custom": {
+                  "name": "player_class",
+                  "kind": {
+                    "Enum": [
+                      "scout",
+                      "soldier",
+                      "pyro",
+                      "demoman",
+                      "engineer",
+                      "heavy",
+                      "medic",
+                      "sniper",
+                      "spy"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Varchar"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "2df08faad317dd3f037d2fde18794a1a3b1c7b154118f3fca1f26ae2e3f9381c"
+}

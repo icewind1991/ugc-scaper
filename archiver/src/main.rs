@@ -9,10 +9,12 @@ use clap::{Parser, Subcommand};
 use main_error::MainResult;
 use std::path::PathBuf;
 use std::pin::pin;
+use std::str::FromStr;
 use std::time::Duration;
 use tokio::time::sleep;
 use tokio_stream::StreamExt;
 use tracing::{error, info, span, warn, Level};
+use ugc_scraper_types::GameMode;
 
 #[derive(Debug, Parser)]
 struct Args {
@@ -25,9 +27,11 @@ struct Args {
 #[derive(Debug, Subcommand)]
 enum Command {
     Matches,
+    Players,
     Teams,
     FixupTeams,
     MembershipHistory,
+    MapHistory { format: String },
 }
 
 const LAST_MATCH: u32 = 117047;
@@ -53,6 +57,13 @@ async fn main() -> MainResult {
         }
         Command::MembershipHistory => {
             archive_team_roster_history(&client, &archive).await?;
+        }
+        Command::Players => {
+            archive_players(&client, &archive).await?;
+        }
+        Command::MapHistory { format } => {
+            let format = GameMode::from_str(&format)?;
+            archive_map_history(&client, &archive, format).await?;
         }
     }
     Ok(())
@@ -159,6 +170,43 @@ async fn fixup_teams(client: &UgcClient, archive: &Archive) -> MainResult {
         }
         sleep(Duration::from_millis(500)).await;
     }
+    Ok(())
+}
+
+async fn archive_players(client: &UgcClient, archive: &Archive) -> MainResult {
+    let last = archive.get_max_player().await?;
+    let mut ids = pin!(archive.get_players_ids(last));
+
+    while let Some(Ok(steam_id)) = ids.next().await {
+        let _span = span!(
+            Level::INFO,
+            "archive_player",
+            steam_id = u64::from(steam_id)
+        )
+        .entered();
+        match client.get_player(steam_id).await.check_not_found() {
+            Ok(Some(player)) => {
+                info!("storing player");
+                archive.store_player(player).await?;
+                // panic!();
+            }
+            Ok(None) => {
+                warn!("player not found");
+            }
+            Err(e) => {
+                error!("error fetching player: {:?}", e);
+                panic!();
+            }
+        }
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+async fn archive_map_history(client: &UgcClient, archive: &Archive, mode: GameMode) -> MainResult {
+    let history = client.get_maps(mode).await?;
+    archive.store_map_history(mode, &history).await?;
+
     Ok(())
 }
 
