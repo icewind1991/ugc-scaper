@@ -16,6 +16,7 @@ time = { version = "0.3.41", features = ["parsing", "macros"] }
 steamid-ng = "1.0.0"
 ugc-scraper-types = { version = "0.2.0", path = "./types" }
 regex = "1.11.1"
+tracing = "0.1.41"
 
 [dev-dependencies]
 tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread", "rt"] }

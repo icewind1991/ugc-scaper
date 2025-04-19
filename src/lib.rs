@@ -13,8 +13,11 @@ use crate::parser::{
 };
 pub use error::*;
 use reqwest::redirect::Policy;
-use reqwest::{Client, Response, StatusCode};
+use reqwest::{Client, IntoUrl, Response, StatusCode};
+use std::time::Duration;
 pub use steamid_ng::SteamID;
+use tokio::time::sleep;
+use tracing::warn;
 
 pub type Result<T, E = ScrapeError> = std::result::Result<T, E>;
 
@@ -63,19 +66,38 @@ impl UgcClient {
             map_history_parser: MapHistoryParser::new(),
         }
     }
+    async fn request<U: IntoUrl>(&self, url: U) -> Result<String> {
+        let url = url.into_url()?;
+        match self.try_request(url.clone()).await {
+            Ok(res) => Ok(res),
+            Err(ScrapeError::Request(e)) => {
+                warn!(url = url.as_str(), error = ?e, "failed to send request, retrying");
+                sleep(Duration::from_secs_f32(0.5)).await;
+                self.try_request(url).await
+            }
+            Err(e) => Err(e),
+        }
+    }
+
+    async fn try_request<U: IntoUrl>(&self, url: U) -> Result<String> {
+        Ok(self
+            .client
+            .get(url)
+            .send()
+            .await?
+            .check_not_found()?
+            .error_for_status()?
+            .text()
+            .await?)
+    }
 
     /// Retrieve player information
     pub async fn player(&self, steam_id: SteamID) -> Result<Player> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/players_page.cfm?player_id={}",
                 u64::from(steam_id)
             ))
-            .send()
-            .await?
-            .check_not_found()?
-            .text()
             .await?;
         self.player_parser.parse(&body)
     }
@@ -83,15 +105,10 @@ impl UgcClient {
     /// Retrieve team membership history for a player
     pub async fn player_team_history(&self, steam_id: SteamID) -> Result<Vec<MembershipHistory>> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/players_page_details.cfm?player_id={}",
                 u64::from(steam_id)
             ))
-            .send()
-            .await?
-            .check_not_found()?
-            .text()
             .await?;
         self.player_detail_parser.parse(&body)
     }
@@ -99,14 +116,10 @@ impl UgcClient {
     /// Retrieve team information
     pub async fn team(&self, id: u32) -> Result<Team> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/team_page.cfm?clan_id={}",
                 id
             ))
-            .send()
-            .await?
-            .text()
             .await?;
         self.team_parser.parse(&body)
     }
@@ -114,14 +127,10 @@ impl UgcClient {
     /// Retrieve team roster history
     pub async fn team_roster_history(&self, id: u32) -> Result<TeamRosterData> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/team_page_rosterhistory.cfm?clan_id={}",
                 id
             ))
-            .send()
-            .await?
-            .text()
             .await?;
         self.team_roster_history_parser.parse(&body)
     }
@@ -129,27 +138,17 @@ impl UgcClient {
     /// Retrieve team match history
     pub async fn team_matches(&self, id: u32) -> Result<Vec<TeamSeason>> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/team_page_matches.cfm?clan_id={}",
                 id
             ))
-            .send()
-            .await?
-            .text()
             .await?;
         self.team_matches_parser.parse(&body)
     }
 
     /// Get all historical seasons by game mode
     pub async fn previous_seasons(&self) -> Result<Vec<Seasons>> {
-        let body = self
-            .client
-            .get("https://www.ugcleague.com")
-            .send()
-            .await?
-            .text()
-            .await?;
+        let body = self.request("https://www.ugcleague.com").await?;
         self.seasons_parser.parse(&body)
     }
 
@@ -158,22 +157,17 @@ impl UgcClient {
             "https://www.ugcleague.com/team_lookup_tf2{}.cfm",
             format.letter()
         );
-        let body = self.client.get(link).send().await?.text().await?;
+        let body = self.request(link).await?;
         self.team_lookup_parser.parse(&body)
     }
 
     /// Get match page info
     pub async fn match_info(&self, id: u32) -> Result<MatchInfo> {
         let body = self
-            .client
-            .get(format!(
+            .request(format!(
                 "https://www.ugcleague.com/matchpage_tf2h.cfm?mid={}",
                 id
             ))
-            .send()
-            .await?
-            .check_not_found()?
-            .text()
             .await?;
         self.match_page_parser.parse(&body)
     }
@@ -183,7 +177,7 @@ impl UgcClient {
             "https://www.ugcleague.com/rostertransactions_tf2{}_all.cfm",
             format.letter()
         );
-        let body = self.client.get(link).send().await?.text().await?;
+        let body = self.request(link).await?;
         self.transaction_parser.parse(&body)
     }
 
@@ -192,7 +186,7 @@ impl UgcClient {
             "https://www.ugcleague.com/maplist_tf2{}.cfm",
             format.letter()
         );
-        let body = self.client.get(link).send().await?.text().await?;
+        let body = self.request(link).await?;
         self.map_history_parser.parse(&body)
     }
 }

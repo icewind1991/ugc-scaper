@@ -386,5 +386,6 @@ expression: parsed
       "since": "2013-08-09"
     }
   ],
-  "favorite_classes": []
+  "favorite_classes": [],
+  "country": null
 }

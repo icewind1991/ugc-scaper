@@ -14,5 +14,9 @@ expression: parsed
     "id": 7861
   },
   "score_home": 4,
-  "score_away": 0
+  "score_away": 0,
+  "map": "koth_ashville_final",
+  "week": 1,
+  "format": "9v9",
+  "default_date": "Mon Oct 09"
 }
