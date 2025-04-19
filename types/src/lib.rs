@@ -348,6 +348,7 @@ pub enum GameMode {
     FFFours,
     Classic,
     Left4Dead,
+    Overwatch,
 }
 
 impl FromStr for GameMode {
@@ -385,6 +386,8 @@ impl FromStr for GameMode {
             "Left 4 Dead 2 Versus League" => Ok(GameMode::Left4Dead),
             "l4d" => Ok(GameMode::Left4Dead),
             "Team Fortress 2 Soldier 1 vs 1 Tournament" => Ok(GameMode::Ones),
+            "Overwatch" => Ok(GameMode::Overwatch),
+            "overwatch" => Ok(GameMode::Overwatch),
             _ => Err(InvalidGameMode {
                 text: s.to_string(),
             }),
@@ -404,6 +407,7 @@ impl GameMode {
             GameMode::FFFours => "ff4",
             GameMode::Classic => "classic",
             GameMode::Left4Dead => "l4d",
+            GameMode::Overwatch => "overwatch",
         }
     }
 
@@ -418,6 +422,7 @@ impl GameMode {
             GameMode::FFFours => "ff4v4",
             GameMode::Classic => "classic",
             GameMode::Left4Dead => "l4d",
+            GameMode::Overwatch => "overwatch",
         }
     }
 
