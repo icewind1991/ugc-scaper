@@ -7,12 +7,21 @@ use thiserror::Error;
 use time::format_description::FormatItem;
 use time::macros::format_description;
 use time::parsing::Parsed;
-use time::Date;
+use time::{Date, Duration};
 use tokio_stream::Stream;
+use tracing::{debug};
 use ugc_scraper_types::{
     Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
     Region, RosterHistory, SteamID, Team,
 };
+
+const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
+    "[weekday case_sensitive:false repr:short], [month repr:short] [day padding:none] [year]"
+);
+const MATCH_DATE_FORMAT2: &[FormatItem<'static>] = format_description!(
+    "[weekday case_sensitive:false repr:short] [month repr:short] [day padding:none] [year]"
+);
+const MATCH_DATE_FORMATS: &[&[FormatItem<'static>]] = &[MATCH_DATE_FORMAT, MATCH_DATE_FORMAT2];
 
 #[derive(Debug, Error)]
 pub enum ArchiveError {
@@ -505,8 +514,6 @@ impl Archive {
         &self,
         match_info: &MatchInfo,
     ) -> Result<Option<Date>, ArchiveError> {
-        const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short], [month repr:short] [day padding:none] [year]");
-        const MATCH_DATE_FORMAT2: &[FormatItem<'static>] = format_description!("[weekday case_sensitive:false repr:short] [month repr:short] [day padding:none] [year]");
         if let Ok(match_date) = parse_old_match_date(&match_info.default_date) {
             return Ok(Some(match_date));
         } else if !match_info.format.is_tf2() {
@@ -531,12 +538,12 @@ impl Archive {
             let Some(match_date) = try_date_formats(
                 match_info.default_date.as_str(),
                 possible_date.year(),
-                &[MATCH_DATE_FORMAT, MATCH_DATE_FORMAT2],
+                MATCH_DATE_FORMATS,
             ) else {
                 break;
             };
 
-            if match_date == possible_date {
+            if (match_date - possible_date).abs() < Duration::days(7) {
                 return Ok(Some(possible_date));
             }
         }
@@ -605,9 +612,19 @@ fn test_parse_old_match_date() {
 
 fn try_date_formats(date: &str, year: i32, formats: &[&[FormatItem<'static>]]) -> Option<Date> {
     for format in formats {
-        if let Ok(match_date) = Date::parse(&format!("{} {}", date, year), format) {
-            return Some(match_date);
+        match Date::parse(&format!("{} {}", date, year), format) {
+            Ok(match_date) => {
+                return Some(match_date);
+            }
+            Err(e) => {
+                debug!(error = ?e, year, date, "date format not matching");
+            }
         };
     }
     None
+}
+
+#[test]
+fn test_parse_date() {
+    assert!(try_date_formats("Sun Oct 06", 2019, MATCH_DATE_FORMATS).is_some());
 }

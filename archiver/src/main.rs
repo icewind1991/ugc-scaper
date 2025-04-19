@@ -227,6 +227,7 @@ async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
                 || match_info.format == GameMode::Fours
                 || match_info.format == GameMode::Ultiduo)
         {
+            dbg!(match_info.default_date);
             error!("failed to parse match date");
             panic!();
         }
