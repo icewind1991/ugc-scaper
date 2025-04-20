@@ -61,6 +61,7 @@ fn test_parse_team_roster_history_html(input: &str, name: &str) {
 }
 
 #[test_case("team_matches_7861.html", "team_matches")]
+#[test_case("team_matches_2157.html", "team_matches_old")]
 #[cfg(feature = "serde")]
 fn test_parse_team_matches_html(input: &str, name: &str) {
     let body = read_to_string(format!("tests/data/{input}")).unwrap();

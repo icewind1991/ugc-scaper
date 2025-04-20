@@ -12,17 +12,16 @@ expression: parsed
         "date": "Mon Oct 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 116246,
-            "opponent": {
-              "name": "VKID",
-              "id": 32033
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 116246,
+          "opponent": {
+            "name": "VKID",
+            "id": 32033
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_final"
       },
@@ -31,7 +30,9 @@ expression: parsed
         "week": 2,
         "date": "Mon Oct 16",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "pl_upward_f10"
       },
       {
@@ -40,17 +41,16 @@ expression: parsed
         "date": "Mon Oct 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 116330,
-            "opponent": {
-              "name": "ivan",
-              "id": 32667
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 116330,
+          "opponent": {
+            "name": "ivan",
+            "id": 32667
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_proot_b6b"
       },
@@ -60,17 +60,16 @@ expression: parsed
         "date": "Mon Oct 30",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 116393,
-            "opponent": {
-              "name": "JaR",
-              "id": 30047
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 116393,
+          "opponent": {
+            "name": "JaR",
+            "id": 30047
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -80,17 +79,16 @@ expression: parsed
         "date": "Mon Nov 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 116440,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 116440,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_final"
       },
@@ -100,15 +98,14 @@ expression: parsed
         "date": "Mon Nov 13",
         "side": "home",
         "result": {
-          "Pending": {
-            "id": 116474,
-            "opponent": {
-              "name": "PONY",
-              "id": 32208
-            },
-            "score": 0,
-            "score_opponent": 2
-          }
+          "state": "pending",
+          "id": 116474,
+          "opponent": {
+            "name": "PONY",
+            "id": 32208
+          },
+          "score": 0,
+          "score_opponent": 2
         },
         "map": "pl_vigil_rc10"
       }
@@ -123,17 +120,16 @@ expression: parsed
         "date": "Mon Jun 19",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 115752,
-            "opponent": {
-              "name": "VoI",
-              "id": 30693
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 115752,
+          "opponent": {
+            "name": "VoI",
+            "id": 30693
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_final"
       },
@@ -143,17 +139,16 @@ expression: parsed
         "date": "Mon Jun 26",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 115789,
-            "opponent": {
-              "name": "PONY",
-              "id": 32208
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 115789,
+          "opponent": {
+            "name": "PONY",
+            "id": 32208
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward_f10"
       },
@@ -163,17 +158,16 @@ expression: parsed
         "date": "Mon Jul 03",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 115827,
-            "opponent": {
-              "name": "I DO",
-              "id": 32814
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 115827,
+          "opponent": {
+            "name": "I DO",
+            "id": 32814
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_warmtic_f10"
       },
@@ -183,17 +177,16 @@ expression: parsed
         "date": "Mon Jul 10",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 115883,
-            "opponent": {
-              "name": "SDJC",
-              "id": 31550
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 115883,
+          "opponent": {
+            "name": "SDJC",
+            "id": 31550
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_vigil_rc10"
       },
@@ -203,17 +196,16 @@ expression: parsed
         "date": "Mon Jul 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 115929,
-            "opponent": {
-              "name": "AͣHͪ",
-              "id": 31975
-            },
-            "score": 3,
-            "score_opponent": 4,
-            "match_points": 3.75,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 115929,
+          "opponent": {
+            "name": "AͣHͪ",
+            "id": 31975
+          },
+          "score": 3,
+          "score_opponent": 4,
+          "match_points": 3.75,
+          "match_points_opponent": 5.0
         },
         "map": "koth_proot_b5b"
       },
@@ -223,17 +215,16 @@ expression: parsed
         "date": "Mon Jul 24",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 115985,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 115985,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -243,17 +234,16 @@ expression: parsed
         "date": "Mon Jul 31",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 116063,
-            "opponent": {
-              "name": "PMSjr",
-              "id": 32815
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 116063,
+          "opponent": {
+            "name": "PMSjr",
+            "id": 32815
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_final"
       },
@@ -263,17 +253,16 @@ expression: parsed
         "date": "Mon Aug 07",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 116085,
-            "opponent": {
-              "name": "menel",
-              "id": 32475
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 116085,
+          "opponent": {
+            "name": "menel",
+            "id": 32475
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel_f12"
       }
@@ -288,17 +277,16 @@ expression: parsed
         "date": "Mon Feb 13",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114504,
-            "opponent": {
-              "name": "VoI",
-              "id": 30693
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114504,
+          "opponent": {
+            "name": "VoI",
+            "id": 30693
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc9"
       },
@@ -308,17 +296,16 @@ expression: parsed
         "date": "Mon Feb 20",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 114525,
-            "opponent": {
-              "name": "pLV",
-              "id": 7827
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 114525,
+          "opponent": {
+            "name": "pLV",
+            "id": 7827
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_product_final"
       },
@@ -328,17 +315,16 @@ expression: parsed
         "date": "Mon Feb 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114572,
-            "opponent": {
-              "name": "/ᐠ｡ꞈ｡ᐟ\\",
-              "id": 32759
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 114572,
+          "opponent": {
+            "name": "/ᐠ｡ꞈ｡ᐟ\\",
+            "id": 32759
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward_f10"
       },
@@ -348,17 +334,16 @@ expression: parsed
         "date": "Mon Mar 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114595,
-            "opponent": {
-              "name": "hb",
-              "id": 31798
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114595,
+          "opponent": {
+            "name": "hb",
+            "id": 31798
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_proot_b5b"
       },
@@ -368,17 +353,16 @@ expression: parsed
         "date": "Mon Mar 13",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 114633,
-            "opponent": {
-              "name": "Tissi",
-              "id": 29099
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 114633,
+          "opponent": {
+            "name": "Tissi",
+            "id": 29099
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "pl_swiftwater_final1"
       },
@@ -387,7 +371,9 @@ expression: parsed
         "week": 6,
         "date": "Mon Mar 20",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_ashville_final"
       },
       {
@@ -396,17 +382,16 @@ expression: parsed
         "date": "Mon Mar 27",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 114730,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114730,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_caldera_rc2"
       },
@@ -416,17 +401,16 @@ expression: parsed
         "date": "Mon Apr 03",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 114783,
-            "opponent": {
-              "name": "AVN",
-              "id": 32505
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114783,
+          "opponent": {
+            "name": "AVN",
+            "id": 32505
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_clearcut_b15d"
       },
@@ -436,17 +420,16 @@ expression: parsed
         "date": "Mon Apr 10",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114805,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114805,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -460,7 +443,9 @@ expression: parsed
         "week": 1,
         "date": "Mon Oct 03",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_ashville_final"
       },
       {
@@ -469,17 +454,16 @@ expression: parsed
         "date": "Mon Oct 10",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 113335,
-            "opponent": {
-              "name": "Tissi",
-              "id": 29099
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 113335,
+          "opponent": {
+            "name": "Tissi",
+            "id": 29099
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_borneo_f2"
       },
@@ -489,17 +473,16 @@ expression: parsed
         "date": "Mon Oct 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 113402,
-            "opponent": {
-              "name": "AVN",
-              "id": 32505
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 113402,
+          "opponent": {
+            "name": "AVN",
+            "id": 32505
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_cascade"
       },
@@ -509,17 +492,16 @@ expression: parsed
         "date": "Mon Oct 24",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 113476,
-            "opponent": {
-              "name": "/ᐠ｡ꞈ｡ᐟ\\",
-              "id": 32759
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 113476,
+          "opponent": {
+            "name": "/ᐠ｡ꞈ｡ᐟ\\",
+            "id": 32759
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc9"
       },
@@ -529,17 +511,16 @@ expression: parsed
         "date": "Mon Oct 31",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 113559,
-            "opponent": {
-              "name": "VKID",
-              "id": 32033
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 113559,
+          "opponent": {
+            "name": "VKID",
+            "id": 32033
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_final"
       },
@@ -549,17 +530,16 @@ expression: parsed
         "date": "Mon Nov 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 113703,
-            "opponent": {
-              "name": "menel",
-              "id": 32475
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 113703,
+          "opponent": {
+            "name": "menel",
+            "id": 32475
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward_f10"
       },
@@ -569,17 +549,16 @@ expression: parsed
         "date": "Mon Nov 14",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 113848,
-            "opponent": {
-              "name": "I DO",
-              "id": 32814
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 113848,
+          "opponent": {
+            "name": "I DO",
+            "id": 32814
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_clearcut_b15d"
       },
@@ -589,17 +568,16 @@ expression: parsed
         "date": "Mon Nov 21",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114017,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114017,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel_f12"
       },
@@ -609,17 +587,16 @@ expression: parsed
         "date": "Mon Nov 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 114175,
-            "opponent": {
-              "name": "/ᐠ｡ꞈ｡ᐟ\\",
-              "id": 32759
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 114175,
+          "opponent": {
+            "name": "/ᐠ｡ꞈ｡ᐟ\\",
+            "id": 32759
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -633,7 +610,9 @@ expression: parsed
         "week": 1,
         "date": "Mon Jun 06",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_product_final"
       },
       {
@@ -642,17 +621,16 @@ expression: parsed
         "date": "Mon Jun 13",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 112092,
-            "opponent": {
-              "name": "PMS",
-              "id": 32614
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 112092,
+          "opponent": {
+            "name": "PMS",
+            "id": 32614
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc9"
       },
@@ -662,17 +640,16 @@ expression: parsed
         "date": "Mon Jun 20",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 112285,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 112285,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_ashville_rc2d"
       },
@@ -682,17 +659,16 @@ expression: parsed
         "date": "Mon Jun 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 112418,
-            "opponent": {
-              "name": "doge bread",
-              "id": 32701
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 112418,
+          "opponent": {
+            "name": "doge bread",
+            "id": 32701
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -702,17 +678,16 @@ expression: parsed
         "date": "Mon Jul 04",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 112561,
-            "opponent": {
-              "name": "/ᐠ｡ꞈ｡ᐟ\\",
-              "id": 32759
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 112561,
+          "opponent": {
+            "name": "/ᐠ｡ꞈ｡ᐟ\\",
+            "id": 32759
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_r2"
       },
@@ -722,17 +697,16 @@ expression: parsed
         "date": "Mon Jul 11",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 112711,
-            "opponent": {
-              "name": "nlfop",
-              "id": 32674
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 112711,
+          "opponent": {
+            "name": "nlfop",
+            "id": 32674
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel_f10"
       },
@@ -742,17 +716,16 @@ expression: parsed
         "date": "Mon Jul 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 112867,
-            "opponent": {
-              "name": "ps5",
-              "id": 32403
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 112867,
+          "opponent": {
+            "name": "ps5",
+            "id": 32403
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_cascade"
       },
@@ -762,17 +735,16 @@ expression: parsed
         "date": "Mon Jul 25",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 113008,
-            "opponent": {
-              "name": "GS",
-              "id": 31251
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 113008,
+          "opponent": {
+            "name": "GS",
+            "id": 31251
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward_f8"
       },
@@ -781,7 +753,9 @@ expression: parsed
         "week": 9,
         "date": "Mon Aug 01",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "Best of 3 Maps"
       },
       {
@@ -790,17 +764,16 @@ expression: parsed
         "date": "Mon Aug 08",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 113167,
-            "opponent": {
-              "name": "ps5",
-              "id": 32403
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 113167,
+          "opponent": {
+            "name": "ps5",
+            "id": 32403
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "Best of 3 Maps"
       },
@@ -810,17 +783,16 @@ expression: parsed
         "date": "Mon Aug 15",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 113211,
-            "opponent": {
-              "name": "/ᐠ｡ꞈ｡ᐟ\\",
-              "id": 32759
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 113211,
+          "opponent": {
+            "name": "/ᐠ｡ꞈ｡ᐟ\\",
+            "id": 32759
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "Best of 3 Maps"
       }
@@ -835,17 +807,16 @@ expression: parsed
         "date": "Mon Jan 31",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 110300,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 110300,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward_f5"
       },
@@ -855,17 +826,16 @@ expression: parsed
         "date": "Mon Feb 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 110398,
-            "opponent": {
-              "name": "PONY",
-              "id": 32208
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 110398,
+          "opponent": {
+            "name": "PONY",
+            "id": 32208
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_r2"
       },
@@ -875,17 +845,16 @@ expression: parsed
         "date": "Mon Feb 14",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 110541,
-            "opponent": {
-              "name": "BLINI",
-              "id": 32522
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 110541,
+          "opponent": {
+            "name": "BLINI",
+            "id": 32522
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_cornwater_b7b"
       },
@@ -894,7 +863,9 @@ expression: parsed
         "week": 4,
         "date": "Mon Feb 21",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_product_final"
       },
       {
@@ -903,17 +874,16 @@ expression: parsed
         "date": "Mon Feb 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 110888,
-            "opponent": {
-              "name": "hb",
-              "id": 31798
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 110888,
+          "opponent": {
+            "name": "hb",
+            "id": 31798
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc9"
       },
@@ -923,17 +893,16 @@ expression: parsed
         "date": "Mon Mar 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 111035,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 111035,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc2d"
       },
@@ -943,17 +912,16 @@ expression: parsed
         "date": "Mon Mar 14",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 111208,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 111208,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel_f9"
       },
@@ -963,17 +931,16 @@ expression: parsed
         "date": "Mon Mar 21",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 111376,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 111376,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo_f1"
       }
@@ -988,17 +955,16 @@ expression: parsed
         "date": "Mon Oct 04",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 108752,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108752,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc7"
       },
@@ -1008,17 +974,16 @@ expression: parsed
         "date": "Mon Oct 11",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 108876,
-            "opponent": {
-              "name": "H4B",
-              "id": 30243
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 108876,
+          "opponent": {
+            "name": "H4B",
+            "id": 30243
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_product_final"
       },
@@ -1028,17 +993,16 @@ expression: parsed
         "date": "Mon Oct 18",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 108978,
-            "opponent": {
-              "name": "ded",
-              "id": 32295
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108978,
+          "opponent": {
+            "name": "ded",
+            "id": 32295
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward_f1"
       },
@@ -1048,17 +1012,16 @@ expression: parsed
         "date": "Mon Oct 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 109228,
-            "opponent": {
-              "name": "PONY",
-              "id": 32208
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 109228,
+          "opponent": {
+            "name": "PONY",
+            "id": 32208
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_cascade_v2_b5"
       },
@@ -1068,17 +1031,16 @@ expression: parsed
         "date": "Mon Nov 01",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 109361,
-            "opponent": {
-              "name": "PFAN",
-              "id": 32296
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 109361,
+          "opponent": {
+            "name": "PFAN",
+            "id": 32296
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel_f6"
       },
@@ -1088,17 +1050,16 @@ expression: parsed
         "date": "Mon Nov 08",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 109489,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 109489,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_prowater_b12"
       },
@@ -1108,17 +1069,16 @@ expression: parsed
         "date": "Mon Nov 15",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 109642,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 109642,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1_nb7"
       },
@@ -1128,17 +1088,16 @@ expression: parsed
         "date": "Mon Nov 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 109806,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 109806,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_final1"
       }
@@ -1153,17 +1112,16 @@ expression: parsed
         "date": "Mon Jun 14",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 107297,
-            "opponent": {
-              "name": "Tissi",
-              "id": 29099
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 107297,
+          "opponent": {
+            "name": "Tissi",
+            "id": 29099
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -1173,17 +1131,16 @@ expression: parsed
         "date": "Mon Jun 21",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 107409,
-            "opponent": {
-              "name": "AͣHͪ",
-              "id": 31975
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 107409,
+          "opponent": {
+            "name": "AͣHͪ",
+            "id": 31975
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rcx"
       },
@@ -1193,17 +1150,16 @@ expression: parsed
         "date": "Mon Jun 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 107566,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 107566,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -1213,17 +1169,16 @@ expression: parsed
         "date": "Mon Jul 05",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 107705,
-            "opponent": {
-              "name": "BM",
-              "id": 28465
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 107705,
+          "opponent": {
+            "name": "BM",
+            "id": 28465
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1_nb7"
       },
@@ -1233,17 +1188,16 @@ expression: parsed
         "date": "Mon Jul 12",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 107870,
-            "opponent": {
-              "name": "kiti",
-              "id": 22135
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 107870,
+          "opponent": {
+            "name": "kiti",
+            "id": 22135
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel_f4"
       },
@@ -1253,17 +1207,16 @@ expression: parsed
         "date": "Mon Jul 19",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 108043,
-            "opponent": {
-              "name": "0FO",
-              "id": 18094
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108043,
+          "opponent": {
+            "name": "0FO",
+            "id": 18094
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc7"
       },
@@ -1273,17 +1226,16 @@ expression: parsed
         "date": "Mon Jul 26",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 108237,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108237,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_r2"
       },
@@ -1293,17 +1245,16 @@ expression: parsed
         "date": "Mon Aug 02",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 108409,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108409,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo"
       },
@@ -1313,17 +1264,16 @@ expression: parsed
         "date": "Mon Aug 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 108503,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 108503,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -1338,17 +1288,16 @@ expression: parsed
         "date": "Mon Oct 05",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 102939,
-            "opponent": {
-              "name": "V///",
-              "id": 31198
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 102939,
+          "opponent": {
+            "name": "V///",
+            "id": 31198
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_r"
       },
@@ -1358,17 +1307,16 @@ expression: parsed
         "date": "Mon Oct 12",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 103133,
-            "opponent": {
-              "name": "1R#",
-              "id": 29845
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 103133,
+          "opponent": {
+            "name": "1R#",
+            "id": 29845
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rcx"
       },
@@ -1378,17 +1326,16 @@ expression: parsed
         "date": "Mon Oct 19",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 103404,
-            "opponent": {
-              "name": "Tissi",
-              "id": 29099
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 103404,
+          "opponent": {
+            "name": "Tissi",
+            "id": 29099
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -1398,17 +1345,16 @@ expression: parsed
         "date": "Mon Oct 26",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 103698,
-            "opponent": {
-              "name": "GMsU",
-              "id": 21544
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 103698,
+          "opponent": {
+            "name": "GMsU",
+            "id": 21544
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_clearcut_b15c"
       },
@@ -1418,17 +1364,16 @@ expression: parsed
         "date": "Mon Nov 02",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 103986,
-            "opponent": {
-              "name": "-.IA.-",
-              "id": 27743
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 103986,
+          "opponent": {
+            "name": "-.IA.-",
+            "id": 27743
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -1438,17 +1383,16 @@ expression: parsed
         "date": "Mon Nov 09",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 104168,
-            "opponent": {
-              "name": "TC",
-              "id": 30478
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 104168,
+          "opponent": {
+            "name": "TC",
+            "id": 30478
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -1458,17 +1402,16 @@ expression: parsed
         "date": "Mon Nov 16",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 104403,
-            "opponent": {
-              "name": "BD",
-              "id": 18846
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 104403,
+          "opponent": {
+            "name": "BD",
+            "id": 18846
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc2b"
       },
@@ -1478,17 +1421,16 @@ expression: parsed
         "date": "Mon Nov 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 104698,
-            "opponent": {
-              "name": "Snus",
-              "id": 31095
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 104698,
+          "opponent": {
+            "name": "Snus",
+            "id": 31095
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_prowater_b11"
       }
@@ -1503,17 +1445,16 @@ expression: parsed
         "date": "Mon Jun 08",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 100997,
-            "opponent": {
-              "name": "0FO",
-              "id": 18094
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 100997,
+          "opponent": {
+            "name": "0FO",
+            "id": 18094
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -1523,17 +1464,16 @@ expression: parsed
         "date": "Mon Jun 15",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 101202,
-            "opponent": {
-              "name": "ZoF",
-              "id": 30555
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 101202,
+          "opponent": {
+            "name": "ZoF",
+            "id": 30555
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_lakeside_final"
       },
@@ -1543,17 +1483,16 @@ expression: parsed
         "date": "Mon Jun 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 101376,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 101376,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_summercoast_rc8d"
       },
@@ -1563,17 +1502,16 @@ expression: parsed
         "date": "Mon Jun 29",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 101627,
-            "opponent": {
-              "name": "warsaw",
-              "id": 30603
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 101627,
+          "opponent": {
+            "name": "warsaw",
+            "id": 30603
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_product_rcx"
       },
@@ -1583,17 +1521,16 @@ expression: parsed
         "date": "Mon Jul 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 101790,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 101790,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -1603,17 +1540,16 @@ expression: parsed
         "date": "Mon Jul 13",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 102061,
-            "opponent": {
-              "name": "HIKEN",
-              "id": 30727
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 102061,
+          "opponent": {
+            "name": "HIKEN",
+            "id": 30727
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "pl_swiftwater_final1"
       },
@@ -1623,17 +1559,16 @@ expression: parsed
         "date": "Mon Jul 20",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 102304,
-            "opponent": {
-              "name": "H4B",
-              "id": 30243
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 102304,
+          "opponent": {
+            "name": "H4B",
+            "id": 30243
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -1643,17 +1578,16 @@ expression: parsed
         "date": "Mon Jul 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 102433,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 102433,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater_pro_v12"
       }
@@ -1668,17 +1602,16 @@ expression: parsed
         "date": "Mon Feb 17",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 99616,
-            "opponent": {
-              "name": "Tissi",
-              "id": 29099
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 99616,
+          "opponent": {
+            "name": "Tissi",
+            "id": 29099
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_lakeside_final"
       },
@@ -1688,17 +1621,16 @@ expression: parsed
         "date": "Mon Feb 24",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 99693,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 99693,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater_pro_v12"
       },
@@ -1708,17 +1640,16 @@ expression: parsed
         "date": "Mon Mar 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 99825,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 99825,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rcx"
       },
@@ -1728,17 +1659,16 @@ expression: parsed
         "date": "Mon Mar 09",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 99957,
-            "opponent": {
-              "name": "turks",
-              "id": 29440
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 99957,
+          "opponent": {
+            "name": "turks",
+            "id": 29440
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -1748,17 +1678,16 @@ expression: parsed
         "date": "Mon Mar 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 100198,
-            "opponent": {
-              "name": "-.IA.-",
-              "id": 27743
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 100198,
+          "opponent": {
+            "name": "-.IA.-",
+            "id": 27743
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "cp_steel"
       },
@@ -1768,17 +1697,16 @@ expression: parsed
         "date": "Mon Mar 23",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 100277,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 100277,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -1788,17 +1716,16 @@ expression: parsed
         "date": "Mon Mar 30",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 100432,
-            "opponent": {
-              "name": "CygZap",
-              "id": 27744
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 100432,
+          "opponent": {
+            "name": "CygZap",
+            "id": 27744
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -1808,17 +1735,16 @@ expression: parsed
         "date": "Mon Apr 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 100611,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 100611,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_cascade_rc1a"
       }
@@ -1833,17 +1759,16 @@ expression: parsed
         "date": "Mon Oct 07",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 98348,
-            "opponent": {
-              "name": "8/10",
-              "id": 28469
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 98348,
+          "opponent": {
+            "name": "8/10",
+            "id": 28469
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -1853,17 +1778,16 @@ expression: parsed
         "date": "Mon Oct 14",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 98433,
-            "opponent": {
-              "name": "| CYO |",
-              "id": 17176
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 98433,
+          "opponent": {
+            "name": "| CYO |",
+            "id": 17176
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -1873,17 +1797,16 @@ expression: parsed
         "date": "Mon Oct 21",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 98544,
-            "opponent": {
-              "name": "AOÉNOSSA",
-              "id": 29261
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 98544,
+          "opponent": {
+            "name": "AOÉNOSSA",
+            "id": 29261
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -1893,17 +1816,16 @@ expression: parsed
         "date": "Mon Oct 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 98648,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 98648,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rcx"
       },
@@ -1913,17 +1835,16 @@ expression: parsed
         "date": "Mon Nov 04",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 98832,
-            "opponent": {
-              "name": "POOP",
-              "id": 29054
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 98832,
+          "opponent": {
+            "name": "POOP",
+            "id": 29054
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -1933,17 +1854,16 @@ expression: parsed
         "date": "Mon Nov 11",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 98953,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 98953,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo"
       },
@@ -1953,17 +1873,16 @@ expression: parsed
         "date": "Mon Nov 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 99181,
-            "opponent": {
-              "name": "WCHFM 2.0",
-              "id": 29322
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 99181,
+          "opponent": {
+            "name": "WCHFM 2.0",
+            "id": 29322
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -1973,17 +1892,16 @@ expression: parsed
         "date": "Mon Nov 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 99286,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 99286,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc6"
       }
@@ -1998,17 +1916,16 @@ expression: parsed
         "date": "Mon Jun 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 96981,
-            "opponent": {
-              "name": "8/10",
-              "id": 28469
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 96981,
+          "opponent": {
+            "name": "8/10",
+            "id": 28469
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -2018,17 +1935,16 @@ expression: parsed
         "date": "Mon Jun 24",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 97147,
-            "opponent": {
-              "name": "FFF",
-              "id": 28589
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 97147,
+          "opponent": {
+            "name": "FFF",
+            "id": 28589
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -2038,17 +1954,16 @@ expression: parsed
         "date": "Mon Jul 01",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 97320,
-            "opponent": {
-              "name": "BD",
-              "id": 18846
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 97320,
+          "opponent": {
+            "name": "BD",
+            "id": 18846
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -2058,17 +1973,16 @@ expression: parsed
         "date": "Mon Jul 08",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 97539,
-            "opponent": {
-              "name": "-.IA.-",
-              "id": 27743
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 97539,
+          "opponent": {
+            "name": "-.IA.-",
+            "id": 27743
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_product_rcx"
       },
@@ -2078,17 +1992,16 @@ expression: parsed
         "date": "Mon Jul 15",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 97752,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 97752,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -2098,17 +2011,16 @@ expression: parsed
         "date": "Mon Jul 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 97916,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 97916,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_rc5"
       }
@@ -2123,17 +2035,16 @@ expression: parsed
         "date": "Mon Jan 28",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 94251,
-            "opponent": {
-              "name": "kiti",
-              "id": 22135
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 94251,
+          "opponent": {
+            "name": "kiti",
+            "id": 22135
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -2143,17 +2054,16 @@ expression: parsed
         "date": "Mon Feb 04",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 94441,
-            "opponent": {
-              "name": "NUT",
-              "id": 26393
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 94441,
+          "opponent": {
+            "name": "NUT",
+            "id": 26393
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_lakeside_final"
       },
@@ -2163,17 +2073,16 @@ expression: parsed
         "date": "Mon Feb 11",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 94675,
-            "opponent": {
-              "name": "gaeta",
-              "id": 26063
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 94675,
+          "opponent": {
+            "name": "gaeta",
+            "id": 26063
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo"
       },
@@ -2183,17 +2092,16 @@ expression: parsed
         "date": "Mon Feb 18",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 94931,
-            "opponent": {
-              "name": "-.IA.-",
-              "id": 27743
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 94931,
+          "opponent": {
+            "name": "-.IA.-",
+            "id": 27743
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -2203,17 +2111,16 @@ expression: parsed
         "date": "Mon Feb 25",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 95172,
-            "opponent": {
-              "name": ".__o<",
-              "id": 27115
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 95172,
+          "opponent": {
+            "name": ".__o<",
+            "id": 27115
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_product_rc9"
       },
@@ -2223,17 +2130,16 @@ expression: parsed
         "date": "Mon Mar 04",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 95411,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 95411,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -2243,17 +2149,16 @@ expression: parsed
         "date": "Mon Mar 11",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 95756,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 95756,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater_pro_v12"
       },
@@ -2262,7 +2167,9 @@ expression: parsed
         "week": 8,
         "date": "Mon Mar 18",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "pl_upward"
       },
       {
@@ -2271,17 +2178,16 @@ expression: parsed
         "date": "Mon Mar 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 96355,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 96355,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Playoffs"
       }
@@ -2296,17 +2202,16 @@ expression: parsed
         "date": "Mon Oct 01",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 92186,
-            "opponent": {
-              "name": "0FO",
-              "id": 18094
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 92186,
+          "opponent": {
+            "name": "0FO",
+            "id": 18094
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -2316,17 +2221,16 @@ expression: parsed
         "date": "Mon Oct 08",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 92564,
-            "opponent": {
-              "name": "FFF",
-              "id": 28589
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 92564,
+          "opponent": {
+            "name": "FFF",
+            "id": 28589
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -2336,17 +2240,16 @@ expression: parsed
         "date": "Mon Oct 15",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 92754,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 92754,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo"
       },
@@ -2356,17 +2259,16 @@ expression: parsed
         "date": "Mon Oct 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 93070,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 5,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 93070,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 5,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -2376,17 +2278,16 @@ expression: parsed
         "date": "Mon Oct 29",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 93335,
-            "opponent": {
-              "name": "LP",
-              "id": 28334
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 93335,
+          "opponent": {
+            "name": "LP",
+            "id": 28334
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -2396,17 +2297,16 @@ expression: parsed
         "date": "Mon Nov 05",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 93566,
-            "opponent": {
-              "name": "gaeta",
-              "id": 26063
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 93566,
+          "opponent": {
+            "name": "gaeta",
+            "id": 26063
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_product_rc9"
       },
@@ -2416,17 +2316,16 @@ expression: parsed
         "date": "Mon Nov 12",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 93766,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 93766,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -2436,17 +2335,16 @@ expression: parsed
         "date": "Mon Nov 19",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 93972,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 93972,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       }
@@ -2461,17 +2359,16 @@ expression: parsed
         "date": "Mon May 21",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 89341,
-            "opponent": {
-              "name": "friends",
-              "id": 27262
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 89341,
+          "opponent": {
+            "name": "friends",
+            "id": 27262
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -2481,17 +2378,16 @@ expression: parsed
         "date": "Mon Jun 04",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 89624,
-            "opponent": {
-              "name": "kiti",
-              "id": 22135
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 89624,
+          "opponent": {
+            "name": "kiti",
+            "id": 22135
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc9"
       },
@@ -2501,17 +2397,16 @@ expression: parsed
         "date": "Mon Jun 11",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 90131,
-            "opponent": {
-              "name": "TOPDEF",
-              "id": 27261
-            },
-            "score": 5,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 90131,
+          "opponent": {
+            "name": "TOPDEF",
+            "id": 27261
+          },
+          "score": 5,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -2521,17 +2416,16 @@ expression: parsed
         "date": "Mon Jun 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 90483,
-            "opponent": {
-              "name": "jew",
-              "id": 27974
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 90483,
+          "opponent": {
+            "name": "jew",
+            "id": 27974
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_borneo"
       },
@@ -2541,17 +2435,16 @@ expression: parsed
         "date": "Mon Jun 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 90773,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 90773,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -2561,17 +2454,16 @@ expression: parsed
         "date": "Mon Jul 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91045,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 3,
-            "score_opponent": 4,
-            "match_points": 3.75,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 91045,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 3,
+          "score_opponent": 4,
+          "match_points": 3.75,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -2581,17 +2473,16 @@ expression: parsed
         "date": "Mon Jul 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91334,
-            "opponent": {
-              "name": "-.IA.-",
-              "id": 27743
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 91334,
+          "opponent": {
+            "name": "-.IA.-",
+            "id": 27743
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_vigil_rc4"
       },
@@ -2601,17 +2492,16 @@ expression: parsed
         "date": "Mon Jul 16",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91556,
-            "opponent": {
-              "name": "wc",
-              "id": 27739
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 91556,
+          "opponent": {
+            "name": "wc",
+            "id": 27739
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_cascade_rc1a"
       },
@@ -2621,17 +2511,16 @@ expression: parsed
         "date": "Mon Jul 23",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91707,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 91707,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       },
@@ -2641,17 +2530,16 @@ expression: parsed
         "date": "Mon Jul 30",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91833,
-            "opponent": {
-              "name": "jew",
-              "id": 27974
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 91833,
+          "opponent": {
+            "name": "jew",
+            "id": 27974
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "Best of 3 Maps"
       },
@@ -2661,17 +2549,16 @@ expression: parsed
         "date": "Thu Aug 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 91883,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 91883,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -2686,17 +2573,16 @@ expression: parsed
         "date": "Mon Jan 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 86553,
-            "opponent": {
-              "name": "fxgn²",
-              "id": 21971
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 86553,
+          "opponent": {
+            "name": "fxgn²",
+            "id": 21971
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -2706,17 +2592,16 @@ expression: parsed
         "date": "Mon Jan 29",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 86861,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 86861,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -2726,17 +2611,16 @@ expression: parsed
         "date": "Mon Feb 05",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 87204,
-            "opponent": {
-              "name": "kiti",
-              "id": 22135
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 87204,
+          "opponent": {
+            "name": "kiti",
+            "id": 22135
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -2746,17 +2630,16 @@ expression: parsed
         "date": "Mon Feb 12",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 87595,
-            "opponent": {
-              "name": "EU",
-              "id": 26948
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 87595,
+          "opponent": {
+            "name": "EU",
+            "id": 26948
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -2766,17 +2649,16 @@ expression: parsed
         "date": "Mon Feb 19",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 87833,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 87833,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -2786,17 +2668,16 @@ expression: parsed
         "date": "Mon Feb 26",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 88202,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 88202,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -2806,17 +2687,16 @@ expression: parsed
         "date": "Mon Mar 05",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 88520,
-            "opponent": {
-              "name": "sandcastle",
-              "id": 26731
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 88520,
+          "opponent": {
+            "name": "sandcastle",
+            "id": 26731
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_badwater_pro_v12"
       },
@@ -2826,17 +2706,16 @@ expression: parsed
         "date": "Mon Mar 12",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 88808,
-            "opponent": {
-              "name": "TOPDEF",
-              "id": 27261
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 88808,
+          "opponent": {
+            "name": "TOPDEF",
+            "id": 27261
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ramjam_rc1"
       }
@@ -2851,17 +2730,16 @@ expression: parsed
         "date": "Mon Sep 11",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 84223,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 84223,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo"
       },
@@ -2871,17 +2749,16 @@ expression: parsed
         "date": "Mon Sep 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 84514,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 84514,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_lakeside_final"
       },
@@ -2891,17 +2768,16 @@ expression: parsed
         "date": "Mon Sep 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 84757,
-            "opponent": {
-              "name": "0FO",
-              "id": 18094
-            },
-            "score": 5,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 84757,
+          "opponent": {
+            "name": "0FO",
+            "id": 18094
+          },
+          "score": 5,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_vanguard"
       },
@@ -2911,17 +2787,16 @@ expression: parsed
         "date": "Mon Oct 02",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 85047,
-            "opponent": {
-              "name": "[AoT]",
-              "id": 24975
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 85047,
+          "opponent": {
+            "name": "[AoT]",
+            "id": 24975
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "pl_swiftwater_final1"
       },
@@ -2931,17 +2806,16 @@ expression: parsed
         "date": "Mon Oct 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 85323,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 85323,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -2951,17 +2825,16 @@ expression: parsed
         "date": "Mon Oct 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 85618,
-            "opponent": {
-              "name": "ubåd",
-              "id": 26260
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 85618,
+          "opponent": {
+            "name": "ubåd",
+            "id": 26260
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -2971,17 +2844,16 @@ expression: parsed
         "date": "Mon Oct 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 85901,
-            "opponent": {
-              "name": "fxgn²",
-              "id": 21971
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 85901,
+          "opponent": {
+            "name": "fxgn²",
+            "id": 21971
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -2990,7 +2862,9 @@ expression: parsed
         "week": 8,
         "date": "Mon Oct 30",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_cascade_b6"
       },
       {
@@ -2999,17 +2873,16 @@ expression: parsed
         "date": "Mon Nov 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 86282,
-            "opponent": {
-              "name": "ubåd",
-              "id": 26260
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 86282,
+          "opponent": {
+            "name": "ubåd",
+            "id": 26260
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "Best of 3 Maps"
       },
@@ -3019,17 +2892,16 @@ expression: parsed
         "date": "Mon Nov 13",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 86378,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 86378,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       },
@@ -3039,17 +2911,16 @@ expression: parsed
         "date": "Thu Nov 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 86402,
-            "opponent": {
-              "name": "TC",
-              "id": 18119
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 86402,
+          "opponent": {
+            "name": "TC",
+            "id": 18119
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -3064,17 +2935,16 @@ expression: parsed
         "date": "Mon May 15",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 81227,
-            "opponent": {
-              "name": "Op_Sqd",
-              "id": 24021
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 81227,
+          "opponent": {
+            "name": "Op_Sqd",
+            "id": 24021
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -3084,17 +2954,16 @@ expression: parsed
         "date": "Mon May 22",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 81585,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 81585,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -3104,17 +2973,16 @@ expression: parsed
         "date": "Mon Jun 05",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 81898,
-            "opponent": {
-              "name": "FROOT",
-              "id": 25137
-            },
-            "score": 5,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.0
-          }
+          "state": "played",
+          "id": 81898,
+          "opponent": {
+            "name": "FROOT",
+            "id": 25137
+          },
+          "score": 5,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -3124,17 +2992,16 @@ expression: parsed
         "date": "Mon Jun 12",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 82556,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 4,
-            "score_opponent": 2,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 82556,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 4,
+          "score_opponent": 2,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "koth_product_rc8"
       },
@@ -3144,17 +3011,16 @@ expression: parsed
         "date": "Mon Jun 19",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 82914,
-            "opponent": {
-              "name": "Lucrosa",
-              "id": 23348
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 82914,
+          "opponent": {
+            "name": "Lucrosa",
+            "id": 23348
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "cp_steel"
       },
@@ -3164,17 +3030,16 @@ expression: parsed
         "date": "Mon Jun 26",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 83146,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 83146,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_millstone_ugc_7"
       },
@@ -3184,17 +3049,16 @@ expression: parsed
         "date": "Mon Jul 03",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 83369,
-            "opponent": {
-              "name": ".fi",
-              "id": 25231
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 83369,
+          "opponent": {
+            "name": ".fi",
+            "id": 25231
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -3204,17 +3068,16 @@ expression: parsed
         "date": "Mon Jul 10",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 83680,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 83680,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_vigil_b5"
       },
@@ -3224,17 +3087,16 @@ expression: parsed
         "date": "Mon Jul 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 83790,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 83790,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       },
@@ -3244,17 +3106,16 @@ expression: parsed
         "date": "Mon Jul 24",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 83885,
-            "opponent": {
-              "name": "kiti",
-              "id": 22135
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 83885,
+          "opponent": {
+            "name": "kiti",
+            "id": 22135
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "Best of 3 Maps"
       }
@@ -3269,17 +3130,16 @@ expression: parsed
         "date": "Mon Jan 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 78596,
-            "opponent": {
-              "name": "brrrrr",
-              "id": 24203
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 78596,
+          "opponent": {
+            "name": "brrrrr",
+            "id": 24203
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -3289,17 +3149,16 @@ expression: parsed
         "date": "Mon Jan 30",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 78823,
-            "opponent": {
-              "name": "ENGA",
-              "id": 19484
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 78823,
+          "opponent": {
+            "name": "ENGA",
+            "id": 19484
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -3308,7 +3167,9 @@ expression: parsed
         "week": 3,
         "date": "Mon Feb 06",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "pl_swiftwater_final1"
       },
       {
@@ -3317,17 +3178,16 @@ expression: parsed
         "date": "Mon Feb 13",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 79490,
-            "opponent": {
-              "name": "Teamisme64",
-              "id": 23630
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 79490,
+          "opponent": {
+            "name": "Teamisme64",
+            "id": 23630
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_lakeside_final"
       },
@@ -3337,17 +3197,16 @@ expression: parsed
         "date": "Mon Feb 20",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 79766,
-            "opponent": {
-              "name": "0FO",
-              "id": 18094
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 79766,
+          "opponent": {
+            "name": "0FO",
+            "id": 18094
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -3357,17 +3216,16 @@ expression: parsed
         "date": "Mon Feb 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 80147,
-            "opponent": {
-              "name": "FF",
-              "id": 24010
-            },
-            "score": 4,
-            "score_opponent": 2,
-            "match_points": 4.0,
-            "match_points_opponent": 2.0
-          }
+          "state": "played",
+          "id": 80147,
+          "opponent": {
+            "name": "FF",
+            "id": 24010
+          },
+          "score": 4,
+          "score_opponent": 2,
+          "match_points": 4.0,
+          "match_points_opponent": 2.0
         },
         "map": "cp_process_final"
       },
@@ -3377,17 +3235,16 @@ expression: parsed
         "date": "Mon Mar 06",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 80418,
-            "opponent": {
-              "name": "Gimme",
-              "id": 18092
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 80418,
+          "opponent": {
+            "name": "Gimme",
+            "id": 18092
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater_pro_v9"
       },
@@ -3397,17 +3254,16 @@ expression: parsed
         "date": "Mon Mar 13",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 80659,
-            "opponent": {
-              "name": "|FV|",
-              "id": 18648
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 80659,
+          "opponent": {
+            "name": "|FV|",
+            "id": 18648
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_ashville_rc1"
       }
@@ -3422,17 +3278,16 @@ expression: parsed
         "date": "Mon Sep 26",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75885,
-            "opponent": {
-              "name": ":(",
-              "id": 9443
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75885,
+          "opponent": {
+            "name": ":(",
+            "id": 9443
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_final1"
       },
@@ -3442,17 +3297,16 @@ expression: parsed
         "date": "Mon Oct 03",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 75915,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75915,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -3462,17 +3316,16 @@ expression: parsed
         "date": "Mon Oct 10",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 75919,
-            "opponent": {
-              "name": "kebab",
-              "id": 12854
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75919,
+          "opponent": {
+            "name": "kebab",
+            "id": 12854
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -3482,17 +3335,16 @@ expression: parsed
         "date": "Mon Oct 17",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75922,
-            "opponent": {
-              "name": "BMS",
-              "id": 12348
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75922,
+          "opponent": {
+            "name": "BMS",
+            "id": 12348
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -3502,17 +3354,16 @@ expression: parsed
         "date": "Mon Oct 24",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 75925,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 75925,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -3522,17 +3373,16 @@ expression: parsed
         "date": "Mon Oct 31",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75929,
-            "opponent": {
-              "name": "StuD",
-              "id": 23629
-            },
-            "score": 2,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 75929,
+          "opponent": {
+            "name": "StuD",
+            "id": 23629
+          },
+          "score": 2,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "pl_borneo"
       },
@@ -3542,17 +3392,16 @@ expression: parsed
         "date": "Mon Nov 07",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75934,
-            "opponent": {
-              "name": "S-O",
-              "id": 17139
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75934,
+          "opponent": {
+            "name": "S-O",
+            "id": 17139
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_millstone_ugc_4"
       }
@@ -3567,17 +3416,16 @@ expression: parsed
         "date": "Mon Jun 06",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 71668,
-            "opponent": {
-              "name": "Energy ?",
-              "id": 8475
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 71668,
+          "opponent": {
+            "name": "Energy ?",
+            "id": 8475
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_borneo"
       },
@@ -3586,7 +3434,9 @@ expression: parsed
         "week": 2,
         "date": "Mon Jun 13",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_product_rc8"
       },
       {
@@ -3595,17 +3445,16 @@ expression: parsed
         "date": "Mon Jun 20",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 72503,
-            "opponent": {
-              "name": "ᵛᵉˢ",
-              "id": 20489
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 72503,
+          "opponent": {
+            "name": "ᵛᵉˢ",
+            "id": 20489
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -3615,17 +3464,16 @@ expression: parsed
         "date": "Mon Jun 27",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 73057,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 2,
-            "score_opponent": 3,
-            "match_points": 2.0,
-            "match_points_opponent": 3.0
-          }
+          "state": "played",
+          "id": 73057,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 2,
+          "score_opponent": 3,
+          "match_points": 2.0,
+          "match_points_opponent": 3.0
         },
         "map": "cp_vanguard"
       },
@@ -3635,17 +3483,16 @@ expression: parsed
         "date": "Mon Jul 11",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 73541,
-            "opponent": {
-              "name": "ᴜᴋɪᴘ",
-              "id": 16949
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 73541,
+          "opponent": {
+            "name": "ᴜᴋɪᴘ",
+            "id": 16949
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -3655,17 +3502,16 @@ expression: parsed
         "date": "Mon Jul 18",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 74081,
-            "opponent": {
-              "name": "GODL",
-              "id": 22120
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 74081,
+          "opponent": {
+            "name": "GODL",
+            "id": 22120
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ramjam_rc1"
       },
@@ -3675,17 +3521,16 @@ expression: parsed
         "date": "Mon Jul 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 74623,
-            "opponent": {
-              "name": "<3",
-              "id": 21227
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 74623,
+          "opponent": {
+            "name": "<3",
+            "id": 21227
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_swiftwater_ugc"
       },
@@ -3695,17 +3540,16 @@ expression: parsed
         "date": "Mon Aug 01",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 74985,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 5.0,
-            "match_points_opponent": 1.25
-          }
+          "state": "played",
+          "id": 74985,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 5.0,
+          "match_points_opponent": 1.25
         },
         "map": "koth_ashville_rc1"
       },
@@ -3715,17 +3559,16 @@ expression: parsed
         "date": "Mon Aug 08",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75335,
-            "opponent": {
-              "name": ".aC",
-              "id": 18789
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 75335,
+          "opponent": {
+            "name": ".aC",
+            "id": 18789
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -3735,17 +3578,16 @@ expression: parsed
         "date": "Mon Aug 15",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75419,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75419,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -3755,17 +3597,16 @@ expression: parsed
         "date": "Thu Aug 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 75533,
-            "opponent": {
-              "name": "ᴜᴋɪᴘ",
-              "id": 16949
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.25,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 75533,
+          "opponent": {
+            "name": "ᴜᴋɪᴘ",
+            "id": 16949
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.25,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       }
@@ -3780,17 +3621,16 @@ expression: parsed
         "date": "Mon Jan 18",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 66886,
-            "opponent": {
-              "name": "TSx*",
-              "id": 7246
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 66886,
+          "opponent": {
+            "name": "TSx*",
+            "id": 7246
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -3800,17 +3640,16 @@ expression: parsed
         "date": "Mon Jan 25",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 67410,
-            "opponent": {
-              "name": "UHT",
-              "id": 19962
-            },
-            "score": 4,
-            "score_opponent": 2,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 67410,
+          "opponent": {
+            "name": "UHT",
+            "id": 19962
+          },
+          "score": 4,
+          "score_opponent": 2,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "koth_ashville_rc1"
       },
@@ -3820,17 +3659,16 @@ expression: parsed
         "date": "Mon Feb 01",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 67966,
-            "opponent": {
-              "name": "DF",
-              "id": 19830
-            },
-            "score": 0,
-            "score_opponent": 5,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 67966,
+          "opponent": {
+            "name": "DF",
+            "id": 19830
+          },
+          "score": 0,
+          "score_opponent": 5,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -3840,17 +3678,16 @@ expression: parsed
         "date": "Mon Feb 08",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 68579,
-            "opponent": {
-              "name": "ATc.",
-              "id": 19815
-            },
-            "score": 3,
-            "score_opponent": 4,
-            "match_points": 3.75,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 68579,
+          "opponent": {
+            "name": "ATc.",
+            "id": 19815
+          },
+          "score": 3,
+          "score_opponent": 4,
+          "match_points": 3.75,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -3860,17 +3697,16 @@ expression: parsed
         "date": "Mon Feb 15",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 69057,
-            "opponent": {
-              "name": "TL",
-              "id": 20141
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 69057,
+          "opponent": {
+            "name": "TL",
+            "id": 20141
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -3880,17 +3716,16 @@ expression: parsed
         "date": "Mon Feb 22",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 69533,
-            "opponent": {
-              "name": ".aC",
-              "id": 18789
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 69533,
+          "opponent": {
+            "name": ".aC",
+            "id": 18789
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_ugc"
       },
@@ -3900,17 +3735,16 @@ expression: parsed
         "date": "Mon Feb 29",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 70143,
-            "opponent": {
-              "name": "A!A!A!",
-              "id": 13009
-            },
-            "score": 4,
-            "score_opponent": 2,
-            "match_points": 5.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 70143,
+          "opponent": {
+            "name": "A!A!A!",
+            "id": 13009
+          },
+          "score": 4,
+          "score_opponent": 2,
+          "match_points": 5.0,
+          "match_points_opponent": 2.5
         },
         "map": "koth_lakeside_final"
       },
@@ -3920,17 +3754,16 @@ expression: parsed
         "date": "Mon Mar 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 70569,
-            "opponent": {
-              "name": "CW4",
-              "id": 19561
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 70569,
+          "opponent": {
+            "name": "CW4",
+            "id": 19561
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_badwater_pro_v9"
       },
@@ -3940,17 +3773,16 @@ expression: parsed
         "date": "Mon Mar 14",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 70979,
-            "opponent": {
-              "name": "HL3",
-              "id": 17739
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 70979,
+          "opponent": {
+            "name": "HL3",
+            "id": 17739
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -3960,17 +3792,16 @@ expression: parsed
         "date": "Mon Mar 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 71083,
-            "opponent": {
-              "name": ".aC",
-              "id": 18789
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 71083,
+          "opponent": {
+            "name": ".aC",
+            "id": 18789
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -3980,17 +3811,16 @@ expression: parsed
         "date": "Mon Apr 04",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 71357,
-            "opponent": {
-              "name": "ACE",
-              "id": 16819
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 71357,
+          "opponent": {
+            "name": "ACE",
+            "id": 16819
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "Grand Finals 3 Maps"
       }
@@ -4005,17 +3835,16 @@ expression: parsed
         "date": "Mon Sep 28",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 63482,
-            "opponent": {
-              "name": "Uncle",
-              "id": 16512
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 63482,
+          "opponent": {
+            "name": "Uncle",
+            "id": 16512
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_borneo"
       },
@@ -4025,17 +3854,16 @@ expression: parsed
         "date": "Mon Oct 05",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 63883,
-            "opponent": {
-              "name": ":3",
-              "id": 10827
-            },
-            "score": 4,
-            "score_opponent": 1,
-            "match_points": 4.0,
-            "match_points_opponent": 1.0
-          }
+          "state": "played",
+          "id": 63883,
+          "opponent": {
+            "name": ":3",
+            "id": 10827
+          },
+          "score": 4,
+          "score_opponent": 1,
+          "match_points": 4.0,
+          "match_points_opponent": 1.0
         },
         "map": "cp_process_final"
       },
@@ -4045,17 +3873,16 @@ expression: parsed
         "date": "Mon Oct 12",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 64345,
-            "opponent": {
-              "name": "$$$",
-              "id": 12767
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 64345,
+          "opponent": {
+            "name": "$$$",
+            "id": 12767
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_product_rc8"
       },
@@ -4065,17 +3892,16 @@ expression: parsed
         "date": "Mon Oct 19",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 64900,
-            "opponent": {
-              "name": "ALTFS",
-              "id": 18166
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 64900,
+          "opponent": {
+            "name": "ALTFS",
+            "id": 18166
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -4085,17 +3911,16 @@ expression: parsed
         "date": "Mon Oct 26",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 65272,
-            "opponent": {
-              "name": "bby.",
-              "id": 18041
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 65272,
+          "opponent": {
+            "name": "bby.",
+            "id": 18041
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -4105,17 +3930,16 @@ expression: parsed
         "date": "Mon Nov 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 65703,
-            "opponent": {
-              "name": "[T-A!] KSV",
-              "id": 5162
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 65703,
+          "opponent": {
+            "name": "[T-A!] KSV",
+            "id": 5162
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_warmtic_b6"
       },
@@ -4124,7 +3948,9 @@ expression: parsed
         "week": 7,
         "date": "Mon Nov 09",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "pl_badwater_pro_v8"
       },
       {
@@ -4133,17 +3959,16 @@ expression: parsed
         "date": "Mon Nov 16",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 66515,
-            "opponent": {
-              "name": "SB",
-              "id": 13955
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.0,
-            "match_points_opponent": 4.0
-          }
+          "state": "played",
+          "id": 66515,
+          "opponent": {
+            "name": "SB",
+            "id": 13955
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.0,
+          "match_points_opponent": 4.0
         },
         "map": "cp_vanguard_rc3"
       }
@@ -4158,17 +3983,16 @@ expression: parsed
         "date": "Mon Jun 01",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 59027,
-            "opponent": {
-              "name": "RUN!",
-              "id": 8335
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 59027,
+          "opponent": {
+            "name": "RUN!",
+            "id": 8335
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -4178,17 +4002,16 @@ expression: parsed
         "date": "Mon Jun 08",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 59431,
-            "opponent": {
-              "name": "Z",
-              "id": 16406
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 2.5,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 59431,
+          "opponent": {
+            "name": "Z",
+            "id": 16406
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 2.5,
+          "match_points_opponent": 0.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -4198,17 +4021,16 @@ expression: parsed
         "date": "Mon Jun 15",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 59972,
-            "opponent": {
-              "name": "Fruity",
-              "id": 14474
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 59972,
+          "opponent": {
+            "name": "Fruity",
+            "id": 14474
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_viaduct_pro7"
       },
@@ -4218,17 +4040,16 @@ expression: parsed
         "date": "Mon Jun 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 60506,
-            "opponent": {
-              "name": "[T-A!] KSV",
-              "id": 5162
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 60506,
+          "opponent": {
+            "name": "[T-A!] KSV",
+            "id": 5162
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -4238,17 +4059,16 @@ expression: parsed
         "date": "Mon Jun 29",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 61025,
-            "opponent": {
-              "name": "/r/ip",
-              "id": 11214
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 61025,
+          "opponent": {
+            "name": "/r/ip",
+            "id": 11214
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_badwater_pro_v7"
       },
@@ -4258,17 +4078,16 @@ expression: parsed
         "date": "Mon Jul 06",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 61722,
-            "opponent": {
-              "name": "TSx*",
-              "id": 7246
-            },
-            "score": 4,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 61722,
+          "opponent": {
+            "name": "TSx*",
+            "id": 7246
+          },
+          "score": 4,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -4278,17 +4097,16 @@ expression: parsed
         "date": "Mon Jul 13",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 62120,
-            "opponent": {
-              "name": "SS",
-              "id": 16972
-            },
-            "score": 0,
-            "score_opponent": 1,
-            "match_points": 0.0,
-            "match_points_opponent": 1.0
-          }
+          "state": "played",
+          "id": 62120,
+          "opponent": {
+            "name": "SS",
+            "id": 16972
+          },
+          "score": 0,
+          "score_opponent": 1,
+          "match_points": 0.0,
+          "match_points_opponent": 1.0
         },
         "map": "cp_glassworks_rc6a"
       },
@@ -4298,17 +4116,16 @@ expression: parsed
         "date": "Mon Jul 20",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 62613,
-            "opponent": {
-              "name": "<3Frank",
-              "id": 9387
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 62613,
+          "opponent": {
+            "name": "<3Frank",
+            "id": 9387
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       }
@@ -4323,17 +4140,16 @@ expression: parsed
         "date": "Mon Jan 26",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 53654,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 53654,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_upward"
       },
@@ -4343,17 +4159,16 @@ expression: parsed
         "date": "Mon Feb 02",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 54199,
-            "opponent": {
-              "name": ".gimme",
-              "id": 13864
-            },
-            "score": 1,
-            "score_opponent": 5,
-            "match_points": 1.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 54199,
+          "opponent": {
+            "name": ".gimme",
+            "id": 13864
+          },
+          "score": 1,
+          "score_opponent": 5,
+          "match_points": 1.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_process_final"
       },
@@ -4363,17 +4178,16 @@ expression: parsed
         "date": "Mon Feb 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 54991,
-            "opponent": {
-              "name": "/r/ip",
-              "id": 11214
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 54991,
+          "opponent": {
+            "name": "/r/ip",
+            "id": 11214
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo_rc4"
       },
@@ -4383,17 +4197,16 @@ expression: parsed
         "date": "Mon Feb 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 55555,
-            "opponent": {
-              "name": "|FTS|",
-              "id": 15424
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 55555,
+          "opponent": {
+            "name": "|FTS|",
+            "id": 15424
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_viaduct_pro5"
       },
@@ -4403,17 +4216,16 @@ expression: parsed
         "date": "Mon Feb 23",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 56074,
-            "opponent": {
-              "name": "mix/huix",
-              "id": 8669
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 56074,
+          "opponent": {
+            "name": "mix/huix",
+            "id": 8669
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -4423,17 +4235,16 @@ expression: parsed
         "date": "Mon Mar 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 56678,
-            "opponent": {
-              "name": "RUN!",
-              "id": 8335
-            },
-            "score": 1,
-            "score_opponent": 5,
-            "match_points": 1.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 56678,
+          "opponent": {
+            "name": "RUN!",
+            "id": 8335
+          },
+          "score": 1,
+          "score_opponent": 5,
+          "match_points": 1.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_sunshine_rc5"
       },
@@ -4443,17 +4254,16 @@ expression: parsed
         "date": "Mon Mar 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 57376,
-            "opponent": {
-              "name": "CI^",
-              "id": 14988
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 2.5,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 57376,
+          "opponent": {
+            "name": "CI^",
+            "id": 14988
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 2.5,
+          "match_points_opponent": 0.0
         },
         "map": "koth_ashville_rc1"
       },
@@ -4463,17 +4273,16 @@ expression: parsed
         "date": "Mon Mar 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 57712,
-            "opponent": {
-              "name": "PM",
-              "id": 3577
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 57712,
+          "opponent": {
+            "name": "PM",
+            "id": 3577
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_ugc"
       }
@@ -4488,17 +4297,16 @@ expression: parsed
         "date": "Mon Sep 22",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 48876,
-            "opponent": {
-              "name": "Energy ?",
-              "id": 8475
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 0.0,
-            "match_points_opponent": 2.5
-          }
+          "state": "played",
+          "id": 48876,
+          "opponent": {
+            "name": "Energy ?",
+            "id": 8475
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 0.0,
+          "match_points_opponent": 2.5
         },
         "map": "koth_pro_viaduct_rc4"
       },
@@ -4508,17 +4316,16 @@ expression: parsed
         "date": "Mon Sep 29",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 49366,
-            "opponent": {
-              "name": "«GFM»",
-              "id": 13501
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 49366,
+          "opponent": {
+            "name": "«GFM»",
+            "id": 13501
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater"
       },
@@ -4527,7 +4334,9 @@ expression: parsed
         "week": 3,
         "date": "Mon Oct 06",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "koth_lakeside_final"
       },
       {
@@ -4536,17 +4345,16 @@ expression: parsed
         "date": "Mon Oct 13",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 50505,
-            "opponent": {
-              "name": "[T-A!] KSV",
-              "id": 5162
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 50505,
+          "opponent": {
+            "name": "[T-A!] KSV",
+            "id": 5162
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -4556,17 +4364,16 @@ expression: parsed
         "date": "Mon Oct 20",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 51026,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 3,
-            "score_opponent": 2,
-            "match_points": 3.0,
-            "match_points_opponent": 2.0
-          }
+          "state": "played",
+          "id": 51026,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 3,
+          "score_opponent": 2,
+          "match_points": 3.0,
+          "match_points_opponent": 2.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -4576,17 +4383,16 @@ expression: parsed
         "date": "Mon Oct 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 51651,
-            "opponent": {
-              "name": "-GA-",
-              "id": 13725
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 51651,
+          "opponent": {
+            "name": "-GA-",
+            "id": 13725
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_ramjam_b8b"
       },
@@ -4595,7 +4401,9 @@ expression: parsed
         "week": 7,
         "date": "Mon Nov 03",
         "side": "home",
-        "result": "ByeWeek",
+        "result": {
+          "state": "bye_week"
+        },
         "map": "cp_process_final"
       },
       {
@@ -4604,17 +4412,16 @@ expression: parsed
         "date": "Mon Nov 10",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 52630,
-            "opponent": {
-              "name": ".gimme",
-              "id": 13864
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 52630,
+          "opponent": {
+            "name": ".gimme",
+            "id": 13864
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       }
@@ -4629,17 +4436,16 @@ expression: parsed
         "date": "Mon May 19",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 42931,
-            "opponent": {
-              "name": "Dz.",
-              "id": 11124
-            },
-            "score": 1,
-            "score_opponent": 4,
-            "match_points": 1.0,
-            "match_points_opponent": 4.0
-          }
+          "state": "played",
+          "id": 42931,
+          "opponent": {
+            "name": "Dz.",
+            "id": 11124
+          },
+          "score": 1,
+          "score_opponent": 4,
+          "match_points": 1.0,
+          "match_points_opponent": 4.0
         },
         "map": "cp_granary"
       },
@@ -4649,17 +4455,16 @@ expression: parsed
         "date": "Mon May 26",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 43634,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 43634,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -4669,17 +4474,16 @@ expression: parsed
         "date": "Mon Jun 02",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 44084,
-            "opponent": {
-              "name": "-WP-",
-              "id": 11799
-            },
-            "score": 5,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 44084,
+          "opponent": {
+            "name": "-WP-",
+            "id": 11799
+          },
+          "score": 5,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -4689,17 +4493,16 @@ expression: parsed
         "date": "Mon Jun 09",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 44739,
-            "opponent": {
-              "name": "pH",
-              "id": 9002
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 44739,
+          "opponent": {
+            "name": "pH",
+            "id": 9002
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -4709,17 +4512,16 @@ expression: parsed
         "date": "Mon Jun 16",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 45421,
-            "opponent": {
-              "name": "/gE/",
-              "id": 8694
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 45421,
+          "opponent": {
+            "name": "/gE/",
+            "id": 8694
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       },
@@ -4729,17 +4531,16 @@ expression: parsed
         "date": "Mon Jun 23",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 46040,
-            "opponent": {
-              "name": "RB",
-              "id": 7047
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 46040,
+          "opponent": {
+            "name": "RB",
+            "id": 7047
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_badwater"
       },
@@ -4749,17 +4550,16 @@ expression: parsed
         "date": "Mon Jun 30",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 46657,
-            "opponent": {
-              "name": "dv8",
-              "id": 9731
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 46657,
+          "opponent": {
+            "name": "dv8",
+            "id": 9731
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_pro_viaduct_rc4"
       },
@@ -4769,17 +4569,16 @@ expression: parsed
         "date": "Mon Jul 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 47121,
-            "opponent": {
-              "name": "MM",
-              "id": 11486
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 2.5,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 47121,
+          "opponent": {
+            "name": "MM",
+            "id": 11486
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 2.5,
+          "match_points_opponent": 0.0
         },
         "map": "cp_snakewater_final1"
       },
@@ -4789,17 +4588,16 @@ expression: parsed
         "date": "Mon Jul 14",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 47686,
-            "opponent": {
-              "name": "VH?",
-              "id": 9490
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 47686,
+          "opponent": {
+            "name": "VH?",
+            "id": 9490
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_ashville_rc1"
       },
@@ -4809,17 +4607,16 @@ expression: parsed
         "date": "Mon Jul 21",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 48161,
-            "opponent": {
-              "name": "Dr. med.",
-              "id": 10474
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 48161,
+          "opponent": {
+            "name": "Dr. med.",
+            "id": 10474
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_steel"
       }
@@ -4834,17 +4631,16 @@ expression: parsed
         "date": "Mon Jan 20",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 37589,
-            "opponent": {
-              "name": "SDCK!",
-              "id": 8054
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 37589,
+          "opponent": {
+            "name": "SDCK!",
+            "id": 8054
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_barnblitz_pro4"
       },
@@ -4854,17 +4650,16 @@ expression: parsed
         "date": "Mon Jan 27",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 38061,
-            "opponent": {
-              "name": "UAP",
-              "id": 10048
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 38061,
+          "opponent": {
+            "name": "UAP",
+            "id": 10048
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_lakeside_final"
       },
@@ -4874,17 +4669,16 @@ expression: parsed
         "date": "Mon Feb 03",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 38689,
-            "opponent": {
-              "name": "\\o/.",
-              "id": 8113
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 38689,
+          "opponent": {
+            "name": "\\o/.",
+            "id": 8113
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_gravelpit"
       },
@@ -4894,17 +4688,16 @@ expression: parsed
         "date": "Mon Feb 10",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 39189,
-            "opponent": {
-              "name": "§GOLD",
-              "id": 7864
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 39189,
+          "opponent": {
+            "name": "§GOLD",
+            "id": 7864
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_upward"
       },
@@ -4914,17 +4707,16 @@ expression: parsed
         "date": "Mon Feb 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 39783,
-            "opponent": {
-              "name": "Tr-S",
-              "id": 8960
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 39783,
+          "opponent": {
+            "name": "Tr-S",
+            "id": 8960
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_coalplant_b7"
       },
@@ -4934,17 +4726,16 @@ expression: parsed
         "date": "Mon Feb 24",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 40369,
-            "opponent": {
-              "name": "srs bsns",
-              "id": 7071
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 2.5,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 40369,
+          "opponent": {
+            "name": "srs bsns",
+            "id": 7071
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 2.5,
+          "match_points_opponent": 0.0
         },
         "map": "cp_process_final"
       },
@@ -4954,17 +4745,16 @@ expression: parsed
         "date": "Mon Mar 03",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 40862,
-            "opponent": {
-              "name": "[GC]",
-              "id": 6318
-            },
-            "score": 1,
-            "score_opponent": 2,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 40862,
+          "opponent": {
+            "name": "[GC]",
+            "id": 6318
+          },
+          "score": 1,
+          "score_opponent": 2,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "pl_borneo_rc3"
       },
@@ -4974,17 +4764,16 @@ expression: parsed
         "date": "Mon Mar 10",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 41442,
-            "opponent": {
-              "name": "Bf N",
-              "id": 9960
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 41442,
+          "opponent": {
+            "name": "Bf N",
+            "id": 9960
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "cp_steel"
       },
@@ -4994,17 +4783,16 @@ expression: parsed
         "date": "Mon Mar 17",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 41970,
-            "opponent": {
-              "name": "iHat",
-              "id": 10042
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 41970,
+          "opponent": {
+            "name": "iHat",
+            "id": 10042
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_ugc"
       },
@@ -5014,17 +4802,16 @@ expression: parsed
         "date": "Mon Mar 24",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 42308,
-            "opponent": {
-              "name": "ECD",
-              "id": 9215
-            },
-            "score": 0,
-            "score_opponent": 4,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 42308,
+          "opponent": {
+            "name": "ECD",
+            "id": 9215
+          },
+          "score": 0,
+          "score_opponent": 4,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "koth_pro_viaduct_rc4"
       }
@@ -5039,17 +4826,16 @@ expression: parsed
         "date": "Mon Sep 09",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 33321,
-            "opponent": {
-              "name": "-TI-",
-              "id": 8643
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 33321,
+          "opponent": {
+            "name": "-TI-",
+            "id": 8643
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_borneo_rc2"
       },
@@ -5059,17 +4845,16 @@ expression: parsed
         "date": "Mon Sep 16",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 33853,
-            "opponent": {
-              "name": "BEST",
-              "id": 7660
-            },
-            "score": 5,
-            "score_opponent": 2,
-            "match_points": 5.0,
-            "match_points_opponent": 2.0
-          }
+          "state": "played",
+          "id": 33853,
+          "opponent": {
+            "name": "BEST",
+            "id": 7660
+          },
+          "score": 5,
+          "score_opponent": 2,
+          "match_points": 5.0,
+          "match_points_opponent": 2.0
         },
         "map": "cp_granary"
       },
@@ -5079,17 +4864,16 @@ expression: parsed
         "date": "Mon Sep 23",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 34210,
-            "opponent": {
-              "name": "Energy ?",
-              "id": 8475
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 34210,
+          "opponent": {
+            "name": "Energy ?",
+            "id": 8475
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "cp_gravelpit"
       },
@@ -5099,17 +4883,16 @@ expression: parsed
         "date": "Mon Sep 30",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 34643,
-            "opponent": {
-              "name": "TEAM_",
-              "id": 7558
-            },
-            "score": 2,
-            "score_opponent": 0,
-            "match_points": 5.0,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 34643,
+          "opponent": {
+            "name": "TEAM_",
+            "id": 7558
+          },
+          "score": 2,
+          "score_opponent": 0,
+          "match_points": 5.0,
+          "match_points_opponent": 0.0
         },
         "map": "pl_barnblitz_pro4"
       },
@@ -5119,17 +4902,16 @@ expression: parsed
         "date": "Mon Oct 07",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 34979,
-            "opponent": {
-              "name": "kat.",
-              "id": 5650
-            },
-            "score": 2,
-            "score_opponent": 4,
-            "match_points": 2.5,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 34979,
+          "opponent": {
+            "name": "kat.",
+            "id": 5650
+          },
+          "score": 2,
+          "score_opponent": 4,
+          "match_points": 2.5,
+          "match_points_opponent": 5.0
         },
         "map": "koth_lakeside_final"
       },
@@ -5139,17 +4921,16 @@ expression: parsed
         "date": "Mon Oct 14",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 35472,
-            "opponent": {
-              "name": "[rub!X]",
-              "id": 4788
-            },
-            "score": 0,
-            "score_opponent": 2,
-            "match_points": 0.0,
-            "match_points_opponent": 5.0
-          }
+          "state": "played",
+          "id": 35472,
+          "opponent": {
+            "name": "[rub!X]",
+            "id": 4788
+          },
+          "score": 0,
+          "score_opponent": 2,
+          "match_points": 0.0,
+          "match_points_opponent": 5.0
         },
         "map": "pl_swiftwater_ugc"
       },
@@ -5159,17 +4940,16 @@ expression: parsed
         "date": "Mon Oct 21",
         "side": "visiting",
         "result": {
-          "Played": {
-            "id": 35966,
-            "opponent": {
-              "name": "fc |",
-              "id": 7194
-            },
-            "score": 3,
-            "score_opponent": 4,
-            "match_points": 3.0,
-            "match_points_opponent": 4.0
-          }
+          "state": "played",
+          "id": 35966,
+          "opponent": {
+            "name": "fc |",
+            "id": 7194
+          },
+          "score": 3,
+          "score_opponent": 4,
+          "match_points": 3.0,
+          "match_points_opponent": 4.0
         },
         "map": "cp_gullywash_final1"
       },
@@ -5179,17 +4959,16 @@ expression: parsed
         "date": "Mon Oct 28",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 36453,
-            "opponent": {
-              "name": "{PaPs}",
-              "id": 6917
-            },
-            "score": 4,
-            "score_opponent": 3,
-            "match_points": 5.0,
-            "match_points_opponent": 3.75
-          }
+          "state": "played",
+          "id": 36453,
+          "opponent": {
+            "name": "{PaPs}",
+            "id": 6917
+          },
+          "score": 4,
+          "score_opponent": 3,
+          "match_points": 5.0,
+          "match_points_opponent": 3.75
         },
         "map": "koth_ashville_rc1"
       },
@@ -5199,17 +4978,16 @@ expression: parsed
         "date": "Mon Nov 04",
         "side": "home",
         "result": {
-          "Played": {
-            "id": 36673,
-            "opponent": {
-              "name": "Bill",
-              "id": 7835
-            },
-            "score": 0,
-            "score_opponent": 0,
-            "match_points": 2.5,
-            "match_points_opponent": 0.0
-          }
+          "state": "played",
+          "id": 36673,
+          "opponent": {
+            "name": "Bill",
+            "id": 7835
+          },
+          "score": 0,
+          "score_opponent": 0,
+          "match_points": 2.5,
+          "match_points_opponent": 0.0
         },
         "map": "pl_badwater"
       }

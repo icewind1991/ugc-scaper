@@ -298,6 +298,9 @@ pub enum MatchResult {
         score_opponent: u8,
     },
     ByeWeek,
+    Unknown {
+        opponent: TeamRef,
+    },
 }
 
 impl MatchResult {
@@ -305,7 +308,7 @@ impl MatchResult {
         match self {
             MatchResult::Played { id, .. } => Some(*id),
             MatchResult::Pending { id, .. } => Some(*id),
-            MatchResult::ByeWeek => None,
+            _ => None,
         }
     }
 }

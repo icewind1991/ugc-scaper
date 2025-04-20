@@ -1,0 +1,147 @@
+---
+source: tests/snapshot.rs
+expression: parsed
+---
+[
+  {
+    "season": 1,
+    "matches": [
+      {
+        "division": "Steel",
+        "week": 1,
+        "date": "Sun Oct 28",
+        "side": "visiting",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[$0.00]",
+            "id": 2137
+          }
+        },
+        "map": "cp_gravelpit"
+      },
+      {
+        "division": "Platinum",
+        "week": 2,
+        "date": "Sun Nov 04",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "-DeX-",
+            "id": 2130
+          }
+        },
+        "map": "cp_gravelpit"
+      },
+      {
+        "division": "Platinum",
+        "week": 3,
+        "date": "Sun Nov 11",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[UGS]",
+            "id": 2127
+          }
+        },
+        "map": "cp_dustbowl"
+      },
+      {
+        "division": "Platinum",
+        "week": 4,
+        "date": "Sun Nov 18",
+        "side": "home",
+        "result": {
+          "state": "bye_week"
+        },
+        "map": "cp_dustbowl"
+      },
+      {
+        "division": "Platinum",
+        "week": 6,
+        "date": "Mon Dec 10",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": ".tKd",
+            "id": 2169
+          }
+        },
+        "map": "ctf_impact"
+      },
+      {
+        "division": "Platinum",
+        "week": 7,
+        "date": "Mon Dec 17",
+        "side": "visiting",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[FOoM]",
+            "id": 2172
+          }
+        },
+        "map": "cp_science2"
+      },
+      {
+        "division": "Platinum",
+        "week": 11,
+        "date": "Mon Jan 14",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[SWAT]",
+            "id": 2188
+          }
+        },
+        "map": "cp_junction"
+      },
+      {
+        "division": "Platinum",
+        "week": 12,
+        "date": "Mon Jan 21",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[FOoM]",
+            "id": 2172
+          }
+        },
+        "map": "cp_castle3"
+      },
+      {
+        "division": "Platinum",
+        "week": 13,
+        "date": "Mon Jan 28",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[=1=]",
+            "id": 2197
+          }
+        },
+        "map": "cp_dustbowl"
+      },
+      {
+        "division": "Platinum",
+        "week": 14,
+        "date": "Mon Feb 04",
+        "side": "home",
+        "result": {
+          "state": "unknown",
+          "opponent": {
+            "name": "[FOoM]",
+            "id": 2172
+          }
+        },
+        "map": "cp_science"
+      }
+    ]
+  }
+]

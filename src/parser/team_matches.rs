@@ -179,8 +179,8 @@ impl Parser for TeamMatchesParser {
                             })
                             .transpose()?;
 
-                        let result = match (opponent, points, points_opponent) {
-                            (Some(opponent), Some(point), Some(points_opponent)) => {
+                        let result = match (opponent, points, points_opponent, id) {
+                            (Some(opponent), Some(point), Some(points_opponent), Some(_)) => {
                                 MatchResult::Played {
                                     id: id.ok_or(ParseError::ElementNotFound {
                                         selector: SELECTOR_SEASON_MATCH_PAGE,
@@ -193,7 +193,7 @@ impl Parser for TeamMatchesParser {
                                     match_points_opponent: points_opponent,
                                 }
                             }
-                            (Some(opponent), None, None) => MatchResult::Pending {
+                            (Some(opponent), None, None, Some(_)) => MatchResult::Pending {
                                 id: id.ok_or(ParseError::ElementNotFound {
                                     selector: SELECTOR_SEASON_MATCH_PAGE,
                                     role: "match page link",
@@ -202,6 +202,7 @@ impl Parser for TeamMatchesParser {
                                 score,
                                 score_opponent,
                             },
+                            (Some(opponent), _, _, None) => MatchResult::Unknown { opponent },
                             _ => MatchResult::ByeWeek,
                         };
                         Ok(TeamSeasonMatch {
