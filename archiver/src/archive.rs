@@ -9,10 +9,10 @@ use time::macros::format_description;
 use time::parsing::Parsed;
 use time::{Date, Duration};
 use tokio_stream::Stream;
-use tracing::{debug};
+use tracing::debug;
 use ugc_scraper_types::{
     Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
-    Region, RosterHistory, SteamID, Team,
+    Region, RosterHistory, SteamID, Team, TeamSeason, TeamSeasonMatch,
 };
 
 const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
@@ -560,7 +560,7 @@ impl Archive {
         let format = match_info.format.is_tf2().then_some(match_info.format);
         if let Some(date) = date {
             query!(
-                "UPDATE matches SET map = $2, week = $3, format = $4, default_data = $5 WHERE id = $1",
+                "UPDATE matches SET map = $2, week = $3, format = $4, default_date = $5 WHERE id = $1",
                 id as i32,
                 match_info.map,
                 match_info.week as i32,
@@ -588,6 +588,49 @@ impl Archive {
                 error,
             })?;
         }
+        Ok(())
+    }
+
+    pub async fn update_match_details_from_team_matches(
+        &self,
+        season: TeamSeason,
+    ) -> Result<(), ArchiveError> {
+        let mut transaction = self
+            .pool
+            .begin()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "beginning team matches transaction",
+                error,
+            })?;
+
+        for match_info in season.matches {
+            if let Some(id) = match_info.result.match_id() {
+                query!(
+                    "UPDATE matches SET map = $2, week = $3, format = $4, season = $5 WHERE id = $1",
+                    id as i32,
+                    match_info.map,
+                    match_info.week as i32,
+                    format as Option<GameMode>,
+                    date
+                )
+                    .execute(&self.pool)
+                    .await
+                    .map_err(|error| ArchiveError::Query {
+                        description: "updating match",
+                        error,
+                    })?;
+            }
+        }
+
+        transaction
+            .commit()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "commiting team matches transaction",
+                error,
+            })?;
+
         Ok(())
     }
 }

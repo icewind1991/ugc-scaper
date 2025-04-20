@@ -220,8 +220,8 @@ async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
     while let Some(Ok(id)) = match_ids.next().await {
         let _span = span!(Level::INFO, "fixup_match", id = id).entered();
         let match_info = client.get_match(id).await?;
-        let date = archive.get_match_date(&match_info).await?;
-        if date.is_none()
+        let date = None; // archive.get_match_date(&match_info).await?;
+        if false && date.is_none()
             && (match_info.format == GameMode::Highlander
                 || match_info.format == GameMode::Sixes
                 || match_info.format == GameMode::Fours

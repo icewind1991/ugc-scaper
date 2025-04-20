@@ -281,6 +281,7 @@ pub struct TeamSeasonMatch {
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "serde", serde(rename_all = "snake_case", tag = "state"))]
 pub enum MatchResult {
     Played {
         id: u32,
@@ -297,6 +298,16 @@ pub enum MatchResult {
         score_opponent: u8,
     },
     ByeWeek,
+}
+
+impl MatchResult {
+    pub fn match_id(&self) -> Option<u32> {
+        match self {
+            MatchResult::Played { id, .. } => Some(*id),
+            MatchResult::Pending { id, .. } => Some(*id),
+            MatchResult::ByeWeek => None,
+        }
+    }
 }
 
 #[derive(Debug, Clone)]

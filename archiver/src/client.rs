@@ -3,7 +3,7 @@ use serde::de::DeserializeOwned;
 use thiserror::Error;
 use ugc_scraper_types::{
     GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, SteamID, Team,
-    TeamRosterData, TeamSeasonMatch, Transaction,
+    TeamRosterData, TeamSeason, TeamSeasonMatch, Transaction,
 };
 
 #[derive(Debug, Error)]
@@ -61,7 +61,7 @@ impl UgcClient {
             .map(|data| data.history)
     }
 
-    pub async fn get_team_matches(&self, id: u32) -> Result<Vec<TeamSeasonMatch>, UgcClientError> {
+    pub async fn get_team_matches(&self, id: u32) -> Result<TeamSeason, UgcClientError> {
         self.send_request(Endpoint::TeamMatches { id }).await
     }
 
