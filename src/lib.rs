@@ -5,7 +5,7 @@ pub mod parser;
 
 use crate::data::{
     GameMode, MapHistory, MatchInfo, MembershipHistory, Player, Seasons, Team, TeamRef,
-    TeamRosterData, TeamSeason, Transaction,
+    TeamRosterData, Transaction,
 };
 use crate::parser::{
     MapHistoryParser, MatchPageParser, Parser, PlayerDetailsParser, PlayerParser, SeasonsParser,
@@ -18,6 +18,7 @@ use std::time::Duration;
 pub use steamid_ng::SteamID;
 use tokio::time::sleep;
 use tracing::warn;
+use ugc_scraper_types::TeamMatches;
 
 pub type Result<T, E = ScrapeError> = std::result::Result<T, E>;
 
@@ -136,7 +137,7 @@ impl UgcClient {
     }
 
     /// Retrieve team match history
-    pub async fn team_matches(&self, id: u32) -> Result<Vec<TeamSeason>> {
+    pub async fn team_matches(&self, id: u32) -> Result<TeamMatches> {
         let body = self
             .request(format!(
                 "https://www.ugcleague.com/team_page_matches.cfm?clan_id={}",

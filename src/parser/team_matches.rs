@@ -1,10 +1,13 @@
 use super::Parser;
-use crate::data::{MatchResult, TeamRef, TeamSeason, TeamSeasonMatch};
+use crate::data::{GameMode, MatchResult, TeamRef, TeamSeason, TeamSeasonMatch};
 use crate::parser::{match_id_from_link, select_text, team_id_from_link, ElementExt};
 use crate::{ParseError, Result};
 use scraper::{Html, Selector};
+use std::str::FromStr;
+use ugc_scraper_types::{Side, TeamMatches};
 
-const SELECTOR_SEASON_TITLE: &str =
+const SELECTOR_SEASON_TITLE: &str = ".container table.table.table-condensed.table-striped thead h4";
+const SELECTOR_SEASON_SEASON: &str =
     ".container table.table.table-condensed.table-striped thead h4 b";
 const SELECTOR_SEASON_MATCHES: &str =
     ".container table.table.table-condensed.table-striped tbody:nth-child(3n)";
@@ -20,8 +23,12 @@ const SELECTOR_SEASON_POINTS: &str = "td:nth-child(9) small";
 const SELECTOR_SEASON_POINTS_OPPONENTS: &str = "td:nth-child(10) small";
 const SELECTOR_SEASON_MATCH_PAGE: &str = "td a[href^=\"matchpage\"]";
 
+const SELECTOR_TEAM_NAME: &str = r#"div.col-md-9 > h2 > b"#;
+const SELECTOR_TEAM_LINK: &str = r#"h2 > span.pull-right > a[href^="team_page.cfm"]"#;
+
 pub struct TeamMatchesParser {
     selector_title: Selector,
+    selector_season: Selector,
     selector_matches: Selector,
     selector_match: Selector,
     selector_division: Selector,
@@ -34,6 +41,9 @@ pub struct TeamMatchesParser {
     selector_points: Selector,
     selector_points_opponent: Selector,
     selector_match_page: Selector,
+
+    selector_team_name: Selector,
+    selector_team_link: Selector,
 }
 
 impl Default for TeamMatchesParser {
@@ -46,6 +56,7 @@ impl TeamMatchesParser {
     pub fn new() -> Self {
         TeamMatchesParser {
             selector_title: Selector::parse(SELECTOR_SEASON_TITLE).unwrap(),
+            selector_season: Selector::parse(SELECTOR_SEASON_SEASON).unwrap(),
             selector_matches: Selector::parse(SELECTOR_SEASON_MATCHES).unwrap(),
             selector_match: Selector::parse(SELECTOR_SEASON_MATCH).unwrap(),
             selector_division: Selector::parse(SELECTOR_SEASON_DIVISION).unwrap(),
@@ -58,27 +69,44 @@ impl TeamMatchesParser {
             selector_points: Selector::parse(SELECTOR_SEASON_POINTS).unwrap(),
             selector_points_opponent: Selector::parse(SELECTOR_SEASON_POINTS_OPPONENTS).unwrap(),
             selector_match_page: Selector::parse(SELECTOR_SEASON_MATCH_PAGE).unwrap(),
+
+            selector_team_name: Selector::parse(SELECTOR_TEAM_NAME).unwrap(),
+            selector_team_link: Selector::parse(SELECTOR_TEAM_LINK).unwrap(),
         }
     }
 }
 
 impl Parser for TeamMatchesParser {
-    type Output = Vec<TeamSeason>;
+    type Output = TeamMatches;
 
     fn parse(&self, document: &str) -> Result<Self::Output> {
         let document = Html::parse_document(document);
 
-        document
+        let seasons = document
             .select(&self.selector_title)
+            .zip(document.select(&self.selector_season))
             .zip(document.select(&self.selector_matches))
-            .map(|(title, matches)| {
-                let title = title.first_text().ok_or(ParseError::EmptyText {
+            .map(|((title, season), matches)| {
+                let format = title.first_text().ok_or(ParseError::EmptyText {
                     selector: SELECTOR_SEASON_TITLE,
                     role: "season title",
                 })?;
-                let season: u32 = title.trim_start_matches("Season ").parse().map_err(|_| {
+
+                let format = format
+                    .split(' ')
+                    .find_map(|part| GameMode::from_str(part).ok())
+                    .ok_or(ParseError::InvalidText {
+                        text: format.into(),
+                        role: "season format",
+                    })?;
+
+                let season = season.first_text().ok_or(ParseError::EmptyText {
+                    selector: SELECTOR_SEASON_SEASON,
+                    role: "season title",
+                })?;
+                let season: u32 = season.trim_start_matches("Season ").parse().map_err(|_| {
                     ParseError::InvalidText {
-                        text: title.to_string(),
+                        text: season.to_string(),
                         role: "season title",
                     }
                 })?;
@@ -167,10 +195,7 @@ impl Parser for TeamMatchesParser {
 
                         let opponent = opponent_link
                             .map(|link| {
-                                let name = link.first_text().ok_or(ParseError::EmptyText {
-                                    selector: SELECTOR_SEASON_OPPONENT,
-                                    role: "match opponent",
-                                })?;
+                                let name = link.first_text().unwrap_or_default();
                                 let id = team_id_from_link(link.attr("href").unwrap_or_default())?;
                                 Result::<_, ParseError>::Ok(TeamRef {
                                     name: name.to_string(),
@@ -208,7 +233,12 @@ impl Parser for TeamMatchesParser {
                         Ok(TeamSeasonMatch {
                             week,
                             date: date.to_string(),
-                            side: side.to_string(),
+                            side: side.parse::<Side>().map_err(|error| {
+                                ParseError::InvalidText {
+                                    text: error.text,
+                                    role: "match side",
+                                }
+                            })?,
                             map: map.to_string(),
                             division: division.to_string(),
                             result,
@@ -216,8 +246,34 @@ impl Parser for TeamMatchesParser {
                     })
                     .collect::<Result<_>>()?;
 
-                Ok(TeamSeason { season, matches })
+                Ok(TeamSeason {
+                    season,
+                    matches,
+                    format,
+                })
             })
-            .collect::<Result<Vec<_>>>()
+            .collect::<Result<Vec<_>>>()?;
+
+        let team_id = document
+            .select(&self.selector_team_link)
+            .next()
+            .and_then(|link| team_id_from_link(link.attr("href").unwrap_or_default()).ok())
+            .ok_or(ParseError::ElementNotFound {
+                selector: SELECTOR_TEAM_LINK,
+                role: "match team link",
+            })?;
+
+        let team_name = select_text(document.root_element(), &self.selector_team_name).ok_or(
+            ParseError::ElementNotFound {
+                selector: SELECTOR_TEAM_NAME,
+                role: "match team name",
+            },
+        )?;
+        let team = TeamRef {
+            id: team_id,
+            name: team_name.into(),
+        };
+
+        Ok(TeamMatches { team, seasons })
     }
 }

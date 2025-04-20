@@ -263,9 +263,43 @@ pub struct RosterHistory {
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+pub struct TeamMatches {
+    pub team: TeamRef,
+    pub seasons: Vec<TeamSeason>,
+}
+
+#[derive(Debug, Clone)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct TeamSeason {
     pub season: u32,
+    pub format: GameMode,
     pub matches: Vec<TeamSeasonMatch>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
+#[cfg_attr(feature = "serde", serde(rename_all = "snake_case"))]
+pub enum Side {
+    Home,
+    Visiting,
+}
+
+#[derive(Debug, Clone, Error)]
+#[error("Invalid side {text}")]
+pub struct InvalidSide {
+    pub text: String,
+}
+
+impl FromStr for Side {
+    type Err = InvalidSide;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "home" => Ok(Side::Home),
+            "visiting" => Ok(Side::Visiting),
+            _ => Err(InvalidSide { text: s.into() }),
+        }
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -274,9 +308,47 @@ pub struct TeamSeasonMatch {
     pub division: String,
     pub week: u8,
     pub date: String,
-    pub side: String,
+    pub side: Side,
     pub result: MatchResult,
     pub map: String,
+}
+
+impl TeamSeasonMatch {
+    pub fn match_info(&self, team: &TeamRef, format: GameMode) -> Option<MatchInfo> {
+        match &self.result {
+            MatchResult::Played {
+                opponent,
+                score,
+                score_opponent,
+                ..
+            }
+            | MatchResult::Pending {
+                opponent,
+                score,
+                score_opponent,
+                ..
+            } => {
+                let (team_home, team_away, score_home, score_away) = if self.side == Side::Home {
+                    (team.clone(), opponent.clone(), *score, *score_opponent)
+                } else {
+                    (opponent.clone(), team.clone(), *score_opponent, *score)
+                };
+                Some(MatchInfo {
+                    comment: None,
+                    comment_author: None,
+                    team_home,
+                    team_away,
+                    score_home,
+                    score_away,
+                    map: self.map.clone(),
+                    week: self.week,
+                    format,
+                    default_date: self.date.clone(),
+                })
+            }
+            _ => None,
+        }
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -306,8 +378,7 @@ pub enum MatchResult {
 impl MatchResult {
     pub fn match_id(&self) -> Option<u32> {
         match self {
-            MatchResult::Played { id, .. } => Some(*id),
-            MatchResult::Pending { id, .. } => Some(*id),
+            MatchResult::Played { id, .. } | MatchResult::Pending { id, .. } => Some(*id),
             _ => None,
         }
     }
