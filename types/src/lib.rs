@@ -327,6 +327,12 @@ impl TeamSeasonMatch {
                 score,
                 score_opponent,
                 ..
+            }
+            | MatchResult::Unknown {
+                opponent,
+                score,
+                score_opponent,
+                ..
             } => {
                 let (team_home, team_away, score_home, score_away) = if self.side == Side::Home {
                     (team.clone(), opponent.clone(), *score, *score_opponent)
@@ -372,6 +378,8 @@ pub enum MatchResult {
     ByeWeek,
     Unknown {
         opponent: TeamRef,
+        score: u8,
+        score_opponent: u8,
     },
 }
 
@@ -379,6 +387,15 @@ impl MatchResult {
     pub fn match_id(&self) -> Option<u32> {
         match self {
             MatchResult::Played { id, .. } | MatchResult::Pending { id, .. } => Some(*id),
+            _ => None,
+        }
+    }
+
+    pub fn opponents(&self) -> Option<&TeamRef> {
+        match self {
+            MatchResult::Played { opponent, .. }
+            | MatchResult::Pending { opponent, .. }
+            | MatchResult::Unknown { opponent, .. } => Some(opponent),
             _ => None,
         }
     }

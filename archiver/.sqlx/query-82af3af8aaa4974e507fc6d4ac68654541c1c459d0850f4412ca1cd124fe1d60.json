@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE matches SET map = $2, week = $3, format = $4, season = $5 WHERE id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Varchar",
+        "Int4",
+        {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        },
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "82af3af8aaa4974e507fc6d4ac68654541c1c459d0850f4412ca1cd124fe1d60"
+}

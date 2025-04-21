@@ -9,10 +9,10 @@ use time::macros::format_description;
 use time::parsing::Parsed;
 use time::{Date, Duration};
 use tokio_stream::Stream;
-use tracing::debug;
+use tracing::{debug, info, warn};
 use ugc_scraper_types::{
     Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
-    Region, RosterHistory, SteamID, Team, TeamSeason, TeamSeasonMatch,
+    Region, RosterHistory, SteamID, Team, TeamRef, TeamSeason,
 };
 
 const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
@@ -59,18 +59,21 @@ impl Archive {
         Ok(Archive { pool })
     }
 
-    pub async fn store_match(&self, id: u32, match_info: MatchInfo) -> Result<(), ArchiveError> {
+    pub async fn store_match(&self, id: i32, match_info: MatchInfo) -> Result<(), ArchiveError> {
         query!(
             "INSERT INTO matches (
-                id, team_home, team_away, score_home, score_away, comment, comment_author
-              ) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-            id as i32,
+                id, team_home, team_away, score_home, score_away, comment, comment_author, map, format, week
+              ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
+            id,
             match_info.team_home.id as i32,
             match_info.team_away.id as i32,
             match_info.score_home as i16,
             match_info.score_away as i16,
             match_info.comment,
-            match_info.comment_author
+            match_info.comment_author,
+            match_info.map,
+            match_info.format as GameMode,
+            match_info.week as i32,
         )
         .execute(&self.pool)
         .await
@@ -498,6 +501,7 @@ impl Archive {
         Ok(())
     }
 
+    #[allow(dead_code)]
     pub fn get_match_ids_without_map(
         &self,
     ) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
@@ -510,6 +514,28 @@ impl Archive {
             .map_ok(|map| map.id as u32)
     }
 
+    pub async fn get_min_team_id_without_match_seasons(&self) -> Result<u32, ArchiveError> {
+        Ok(query!("select LEAST(MIN(team_home), MIN(team_away)) as team_id from matches INNER JOIN teams ON (team_home = teams.id OR team_away = teams.id) WHERE season IS NULL")
+            .fetch_one(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "getting team ids",
+                error,
+            })?.team_id.unwrap_or_default() as u32)
+    }
+
+    pub async fn has_match(&self, id: u32) -> Result<bool, ArchiveError> {
+        Ok(query!("select id from matches WHERE id = $1", id as i32)
+            .fetch_optional(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "checking match existence",
+                error,
+            })?
+            .is_some())
+    }
+
+    #[allow(dead_code)]
     pub async fn get_match_date(
         &self,
         match_info: &MatchInfo,
@@ -551,6 +577,21 @@ impl Archive {
         Ok(None)
     }
 
+    pub async fn get_team_format(&self, id: u32) -> Result<GameMode, ArchiveError> {
+        Ok(query!(
+            r#"SELECT format as "format: GameMode" FROM teams WHERE id = $1"#,
+            id as i32
+        )
+        .fetch_one(&self.pool)
+        .await
+        .map_err(|error| ArchiveError::Query {
+            description: "getting team format",
+            error,
+        })?
+        .format)
+    }
+
+    #[allow(dead_code)]
     pub async fn update_match_details(
         &self,
         id: u32,
@@ -593,7 +634,9 @@ impl Archive {
 
     pub async fn update_match_details_from_team_matches(
         &self,
-        season: TeamSeason,
+        team: &TeamRef,
+        format: GameMode,
+        season: &TeamSeason,
     ) -> Result<(), ArchiveError> {
         let mut transaction = self
             .pool
@@ -604,23 +647,55 @@ impl Archive {
                 error,
             })?;
 
-        for match_info in season.matches {
-            if let Some(id) = match_info.result.match_id() {
-                query!(
-                    "UPDATE matches SET map = $2, week = $3, format = $4, season = $5 WHERE id = $1",
-                    id as i32,
-                    match_info.map,
-                    match_info.week as i32,
-                    format as Option<GameMode>,
-                    date
+        for match_info in season.matches.iter() {
+            let id = if let Some(id) = match_info.result.match_id() {
+                id as i32
+            } else if let Some(opponent) = match_info.result.opponents() {
+                let options = Self::find_match_id(
+                    &mut *transaction,
+                    match_info.week,
+                    team.id,
+                    opponent.id,
+                    &match_info.map,
                 )
-                    .execute(&self.pool)
-                    .await
-                    .map_err(|error| ArchiveError::Query {
-                        description: "updating match",
-                        error,
-                    })?;
-            }
+                .await?;
+                if options.len() == 1 {
+                    options[0] as i32
+                } else if options.is_empty() {
+                    let fake_id = Self::find_next_negative_match_id(&mut *transaction).await?;
+                    assert!(fake_id < 0);
+                    info!(id = fake_id, "inserting synthetic match");
+                    panic!("?");
+                    let fake_match = match_info
+                        .match_info(team, format)
+                        .expect("no match info but we do have opponent");
+                    self.store_match(fake_id, fake_match).await?;
+                    fake_id
+                } else {
+                    warn!(
+                        possible_options = options.len(),
+                        season.season, match_info.week, "Failed to find match, multiple options"
+                    );
+                    panic!();
+                }
+            } else {
+                continue;
+            };
+
+            query!(
+                "UPDATE matches SET map = $2, week = $3, format = $4, season = $5 WHERE id = $1",
+                id as i32,
+                match_info.map,
+                match_info.week as i32,
+                format as GameMode,
+                season.season as i32
+            )
+            .execute(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "updating match with team match data",
+                error,
+            })?;
         }
 
         transaction
@@ -632,6 +707,48 @@ impl Archive {
             })?;
 
         Ok(())
+    }
+
+    async fn find_match_id(
+        db: impl Executor<'_, Database = Postgres>,
+        week: u8,
+        team_a: u32,
+        team_b: u32,
+        map: &str,
+    ) -> Result<Vec<u32>, ArchiveError> {
+        Ok(
+            query!(
+                "SELECT id FROM matches WHERE week = $1 AND team_home IN ($2, $3) AND team_away IN ($2, $3) AND map = $4 AND id > 0 ORDER BY id DESC LIMIT 1",
+                week as i32,
+                team_a as i32,
+                team_b as i32,
+                map
+            )
+                .fetch_all(db)
+                .await
+                .map_err(|error| ArchiveError::Query {
+                    description: "searching match",
+                    error,
+                })?
+                .into_iter()
+                .map(|row| row.id as u32)
+                .collect(),
+        )
+    }
+
+    async fn find_next_negative_match_id(
+        db: impl Executor<'_, Database = Postgres>,
+    ) -> Result<i32, ArchiveError> {
+        let min = query!("SELECT MIN(id) as id FROM matches WHERE id < 0")
+            .fetch_optional(db)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "getting next negative match",
+                error,
+            })?
+            .map(|row| row.id.unwrap_or_default())
+            .unwrap_or_default();
+        Ok(min - 1)
     }
 }
 

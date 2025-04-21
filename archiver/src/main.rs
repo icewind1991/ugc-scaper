@@ -13,7 +13,7 @@ use std::str::FromStr;
 use std::time::Duration;
 use tokio::time::sleep;
 use tokio_stream::StreamExt;
-use tracing::{error, info, span, warn, Level};
+use tracing::{error, info, instrument, span, warn, Level};
 use ugc_scraper_types::GameMode;
 
 #[derive(Debug, Parser)]
@@ -79,23 +79,30 @@ async fn archive_matches(client: &UgcClient, archive: &Archive) -> MainResult {
         .await?
         .unwrap_or(MAYBE_FIRST_MATCH - 1)
         + 1;
-    for id in next_match..=LAST_MATCH {
-        let _span = span!(Level::INFO, "archive_match", id = id).entered();
-        match client.get_match(id).await.check_not_found() {
-            Ok(Some(match_data)) => {
-                info!("storing match");
-                archive.store_match(id, match_data).await?;
-            }
-            Ok(None) => {
-                warn!("match not found");
-            }
-            Err(e) => {
-                error!("error fetching match: {}", e);
-            }
-        }
+    for id in 200..=MAYBE_FIRST_MATCH {
+        archive_match(client, archive, id).await.ok();
         sleep(Duration::from_millis(500)).await;
     }
     Ok(())
+}
+
+#[instrument(skip(client, archive))]
+async fn archive_match(client: &UgcClient, archive: &Archive, id: u32) -> MainResult {
+    match client.get_match(id).await.check_not_found() {
+        Ok(Some(match_data)) => {
+            info!("storing match");
+            archive.store_match(id as i32, match_data).await?;
+            Ok(())
+        }
+        Ok(None) => {
+            warn!("match not found");
+            Ok(())
+        }
+        Err(e) => {
+            error!("error fetching match: {}", e);
+            Err(e.into())
+        }
+    }
 }
 
 async fn archive_teams(client: &UgcClient, archive: &Archive) -> MainResult {
@@ -103,25 +110,30 @@ async fn archive_teams(client: &UgcClient, archive: &Archive) -> MainResult {
     let next_team = archive.get_last_team_id().await?.unwrap_or(range.start - 1) + 1;
 
     for id in next_team..=range.end {
-        let _span = span!(Level::INFO, "archive_team", id = id).entered();
-        match client.get_team(id).await.check_not_found() {
-            Ok(Some(team_data)) => {
-                if team_data.format.is_tf2() {
-                    info!("storing team");
-                    archive.store_team(id, &team_data).await?;
-                } else {
-                    info!("skipping non-tf2 team");
-                }
-            }
-            Ok(None) => {
-                warn!("team not found");
-            }
-            Err(e) => {
-                error!("error fetching team: {:?}", e);
-                panic!();
+        archive_team(client, archive, id).await?;
+        sleep(Duration::from_millis(500)).await;
+    }
+    Ok(())
+}
+
+#[instrument(skip(client, archive))]
+async fn archive_team(client: &UgcClient, archive: &Archive, id: u32) -> MainResult {
+    match client.get_team(id).await.check_not_found() {
+        Ok(Some(team_data)) => {
+            if team_data.format.is_tf2() {
+                info!("storing team");
+                archive.store_team(id, &team_data).await?;
+            } else {
+                info!("skipping non-tf2 team");
             }
         }
-        sleep(Duration::from_millis(500)).await;
+        Ok(None) => {
+            warn!("team not found");
+        }
+        Err(e) => {
+            error!("error fetching team: {:?}", e);
+            panic!();
+        }
     }
     Ok(())
 }
@@ -215,24 +227,42 @@ async fn archive_map_history(client: &UgcClient, archive: &Archive, mode: GameMo
 }
 
 async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
-    let mut match_ids = pin!(archive.get_match_ids_without_map());
+    let min_team = archive.get_min_team_id_without_match_seasons().await?;
+    let mut team_ids = pin!(archive.get_team_ids(min_team - 1));
 
-    while let Some(Ok(id)) = match_ids.next().await {
-        let _span = span!(Level::INFO, "fixup_match", id = id).entered();
-        let match_info = client.get_match(id).await?;
-        let date = None; // archive.get_match_date(&match_info).await?;
-        if false && date.is_none()
-            && (match_info.format == GameMode::Highlander
-                || match_info.format == GameMode::Sixes
-                || match_info.format == GameMode::Fours
-                || match_info.format == GameMode::Ultiduo)
-        {
-            dbg!(match_info.default_date);
-            error!("failed to parse match date");
-            panic!();
+    while let Some(Ok(team_id)) = team_ids.next().await {
+        let _span = span!(Level::INFO, "fixup_matches", team_id).entered();
+        let format = archive.get_team_format(team_id).await?;
+        let matches = client.get_team_matches(team_id).await?;
+        info!(
+            seasons = matches.seasons.len(),
+            ?format,
+            "updating matches for team"
+        );
+
+        for season in matches.seasons.iter() {
+            for season_match in season.matches.iter() {
+                if let Some(match_id) = season_match.result.match_id() {
+                    if !archive.has_match(match_id).await? {
+                        warn!(match_id, "match not archived yet");
+                        sleep(Duration::from_millis(500)).await;
+                        if let Err(_) = archive_match(client, archive, match_id).await {
+                            let match_info = season_match
+                                .match_info(&matches.team, season.format)
+                                .expect("failed to build match info");
+                            assert_eq!(format, match_info.format);
+                            info!("reconstructed match");
+                            archive.store_match(match_id as i32, match_info).await?;
+                        }
+                    }
+                }
+            }
+
+            archive
+                .update_match_details_from_team_matches(&matches.team, format, season)
+                .await?;
         }
-        info!(date = ?date, format = %match_info.format, "updating match");
-        archive.update_match_details(id, &match_info, date).await?;
+
         sleep(Duration::from_millis(500)).await;
     }
     Ok(())

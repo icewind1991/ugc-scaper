@@ -227,7 +227,11 @@ impl Parser for TeamMatchesParser {
                                 score,
                                 score_opponent,
                             },
-                            (Some(opponent), _, _, None) => MatchResult::Unknown { opponent },
+                            (Some(opponent), _, _, None) => MatchResult::Unknown {
+                                opponent,
+                                score,
+                                score_opponent,
+                            },
                             _ => MatchResult::ByeWeek,
                         };
                         Ok(TeamSeasonMatch {

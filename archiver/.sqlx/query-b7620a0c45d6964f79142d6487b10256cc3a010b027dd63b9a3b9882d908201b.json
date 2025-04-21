@@ -1,0 +1,30 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO matches (\n                id, team_home, team_away, score_home, score_away, comment, comment_author, map, format, week\n              ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Int4",
+        "Int4",
+        "Int2",
+        "Int2",
+        "Varchar",
+        "Varchar",
+        "Varchar",
+        {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        },
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "b7620a0c45d6964f79142d6487b10256cc3a010b027dd63b9a3b9882d908201b"
+}

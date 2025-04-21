@@ -3,15 +3,21 @@ use serde::de::DeserializeOwned;
 use thiserror::Error;
 use ugc_scraper_types::{
     GameMode, MapHistory, MatchInfo, MembershipHistory, Player, RosterHistory, SteamID, Team,
-    TeamRosterData, TeamSeason, TeamSeasonMatch, Transaction,
+    TeamMatches, TeamRosterData, Transaction,
 };
 
 #[derive(Debug, Error)]
 pub enum UgcClientError {
     #[error("Error sending request to {endpoint:?}: {error:#}")]
     Request { endpoint: Endpoint, error: Error },
-    #[error("Error parsing response from {endpoint:?}: {error:#}")]
+    #[error("Error receiving response from {endpoint:?}: {error:#}")]
     Response { endpoint: Endpoint, error: Error },
+    #[error("Error parsing response from {endpoint:?}: {error:#}, from: {text}")]
+    Decode {
+        endpoint: Endpoint,
+        error: serde_json::Error,
+        text: String,
+    },
     #[error("{endpoint:?} not found")]
     NotFound { endpoint: Endpoint },
 }
@@ -36,15 +42,23 @@ impl UgcClient {
         &self,
         endpoint: Endpoint,
     ) -> Result<T, UgcClientError> {
-        self.client
+        let text = self
+            .client
             .get(endpoint.build_url(&self.api_url))
             .send()
             .await
             .map_err(|error| UgcClientError::Request { endpoint, error })?
             .check_not_found(endpoint)?
-            .json()
+            .error_for_status()
+            .map_err(|error| UgcClientError::Response { endpoint, error })?
+            .text()
             .await
-            .map_err(|error| UgcClientError::Response { endpoint, error })
+            .map_err(|error| UgcClientError::Response { endpoint, error })?;
+        serde_json::from_str(&text).map_err(|error| UgcClientError::Decode {
+            endpoint,
+            error,
+            text,
+        })
     }
 
     pub async fn get_match(&self, id: u32) -> Result<MatchInfo, UgcClientError> {
@@ -61,7 +75,7 @@ impl UgcClient {
             .map(|data| data.history)
     }
 
-    pub async fn get_team_matches(&self, id: u32) -> Result<TeamSeason, UgcClientError> {
+    pub async fn get_team_matches(&self, id: u32) -> Result<TeamMatches, UgcClientError> {
         self.send_request(Endpoint::TeamMatches { id }).await
     }
 

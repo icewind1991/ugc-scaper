@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT format as \"format: GameMode\" FROM teams WHERE id = $1",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "format: GameMode",
+        "type_info": {
+          "Custom": {
+            "name": "game_mode",
+            "kind": {
+              "Enum": ["highlander", "eights", "sixes", "fours", "ultiduo"]
+            }
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": ["Int4"]
+    },
+    "nullable": [false]
+  },
+  "hash": "b55c859eae400f5b4231f8b9c8417371dce54bde4d7743af588dba96c4b0fcee"
+}

@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id FROM matches WHERE week = $1 AND team_home IN ($2, $3) AND team_away IN ($2, $3) AND map = $4 AND id > 0 ORDER BY id DESC LIMIT 1",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": ["Int4", "Int4", "Int4", "Text"]
+    },
+    "nullable": [false]
+  },
+  "hash": "3ec8ec092f25c86ae4160829cd419efaf0340afb5e7ad65492a1b2eae988d7c3"
+}

@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "select LEAST(MIN(team_home), MIN(team_away)) as team_id from matches INNER JOIN teams ON (team_home = teams.id OR team_away = teams.id) WHERE season IS NULL",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "team_id",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [null]
+  },
+  "hash": "98d74e80ad5bfcde41e6ba24592dff950957b0d0a1ee0df8c5ebc487f262556f"
+}
