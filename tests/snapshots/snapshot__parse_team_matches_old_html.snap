@@ -22,7 +22,9 @@ expression: parsed
             "opponent": {
               "name": "[$0.00]",
               "id": 2137
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_gravelpit"
         },
@@ -36,7 +38,9 @@ expression: parsed
             "opponent": {
               "name": "-DeX-",
               "id": 2130
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_gravelpit"
         },
@@ -50,7 +54,9 @@ expression: parsed
             "opponent": {
               "name": "[UGS]",
               "id": 2127
-            }
+            },
+            "score": 3,
+            "score_opponent": 0
           },
           "map": "cp_dustbowl"
         },
@@ -74,7 +80,9 @@ expression: parsed
             "opponent": {
               "name": ".tKd",
               "id": 2169
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "ctf_impact"
         },
@@ -88,7 +96,9 @@ expression: parsed
             "opponent": {
               "name": "[FOoM]",
               "id": 2172
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_science2"
         },
@@ -102,7 +112,9 @@ expression: parsed
             "opponent": {
               "name": "[SWAT]",
               "id": 2188
-            }
+            },
+            "score": 1,
+            "score_opponent": 0
           },
           "map": "cp_junction"
         },
@@ -116,7 +128,9 @@ expression: parsed
             "opponent": {
               "name": "[FOoM]",
               "id": 2172
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_castle3"
         },
@@ -130,7 +144,9 @@ expression: parsed
             "opponent": {
               "name": "[=1=]",
               "id": 2197
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_dustbowl"
         },
@@ -144,7 +160,9 @@ expression: parsed
             "opponent": {
               "name": "[FOoM]",
               "id": 2172
-            }
+            },
+            "score": 0,
+            "score_opponent": 0
           },
           "map": "cp_science"
         }

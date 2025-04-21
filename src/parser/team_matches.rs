@@ -267,12 +267,8 @@ impl Parser for TeamMatchesParser {
                 role: "match team link",
             })?;
 
-        let team_name = select_text(document.root_element(), &self.selector_team_name).ok_or(
-            ParseError::ElementNotFound {
-                selector: SELECTOR_TEAM_NAME,
-                role: "match team name",
-            },
-        )?;
+        let team_name =
+            select_text(document.root_element(), &self.selector_team_name).unwrap_or_default();
         let team = TeamRef {
             id: team_id,
             name: team_name.into(),

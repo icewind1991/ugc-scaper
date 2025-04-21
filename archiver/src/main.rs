@@ -228,6 +228,7 @@ async fn archive_map_history(client: &UgcClient, archive: &Archive, mode: GameMo
 
 async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
     let min_team = archive.get_min_team_id_without_match_seasons().await?;
+    dbg!(min_team);
     let mut team_ids = pin!(archive.get_team_ids(min_team - 1));
 
     while let Some(Ok(team_id)) = team_ids.next().await {

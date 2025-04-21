@@ -132,13 +132,14 @@ impl Parser for TeamParser {
             .unwrap_or_default()
             .to_string();
 
-        match (tag.as_str(), name.as_str()) {
-            ("", "") => return Err(ScrapeError::NotFound),
-            (_, "") => name = tag.clone(),
+        let image = document.select(&self.selector_image).next();
+
+        match (tag.as_str(), name.as_str(), image.is_some()) {
+            ("", "", false) => return Err(ScrapeError::NotFound),
+            (_, "", true) => name = tag.clone(),
             _ => {}
         };
 
-        let image = document.select(&self.selector_image).next();
         let image = image.and_then(|image| {
             image
                 .attr("data-cfsrc")

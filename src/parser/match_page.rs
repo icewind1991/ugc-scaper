@@ -6,7 +6,7 @@ use scraper::{Html, Selector};
 
 const SELECTOR_MATCH_FORMAT: &str = "h3.page-header > strong.styleColor";
 const SELECTOR_MATCH_COMMENT_AUTHOR: &str = ".row-fluid .col-md-12 span.text-success";
-const SELECTOR_MATCH_COMMENT: &str = ".row-fluid .col-md-12 > .white-row-light-small > p";
+const SELECTOR_MATCH_COMMENT: &str = ".row-fluid .col-md-12 > .text-center > p";
 const SELECTOR_MATCH_TEAM_LINK: &str = "a[href^=\"team_page\"]:not(.btn-large)";
 const SELECTOR_MATCH_RESULT_TEAM: &str =
     ".table.table-condensed.table-bordered tr:nth-child(2) td:nth-child(1)";
@@ -119,10 +119,7 @@ impl Parser for MatchPageParser {
                 role: "home team link",
             })?
             .first_text()
-            .ok_or(ParseError::EmptyText {
-                role: "home team name",
-                selector: SELECTOR_MATCH_RESULT_TEAM,
-            })?
+            .unwrap_or_default()
             .to_string();
         let team_name_away = team_names
             .next()
@@ -131,10 +128,7 @@ impl Parser for MatchPageParser {
                 role: "away team link",
             })?
             .first_text()
-            .ok_or(ParseError::EmptyText {
-                role: "away team name",
-                selector: SELECTOR_MATCH_RESULT_TEAM,
-            })?
+            .unwrap_or_default()
             .to_string();
 
         let mut team_scores = document.select(&self.selector_result_score);

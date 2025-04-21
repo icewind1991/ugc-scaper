@@ -3,7 +3,7 @@ source: tests/snapshot.rs
 expression: parsed
 ---
 {
-  "comment": "https://logs.tf/3509421#76561198288857894\r\nhttps://logs.tf/3509435#76561198288857894",
+  "comment": null,
   "comment_author": "Vkid E-sports:",
   "team_home": {
     "name": "Vkid E-Sports",
