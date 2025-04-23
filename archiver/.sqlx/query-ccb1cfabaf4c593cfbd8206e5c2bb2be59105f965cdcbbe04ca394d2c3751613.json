@@ -1,6 +1,6 @@
 {
   "db_name": "PostgreSQL",
-  "query": "SELECT date FROM maps WHERE format = $1 AND week = $2 AND map = $3",
+  "query": "SELECT date FROM maps WHERE format = $1 AND week = $2 AND season = $3",
   "describe": {
     "columns": [
       {
@@ -20,10 +20,10 @@
           }
         },
         "Int4",
-        "Text"
+        "Int4"
       ]
     },
     "nullable": [false]
   },
-  "hash": "b679f54e09d9d2f7e5640725bfe2dbf553a6fcd68947e247e0d68a5c8eb43eab"
+  "hash": "ccb1cfabaf4c593cfbd8206e5c2bb2be59105f965cdcbbe04ca394d2c3751613"
 }

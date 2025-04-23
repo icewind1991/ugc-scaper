@@ -35,7 +35,6 @@ enum Command {
     MapHistory { format: String },
 }
 
-const LAST_MATCH: u32 = 117047;
 const MAYBE_FIRST_MATCH: u32 = 14486;
 
 #[tokio::main]
@@ -79,7 +78,7 @@ async fn archive_matches(client: &UgcClient, archive: &Archive) -> MainResult {
         .await?
         .unwrap_or(MAYBE_FIRST_MATCH - 1)
         + 1;
-    for id in 200..=MAYBE_FIRST_MATCH {
+    for id in next_match..=MAYBE_FIRST_MATCH {
         archive_match(client, archive, id).await.ok();
         sleep(Duration::from_millis(500)).await;
     }
@@ -228,44 +227,71 @@ async fn archive_map_history(client: &UgcClient, archive: &Archive, mode: GameMo
 
 async fn fixup_matches(client: &UgcClient, archive: &Archive) -> MainResult {
     let min_team = archive.get_min_team_id_without_match_seasons().await?;
-    dbg!(min_team);
-    let mut team_ids = pin!(archive.get_team_ids(min_team - 1));
+    if min_team > 0 {
+        let mut team_ids = pin!(archive.get_team_ids(min_team - 1));
 
-    while let Some(Ok(team_id)) = team_ids.next().await {
+        while let Some(Ok(team_id)) = team_ids.next().await {
+            let _span = span!(Level::INFO, "fixup_matches", team_id).entered();
+            let format = archive.get_team_format(team_id).await?;
+            let matches = client.get_team_matches(team_id).await?;
+            info!(
+                seasons = matches.seasons.len(),
+                ?format,
+                "updating matches for team"
+            );
+
+            for season in matches.seasons.iter() {
+                for season_match in season.matches.iter() {
+                    if let Some(match_id) = season_match.result.match_id() {
+                        if !archive.has_match(match_id).await? {
+                            warn!(match_id, "match not archived yet");
+                            sleep(Duration::from_millis(500)).await;
+                            if let Err(_) = archive_match(client, archive, match_id).await {
+                                let match_info = season_match
+                                    .match_info(&matches.team, season.format)
+                                    .expect("failed to build match info");
+                                assert_eq!(format, match_info.format);
+                                info!("reconstructed match");
+                                archive.store_match(match_id as i32, match_info).await?;
+                            }
+                        }
+                    }
+                }
+
+                archive
+                    .update_match_details_from_team_matches(&matches.team, format, season)
+                    .await?;
+            }
+
+            sleep(Duration::from_millis(500)).await;
+        }
+    }
+
+    let mut last_team_id = 0;
+    while let Some(team_id) = archive.get_min_team_id_without_default_date().await? {
+        if team_id == last_team_id {
+            panic!("team didn't get fixed up");
+        }
+        last_team_id = team_id;
+
         let _span = span!(Level::INFO, "fixup_matches", team_id).entered();
         let format = archive.get_team_format(team_id).await?;
         let matches = client.get_team_matches(team_id).await?;
         info!(
             seasons = matches.seasons.len(),
             ?format,
-            "updating matches for team"
+            "updating match date for team"
         );
 
         for season in matches.seasons.iter() {
-            for season_match in season.matches.iter() {
-                if let Some(match_id) = season_match.result.match_id() {
-                    if !archive.has_match(match_id).await? {
-                        warn!(match_id, "match not archived yet");
-                        sleep(Duration::from_millis(500)).await;
-                        if let Err(_) = archive_match(client, archive, match_id).await {
-                            let match_info = season_match
-                                .match_info(&matches.team, season.format)
-                                .expect("failed to build match info");
-                            assert_eq!(format, match_info.format);
-                            info!("reconstructed match");
-                            archive.store_match(match_id as i32, match_info).await?;
-                        }
-                    }
-                }
-            }
-
             archive
-                .update_match_details_from_team_matches(&matches.team, format, season)
+                .update_match_date_from_team_matches(format, season)
                 .await?;
         }
 
         sleep(Duration::from_millis(500)).await;
     }
+
     Ok(())
 }
 

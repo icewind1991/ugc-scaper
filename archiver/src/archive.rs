@@ -7,9 +7,9 @@ use thiserror::Error;
 use time::format_description::FormatItem;
 use time::macros::format_description;
 use time::parsing::Parsed;
-use time::{Date, Duration};
+use time::Date;
 use tokio_stream::Stream;
-use tracing::{debug, info, warn};
+use tracing::{debug, error, warn};
 use ugc_scraper_types::{
     Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
     Region, RosterHistory, SteamID, Team, TeamRef, TeamSeason,
@@ -21,6 +21,8 @@ const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
 const MATCH_DATE_FORMAT2: &[FormatItem<'static>] = format_description!(
     "[weekday case_sensitive:false repr:short] [month repr:short] [day padding:none] [year]"
 );
+
+#[allow(dead_code)]
 const MATCH_DATE_FORMATS: &[&[FormatItem<'static>]] = &[MATCH_DATE_FORMAT, MATCH_DATE_FORMAT2];
 
 #[derive(Debug, Error)]
@@ -193,6 +195,22 @@ impl Archive {
         query!(
             "select id from teams where id > $1 order by id asc",
             min as i32
+        )
+        .fetch(&self.pool)
+        .map_err(|error| ArchiveError::Query {
+            description: "getting team ids",
+            error,
+        })
+        .map_ok(|map| map.id as u32)
+    }
+
+    pub fn get_team_ids_in(
+        &self,
+        min: u32,
+    ) -> impl Stream<Item = Result<u32, ArchiveError>> + use<'_> {
+        query!(
+            "select id from teams where id > $1 and format in ('highlander', 'sixes', 'fours', 'ultiduo') order by id asc",
+            min as i32,
         )
         .fetch(&self.pool)
         .map_err(|error| ArchiveError::Query {
@@ -514,6 +532,20 @@ impl Archive {
             .map_ok(|map| map.id as u32)
     }
 
+    pub async fn get_min_team_id_without_default_date(&self) -> Result<Option<u32>, ArchiveError> {
+        Ok(query!(r#"select LEAST(MIN(team_home), MIN(team_away)) as team_id from matches
+                INNER JOIN teams ON (team_home = teams.id OR team_away = teams.id)
+                WHERE matches.default_date IS NULL AND matches.format in ('highlander', 'sixes', 'fours', 'ultiduo')
+                    AND region in ('europe', 'north-america', 'south-america', 'australia')
+            "#)
+            .fetch_one(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "getting team ids",
+                error,
+            })?.team_id.map(|id| id as u32))
+    }
+
     pub async fn get_min_team_id_without_match_seasons(&self) -> Result<u32, ArchiveError> {
         Ok(query!("select LEAST(MIN(team_home), MIN(team_away)) as team_id from matches INNER JOIN teams ON (team_home = teams.id OR team_away = teams.id) WHERE season IS NULL")
             .fetch_one(&self.pool)
@@ -535,46 +567,26 @@ impl Archive {
             .is_some())
     }
 
-    #[allow(dead_code)]
-    pub async fn get_match_date(
+    pub async fn get_match_year(
         &self,
-        match_info: &MatchInfo,
-    ) -> Result<Option<Date>, ArchiveError> {
-        if let Ok(match_date) = parse_old_match_date(&match_info.default_date) {
-            return Ok(Some(match_date));
-        } else if !match_info.format.is_tf2() {
-            return Ok(None);
-        }
-
-        let options = query!(
-            "SELECT date FROM maps WHERE format = $1 AND week = $2 AND map = $3",
-            match_info.format as GameMode,
-            match_info.week as i32,
-            match_info.map,
+        format: GameMode,
+        season: u32,
+        week: u8,
+    ) -> Result<Option<u32>, ArchiveError> {
+        let option = query!(
+            "SELECT date FROM maps WHERE format = $1 AND week = $2 AND season = $3",
+            format as GameMode,
+            week as i32,
+            season as i32,
         )
-        .fetch_all(&self.pool)
+        .fetch_optional(&self.pool)
         .await
         .map_err(|error| ArchiveError::Query {
             description: "searching map history",
             error,
         })?;
 
-        for row in options {
-            let possible_date: Date = row.date;
-            let Some(match_date) = try_date_formats(
-                match_info.default_date.as_str(),
-                possible_date.year(),
-                MATCH_DATE_FORMATS,
-            ) else {
-                break;
-            };
-
-            if (match_date - possible_date).abs() < Duration::days(7) {
-                return Ok(Some(possible_date));
-            }
-        }
-
-        Ok(None)
+        Ok(option.map(|row| row.date.year() as u32))
     }
 
     pub async fn get_team_format(&self, id: u32) -> Result<GameMode, ArchiveError> {
@@ -592,46 +604,6 @@ impl Archive {
     }
 
     #[allow(dead_code)]
-    pub async fn update_match_details(
-        &self,
-        id: u32,
-        match_info: &MatchInfo,
-        date: Option<Date>,
-    ) -> Result<(), ArchiveError> {
-        let format = match_info.format.is_tf2().then_some(match_info.format);
-        if let Some(date) = date {
-            query!(
-                "UPDATE matches SET map = $2, week = $3, format = $4, default_date = $5 WHERE id = $1",
-                id as i32,
-                match_info.map,
-                match_info.week as i32,
-                format as Option<GameMode>,
-                date
-            )
-                .execute(&self.pool)
-                .await
-                .map_err(|error| ArchiveError::Query {
-                    description: "updating match",
-                    error,
-                })?;
-        } else {
-            query!(
-                "UPDATE matches SET map = $2, week = $3, format = $4 WHERE id = $1",
-                id as i32,
-                match_info.map,
-                match_info.week as i32,
-                format as Option<GameMode>,
-            )
-            .execute(&self.pool)
-            .await
-            .map_err(|error| ArchiveError::Query {
-                description: "updating match",
-                error,
-            })?;
-        }
-        Ok(())
-    }
-
     pub async fn update_match_details_from_team_matches(
         &self,
         team: &TeamRef,
@@ -662,15 +634,7 @@ impl Archive {
                 if options.len() == 1 {
                     options[0] as i32
                 } else if options.is_empty() {
-                    let fake_id = Self::find_next_negative_match_id(&mut *transaction).await?;
-                    assert!(fake_id < 0);
-                    info!(id = fake_id, "inserting synthetic match");
-                    panic!("?");
-                    let fake_match = match_info
-                        .match_info(team, format)
-                        .expect("no match info but we do have opponent");
-                    self.store_match(fake_id, fake_match).await?;
-                    fake_id
+                    panic!("failed to find match");
                 } else {
                     warn!(
                         possible_options = options.len(),
@@ -690,12 +654,69 @@ impl Archive {
                 format as GameMode,
                 season.season as i32
             )
-            .execute(&self.pool)
+            .execute(&mut *transaction)
             .await
             .map_err(|error| ArchiveError::Query {
                 description: "updating match with team match data",
                 error,
             })?;
+        }
+
+        transaction
+            .commit()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "commiting team matches transaction",
+                error,
+            })?;
+
+        Ok(())
+    }
+
+    pub async fn update_match_date_from_team_matches(
+        &self,
+        format: GameMode,
+        season: &TeamSeason,
+    ) -> Result<(), ArchiveError> {
+        let mut transaction = self
+            .pool
+            .begin()
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "beginning team matches transaction",
+                error,
+            })?;
+
+        for match_info in season.matches.iter() {
+            if let Some(id) = match_info.result.match_id() {
+                let Some(year) = self
+                    .get_match_year(format, season.season, match_info.week)
+                    .await?
+                else {
+                    error!(
+                        r#match = id,
+                        ?format,
+                        season = season.season,
+                        week = match_info.week,
+                        "Can't find year'"
+                    );
+                    panic!("Can't find year for match");
+                };
+
+                let date = parse_match_date(&match_info.date, year as i32);
+
+                query!(
+                    "UPDATE matches SET default_date = $2 WHERE id = $1",
+                    id as i32,
+                    date,
+                )
+                .execute(&mut *transaction)
+                .await
+                .map_err(|error| ArchiveError::Query {
+                    description: "updating match date with team match data",
+                    error,
+                })?;
+            }
         }
 
         transaction
@@ -735,21 +756,14 @@ impl Archive {
                 .collect(),
         )
     }
+}
 
-    async fn find_next_negative_match_id(
-        db: impl Executor<'_, Database = Postgres>,
-    ) -> Result<i32, ArchiveError> {
-        let min = query!("SELECT MIN(id) as id FROM matches WHERE id < 0")
-            .fetch_optional(db)
-            .await
-            .map_err(|error| ArchiveError::Query {
-                description: "getting next negative match",
-                error,
-            })?
-            .map(|row| row.id.unwrap_or_default())
-            .unwrap_or_default();
-        Ok(min - 1)
+#[allow(dead_code)]
+fn parse_match_date(date: &str, year: i32) -> Date {
+    if let Ok(date) = parse_old_match_date(date) {
+        return date;
     }
+    try_date_formats(date, year, MATCH_DATE_FORMATS).expect("failed to parse date")
 }
 
 fn parse_old_match_date(date: &str) -> Result<Date, time::Error> {
@@ -770,6 +784,7 @@ fn test_parse_old_match_date() {
     );
 }
 
+#[allow(dead_code)]
 fn try_date_formats(date: &str, year: i32, formats: &[&[FormatItem<'static>]]) -> Option<Date> {
     for format in formats {
         match Date::parse(&format!("{} {}", date, year), format) {

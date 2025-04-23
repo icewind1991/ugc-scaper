@@ -1,0 +1,12 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE matches SET default_date = $2 WHERE id = $1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": ["Int4", "Date"]
+    },
+    "nullable": []
+  },
+  "hash": "2d58774b5365ac8ba3996246c26fb6b7ca63a8a6f8c086b85979f6ea7b5b8ebe"
+}
