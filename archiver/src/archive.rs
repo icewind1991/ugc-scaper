@@ -1,6 +1,7 @@
 use futures_util::stream::TryStreamExt;
+use serde::{Serialize, Serializer};
 use sqlx::postgres::PgConnectOptions;
-use sqlx::{query, Error, Executor, PgPool, Postgres};
+use sqlx::{query, query_as, Error, Executor, PgPool, Postgres};
 use std::ops::Range;
 use std::str::FromStr;
 use thiserror::Error;
@@ -11,8 +12,8 @@ use time::Date;
 use tokio_stream::Stream;
 use tracing::{debug, error, warn};
 use ugc_scraper_types::{
-    Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole, NameChange, Player, Record,
-    Region, RosterHistory, SteamID, Team, TeamRef, TeamSeason,
+    serde_steam_id_as_string, Class, GameMode, MapHistory, MatchInfo, Membership, MembershipRole,
+    NameChange, Player, Record, Region, RosterHistory, SteamID, Team, TeamRef, TeamSeason,
 };
 
 const MATCH_DATE_FORMAT: &[FormatItem<'static>] = format_description!(
@@ -77,12 +78,12 @@ impl Archive {
             match_info.format as GameMode,
             match_info.week as i32,
         )
-        .execute(&self.pool)
-        .await
-        .map_err(|error| ArchiveError::Query {
-            description: "inserting match",
-            error,
-        })?;
+            .execute(&self.pool)
+            .await
+            .map_err(|error| ArchiveError::Query {
+                description: "inserting match",
+                error,
+            })?;
         Ok(())
     }
 
@@ -212,12 +213,12 @@ impl Archive {
             "select id from teams where id > $1 and format in ('highlander', 'sixes', 'fours', 'ultiduo') order by id asc",
             min as i32,
         )
-        .fetch(&self.pool)
-        .map_err(|error| ArchiveError::Query {
-            description: "getting team ids",
-            error,
-        })
-        .map_ok(|map| map.id as u32)
+            .fetch(&self.pool)
+            .map_err(|error| ArchiveError::Query {
+                description: "getting team ids",
+                error,
+            })
+            .map_ok(|map| map.id as u32)
     }
 
     pub async fn get_max_roster_history(&self) -> Result<u32, ArchiveError> {
@@ -756,6 +757,167 @@ impl Archive {
                 .collect(),
         )
     }
+
+    pub fn get_teams(&self) -> impl Stream<Item = Result<TeamData, ArchiveError>> + use<'_> {
+        query_as!(
+            TeamData,
+            r#"select id, tag, name, image, format as "format!: GameMode", region as "region!: Region", timezone from teams
+                where format in ('highlander', 'sixes', 'fours', 'ultiduo')
+                order by id asc"#
+        )
+            .fetch(&self.pool)
+            .map_err(|error| ArchiveError::Query {
+                description: "listing teams",
+                error,
+            })
+    }
+
+    pub fn get_players(&self) -> impl Stream<Item = Result<PlayerData, ArchiveError>> + use<'_> {
+        query_as!(
+            PlayerDataRaw,
+            r#"select steam_id, name, avatar, country from players
+                order by steam_id asc"#
+        )
+        .fetch(&self.pool)
+        .map_err(|error| ArchiveError::Query {
+            description: "listing teams",
+            error,
+        })
+        .map_ok(PlayerData::from)
+    }
+
+    pub fn get_matches(&self) -> impl Stream<Item = Result<MatchData, ArchiveError>> + use<'_> {
+        query_as!(
+            MatchData,
+            r#"select matches.id, team_home, team_away, score_home, score_away, matches.format as "format!: GameMode", season as "season!", week as "week!", default_date as "default_date!", map as "map!" from matches
+                inner join teams on teams.id in (team_home, team_away)
+                where matches.format in ('highlander', 'sixes', 'fours', 'ultiduo')
+                and region != 'asia'
+                order by id asc"#
+        )
+            .fetch(&self.pool)
+            .map_err(|error| ArchiveError::Query {
+                description: "listing matches",
+                error,
+            })
+    }
+
+    pub fn get_membership(
+        &self,
+    ) -> impl Stream<Item = Result<MembershipData, ArchiveError>> + use<'_> {
+        query_as!(
+            MembershipDataRaw,
+            r#"select team_id, steam_id, role as "role: MembershipRole", joined, "left" from membership_history
+                order by team_id, steam_id asc"#
+        )
+        .fetch(&self.pool)
+        .map_err(|error| ArchiveError::Query {
+            description: "listing matches",
+            error,
+        })
+        .map_ok(MembershipData::from)
+    }
+}
+
+#[derive(Serialize)]
+pub struct TeamData {
+    id: i32,
+    tag: String,
+    name: String,
+    image: Option<String>,
+    format: GameMode,
+    region: Region,
+    timezone: Option<String>,
+}
+
+pub struct PlayerDataRaw {
+    steam_id: i64,
+    name: String,
+    avatar: Option<String>,
+    country: Option<String>,
+}
+
+#[derive(Serialize)]
+pub struct PlayerData {
+    #[serde(with = "serde_steam_id_as_string")]
+    steam_id: SteamID,
+    name: String,
+    avatar: Option<String>,
+    country: Option<String>,
+}
+
+impl From<PlayerDataRaw> for PlayerData {
+    fn from(player: PlayerDataRaw) -> Self {
+        PlayerData {
+            steam_id: (player.steam_id as u64).into(),
+            name: player.name,
+            avatar: player.avatar,
+            country: player.country,
+        }
+    }
+}
+
+#[derive(Serialize)]
+pub struct MatchData {
+    id: i32,
+    team_home: i32,
+    team_away: i32,
+    score_home: i32,
+    score_away: i32,
+    map: String,
+    season: i32,
+    week: i32,
+    #[serde(serialize_with = "serialize_date")]
+    default_date: Date,
+    format: GameMode,
+}
+
+pub struct MembershipDataRaw {
+    team_id: i32,
+    steam_id: i64,
+    role: MembershipRole,
+    joined: Option<Date>,
+    left: Option<Date>,
+}
+
+#[derive(Serialize)]
+pub struct MembershipData {
+    team_id: i32,
+    #[serde(with = "serde_steam_id_as_string")]
+    steam_id: SteamID,
+    role: MembershipRole,
+    #[serde(serialize_with = "serialize_date_opt")]
+    joined: Option<Date>,
+    #[serde(serialize_with = "serialize_date_opt")]
+    left: Option<Date>,
+}
+
+impl From<MembershipDataRaw> for MembershipData {
+    fn from(membership: MembershipDataRaw) -> Self {
+        MembershipData {
+            team_id: membership.team_id,
+            steam_id: (membership.steam_id as u64).into(),
+            role: membership.role,
+            joined: membership.joined,
+            left: membership.left,
+        }
+    }
+}
+
+fn serialize_date<S: Serializer>(date: &Date, serializer: S) -> Result<S::Ok, S::Error> {
+    let format = format_description!("[year]/[month]/[day]");
+
+    serializer.serialize_str(&date.format(&format).unwrap())
+}
+
+fn serialize_date_opt<S: Serializer>(
+    date: &Option<Date>,
+    serializer: S,
+) -> Result<S::Ok, S::Error> {
+    let format = format_description!("[year]/[month]/[day]");
+
+    let date = date.as_ref().map(|date| date.format(&format).unwrap());
+    date.serialize(serializer)
 }
 
 #[allow(dead_code)]

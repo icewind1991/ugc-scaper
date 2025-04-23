@@ -5,8 +5,12 @@ mod config;
 use crate::archive::Archive;
 use crate::client::{UgcClient, UgcClientError};
 use crate::config::Config;
+use clap::ValueEnum;
 use clap::{Parser, Subcommand};
 use main_error::MainResult;
+use std::fs::OpenOptions;
+use std::io::BufWriter;
+use std::io::Write;
 use std::path::PathBuf;
 use std::pin::pin;
 use std::str::FromStr;
@@ -33,6 +37,15 @@ enum Command {
     FixupMatches,
     MembershipHistory,
     MapHistory { format: String },
+    Dump { data: Data, target: String },
+}
+
+#[derive(Debug, ValueEnum, Clone, Copy, Eq, PartialEq)]
+enum Data {
+    Teams,
+    Players,
+    Matches,
+    Membership,
 }
 
 const MAYBE_FIRST_MATCH: u32 = 14486;
@@ -67,6 +80,9 @@ async fn main() -> MainResult {
         Command::MapHistory { format } => {
             let format = GameMode::from_str(&format)?;
             archive_map_history(&client, &archive, format).await?;
+        }
+        Command::Dump { data, target } => {
+            dump_data(&archive, data, &target).await?;
         }
     }
     Ok(())
@@ -307,4 +323,68 @@ impl<T> NotFoundResultExt<T> for Result<T, UgcClientError> {
             Err(e) => Err(e),
         }
     }
+}
+
+async fn dump_data(archive: &Archive, data: Data, output: &str) -> MainResult {
+    let mut output = BufWriter::new(
+        OpenOptions::new()
+            .create(true)
+            .truncate(true)
+            .write(true)
+            .open(output)?,
+    );
+    writeln!(&mut output, "[")?;
+    let mut first = true;
+    match data {
+        Data::Teams => {
+            let mut teams = pin!(archive.get_teams());
+            while let Some(res) = teams.next().await {
+                let team = res?;
+                if !first {
+                    writeln!(&mut output, ",")?;
+                }
+                first = false;
+                write!(&mut output, "\t")?;
+                serde_json::to_writer(&mut output, &team)?;
+            }
+        }
+        Data::Players => {
+            let mut players = pin!(archive.get_players());
+            while let Some(res) = players.next().await {
+                let player = res?;
+                if !first {
+                    writeln!(&mut output, ",")?;
+                }
+                first = false;
+                write!(&mut output, "\t")?;
+                serde_json::to_writer(&mut output, &player)?;
+            }
+        }
+        Data::Matches => {
+            let mut matches = pin!(archive.get_matches());
+            while let Some(res) = matches.next().await {
+                let matches = res?;
+                if !first {
+                    writeln!(&mut output, ",")?;
+                }
+                first = false;
+                write!(&mut output, "\t")?;
+                serde_json::to_writer(&mut output, &matches)?;
+            }
+        }
+        Data::Membership => {
+            let mut memberships = pin!(archive.get_membership());
+            while let Some(res) = memberships.next().await {
+                let membership = res?;
+                if !first {
+                    writeln!(&mut output, ",")?;
+                }
+                first = false;
+                write!(&mut output, "\t")?;
+                serde_json::to_writer(&mut output, &membership)?;
+            }
+        }
+    }
+    writeln!(&mut output, "\n]")?;
+    Ok(())
 }

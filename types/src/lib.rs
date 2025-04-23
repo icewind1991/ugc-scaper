@@ -742,7 +742,7 @@ pub struct PreviousSeasonMap {
 }
 
 #[cfg(feature = "serde")]
-mod serde_steam_id_as_string {
+pub mod serde_steam_id_as_string {
     use serde::{Deserialize, Deserializer, Serialize, Serializer};
     use steamid_ng::SteamID;
 
