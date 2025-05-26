@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/icewind/ugc-scaper
+
 # ugc-scraper
 
 _We have ugc api at home_
